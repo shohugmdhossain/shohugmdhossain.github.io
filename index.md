@@ -1,11 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
-
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
@@ -25,8 +17,8 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Md Shohug Hossain"
-  pronouns         : # example: "he/him"  
-  bio              : "Short biography for the left-hand sidebar"
+  pronouns         : "he/him"  
+  bio              : "Geospatial Data Scientist"
   location         : "Calgary, Alberta"
   employer         : "University of Calgary"
   uri              : # URL
