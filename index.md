@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: home
 author_profile: true
 ---
 
 # Md Shohug Hossain
 
-👋 I am a Doctoral Fellow at the University of Calgary.  
+I am a Doctoral Fellow at the University of Calgary.  
 
 My research focuses on:
 - 🌍 Environmental remote sensing: wetlands, vegetation dynamics, and deforestation monitoring
