@@ -1,6 +1,6 @@
-title: "Md Shohug Hossain"
+title: "About Me"
 name: "Md Shohug Hossain"
-email: "your-email@example.com"
+email: "shohugmdhossain@gmail.com"
 description: >-
   PhD Student · Earth & Energy Science  
   University of Calgary
@@ -27,16 +27,20 @@ plugins:
 author:
   name   : "Md Shohug Hossain"
   avatar : "/images/profile.jpg"
-  bio    : "PhD Student · Planetary Science & Remote Sensing"
-  location: "Calgary, Alberta"
+  bio    : "PhD Student in Earth & Energy Science · Remote Sensing & Planetary Science"
+  location: "Calgary, Alberta, Canada"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:your-email@example.com"
+      url: "mailto:your-email@example.com"   # replace with your real email
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/shohugmdhossain"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
-      url: "https://linkedin.com/in/your-profile"
+      url: "https://linkedin.com/in/your-profile"   # replace with your LinkedIn
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/"
+
 
