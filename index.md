@@ -3,7 +3,7 @@ layout: home
 author_profile: true
 ---
 
-Welcome! I am a **PhD student in Earth & Energy Science** at the University of Calgary.  
+Welcome! I am a **PhD student in Earth Science** at the University of Calgary.  
 
 My research focuses on:   
 - 🌍 Environmental remote sensing (wetlands, vegetation dynamics, deforestation monitoring)  
