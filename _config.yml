@@ -39,5 +39,12 @@ author:
       icon: "ai ai-google-scholar"
       url: "https://scholar.google.com/citations?user=YOURID"  # replace with your Scholar ID
 
+      sass:
+  style: compressed
+
+include:
+  - assets
+
+
 
 
