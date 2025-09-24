@@ -2,7 +2,7 @@ title: "About Me"
 name: "Md Shohug Hossain"
 email: "shohugmdhossain@gmail.com"
 description: >-
-  Doctoral Fellow in Earth & Energy Science @ University of Calgary
+  Doctoral Fellow in Earth Science @ University of Calgary
 url: "https://shohugmdhossain.github.io"
 
 # Theme
@@ -38,6 +38,8 @@ author:
     - label: "Google Scholar"
       icon: "ai ai-google-scholar"
       url: "https://scholar.google.com/citations?user=YOURID"
+
+show_author_profile: true 
 
 # Custom CSS
 sass:
