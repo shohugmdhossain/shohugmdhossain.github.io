@@ -3,12 +3,11 @@ layout: home
 author_profile: true
 ---
 
-# Md Shohug Hossain
+Welcome! I am a **PhD student in Earth & Energy Science** at the University of Calgary.  
 
-I am a Doctoral Fellow at the University of Calgary.  
+My research focuses on:   
+- 🌍 Environmental remote sensing (wetlands, vegetation dynamics, deforestation monitoring)  
+- 🤖 Explainable AI for geospatial models (SHAP-based interpretability)  
 
-My research focuses on:
-- 🌍 Environmental remote sensing: wetlands, vegetation dynamics, and deforestation monitoring
-- 🤖 Explainable AI: SHAP-based interpretability for geospatial models
+👉 Learn more about me on the [About](/about/) page, check my [Projects](/projects/), or download my [CV](/cv/).
 
-📄 [Download my CV](/cv/) · 🔗 [GitHub](https://github.com/shohugmdhossain) · 🔗 [LinkedIn](https://linkedin.com/in/your-profile)
