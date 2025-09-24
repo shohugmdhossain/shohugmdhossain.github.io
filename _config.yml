@@ -25,7 +25,7 @@ plugins:
 # Author box (sidebar)
 author:
   name   : "Md Shohug Hossain"
-  avatar : "/images/profile.jpg"
+  avatar : "/images/shohug.jpg"
   bio    : "PhD Student in Earth & Energy Science @ University of Calgary"
   location: "Calgary, Alberta, Canada"
   links:
