@@ -28,6 +28,7 @@ author:
   avatar : "/images/shohug.jpg"
   bio    : "PhD Student in Earth Science @ University of Calgary"
   location: "Calgary, Alberta, Canada"
+  
   links:
     - label: "GitHub"
       icon: "fab fa-github"
