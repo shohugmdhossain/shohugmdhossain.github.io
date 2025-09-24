@@ -26,9 +26,8 @@ plugins:
 author:
   name   : "Md Shohug Hossain"
   avatar : "/images/shohug.jpg"
-  bio    : "PhD Student in Earth Science @ University of Calgary"
+  bio    : "PhD Student in Earth Science · Remote Sensing & Planetary Science"
   location: "Calgary, Alberta, Canada"
-  
   links:
     - label: "GitHub"
       icon: "fab fa-github"
@@ -40,7 +39,29 @@ author:
       icon: "ai ai-google-scholar"
       url: "https://scholar.google.com/citations?user=YOURID"
 
-show_author_profile: true 
+# Show author sidebar profile (LinkedIn-style left column)
+show_author_profile: true
+
+# Default layout settings
+defaults:
+  # Apply to all posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+
+  # Apply to homepage
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: home
+      author_profile: true
 
 # Custom CSS
 sass:
@@ -48,6 +69,7 @@ sass:
 
 include:
   - assets
+
 
 
 
