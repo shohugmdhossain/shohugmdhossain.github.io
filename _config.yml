@@ -1,6 +1,6 @@
 title: "About Me"
-name: "Md Shohug Hossain"
-email: "shohugmdhossain@gmail.com"
+name: "X X X"
+email: "xyz@gmail.com"
 description: >-
   Doctoral Fellow in Earth Science @ University of Calgary
 url: "https://shohugmdhossain.github.io"
@@ -24,7 +24,7 @@ plugins:
 
 # Author box (sidebar)
 author:
-  name   : "Md Shohug Hossain"
+  name   : "X X X"
   avatar : "/images/shohug.jpg"
   bio    : "PhD Student in Earth Science · Remote Sensing & Planetary Science"
   location: "Calgary, Alberta, Canada"
