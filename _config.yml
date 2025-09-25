@@ -25,7 +25,7 @@ plugins:
 # Author box (sidebar)
 author:
   name   : "X X X"
-  avatar : "/images/shohug.jpg"
+  avatar : "/images/profile.jpg"
   bio    : "PhD Student in Earth Science · Remote Sensing & Planetary Science"
   location: "Calgary, Alberta, Canada"
   links:
