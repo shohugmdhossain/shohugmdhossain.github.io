@@ -26,7 +26,7 @@ plugins:
 author:
   name   : "X X X"
   avatar : "/images/shohug.jpg"
-  bio    : "PhD Student in Earth Science · Remote Sensing & Planetary Science"
+  bio    : "PhD Student in Earth Science"
   location: "Calgary, Alberta, Canada"
   links:
     - label: "GitHub"
