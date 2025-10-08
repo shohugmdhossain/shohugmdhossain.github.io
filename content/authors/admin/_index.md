@@ -1,4 +1,6 @@
 ---
+avatar: shohug.jpg
+
 # Display name
 title: M S Hossain
 
