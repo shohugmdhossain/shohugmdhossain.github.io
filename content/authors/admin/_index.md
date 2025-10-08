@@ -1,5 +1,5 @@
 ---
-avatar: shohug.jpg
+avatar: profile.jpg
 
 # Display name
 title: M S Hossain
