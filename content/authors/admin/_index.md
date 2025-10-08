@@ -81,11 +81,11 @@ education:
       Minored in Mathematics. President of AI Club.
 
 work:
-  - position: Senior AI Research Scientist
-    company_name: Meta AI
-    company_url: 'https://ai.meta.com/'
+  - position: Rsearch Fellow
+    company_name: University of Calgary
+    company_url: 'https://ucalgary.ca/'
     company_logo: ''
-    date_start: 2020-01-01
+    date_start: 2025-25-08
     date_end: ''
     summary: |2-
       Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
@@ -163,7 +163,7 @@ awards:
     awarder: Stanford University
     icon: hero/academic-cap
     summary: |
-      Recognized for contributions to scaling laws in deep learning.
+       Turning satellite data into actionable insights for Earth and planetary science.
 ---
 
-Alex Johnson is a Senior AI Research Scientist at Meta AI, where he leads groundbreaking work on large language models and multimodal systems. His research has been published in top conferences like NeurIPS and ICML, with over 10,000 citations. Alex is passionate about pushing the boundaries of AI while ensuring ethical development. Outside of work, he enjoys hiking in the Rockies, building custom PCs, and mentoring the next generation of AI talent.
+I’m a Ph.D. researcher specializing in 𝗿𝗲𝗺𝗼𝘁𝗲 𝘀𝗲𝗻𝘀𝗶𝗻𝗴, 𝘀𝗮𝘁𝗲𝗹𝗹𝗶𝘁𝗲 𝗶𝗺𝗮𝗴𝗲𝗿𝘆, and 𝗴𝗲𝗼𝘀𝗽𝗮𝘁𝗶𝗮𝗹 𝗔𝗜. My work combines 𝗺𝗮𝗰𝗵𝗶𝗻𝗲 𝗹𝗲𝗮𝗿𝗻𝗶𝗻𝗴 and 𝗵𝗶𝗴𝗵-𝗽𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 𝗰𝗼𝗺𝗽𝘂𝘁𝗶𝗻𝗴 (𝗟𝗶𝗻𝘂𝘅, 𝗦𝗹𝘂𝗿𝗺) to study landscapes on 𝗘𝗮𝗿𝘁𝗵 and 𝗠𝗮𝗿𝘀. I am passionate about advancing 𝗽𝗹𝗮𝗻𝗲𝘁𝗮𝗿𝘆 𝗲𝘅𝗽𝗹𝗼𝗿𝗮𝘁𝗶𝗼𝗻 and 𝗘𝗮𝗿𝘁𝗵 𝘀𝘂𝘀𝘁𝗮𝗶𝗻𝗮𝗯𝗶𝗹𝗶𝘁𝘆 through remote sensing. I have hands-on experience with 𝗺𝘂𝗹𝘁𝗶𝘀𝗽𝗲𝗰𝘁𝗿𝗮𝗹 (𝗟𝗮𝗻𝗱𝘀𝗮𝘁, 𝗦𝗲𝗻𝘁𝗶𝗻𝗲𝗹) and 𝗵𝘆𝗽𝗲𝗿𝘀𝗽𝗲𝗰𝘁𝗿𝗮𝗹 (𝗣𝗥𝗜𝗦𝗠𝗔, 𝗔𝗩𝗜𝗥𝗜𝗦) data analysis, 𝗴𝗲𝗼𝘀𝗽𝗮𝘁𝗶𝗮𝗹 𝗺𝗼𝗱𝗲𝗹𝗶𝗻𝗴, and large-scale 𝘀𝗮𝘁𝗲𝗹𝗹𝗶𝘁𝗲 𝗱𝗮𝘁𝗮 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴. Beyond the technical side, I focus on translating complex datasets into insights that drive 𝗰𝗹𝗶𝗺𝗮𝘁𝗲 𝗮𝗰𝘁𝗶𝗼𝗻, 𝘂𝗿𝗯𝗮𝗻 𝗽𝗹𝗮𝗻𝗻𝗶𝗻𝗴, and 𝗽𝗹𝗮𝗻𝗲𝘁𝗮𝗿𝘆 𝘀𝗰𝗶𝗲𝗻𝗰𝗲.
