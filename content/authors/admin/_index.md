@@ -85,7 +85,7 @@ work:
     company_name: University of Calgary
     company_url: 'https://ucalgary.ca/'
     company_logo: ''
-    date_start: 2025-25-08
+    date_start: 2025-08-25
     date_end: ''
     summary: |2-
       Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
