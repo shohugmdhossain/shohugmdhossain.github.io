@@ -1,7 +1,5 @@
 ---
 avatar: profile.jpg
-
-# Display name
 title: M S Hossain
 
 # Name pronunciation (optional)
