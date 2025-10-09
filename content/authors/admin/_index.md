@@ -1,8 +1,5 @@
 ---
-avatar: img/profile.jpg
-<!-- Put this RIGHT AFTER the YAML '---' line -->
 <style>
-  /* Hide the built-in page title to avoid duplicate name */
   .article-container h1:first-of-type { display: none; }
 
   /* Responsive image sizing */
