@@ -29,16 +29,16 @@ sections:
       avatar:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
-  - block: markdown
+    - block: markdown
     content:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-    <div style="text-align: justify; text-justify: inter-word;">
-        My research explores Martian surface evolution through the integration of satellite remote sensing and            artificial intelligence. I develop deep learning–based workflows to analyze geomorphological features             that preserve evidence of past subsurface and sedimentary activity. Using advanced geospatial modeling            and high-performance computing, this work aims to reveal patterns in Martian landscapes that contribute           to understanding the planet’s geological and climatic history.
-    <br><br>
+        <div style="text-align: justify; text-justify: inter-word;">
+        My research explores Martian surface evolution through the integration of satellite remote sensing and artificial intelligence. I develop deep learning–based workflows to analyze geomorphological features that preserve evidence of past subsurface and sedimentary activity. Using advanced geospatial modeling and high-performance computing, this work aims to reveal patterns in Martian landscapes that contribute to understanding the planet’s geological and climatic history.
+        <br><br>
         Please reach out to collaborate 😃
-    </div>
+        </div>
     design:
       columns: '1'
   - block: collection
