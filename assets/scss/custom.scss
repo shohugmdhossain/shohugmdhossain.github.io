@@ -1,11 +1,18 @@
-/* --- Custom avatar adjustments --- */
-
-/* Make sure the avatar shows full head, not cropped */
-.avatar {
-  object-fit: contain !important;
-  border-radius: 50%;
+/* --- Fix avatar crop --- */
+.avatar,
+.avatar img {
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: 50% !important;
   width: 180px !important;
   height: 180px !important;
-  object-position: top center !important; /* moves image down slightly so head is visible */
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+/* --- Remove top spacing above author section --- */
+.article-container,
+.page-body,
+.main-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
