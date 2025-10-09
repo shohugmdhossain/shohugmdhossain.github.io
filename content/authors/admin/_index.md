@@ -1,5 +1,5 @@
 ---
-avatar: profile.jpg
+avatar: avatar.jpg
 title: M S Hossain
 first_name: M S
 last_name: Hossain
