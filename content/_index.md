@@ -5,7 +5,7 @@ date: 2022-10-24
 type: landing
 
 design:
-  # Default section spacing
+  # Default section spacing (reduced for tighter layout)
   spacing: '2rem'
 
 sections:
@@ -29,18 +29,20 @@ sections:
       avatar:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
-    - block: markdown
+
+  - block: markdown
     content:
       title: '📚 My Research'
       subtitle: ''
       text: |-
         <div style="text-align: justify; text-justify: inter-word;">
         My research explores Martian surface evolution through the integration of satellite remote sensing and artificial intelligence. I develop deep learning–based workflows to analyze geomorphological features that preserve evidence of past subsurface and sedimentary activity. Using advanced geospatial modeling and high-performance computing, this work aims to reveal patterns in Martian landscapes that contribute to understanding the planet’s geological and climatic history.
-        <br><br>
+
         Please reach out to collaborate 😃
         </div>
     design:
       columns: '1'
+
   - block: collection
     id: papers
     content:
@@ -52,6 +54,7 @@ sections:
     design:
       view: article-grid
       columns: 2
+
   - block: collection
     content:
       title: Recent Publications
@@ -62,6 +65,7 @@ sections:
         exclude_featured: false
     design:
       view: citation
+
   - block: collection
     id: talks
     content:
@@ -71,6 +75,7 @@ sections:
           - events
     design:
       view: card
+
   - block: collection
     id: news
     content:
@@ -100,6 +105,7 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
+
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
@@ -121,3 +127,5 @@ sections:
         css_class: 'bg-primary-300'
         css_style: ''
 ---
+
+
