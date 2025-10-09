@@ -1,0 +1,17 @@
+/* --- Avatar crop fix --- */
+.avatar,
+.avatar img {
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: 50% !important;
+  width: 180px !important;
+  height: 180px !important;
+}
+
+/* --- Remove empty top space --- */
+.article-container,
+.page-body,
+.main-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
