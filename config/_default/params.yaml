@@ -42,6 +42,7 @@ footer:
   show_powered_by: false
   show_copyright: false
   text: ''
+  block: false
 
 # Localization
 locale:
