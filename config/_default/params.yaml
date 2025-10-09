@@ -54,3 +54,8 @@ features:
     enable: false
   privacy_pack:
     enable: false
+
+# 👇 ADD THIS SECTION AT THE END
+params:
+  custom_css: ["extra.scss"]
+
