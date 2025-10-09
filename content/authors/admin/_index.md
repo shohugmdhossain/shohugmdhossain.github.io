@@ -1,9 +1,4 @@
 ---
-<div style="text-align:center; margin-bottom:20px;">
-  <img src="/img/profile.jpg"
-       alt="M S Hossain"
-       style="width:220px; height:220px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(0,0,0,0.25);" />
-</div>
 avatar: img/profile.jpg
 
 # Display name
@@ -169,5 +164,10 @@ awards:
     summary: |
        Turning satellite data into actionable insights for Earth and planetary science.
 ---
+<div style="text-align:center; margin-bottom:20px;">
+  <img src="/img/profile.jpg"
+       alt="M S Hossain"
+       style="width:220px; height:220px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(0,0,0,0.25);" />
+</div>
 
 I’m a Ph.D. researcher specializing in 𝗿𝗲𝗺𝗼𝘁𝗲 𝘀𝗲𝗻𝘀𝗶𝗻𝗴, 𝘀𝗮𝘁𝗲𝗹𝗹𝗶𝘁𝗲 𝗶𝗺𝗮𝗴𝗲𝗿𝘆, and 𝗴𝗲𝗼𝘀𝗽𝗮𝘁𝗶𝗮𝗹 𝗔𝗜. My work combines 𝗺𝗮𝗰𝗵𝗶𝗻𝗲 𝗹𝗲𝗮𝗿𝗻𝗶𝗻𝗴 and 𝗵𝗶𝗴𝗵-𝗽𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 𝗰𝗼𝗺𝗽𝘂𝘁𝗶𝗻𝗴 (𝗟𝗶𝗻𝘂𝘅, 𝗦𝗹𝘂𝗿𝗺) to study landscapes on 𝗘𝗮𝗿𝘁𝗵 and 𝗠𝗮𝗿𝘀. I am passionate about advancing 𝗽𝗹𝗮𝗻𝗲𝘁𝗮𝗿𝘆 𝗲𝘅𝗽𝗹𝗼𝗿𝗮𝘁𝗶𝗼𝗻 and 𝗘𝗮𝗿𝘁𝗵 𝘀𝘂𝘀𝘁𝗮𝗶𝗻𝗮𝗯𝗶𝗹𝗶𝘁𝘆 through remote sensing. I have hands-on experience with 𝗺𝘂𝗹𝘁𝗶𝘀𝗽𝗲𝗰𝘁𝗿𝗮𝗹 (𝗟𝗮𝗻𝗱𝘀𝗮𝘁, 𝗦𝗲𝗻𝘁𝗶𝗻𝗲𝗹) and 𝗵𝘆𝗽𝗲𝗿𝘀𝗽𝗲𝗰𝘁𝗿𝗮𝗹 (𝗣𝗥𝗜𝗦𝗠𝗔, 𝗔𝗩𝗜𝗥𝗜𝗦) data analysis, 𝗴𝗲𝗼𝘀𝗽𝗮𝘁𝗶𝗮𝗹 𝗺𝗼𝗱𝗲𝗹𝗶𝗻𝗴, and large-scale 𝘀𝗮𝘁𝗲𝗹𝗹𝗶𝘁𝗲 𝗱𝗮𝘁𝗮 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴. Beyond the technical side, I focus on translating complex datasets into insights that drive 𝗰𝗹𝗶𝗺𝗮𝘁𝗲 𝗮𝗰𝘁𝗶𝗼𝗻, 𝘂𝗿𝗯𝗮𝗻 𝗽𝗹𝗮𝗻𝗻𝗶𝗻𝗴, and 𝗽𝗹𝗮𝗻𝗲𝘁𝗮𝗿𝘆 𝘀𝗰𝗶𝗲𝗻𝗰𝗲.
