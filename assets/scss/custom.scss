@@ -1,0 +1,11 @@
+/* --- Custom avatar adjustments --- */
+
+/* Make sure the avatar shows full head, not cropped */
+.avatar {
+  object-fit: contain !important;
+  border-radius: 50%;
+  width: 180px !important;
+  height: 180px !important;
+  object-position: top center !important; /* moves image down slightly so head is visible */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
