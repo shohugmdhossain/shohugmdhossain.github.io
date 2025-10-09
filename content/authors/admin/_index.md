@@ -45,7 +45,7 @@ profiles:
   - icon: academicons/orcid
     url: https://orcid.org/0000-0002-1825-0097
 
-interests:
+Research interests:
   - Large Language Models
   - Computer Vision
   - Machine Learning
