@@ -1,28 +1,11 @@
 ---
 avatar: profile.jpg
-# Display name
 title: M S Hossain
-
-# Name pronunciation (optional)
-name_pronunciation: ''
-
-# Full name (for SEO)
 first_name: M S
 last_name: Hossain
-
-# Pronouns (optional)
-pronouns: he/him
-
-# Is this the primary user of the site?
 superuser: true
-
-# Highlight the author in author lists? (true/false)
 highlight_name: true
-
-# Role/position/tagline
 role: Research Fellow
-
-# Organizations/Affiliations to display in Biography blox
 organizations:
   - name: University of Calgary
     url: https://ucalgary.ca/
