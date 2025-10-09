@@ -34,9 +34,11 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
+    <div style="text-align: justify; text-justify: inter-word;">
         My research explores Martian surface evolution through the integration of satellite remote sensing and artificial intelligence. I develop deep learning–based workflows to analyze geomorphological features that preserve evidence of past subsurface and sedimentary activity. Using advanced geospatial modeling and high-performance computing, this work aims to reveal patterns in Martian landscapes that contribute to understanding the planet’s geological and climatic history.
 
         Please reach out to collaborate 😃
+    </div>
     design:
       columns: '1'
   - block: collection
