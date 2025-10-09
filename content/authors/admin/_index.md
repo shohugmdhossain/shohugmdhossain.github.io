@@ -1,23 +1,5 @@
 ---
-<style>
-  .article-container h1:first-of-type { display: none; }
-
-  /* Responsive image sizing */
-  @media (max-width: 640px) {
-    .profile-header img { width: 140px; height: 140px; }
-  }
-</style>
-
-<div class="profile-header" style="display:flex; align-items:center; gap:18px; margin:0 0 20px 0;">
-  <img src="/img/profile.jpg"
-       alt="M S Hossain"
-       style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(0,0,0,0.25);" />
-  <div>
-    <!-- Reuse your exact name so content stays identical -->
-    <h1 style="margin:0;">M S Hossain</h1>
-  </div>
-</div>
-
+avatar: profile.jpg
 # Display name
 title: M S Hossain
 
