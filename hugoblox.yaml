@@ -3,3 +3,6 @@ build:
 template:
   id: "academic-cv"
   name: "Academic CV"
+
+show_built_with: false
+
