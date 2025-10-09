@@ -34,9 +34,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
-
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        My research explores Martian surface evolution through the integration of satellite remote sensing and artificial intelligence. I develop deep learning–based workflows to analyze geomorphological features that preserve evidence of past subsurface and sedimentary activity. Using advanced geospatial modeling and high-performance computing, this work aims to reveal patterns in Martian landscapes that contribute to understanding the planet’s geological and climatic history.
 
         Please reach out to collaborate 😃
     design:
