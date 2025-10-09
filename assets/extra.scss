@@ -1,17 +1,65 @@
-/* --- Avatar crop fix --- */
-.avatar,
-.avatar img {
-  object-fit: cover !important;
-  object-position: top center !important;
-  border-radius: 50% !important;
-  width: 180px !important;
-  height: 180px !important;
+
+
+/* --- Hide Hugo Blox footer and bottom spacing --- */
+
+/* Remove footer text ("Made with Hugo Blox...") */
+.site-footer {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* --- Remove empty top space --- */
-.article-container,
-.page-body,
-.main-content {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+/* Remove extra white space below last section */
+body, .main {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
+
+/* --- Avatar image adjustments --- */
+.avatar,
+.avatar img {
+  object-fit: contain !important;
+  object-position: top center !important;
+  border-radius: 50%;
+  width: 180px !important;
+  height: 180px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Reduce vertical spacing between homepage sections --- */
+.section,
+.page-section,
+.block-section {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* --- Fine-tune header section spacing --- */
+.hbx-bg-gradient {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* --- Optional: Center "My Research" heading and justify text --- */
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  text-align: center;
+}
+
+.markdown p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* --- Compact navbar --- */
+.navbar {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* --- Smooth scroll behavior --- */
+html {
+  scroll-behavior: smooth;
+}
+
