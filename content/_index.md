@@ -4,7 +4,8 @@ date: 2022-10-24
 type: landing
 
 design:
-  spacing: '1rem'  # globally reduce padding between blocks
+  # Moderate vertical space between blocks (balanced look)
+  spacing: '2.5rem'
 
 sections:
   - block: resume-biography-3
@@ -37,7 +38,7 @@ sections:
     design:
       columns: '1'
       spacing:
-        padding: [0, 0, 0, 0]  # remove inner padding
+        padding: [1, 0, 1, 0]  # light inner padding for breathing space
 
   - block: collection
     id: papers
@@ -51,7 +52,7 @@ sections:
       view: article-grid
       columns: 2
       spacing:
-        padding: [0, 0, 0, 0]
+        padding: [1, 0, 1, 0]
 
   - block: collection
     content:
@@ -64,7 +65,7 @@ sections:
     design:
       view: citation
       spacing:
-        padding: [0, 0, 0, 0]
+        padding: [1, 0, 1, 0]
 
   - block: collection
     id: talks
@@ -76,7 +77,7 @@ sections:
     design:
       view: card
       spacing:
-        padding: [0, 0, 0, 0]
+        padding: [1, 0, 1, 0]
 
   - block: collection
     id: news
@@ -99,7 +100,7 @@ sections:
     design:
       view: card
       spacing:
-        padding: [0, 0, 0, 0]
+        padding: [1, 0, 1, 0]
 
   - block: cta-card
     demo: true
@@ -121,8 +122,9 @@ sections:
         css_class: 'bg-primary-300'
         css_style: ''
       spacing:
-        padding: [0, 0, 0, 0]
+        padding: [1, 0, 1, 0]
 ---
+
 
 
 
