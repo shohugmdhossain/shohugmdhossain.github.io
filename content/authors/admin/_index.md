@@ -1,4 +1,9 @@
 ---
+<div style="text-align:center; margin-bottom:20px;">
+  <img src="/img/profile.jpg"
+       alt="M S Hossain"
+       style="width:220px; height:220px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(0,0,0,0.25);" />
+</div>
 avatar: img/profile.jpg
 
 # Display name
