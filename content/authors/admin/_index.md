@@ -32,7 +32,7 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:alex.johnson@meta.com'
+    url: 'hmdshohug@gmail.com'
     label: E-mail Me
   - icon: brands/x
     url: https://twitter.com/AlexAIResearch
@@ -48,12 +48,13 @@ profiles:
 interests:
   - Large Language Models
   - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Machine Learning
+  - GeoAI
+  - Remote Sensing
 
 education:
   - area: PhD Computer Science (AI Focus)
-    institution: Stanford University
+    institution: University of Calgary
     date_start: 2015-09-01
     date_end: 2019-06-30
     summary: |
@@ -62,7 +63,7 @@ education:
       text: 'Read Thesis'
       url: 'https://example.com/thesis.pdf'
   - area: MS Computer Science
-    institution: Carnegie Mellon University
+    institution: University of Calgary
     date_start: 2013-09-01
     date_end: 2015-05-31
     summary: |
@@ -70,13 +71,13 @@ education:
 
       Specialized in machine learning and robotics.
   - area: BS Computer Science
-    institution: MIT
+    institution: North South University
     date_start: 2009-09-01
     date_end: 2013-05-31
     summary: |
       GPA: 3.9/4.0
 
-      Minored in Mathematics. President of AI Club.
+      Minored in Mathematics.
 
 work:
   - position: Rsearch Fellow
@@ -87,9 +88,9 @@ work:
     date_end: ''
     summary: |2-
       Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
-  - position: AI Research Intern
-    company_name: OpenAI
-    company_url: 'https://openai.com/'
+  - position: Research Intern
+    company_name: Space Research & Remote Sensing Organization
+    company_url: 'https://sparrso.gov.bd/'
     company_logo: ''
     date_start: 2019-06-01
     date_end: 2019-12-31
