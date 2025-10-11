@@ -37,13 +37,6 @@ header:
     logo:
       text: 'M S Hossain'
 
-# Site footer
-footer:
-  show_powered_by: false
-  show_copyright: false
-  text: ''
-  block: false
-
 # Localization
 locale:
   date_format: 'Jan 2, 2006'
