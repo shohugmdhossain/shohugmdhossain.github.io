@@ -359,6 +359,13 @@ footer img {
     height: 360px;
     transform: none;
   }
+  /* --- Sticky profile photo --- */
+.photo.fixed {
+  position: sticky;
+  top: 76px;      /* just below the navbar */
+  transform: translateY(0);
+}
+
 }
 /* === Final precise alignment fix for hero section === */
 .hero.two {
@@ -379,3 +386,21 @@ footer img {
   position: relative;
   top: -6px;                      /* fine-tune alignment: adjust -4 to -8px if needed */
 }
+/* --- Refine spacing and line rhythm --- */
+.rightcol {
+  gap: 8px; /* consistent tight vertical rhythm */
+}
+
+.kicker.red {
+  margin-bottom: 6px; /* reduce space below red tagline */
+}
+
+.subtitle {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.current-projects {
+  margin-top: 16px; /* slightly less gap before project box */
+}
+
