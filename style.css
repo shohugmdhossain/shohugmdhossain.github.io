@@ -9,6 +9,7 @@
   --max: 1000px;
 }
 
+/* Reset and basics */
 * {
   box-sizing: border-box;
 }
@@ -41,7 +42,7 @@ a:hover {
   padding: 0 40px;
 }
 
-/* Navigation */
+/* -------------------- Navigation -------------------- */
 header.site {
   position: sticky;
   top: 0;
@@ -82,7 +83,7 @@ nav a:hover {
   background: rgba(179, 27, 27, 0.12);
 }
 
-/* Global justified text */
+/* -------------------- Global text -------------------- */
 p,
 li,
 div.card,
@@ -134,7 +135,7 @@ h2 {
   color: #d8d8d8;
 }
 
-/* Buttons */
+/* -------------------- Buttons -------------------- */
 .btns {
   display: flex;
   gap: 12px;
@@ -159,14 +160,15 @@ h2 {
   background: transparent;
 }
 
-/* Hero layout */
+/* -------------------- Hero Layout -------------------- */
 .two {
   display: grid;
   grid-template-columns: 360px 1fr;
   gap: 36px;
-  align-items: start;
+  align-items: start; /* top align by default */
 }
-/* Ensure top alignment in the hero grid */
+
+/* Enforce top alignment */
 .hero.two {
   align-items: start !important;
 }
@@ -175,10 +177,14 @@ h2 {
 }
 .rightcol {
   align-self: start !important;
+  margin-top: -4px; /* small visual nudge to align exactly with photo */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .hero {
-  padding: 72px 0;
+  padding: 64px 0; /* adjusted for perfect alignment under navbar */
 }
 
 .leftcol {
@@ -195,7 +201,7 @@ h2 {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   border: 1px solid var(--line);
-  transform: translateY(-10px);
+  transform: translateY(0);
 }
 
 .photo.fixed img {
@@ -221,7 +227,7 @@ h2 {
   color: var(--accent);
 }
 
-/* Sections */
+/* -------------------- Sections -------------------- */
 section {
   padding: 48px 0;
   border-top: 1px solid var(--line);
@@ -244,7 +250,7 @@ li {
   margin: 6px 0;
 }
 
-/* ✅ Current Projects Block */
+/* -------------------- Current Projects -------------------- */
 .current-projects {
   margin-top: 24px;
   font-size: 15px;
@@ -257,17 +263,17 @@ li {
 }
 
 .current-projects b {
-  color: var(--text) !important;   /* force white color */
+  color: var(--text) !important;
   display: inline;
 }
 
 .current-projects b:first-child {
-  color: var(--accent) !important; /* keep 'Currently Working On:' red */
+  color: var(--accent) !important; /* only 'Currently Working On:' red */
 }
 
-/* ✅ Project Link Styles */
+/* Project link styling */
 .project-link {
-  color: var(--text); /* white */
+  color: var(--text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
@@ -277,7 +283,15 @@ li {
   border-bottom: 1px solid var(--accent);
 }
 
-/* Education logos */
+/* White bullets and colons */
+.current-projects b,
+.current-projects b a,
+.current-projects b::before,
+.current-projects b::after {
+  color: var(--text) !important;
+}
+
+/* -------------------- Education logos -------------------- */
 .edu {
   display: grid;
   gap: 14px;
@@ -295,7 +309,7 @@ li {
   filter: grayscale(30%);
 }
 
-/* Footer */
+/* -------------------- Footer -------------------- */
 footer.site {
   border-top: 1px solid var(--line);
   padding: 24px 0;
@@ -322,7 +336,7 @@ footer img {
   opacity: 0.95;
 }
 
-/* Responsive adjustments */
+/* -------------------- Responsive -------------------- */
 @media (max-width: 900px) {
   .two {
     grid-template-columns: 1fr;
@@ -346,17 +360,3 @@ footer img {
     transform: none;
   }
 }
-/* ✅ Force white bullets and colons in Current Projects */
-.current-projects b,
-.current-projects b a,
-.current-projects b::before,
-.current-projects b::after {
-  color: var(--text) !important; /* white text */
-}
-
-/* Keep only the header "Currently Working On:" red */
-.current-projects b:first-of-type {
-  color: var(--accent) !important;
-}
-
-
