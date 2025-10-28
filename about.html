@@ -31,10 +31,28 @@
   </div>
 </header>
 
-<main class="wrap">
-  <section class="about">
-    <h1>About Me</h1>
+<main class="wrap hero two">
+  <!-- Left column with image -->
+  <div class="leftcol">
+    <div class="photo-wrapper">
+      <div class="photo fixed">
+        <img src="profile.jpg" alt="Md Shohug Hossain portrait">
+      </div>
+    </div>
 
+    <div class="socials">
+      <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+      <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+      <a class="icon" href="https://github.com/shohugmdhossain" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+  <!-- Right column with content -->
+  <div class="rightcol">
+    <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">ABOUT ME</div>
+    
     <p>
       My academic journey began with a fascination for computing and problem-solving during my undergraduate studies in
       <b>Computer Science and Engineering at North South University, Bangladesh</b>. I later pursued a
@@ -58,7 +76,7 @@
     <h2>Technical Expertise</h2>
     <p>
       I have hands-on experience with <b>Detectron2, YOLO, Faster R-CNN</b>, <b>PyTorch</b>, and geospatial tools such as <b>ArcGIS</b> and <b>QGIS</b>.
-      My workflow integrates <b>HPC environments (LONI</b> and cloud systems for large-scale processing.
+      My workflow integrates <b>HPC environments (LONI, Slurm, Conda)</b> and cloud systems for large-scale processing.
       I also use <b>SHAP-based interpretability</b> methods to analyze and explain GeoAI models.
     </p>
 
@@ -69,17 +87,10 @@
       My broader vision is to enable GeoAI applications that support both planetary exploration and climate resilience on Earth.
     </p>
 
-    <h2>Beyond Research</h2>
-    <p>
-      Beyond my academic work, I enjoy creating visual stories with data, following space exploration missions,
-      and contributing to open-source GeoAI projects. I’m also passionate about scientific communication —
-      making complex spatial ideas accessible through clear visual and computational storytelling.
-    </p>
-
     <h2>Education</h2>
     <div class="edu">
       <div class="edu-item">
-        <img src="/ucalgary.png" class="edu-logo" alt="University of Calgary">
+        <img src="/ul.png" class="edu-logo" alt="University of Louisiana at Lafayette">
         <div>
           <b>University of Calgary</b><br>
           Ph.D. in Earth and Energy Sciences<br>
@@ -102,7 +113,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </main>
 
 <footer class="site">
@@ -110,6 +121,7 @@
     <div>© <span id="y"></span> M S Hossain</div>
     <div class="logos">
       <img src="/ul.png" alt="UL Lafayette" />
+      <img src="/ucalgary.png" alt="University of Calgary" />
     </div>
   </div>
 </footer>
@@ -120,4 +132,5 @@
 
 </body>
 </html>
+
 
