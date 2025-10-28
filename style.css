@@ -339,15 +339,19 @@ nav ul li a::after,
   display: none !important;
 }
 /* --- Final Cleanup: Remove all unwanted arrow icons from nav --- */
-.nav ul li::after,
-.nav ul li a::after,
+/* ==================== FINAL NAV ARROW REMOVAL ==================== */
+header.site nav ul li::before,
 header.site nav ul li::after,
+header.site nav ul li a::before,
 header.site nav ul li a::after,
+nav ul li::before,
 nav ul li::after,
-nav ul li a::after,
-.menu-item-has-children::after,
-.menu-item-has-children > a::after {
+nav ul li a::before,
+nav ul li a::after {
   content: none !important;
   background: none !important;
+  border: none !important;
   display: none !important;
+  visibility: hidden !important;
 }
+
