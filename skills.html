@@ -46,12 +46,13 @@
       line-height: 1.7;
     }
 
+    /* Skill Tags */
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 8px;
     }
-
     .skill-tags .tag {
       background: var(--line);
       color: var(--text);
@@ -60,19 +61,42 @@
       font-size: 0.9rem;
       transition: background 0.2s ease, color 0.2s ease;
     }
-
     .skill-tags .tag:hover {
       background: var(--accent);
       color: #fff;
     }
 
+    /* Progress Bars */
+    .progress-container {
+      margin-top: 14px;
+    }
+    .progress-item {
+      margin-bottom: 12px;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      border-radius: 8px;
+      background: var(--line);
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 8px;
+      border-radius: 8px;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+
     @media (max-width: 900px) {
-      .skills-section {
-        gap: 30px;
-      }
-      .skill-category {
-        padding: 22px 20px;
-      }
+      .skills-section { gap: 30px; }
+      .skill-category { padding: 22px 20px; }
     }
   </style>
 </head>
@@ -101,13 +125,15 @@
   <section class="skills-section">
     <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Skills & Expertise</h1>
     <p style="font-size:15px; color:var(--text); max-width:800px;">
-      A combination of technical, analytical, and leadership skills across software development, data science, remote sensing, and cloud infrastructure — strengthened by research and interdisciplinary collaboration.
+      A balanced blend of <b>technical, analytical, and leadership abilities</b> spanning software development, 
+      data science, remote sensing, and cloud infrastructure. My skill set is strengthened by 
+      <b>research-driven problem solving</b> and <b>interdisciplinary collaboration</b> across Earth and planetary data domains.
     </p>
 
     <!-- Programming & Data Science -->
     <div class="skill-category">
       <h2><i class="fa-solid fa-code"></i> Programming & Data Science</h2>
-      <p>Advanced proficiency in programming, algorithm design, and applied machine learning for scientific and industrial applications.</p>
+      <p>Proficient in scientific computing, algorithmic problem solving, and statistical analysis across diverse programming environments.</p>
       <div class="skill-tags">
         <span class="tag">Python</span>
         <span class="tag">R</span>
@@ -118,12 +144,17 @@
         <span class="tag">Shell / Bash</span>
         <span class="tag">LaTeX</span>
       </div>
+      <div class="progress-container">
+        <div class="progress-item"><div class="progress-label"><span>Python</span><span>Advanced</span></div><div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div></div>
+        <div class="progress-item"><div class="progress-label"><span>SQL</span><span>Proficient</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+        <div class="progress-item"><div class="progress-label"><span>R / MATLAB</span><span>Intermediate</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
+      </div>
     </div>
 
     <!-- Machine Learning & AI -->
     <div class="skill-category">
       <h2><i class="fa-solid fa-brain"></i> Machine Learning & Artificial Intelligence</h2>
-      <p>Skilled in developing, training, and evaluating deep learning and traditional ML models for geospatial, scientific, and predictive analytics tasks.</p>
+      <p>Experienced in developing, training, and optimizing ML models for geospatial, planetary, and scientific datasets using advanced frameworks.</p>
       <div class="skill-tags">
         <span class="tag">PyTorch</span>
         <span class="tag">TensorFlow</span>
@@ -133,70 +164,63 @@
         <span class="tag">NumPy</span>
         <span class="tag">Pandas</span>
         <span class="tag">Matplotlib</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">Deep Learning (CNN, UNet, R-CNN)</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-item"><div class="progress-label"><span>Deep Learning</span><span>Advanced</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="progress-item"><div class="progress-label"><span>Model Evaluation / MLflow</span><span>Proficient</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
       </div>
     </div>
 
-    <!-- Geospatial & Remote Sensing -->
+    <!-- Geospatial -->
     <div class="skill-category">
       <h2><i class="fa-solid fa-globe"></i> Geospatial & Remote Sensing</h2>
-      <p>Hands-on experience in processing, analyzing, and visualizing satellite data for planetary and Earth-observation applications.</p>
+      <p>Specialized in satellite-image processing, feature extraction, and geospatial AI for terrestrial and planetary analysis.</p>
       <div class="skill-tags">
         <span class="tag">Google Earth Engine</span>
         <span class="tag">QGIS</span>
         <span class="tag">ArcGIS</span>
         <span class="tag">ERDAS Imagine</span>
         <span class="tag">GDAL</span>
-        <span class="tag">Raster & Vector Data Processing</span>
-        <span class="tag">Change Detection</span>
-        <span class="tag">Remote Sensing Analysis</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-item"><div class="progress-label"><span>Remote Sensing</span><span>Advanced</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="progress-item"><div class="progress-label"><span>Geospatial AI</span><span>Proficient</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
       </div>
     </div>
 
     <!-- Cloud & HPC -->
     <div class="skill-category">
       <h2><i class="fa-solid fa-server"></i> Cloud & High-Performance Computing</h2>
-      <p>Proficient in leveraging distributed and GPU-based systems for scalable data processing, model training, and automation.</p>
+      <p>Strong foundation in distributed systems, cloud deployment, and GPU computing for large-scale model training and automation.</p>
       <div class="skill-tags">
         <span class="tag">LONI HPC</span>
-        <span class="tag">GPU Computing (A100)</span>
+        <span class="tag">GPU (A100)</span>
         <span class="tag">AWS</span>
         <span class="tag">Azure</span>
-        <span class="tag">Google Cloud Platform</span>
+        <span class="tag">GCP</span>
         <span class="tag">Docker</span>
         <span class="tag">Kubernetes</span>
-        <span class="tag">Hadoop</span>
-        <span class="tag">Spark</span>
       </div>
-    </div>
-
-    <!-- Web Development -->
-    <div class="skill-category">
-      <h2><i class="fa-solid fa-laptop-code"></i> Web & Application Development</h2>
-      <p>Designing user-centric and data-driven web applications for interactive analytics and automation workflows.</p>
-      <div class="skill-tags">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">React</span>
-        <span class="tag">Flask</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">UI/UX Design</span>
+      <div class="progress-container">
+        <div class="progress-item"><div class="progress-label"><span>HPC / GPU Training</span><span>Advanced</span></div><div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div></div>
+        <div class="progress-item"><div class="progress-label"><span>Cloud Deployment</span><span>Intermediate</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
       </div>
     </div>
 
     <!-- Research & Leadership -->
     <div class="skill-category">
       <h2><i class="fa-solid fa-user-tie"></i> Research, Leadership & Communication</h2>
-      <p>Demonstrated ability to lead teams, communicate complex ideas clearly, and manage interdisciplinary research projects effectively.</p>
+      <p>Combining research rigor with technical leadership and collaboration in multidisciplinary environments.</p>
       <div class="skill-tags">
         <span class="tag">Research Design</span>
-        <span class="tag">Project Coordination</span>
+        <span class="tag">Project Management</span>
         <span class="tag">Technical Writing</span>
-        <span class="tag">Academic Mentorship</span>
+        <span class="tag">Mentorship</span>
         <span class="tag">Public Speaking</span>
-        <span class="tag">Team Collaboration</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-item"><div class="progress-label"><span>Research / Writing</span><span>Advanced</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div></div>
+        <div class="progress-item"><div class="progress-label"><span>Team Leadership</span><span>Proficient</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div></div>
       </div>
     </div>
   </section>
@@ -214,6 +238,8 @@
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
+
 
