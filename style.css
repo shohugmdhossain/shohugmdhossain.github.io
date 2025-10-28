@@ -339,19 +339,39 @@ nav ul li a::after,
   display: none !important;
 }
 /* --- Final Cleanup: Remove all unwanted arrow icons from nav --- */
-/* ==================== FINAL NAV ARROW REMOVAL ==================== */
+/* === Hard reset for unwanted nav arrows === */
+header.site nav ul,
+header.site nav ul li,
+header.site nav ul li a {
+  list-style: none !important;
+  background-image: none !important;
+}
+
+header.site nav ul li::marker,
 header.site nav ul li::before,
 header.site nav ul li::after,
 header.site nav ul li a::before,
-header.site nav ul li a::after,
-nav ul li::before,
-nav ul li::after,
-nav ul li a::before,
-nav ul li a::after {
-  content: none !important;
-  background: none !important;
-  border: none !important;
+header.site nav ul li a::after {
+  content: "" !important;
   display: none !important;
-  visibility: hidden !important;
 }
+
+nav ul li a,
+nav ul li {
+  background: none !important;
+  text-decoration: none !important;
+}
+
+/* Remove Safari/Chrome dropdown symbols */
+summary::-webkit-details-marker,
+details summary::-webkit-details-marker {
+  display: none !important;
+}
+
+/* Just to be extra safe */
+li::marker {
+  content: "" !important;
+  color: transparent !important;
+}
+
 
