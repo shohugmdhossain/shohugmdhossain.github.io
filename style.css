@@ -504,6 +504,43 @@ img, iframe, video {
   .wrap { padding: 0 16px; }
   .two { grid-template-columns: 1fr; }
 }
+/* ==================== Responsive Navigation Fix for Mobile ==================== */
+@media (max-width: 700px) {
+  .nav {
+    flex-wrap: wrap;           /* allows items to break into new line */
+    justify-content: center;   /* centers everything nicely */
+    text-align: center;
+    height: auto;              /* remove fixed height */
+    padding: 10px 0;
+  }
+
+  .brand {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav ul li {
+    display: inline-block;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    font-size: 15px;
+  }
+
+  header.site {
+    position: relative; /* prevent sticky overlap on mobile */
+  }
+}
+
 
 
 
