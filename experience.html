@@ -9,76 +9,154 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
   <style>
-    /* ---------- Local Experience Page Tweaks ---------- */
+    /* --- Experience Section --- */
     .experience-section {
       display: flex;
       flex-direction: column;
-      gap: 40px; /* moderate gap between cards */
+      gap: 40px;
       margin-top: 40px;
     }
+
     .exp-card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 28px 30px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease;
+      padding: 28px 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .exp-card:hover { transform: translateY(-3px); box-shadow: 0 0 10px rgba(179,27,27,0.4); }
-    .exp-card h2 { color: var(--accent); font-size: 22px; margin-bottom: 6px; }
-    .exp-card h3 { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
-    .exp-card p { margin-bottom: 12px; line-height: 1.65; }
-    .project-list { margin: 10px 0 15px 1rem; padding: 0; list-style: none; }
-    .project-list li { position: relative; padding-left: 1.2rem; margin-bottom: 8px; }
-    .project-list li::before {
-      content: "▹";
+
+    .exp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 12px rgba(179,27,27,0.4);
+    }
+
+    .exp-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+    }
+
+    .exp-header h2 {
       color: var(--accent);
-      position: absolute;
-      left: 0;
-      font-weight: 700;
+      font-size: 22px;
+      margin: 0;
     }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 8px; }
+
+    .exp-header h3 {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 6px 0 10px;
+    }
+
+    .exp-card p {
+      margin-bottom: 10px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .exp-points {
+      list-style: none;
+      padding-left: 0;
+      margin: 10px 0 0;
+    }
+
+    .exp-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .exp-points i {
+      color: var(--accent);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
     .tag {
       background: var(--line);
       color: var(--text);
       padding: 0.3em 0.7em;
       border-radius: 999px;
       font-size: 0.85rem;
+      transition: background 0.2s ease;
     }
-    .tag:hover { background: var(--accent); color: #fff; }
 
-    /* Leadership Section */
-    .leadership-section {
+    .tag:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* --- Leadership Section --- */
+    .leadership-volunteer {
       margin-top: 60px;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .leadership-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 28px 30px;
+      border-radius: 14px;
+      padding: 22px 24px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .leadership-section h2 {
+
+    .leadership-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(179, 27, 27, 0.4);
+    }
+
+    .leadership-icon {
+      font-size: 26px;
       color: var(--accent);
-      font-size: 22px;
-      margin-bottom: 12px;
+      flex-shrink: 0;
+      margin-top: 4px;
     }
-    .leadership-section ul {
-      list-style: none;
-      padding-left: 0;
+
+    .leadership-content h3 {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    .leadership-content p {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
       margin: 0;
     }
-    .leadership-section li {
-      position: relative;
-      padding-left: 1.3rem;
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-    .leadership-section li::before {
-      content: "▹";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: bold;
+
+    @media (max-width: 700px) {
+      .leadership-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .leadership-icon {
+        margin-bottom: 6px;
+      }
     }
   </style>
 </head>
@@ -107,136 +185,162 @@
   <section class="experience-section">
     <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 20px;">Professional Experience</h1>
 
-    <!-- Job Card -->
+    <!-- UCalgary -->
     <div class="exp-card">
       <div class="exp-header">
         <h2>Research Assistant — University of Calgary</h2>
         <h3>Calgary, AB, Canada | 2025–Present</h3>
       </div>
       <p>
-        Conducting <b>GeoAI-driven planetary research</b> on Martian surface morphology using <b>deep learning</b> and <b>remote sensing</b>. 
-        Developed and validated a <b>Faster R-CNN</b> framework on the <b>LONI HPC cluster</b> for automated mound detection from CTX imagery.
+        Engaged in <b>GeoAI and planetary science research</b> focused on detecting and analyzing Martian surface features. 
+        Developed an end-to-end <b>Faster R-CNN pipeline</b> using the Detectron2 framework on high-performance GPU infrastructure (LONI). 
+        Designed scalable data-preprocessing systems and validated model robustness through cross-feature analysis.
       </p>
       <ul class="exp-points">
-        <li><i class="fa-solid fa-circle-check"></i> Automated data preparation and COCO-based annotation pipelines.</li>
-        <li><i class="fa-solid fa-circle-check"></i> Optimized Detectron2 performance on A100 GPUs for large-scale training.</li>
-        <li><i class="fa-solid fa-circle-check"></i> Implemented cross-validation metrics to analyze feature-specific accuracy.</li>
+        <li><i class="fa-solid fa-database"></i> Built automated COCO-style annotation pipelines for CTX image subframes.</li>
+        <li><i class="fa-solid fa-microchip"></i> Deployed large-scale training on A100 GPUs, optimizing inference speed and precision.</li>
+        <li><i class="fa-solid fa-chart-line"></i> Generated per-feature confusion matrices and validation metrics for model tuning.</li>
       </ul>
       <div class="tags">
         <span class="tag">Detectron2</span>
         <span class="tag">HPC</span>
-        <span class="tag">Remote Sensing</span>
+        <span class="tag">Planetary Remote Sensing</span>
         <span class="tag">Python</span>
-        <span class="tag">Planetary Science</span>
+        <span class="tag">GeoAI</span>
       </div>
     </div>
 
+    <!-- TELUS -->
     <div class="exp-card">
       <div class="exp-header">
         <h2>Data Engineer — TELUS</h2>
         <h3>Calgary, Canada | 2023–2024</h3>
       </div>
       <p>
-        Supported <b>data modernization</b> and <b>ETL development</b> initiatives to optimize business analytics and network operations.
+        Collaborated within TELUS’s enterprise data modernization team to streamline analytics pipelines and automate ETL workflows. 
+        Improved data quality, scalability, and accessibility across cloud-based systems supporting customer insight initiatives.
       </p>
       <ul class="exp-points">
-        <li><i class="fa-solid fa-database"></i> Built and monitored ETL pipelines for transactional data ingestion and transformation.</li>
-        <li><i class="fa-solid fa-chart-line"></i> Designed QA scripts improving data reliability across environments.</li>
-        <li><i class="fa-solid fa-layer-group"></i> Contributed to Power BI dashboards and Snowflake data models.</li>
+        <li><i class="fa-solid fa-cloud"></i> Developed data ingestion scripts integrating Snowflake, Power BI, and Python APIs.</li>
+        <li><i class="fa-solid fa-gears"></i> Engineered QA layers and health checks improving pipeline reliability by 30%.</li>
+        <li><i class="fa-solid fa-diagram-project"></i> Standardized schema management and automated validation reporting.</li>
       </ul>
       <div class="tags">
-        <span class="tag">Python</span>
         <span class="tag">SQL</span>
+        <span class="tag">Python</span>
         <span class="tag">ETL</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">Data Engineering</span>
+        <span class="tag">Snowflake</span>
+        <span class="tag">DataOps</span>
       </div>
     </div>
 
+    <!-- GTA -->
     <div class="exp-card">
       <div class="exp-header">
         <h2>Graduate Teaching Assistant — University of Calgary</h2>
         <h3>Calgary, Canada | 2021–2023</h3>
       </div>
       <p>
-        Facilitated courses in <b>Python programming</b> and <b>Agent-Based Software Engineering</b>, mentoring 100+ students in algorithmic thinking and software design.
+        Supported instruction for <b>Python programming</b> and <b>Agent-Based Software Engineering</b> courses. 
+        Provided hands-on guidance in object-oriented programming, debugging, and system modeling for undergraduate and graduate students.
       </p>
       <ul class="exp-points">
-        <li><i class="fa-solid fa-person-chalkboard"></i> Led tutorials on object-oriented programming and system architecture.</li>
-        <li><i class="fa-solid fa-laptop-code"></i> Automated grading systems and improved course materials.</li>
-        <li><i class="fa-solid fa-users"></i> Provided one-on-one student mentorship sessions.</li>
+        <li><i class="fa-solid fa-laptop-code"></i> Delivered lab demonstrations and tutorials for 100+ students.</li>
+        <li><i class="fa-solid fa-code-branch"></i> Developed automated grading tools using Python scripts and regex validators.</li>
+        <li><i class="fa-solid fa-user-graduate"></i> Mentored students on clean code practices and simulation design.</li>
       </ul>
       <div class="tags">
-        <span class="tag">Python</span>
         <span class="tag">Teaching</span>
+        <span class="tag">Python</span>
         <span class="tag">Software Engineering</span>
-        <span class="tag">Education</span>
+        <span class="tag">Academic Mentorship</span>
       </div>
     </div>
 
+    <!-- SPARRSO -->
     <div class="exp-card">
       <div class="exp-header">
         <h2>Research Assistant — SPARRSO (Bangladesh Space Research & Remote Sensing Organization)</h2>
         <h3>Dhaka, Bangladesh | 2021–2022</h3>
       </div>
       <p>
-        Applied <b>deep learning</b> and <b>remote sensing</b> to monitor wetland change and hydrological shifts using multispectral imagery.
+        Contributed to national-scale research on <b>wetland mapping</b> and <b>climate resilience</b> using multispectral satellite imagery. 
+        Applied deep-learning-based segmentation models to quantify hydrological and land-cover dynamics in the Ganges-Brahmaputra Delta.
       </p>
       <ul class="exp-points">
-        <li><i class="fa-solid fa-earth-asia"></i> Processed Landsat and Sentinel datasets via Python and QGIS.</li>
-        <li><i class="fa-solid fa-brain"></i> Trained CNN and UNet segmentation models for wetland mapping.</li>
-        <li><i class="fa-solid fa-check-double"></i> Validated accuracy using in-situ data and temporal analysis.</li>
+        <li><i class="fa-solid fa-earth-asia"></i> Preprocessed Landsat and Sentinel datasets in Google Earth Engine and QGIS.</li>
+        <li><i class="fa-solid fa-brain"></i> Trained UNet models for temporal change detection and accuracy validation.</li>
+        <li><i class="fa-solid fa-seedling"></i> Delivered spatial analytics outputs to national climate-monitoring stakeholders.</li>
       </ul>
       <div class="tags">
         <span class="tag">Deep Learning</span>
-        <span class="tag">QGIS</span>
         <span class="tag">GEE</span>
+        <span class="tag">QGIS</span>
         <span class="tag">Climate Analysis</span>
+        <span class="tag">Remote Sensing</span>
       </div>
     </div>
 
+    <!-- NSU -->
     <div class="exp-card">
       <div class="exp-header">
         <h2>Research Assistant — North South University</h2>
         <h3>Dhaka, Bangladesh | 2019–2021</h3>
       </div>
       <p>
-        Designed an <b>implicit recommender system</b> using behavioral signals to improve personalized learning experiences.
+        Developed an <b>implicit recommender system</b> using <b>mouse-movement analytics</b> to predict learner interest in digital environments. 
+        Focused on enhancing user personalization and adaptive content delivery through behavioral data mining.
       </p>
       <ul class="exp-points">
-        <li><i class="fa-solid fa-mouse-pointer"></i> Analyzed user activity and built mouse-movement-based predictors.</li>
-        <li><i class="fa-solid fa-network-wired"></i> Applied matrix factorization for user–item embedding generation.</li>
-        <li><i class="fa-solid fa-book"></i> Published work on implicit feedback modeling and system design.</li>
+        <li><i class="fa-solid fa-mouse-pointer"></i> Engineered behavioral datasets from human-computer interaction logs.</li>
+        <li><i class="fa-solid fa-network-wired"></i> Built collaborative filtering models using cosine-similarity and latent factors.</li>
+        <li><i class="fa-solid fa-book"></i> Presented research findings on implicit feedback and intelligent recommender systems.</li>
       </ul>
       <div class="tags">
         <span class="tag">Recommender Systems</span>
-        <span class="tag">Data Mining</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Behavioral Data</span>
         <span class="tag">Python</span>
         <span class="tag">AI</span>
       </div>
     </div>
   </section>
 
+  <!-- Leadership & Volunteering -->
   <section class="leadership-volunteer">
-    <h1 style="color: var(--accent); font-size: 28px; margin-top: 60px;">Leadership & Volunteering</h1>
+    <h1 style="color: var(--accent); font-size: 28px; margin-top: 60px; text-align:left;">Leadership & Volunteering</h1>
     <div class="leadership-grid">
+
       <div class="leadership-card">
-        <h3>President — ECE Graduate Group, University of Calgary</h3>
-        <p>Organized technical seminars, mentored graduate peers, and fostered interdisciplinary research culture among engineering students.</p>
+        <div class="leadership-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <div class="leadership-content">
+          <h3>President — ECE Graduate Group, University of Calgary</h3>
+          <p>Directed graduate initiatives promoting interdisciplinary collaboration. 
+          Organized research seminars, mentorship programs, and technical panels connecting students with industry leaders.</p>
+        </div>
       </div>
+
       <div class="leadership-card">
-        <h3>Vice President — Schulich School of Engineering Consortium & Bangladeshi Students Association</h3>
-        <p>Led community programs, mentorship events, and cultural initiatives supporting international student inclusion.</p>
+        <div class="leadership-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="leadership-content">
+          <h3>Vice President — Schulich School of Engineering Consortium & BSA</h3>
+          <p>Led multicultural engagement events, mentorship activities, and academic support programs to enhance inclusion and community growth within the engineering faculty.</p>
+        </div>
       </div>
+
       <div class="leadership-card">
-        <h3>Executive Member — NSU Computer Engineering Club</h3>
-        <p>Coordinated hackathons, coding workshops, and undergraduate research symposia to promote AI literacy and innovation.</p>
+        <div class="leadership-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="leadership-content">
+          <h3>Executive Member — NSU Computer Engineering Club</h3>
+          <p>Coordinated hackathons, coding workshops, and research expos. 
+          Supported undergraduate innovation in AI and data science through mentoring and event organization.</p>
+        </div>
       </div>
+
     </div>
   </section>
 
 </main>
-
 
 <footer class="site">
   <div class="wrap bottom">
@@ -252,3 +356,4 @@
 </script>
 </body>
 </html>
+
