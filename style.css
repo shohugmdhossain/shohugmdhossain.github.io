@@ -336,5 +336,17 @@ footer img {
     transform: none;
   }
 }
+/* ✅ Force white bullets and colons in Current Projects */
+.current-projects b,
+.current-projects b a,
+.current-projects b::before,
+.current-projects b::after {
+  color: var(--text) !important; /* white text */
+}
+
+/* Keep only the header "Currently Working On:" red */
+.current-projects b:first-of-type {
+  color: var(--accent) !important;
+}
 
 
