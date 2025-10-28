@@ -253,13 +253,13 @@ li {
 
 /* ✅ Project Link Styles */
 .project-link {
-  color: var(--text); /* white text */
+  color: var(--text); /* white */
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .project-link:hover {
-  color: var(--accent); /* red hover */
+  color: var(--accent);
   border-bottom: 1px solid var(--accent);
 }
 
