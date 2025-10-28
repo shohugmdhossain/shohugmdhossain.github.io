@@ -177,14 +177,14 @@ h2 {
 }
 .rightcol {
   align-self: start !important;
-  margin-top: -4px; /* small visual nudge to align exactly with photo */
+  margin-top: -4px; /* fine-tune visual alignment */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .hero {
-  padding: 64px 0; /* adjusted for perfect alignment under navbar */
+  padding: 64px 0; /* balanced space under navbar */
 }
 
 .leftcol {
@@ -202,6 +202,14 @@ h2 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   border: 1px solid var(--line);
   transform: translateY(0);
+}
+
+/* --- Sticky profile photo (works on desktop) --- */
+.photo.fixed {
+  position: sticky;
+  top: 90px;      /* sits just below navbar */
+  transform: translateY(0);
+  z-index: 5;
 }
 
 .photo.fixed img {
@@ -268,7 +276,7 @@ li {
 }
 
 .current-projects b:first-child {
-  color: var(--accent) !important; /* only 'Currently Working On:' red */
+  color: var(--accent) !important; /* only heading red */
 }
 
 /* Project link styling */
@@ -358,50 +366,28 @@ footer img {
     width: 100%;
     height: 360px;
     transform: none;
+    position: relative;
+    top: 0;
   }
 }
 
-/* --- Sticky profile photo (works on desktop) --- */
-.photo.fixed {
-  position: sticky;
-  top: 90px;      /* just below the navbar */
-  transform: translateY(0);
-}
-
-/* === Final precise alignment fix for hero section === */
-.hero.two {
-  align-items: start !important;
-}
-
-.leftcol {
-  align-self: start !important;
-}
-
+/* === Final precise alignment fix === */
+.hero.two { align-items: start !important; }
+.leftcol { align-self: start !important; }
 .rightcol {
   align-self: start !important;
-  margin-top: 0 !important;       /* reset margin */
+  margin-top: 0 !important;
   padding-top: 0 !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
-  top: -6px;                      /* fine-tune alignment: adjust -4 to -8px if needed */
+  top: -6px; /* adjust -4 to -8px if needed */
 }
+
 /* --- Refine spacing and line rhythm --- */
-.rightcol {
-  gap: 8px; /* consistent tight vertical rhythm */
-}
-
-.kicker.red {
-  margin-bottom: 6px; /* reduce space below red tagline */
-}
-
-.subtitle {
-  margin-top: 4px;
-  margin-bottom: 10px;
-}
-
-.current-projects {
-  margin-top: 16px; /* slightly less gap before project box */
-}
+.rightcol { gap: 8px; }
+.kicker.red { margin-bottom: 6px; }
+.subtitle { margin-top: 4px; margin-bottom: 10px; }
+.current-projects { margin-top: 16px; }
 
