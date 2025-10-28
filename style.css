@@ -360,3 +360,22 @@ footer img {
     transform: none;
   }
 }
+/* === Final precise alignment fix for hero section === */
+.hero.two {
+  align-items: start !important;
+}
+
+.leftcol {
+  align-self: start !important;
+}
+
+.rightcol {
+  align-self: start !important;
+  margin-top: 0 !important;       /* reset margin */
+  padding-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  top: -6px;                      /* fine-tune alignment: adjust -4 to -8px if needed */
+}
