@@ -259,7 +259,7 @@ li {
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .project-link:hover {
-  color: var(--accent);
+  color: var(--accent); /* red hover */
   border-bottom: 1px solid var(--accent);
 }
 
