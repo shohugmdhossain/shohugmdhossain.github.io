@@ -412,5 +412,11 @@ footer img {
   bottom: 40px;   /* stops before footer */
   z-index: 5;
 }
+.photo.fixed {
+  position: sticky;
+  top: 90px;      /* begins sticking below navbar */
+  bottom: 40px;   /* stops before footer */
+  z-index: 5;
+}
 
 
