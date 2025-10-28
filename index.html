@@ -1,27 +1,41 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <title>M S Hossain — GeoAI & Remote Sensing</title>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+</head>
 
-</head><body>
+<body>
 
 <header class="site">
   <div class="wrap nav">
     <div class="brand">M S Hossain</div>
-    <nav><ul>
-      <li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="skills.html">Skills</a></li><li><a href="publications.html">Publications</a></li><li><a href="awards.html">Awards</a></li><li><a href="contact.html">Contact</a></li>
-    </ul></nav>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <main class="wrap hero two">
   <div class="leftcol">
-    <div class="photo fixed"><img src="profile.jpg" alt="Md Shohug Hossain portrait"></div>
+    <div class="photo fixed">
+      <img src="profile.jpg" alt="Md Shohug Hossain portrait">
+    </div>
     <div class="socials">
       <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
       <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
@@ -30,10 +44,29 @@
       <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
   </div>
+
   <div class="rightcol">
-    <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;"> EARTH &amp; PLANETARY SCIENCE • GEOAI</div>
+    <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">EARTH &amp; PLANETARY SCIENCE • GEOAI</div>
     <h1 class="subtitle">Turning satellite data into actionable insights for Earth and planetary science</h1>
-    <p>I’m a Ph.D. researcher specializing in remote sensing, satellite imagery, and geospatial AI. My work combines machine learning and high-performance computing to study landscapes on Earth and Mars. I am passionate about advancing planetary exploration and Earth sustainability through remote sensing. I have hands-on experience with multispectral and hyperspectral data analysis, geospatial modeling, and large-scale satellite data processing. Beyond the technical side, I focus on translating complex datasets into insights that drive climate action, urban planning, and planetary science.</p>
+
+    <p>
+      I’m a Ph.D. researcher specializing in remote sensing, satellite imagery, and geospatial AI. My work combines
+      machine learning and high-performance computing to study landscapes on Earth and Mars. I am passionate about
+      advancing planetary exploration and Earth sustainability through remote sensing. I have hands-on experience with
+      multispectral and hyperspectral data analysis, geospatial modeling, and large-scale satellite data processing.
+      Beyond the technical side, I focus on translating complex datasets into insights that drive climate action,
+      urban planning, and planetary science.
+    </p>
+
+    <!-- ✅ Current Projects block with links -->
+    <div class="current-projects card">
+      <b>Currently Working On:</b><br>
+      <b>• <a href="research.html#mars" class="project-link">Mars Mounds Detection</a> —</b>
+      training Faster R-CNN models on Mars CTX imagery for geomorphological mapping.<br>
+      <b>• <a href="research.html#planetary" class="project-link">Planetary Change Detection</a> —</b>
+      integrating multispectral datasets for temporal analysis of surface evolution.
+    </div>
+
     <div class="btns">
       <a class="btn red" href="about.html">Learn more →</a>
     </div>
@@ -48,6 +81,10 @@
     </div>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
-</body></html>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
