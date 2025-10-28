@@ -9,14 +9,10 @@
   --max: 1000px;
 }
 
-/* Reset and basics */
-* {
-  box-sizing: border-box;
-}
+/* ==================== Reset & Basics ==================== */
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -30,11 +26,9 @@ a {
   color: var(--text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
 }
-
-a:hover {
-  border-bottom: 1px solid var(--accent);
-}
+a:hover { border-bottom: 1px solid var(--accent); }
 
 .wrap {
   max-width: var(--max);
@@ -42,7 +36,7 @@ a:hover {
   padding: 0 40px;
 }
 
-/* -------------------- Navigation -------------------- */
+/* ==================== Navigation ==================== */
 header.site {
   position: sticky;
   top: 0;
@@ -51,19 +45,16 @@ header.site {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
-
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 64px;
 }
-
 .brand {
   font-weight: 700;
   letter-spacing: 0.2px;
 }
-
 nav ul {
   display: flex;
   gap: 18px;
@@ -71,46 +62,29 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav a {
   padding: 8px 10px;
   border-radius: 10px;
 }
-
 nav a.active,
 nav a:hover {
   color: #fff;
   background: rgba(179, 27, 27, 0.12);
 }
 
-/* -------------------- Global text -------------------- */
-p,
-li,
-div.card,
-section,
-.grid,
-.wrap {
+/* ==================== Global Text ==================== */
+p, li, div.card, section, .grid, .wrap {
   text-align: justify;
   text-justify: inter-word;
 }
-
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: "Libre Baskerville", Georgia, serif;
   line-height: 1.2;
   margin: 0 0 10px;
   text-align: left;
 }
-
-h1 {
-  font-size: 42px;
-}
-
-h2 {
-  font-size: 28px;
-  margin-top: 8px;
-}
+h1 { font-size: 42px; }
+h2 { font-size: 28px; margin-top: 8px; }
 
 .kicker {
   color: var(--muted);
@@ -119,8 +93,6 @@ h2 {
   font-size: 12px;
   margin-bottom: 8px;
 }
-
-/* Highlighted kicker (main tagline) */
 .kicker.red {
   color: var(--accent);
   letter-spacing: 0.18em;
@@ -129,71 +101,49 @@ h2 {
   text-align: left;
   margin-bottom: 10px;
 }
-
 .subtitle {
   font-size: 18px;
   color: #d8d8d8;
 }
 
-/* -------------------- Buttons -------------------- */
+/* ==================== Buttons ==================== */
 .btns {
   display: flex;
   gap: 12px;
   margin-top: 18px;
   flex-wrap: wrap;
 }
-
 .btn {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid var(--line);
+  transition: 0.2s ease;
 }
-
 .btn.red {
   background: var(--accent);
   color: #fff;
   border-color: transparent;
 }
+.btn.ghost { background: transparent; }
+.btn:hover { opacity: 0.9; }
 
-.btn.ghost {
-  background: transparent;
-}
-
-/* -------------------- Hero Layout -------------------- */
+/* ==================== Hero Layout ==================== */
 .two {
   display: grid;
   grid-template-columns: 360px 1fr;
   gap: 36px;
-  align-items: start; /* top align by default */
+  align-items: start;
 }
-
-/* Enforce top alignment */
-.hero.two {
-  align-items: start !important;
-}
-.leftcol {
-  align-self: start !important;
-}
-.rightcol {
-  align-self: start !important;
-  margin-top: -4px; /* fine-tune visual alignment */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 .hero {
-  padding: 64px 0; /* balanced space under navbar */
+  padding: 64px 0;
 }
-
 .leftcol {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
 }
-
 .photo.fixed {
   width: 320px;
   height: 360px;
@@ -201,64 +151,52 @@ h2 {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   border: 1px solid var(--line);
-  transform: translateY(0);
-}
-
-/* --- Sticky profile photo (works on desktop) --- */
-.photo.fixed {
   position: sticky;
-  top: 90px;      /* sits just below navbar */
-  transform: translateY(0);
+  top: 90px;
   z-index: 5;
 }
-
 .photo.fixed img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .socials {
   display: flex;
   gap: 14px;
   justify-content: center;
 }
-
 .icon {
   font-size: 20px;
   color: #b6b6b6;
   border: none;
 }
+.icon:hover { color: var(--accent); }
 
-.icon:hover {
-  color: var(--accent);
-}
-
-/* -------------------- Sections -------------------- */
+/* ==================== Sections ==================== */
 section {
   padding: 48px 0;
   border-top: 1px solid var(--line);
 }
-
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
-
 .card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 18px;
+  box-shadow: 0 0 0 1px var(--line);
+  transition: 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(179, 27, 27, 0.3);
 }
 
-li {
-  margin: 6px 0;
-}
-
-/* -------------------- Current Projects -------------------- */
+/* ==================== Current Projects ==================== */
 .current-projects {
   margin-top: 24px;
   font-size: 15px;
@@ -269,17 +207,14 @@ li {
   color: var(--text);
   line-height: 1.6;
 }
-
 .current-projects b {
   color: var(--text) !important;
-  display: inline;
 }
-
 .current-projects b:first-child {
-  color: var(--accent) !important; /* only heading red */
+  color: var(--accent) !important;
 }
 
-/* Project link styling */
+/* Links in project list */
 .project-link {
   color: var(--text);
   text-decoration: none;
@@ -291,39 +226,56 @@ li {
   border-bottom: 1px solid var(--accent);
 }
 
-/* White bullets and colons */
-.current-projects b,
-.current-projects b a,
-.current-projects b::before,
-.current-projects b::after {
-  color: var(--text) !important;
+/* ==================== Research Page Enhancements ==================== */
+.project-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+}
+.project-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+}
+.project-list li::before {
+  content: "\2192"; /* → */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
 }
 
-/* -------------------- Education logos -------------------- */
+/* Fade-in animation */
+main.wrap {
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ==================== Education Logos ==================== */
 .edu {
   display: grid;
   gap: 14px;
 }
-
 .edu-item {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .edu-logo {
   height: 24px;
   object-fit: contain;
   filter: grayscale(30%);
 }
 
-/* -------------------- Footer -------------------- */
+/* ==================== Footer ==================== */
 footer.site {
   border-top: 1px solid var(--line);
   padding: 24px 0;
   color: var(--muted);
 }
-
 footer .bottom {
   display: flex;
   justify-content: center;
@@ -332,36 +284,22 @@ footer .bottom {
   flex-wrap: wrap;
   text-align: center;
 }
-
 footer .logos {
   display: flex;
   gap: 18px;
   align-items: center;
 }
-
 footer img {
   height: 22px;
   opacity: 0.95;
 }
 
-/* -------------------- Responsive -------------------- */
+/* ==================== Responsive ==================== */
 @media (max-width: 900px) {
-  .two {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 44px 0;
-  }
-
-  .wrap {
-    padding: 0 20px;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-
+  .two { grid-template-columns: 1fr; }
+  .hero { padding: 44px 0; }
+  .wrap { padding: 0 20px; }
+  h1 { font-size: 34px; }
   .photo.fixed {
     width: 100%;
     height: 360px;
@@ -369,9 +307,10 @@ footer img {
     position: relative;
     top: 0;
   }
+  .rightcol h2 { font-size: 20px; }
 }
 
-/* === Final precise alignment fix === */
+/* ==================== Final Alignment Fix ==================== */
 .hero.two { align-items: start !important; }
 .leftcol { align-self: start !important; }
 .rightcol {
@@ -382,150 +321,14 @@ footer img {
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
-  top: -6px; /* adjust -4 to -8px if needed */
+  top: -6px;
+  gap: 10px;
 }
-
-/* --- Refine spacing and line rhythm --- */
-.rightcol { gap: 8px; }
 .kicker.red { margin-bottom: 6px; }
 .subtitle { margin-top: 4px; margin-bottom: 10px; }
 .current-projects { margin-top: 16px; }
 
-/* --- Sticky photo scroll limit & left column fix --- */
-.leftcol {
-  width: 360px; /* keeps photo column fixed size */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.photo-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.photo.fixed {
-  position: sticky;
-  top: 90px;      /* begins sticking below navbar */
-  bottom: 40px;   /* stops before footer */
-  z-index: 5;
-}
-.photo.fixed {
-  position: sticky;
-  top: 90px;      /* begins sticking below navbar */
-  bottom: 40px;   /* stops before footer */
-  z-index: 5;
-}
-/* =========================================================
-   Research Page Enhancements
-   (Add this block at the END of style.css)
-   ========================================================= */
-
-/* --- Fade-in animation for main content --- */
-main.wrap {
-  animation: fadeIn 1s ease-in;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: none; }
-}
-
-/* --- Section header styling --- */
-.kicker {
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-/* --- Research grid layout --- */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* --- Research cards --- */
-.card {
-  background: var(--card);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 0 0 1px var(--line), 0 4px 15px rgba(0,0,0,0.25);
-  transition: all 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px var(--accent);
-}
-
-/* --- Card text hierarchy --- */
-.card h2 {
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  line-height: 1.4;
-}
-.card p {
-  color: var(--text);
-  margin-bottom: 0.75rem;
-  line-height: 1.7;
-}
-
-/* --- Subsection headers --- */
-section h2 {
-  margin-top: 3rem;
-  color: var(--accent);
-}
-
-/* --- Custom list bullets --- */
-ul {
-  list-style: none;
-  padding: 0;
-}
-ul li {
-  padding-left: 1.5em;
-  position: relative;
-  margin: 0.5em 0;
-}
-ul li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* --- Tag / pill layout for Tools & Methods --- */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-.tag {
-  background: var(--line);
-  color: var(--text);
-  padding: 0.4em 0.9em;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-.tag:hover {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* --- Footer spacing --- */
-footer.site {
-  margin-top: 3rem;
-  border-top: 1px solid var(--line);
-  padding-top: 2rem;
-}
-/* --- Remove dropdown arrows from top navigation menu --- */
+/* ==================== Navigation Cleanup ==================== */
 .nav ul li::after,
 .nav ul li a::after,
 nav ul li::after,
@@ -535,5 +338,3 @@ nav ul li a::after,
   content: none !important;
   display: none !important;
 }
-
-
