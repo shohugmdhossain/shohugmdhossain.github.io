@@ -1,38 +1,205 @@
 <!doctype html>
-<html lang="en"><head>
-<title>Contact — Md Shohug Hossain</title>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+  <title>Contact — M S Hossain</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-</head><body>
+  <style>
+    /* ---------- Contact Page Styling ---------- */
+    .contact-section {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .contact-info h2 {
+      color: var(--accent);
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .info-item i {
+      color: var(--accent);
+      margin-right: 10px;
+      font-size: 18px;
+      width: 22px;
+    }
+
+    .info-item a {
+      color: var(--text);
+      border-bottom: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .info-item a:hover {
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* Form styling */
+    .contact-form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .contact-form h2 {
+      color: var(--accent);
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input, textarea {
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      color: var(--text);
+      font-family: Inter, sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* Social icons */
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      color: var(--muted);
+      font-size: 20px;
+      transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
 
 <header class="site">
   <div class="wrap nav">
     <div class="brand">M S Hossain</div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="skills.html">Skills</a></li><li><a href="publications.html">Publications</a></li><li><a href="awards.html">Awards</a></li><li><a href="contact.html" class="active">Contact</a></li>
-    </ul></nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <main class="wrap">
-  <section>
-    <div class="kicker">Get in touch</div>
-    <h1>Contact</h1>
-    <p><b>Email:</b> <a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
-    <p><b>Location:</b> Calgary, AB, Canada</p>
-    <p><b>Links:</b> <a href="#">Google Scholar</a> · <a href="https://github.com/shohugmdhossain">GitHub</a> · <a href="https://www.linkedin.com/in/md-shohug-hossain/">LinkedIn</a> · <a href="https://x.com/Hmdshohug10">Twitter/X</a></p>
-    <div class="card" style="max-width:600px">
-      <form onsubmit="event.preventDefault(); alert('Thanks! I\'ll get back to you.');">
-        <label>Name<br><input required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1114;color:var(--text)"></label><br><br>
-        <label>Email<br><input type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1114;color:var(--text)"></label><br><br>
-        <label>Message<br><textarea required style="width:100%;min-height:140px;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0f1114;color:var(--text)"></textarea></label><br><br>
-        <button class="btn red" type="submit">Send</button>
+  <section class="contact-section">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>If you’d like to discuss research collaboration, professional opportunities, or any project ideas — feel free to reach out through the form or my contact channels below.</p>
+
+      <div class="info-item"><i class="fa-solid fa-envelope"></i><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></div>
+      <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Lafayette, Louisiana, USA</span></div>
+      <div class="info-item"><i class="fa-solid fa-phone"></i><a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></div>
+
+      <div class="social-links">
+        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shohugmdhossain" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/shohugmdhossain" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
       </form>
+      <p style="font-size:13px; color:var(--muted); margin-top:10px;">
+        This form uses <a href="https://formspree.io" style="color:var(--accent);">Formspree</a> for secure delivery.
+      </p>
     </div>
   </section>
 </main>
@@ -45,6 +212,10 @@
     </div>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
-</body></html>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
