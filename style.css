@@ -390,23 +390,6 @@ footer img {
 .kicker.red { margin-bottom: 6px; }
 .subtitle { margin-top: 4px; margin-bottom: 10px; }
 .current-projects { margin-top: 16px; }
-/* --- Sticky photo scroll limit --- */
-.photo-wrapper {
-  position: relative;
-}
 
-.photo.fixed {
-  position: sticky;
-  top: 90px;      /* starts sticking below navbar */
-  bottom: 40px;   /* stops before footer */
-}
-
-@media (max-width: 900px) {
-  .photo.fixed {
-    position: relative;
-    top: 0;
-    bottom: auto;
-  }
-}
 
 
