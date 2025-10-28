@@ -391,5 +391,26 @@ footer img {
 .subtitle { margin-top: 4px; margin-bottom: 10px; }
 .current-projects { margin-top: 16px; }
 
+/* --- Sticky photo scroll limit & left column fix --- */
+.leftcol {
+  width: 360px; /* keeps photo column fixed size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo.fixed {
+  position: sticky;
+  top: 90px;      /* begins sticking below navbar */
+  bottom: 40px;   /* stops before footer */
+  z-index: 5;
+}
 
 
