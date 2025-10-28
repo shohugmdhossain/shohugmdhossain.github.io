@@ -253,15 +253,14 @@ li {
 
 /* ✅ Project Link Styles */
 .project-link {
-  color: var(--accent);
+  color: var(--text); /* white text */
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
-
 .project-link:hover {
+  color: var(--accent);
   border-bottom: 1px solid var(--accent);
-  color: #fff;
 }
 
 /* Education logos */
