@@ -364,7 +364,7 @@ footer img {
 /* --- Sticky profile photo (works on desktop) --- */
 .photo.fixed {
   position: sticky;
-  top: 76px;      /* just below the navbar */
+  top: 90px;      /* just below the navbar */
   transform: translateY(0);
 }
 
