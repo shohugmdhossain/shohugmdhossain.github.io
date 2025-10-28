@@ -504,42 +504,60 @@ img, iframe, video {
   .wrap { padding: 0 16px; }
   .two { grid-template-columns: 1fr; }
 }
-/* ==================== Responsive Navigation Fix for Mobile ==================== */
-@media (max-width: 700px) {
+/* ========= Mobile Header/Nav fix (stacks brand, wraps menu, no cut-off) ========= */
+@media (max-width: 780px) {
+  /* let the bar grow to two rows and center things */
   .nav {
-    flex-wrap: wrap;           /* allows items to break into new line */
-    justify-content: center;   /* centers everything nicely */
-    text-align: center;
-    height: auto;              /* remove fixed height */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center !important; /* override space-between */
+    gap: 8px;
+    height: auto;                       /* remove fixed 64px */
     padding: 10px 0;
   }
 
+  /* put your name on its own full-width row (no awkward wrap) */
   .brand {
-    width: 100%;
+    flex: 0 0 100%;
+    order: 0;
     text-align: center;
-    margin-bottom: 6px;
+    white-space: nowrap;  /* keeps “M S Hossain” on one line */
     font-size: 18px;
+    margin: 0;
   }
 
-  nav ul {
-    flex-wrap: wrap;
+  /* make the nav list take a full row and wrap nicely */
+  header.site nav {
+    flex: 0 0 100%;
+    order: 1;
+  }
+
+  header.site nav ul {
+    display: flex;
+    flex-wrap: wrap;             /* allow links to flow to second line */
     justify-content: center;
-    gap: 10px;
+    width: 100%;
+    gap: 10px 14px;              /* row, column gap */
+    margin: 0;
+    padding: 0;
   }
 
-  nav ul li {
-    display: inline-block;
-  }
+  header.site nav li { display: inline-block; }
 
-  nav a {
+  /* slightly smaller paddings/fonts so all items fit */
+  header.site nav a {
     padding: 6px 10px;
     font-size: 15px;
   }
 
+  /* ensure the header itself never causes horizontal overflow */
   header.site {
-    position: relative; /* prevent sticky overlap on mobile */
+    width: 100%;
+    max-width: 100%;
   }
 }
+
 
 
 
