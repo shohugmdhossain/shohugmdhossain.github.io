@@ -338,3 +338,16 @@ nav ul li a::after,
   content: none !important;
   display: none !important;
 }
+/* --- Final Cleanup: Remove all unwanted arrow icons from nav --- */
+.nav ul li::after,
+.nav ul li a::after,
+header.site nav ul li::after,
+header.site nav ul li a::after,
+nav ul li::after,
+nav ul li a::after,
+.menu-item-has-children::after,
+.menu-item-has-children > a::after {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
