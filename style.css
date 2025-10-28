@@ -166,6 +166,16 @@ h2 {
   gap: 36px;
   align-items: start;
 }
+/* Ensure top alignment in the hero grid */
+.hero.two {
+  align-items: start !important;
+}
+.leftcol {
+  align-self: start !important;
+}
+.rightcol {
+  align-self: start !important;
+}
 
 .hero {
   padding: 72px 0;
