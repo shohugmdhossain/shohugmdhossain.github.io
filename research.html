@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>About — M S Hossain</title>
+  <title>Research — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,8 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="research.html">Research</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
         <li><a href="experience.html">Experience</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="publications.html">Publications</a></li>
@@ -31,84 +31,97 @@
   </div>
 </header>
 
-<body>
-
-<main class="wrap">
-  <section>
-    <div class="kicker">Projects</div>
-    <h1>Research</h1>
-
-    <div class="grid">
-      <div class="card">
-        <h2>Planetary GeoAI — Mars Mounds (CTX)</h2>
-        <p>
-          Developing deep-learning models using <strong>Detectron2</strong> and <strong>LONI A100 GPUs</strong> to automatically detect
-          and classify mound-like features on Mars from <strong>CTX imagery</strong>. The project applies <strong>Faster/Mask R-CNN</strong>
-          with COCO-format datasets and topographic fusion to improve detection under challenging illumination and terrain.
-        </p>
-        <p>
-          The goal is to infer geological processes—such as past hydrological or volcanic activity—through large-scale morphological
-          mapping, contributing to planetary stratigraphy and site selection for future Mars missions.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Earth Observation — Wetland Change Detection</h2>
-        <p>
-          Applying <strong>multispectral and hyperspectral imagery</strong> (Sentinel-2, Landsat-9, ECOSTRESS) to identify
-          wetland disturbance and resilience. Uses spectral indices (NDVI, NDWI, EVI) and <strong>temporal ML models</strong>
-          such as Random Forest and LSTM to track ecosystem recovery patterns over time.
-        </p>
-        <p>
-          The study supports conservation policy and land-use planning by delivering scalable, AI-driven pipelines for wetland health monitoring.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Urban GeoAI — Sidewalk Inventory & Accessibility Mapping</h2>
-        <p>
-          Designing a <strong>computer-vision workflow</strong> to map sidewalk elements—curb ramps, crosswalks, buffers,
-          surfaces—from street-level imagery. An <strong>automated label-auditing system</strong> detects annotation errors and
-          improves per-feature <em>F1-scores</em> through re-training and confusion-matrix evaluation.
-        </p>
-        <p>
-          The results strengthen municipal GIS datasets and empower accessibility planning by producing interpretable,
-          reproducible infrastructure analytics.
-        </p>
+<main class="wrap hero two">
+  <!-- ============ LEFT COLUMN ============ -->
+  <div class="leftcol">
+    <div class="photo-wrapper">
+      <div class="photo fixed">
+        <img src="profile.jpg" alt="Md Shohug Hossain portrait">
       </div>
     </div>
-  </section>
 
-  <section>
-    <h2>Research in Progress</h2>
-    <ul>
-      <li>Integrating DEM and multispectral fusion for robust mound segmentation across Martian terrains.</li>
-      <li>Expanding wetland monitoring with long-term time-series data and ecosystem resilience metrics.</li>
-      <li>Developing GeoAI-based <em>walkability prediction</em> models from panoramic street-view imagery.</li>
+    <div class="socials">
+      <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+      <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+      <a class="icon" href="https://github.com/shohugmdhossain" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+  <!-- ============ RIGHT COLUMN ============ -->
+  <div class="rightcol">
+
+    <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">RESEARCH</div>
+    <h1 class="subtitle">Exploring GeoAI for Planetary and Earth Systems</h1>
+
+    <p>
+      My research focuses on developing intelligent computer vision models for analyzing remote sensing imagery of both Earth and planetary surfaces.
+      I work at the intersection of <b>machine learning, geospatial analysis, and high-performance computing (HPC)</b> to extract meaningful patterns from satellite data.
+      The overarching goal is to design scalable GeoAI workflows that enhance our understanding of geomorphological processes and environmental change.
+    </p>
+
+    <h2 id="mars">Planetary GeoAI — Mars Mounds Detection</h2>
+    <p>
+      I develop <b>Faster R-CNN and Mask R-CNN</b> models using <b>Detectron2</b> to identify and classify mound-like features on the Martian surface
+      using <b>CTX (Context Camera) imagery</b>. These features offer clues about sedimentary, volcanic, or erosional processes on Mars.
+      The project combines <b>AI-based object detection</b> with geomorphological validation to create one of the first scalable
+      mapping frameworks for mound detection in Martian craters.
+    </p>
+
+    <ul class="project-list">
+      <li>Dataset preprocessing using COCO-style annotations via Roboflow and custom JSON correction scripts.</li>
+      <li>Model training and evaluation on <b>LONI HPC GPU nodes (A100 80GB)</b>.</li>
+      <li>Integration of <b>per-feature performance metrics</b> and <b>confusion matrices</b> for label consistency analysis.</li>
     </ul>
-  </section>
 
-  <section>
-    <h2>Tools & Methods</h2>
-    <div class="tags">
-      <span class="tag">PyTorch</span>
-      <span class="tag">Detectron2</span>
-      <span class="tag">QGIS</span>
-      <span class="tag">COCO</span>
-      <span class="tag">Slurm</span>
-      <span class="tag">LONI A100</span>
-      <span class="tag">Python</span>
-      <span class="tag">R</span>
-      <span class="tag">SQL</span>
+    <h2 id="planetary">Planetary Surface Evolution Modeling</h2>
+    <p>
+      This research focuses on integrating multi-sensor datasets (optical, radar, and thermal) to understand
+      geomorphic evolution and temporal surface changes on Mars and other planetary bodies. Using a
+      <b>multi-modal GeoAI framework</b>, we aim to infer surface dynamics and classify terrain changes under varying
+      illumination and environmental conditions.
+    </p>
+
+    <ul class="project-list">
+      <li>Combining optical CTX, HiRISE, and thermal infrared data for temporal analysis.</li>
+      <li>Developing physics-informed models to link morphological features with environmental variables.</li>
+      <li>Exploring explainable AI to interpret model predictions in the context of planetary geology.</li>
+    </ul>
+
+    <h2 id="earth">Earth Observation & Urban GeoAI</h2>
+    <p>
+      On the Earth side, I focus on <b>geospatial AI for infrastructure monitoring, walkability analysis, and wetland change detection</b>.
+      Using multi-resolution satellite and street-level imagery, I design automated workflows to extract urban features and evaluate accessibility and sustainability indicators.
+    </p>
+
+    <ul class="project-list">
+      <li>Developing a <b>sidewalk and curb-ramp inventory system</b> for urban accessibility mapping using computer vision.</li>
+      <li>Applying deep learning to classify surface conditions and detect infrastructure gaps.</li>
+      <li>Integrating model performance validation through automated label review pipelines.</li>
+    </ul>
+
+    <h2>Research in Progress</h2>
+    <ul class="project-list">
+      <li>Cross-domain GeoAI for transferable learning between Earth and planetary datasets.</li>
+      <li>Integrating climate variables with remote sensing for interpretable AI-driven hazard prediction.</li>
+      <li>Collaborative planetary mapping for open-access scientific reproducibility.</li>
+    </ul>
+
+    <div class="btns">
+      <a class="btn red" href="publications.html">View Publications →</a>
     </div>
-  </section>
+
+  </div>
 </main>
 
 <footer class="site">
   <div class="wrap bottom">
-    <div>© <span id="y"></span> Md Shohug Hossain</div>
+    <div>© <span id="y"></span> M S Hossain</div>
     <div class="logos">
-      <img src="ul.png" alt="UL Lafayette" />
+      <img src="/ul.png" alt="UL Lafayette" />
+      <img src="/ucalgary.png" alt="University of Calgary" />
+      <img src="/nsu.png" alt="North South University" />
     </div>
   </div>
 </footer>
@@ -119,4 +132,6 @@
 
 </body>
 </html>
+
+
 
