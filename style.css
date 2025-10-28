@@ -557,6 +557,65 @@ img, iframe, video {
     max-width: 100%;
   }
 }
+/* ---------- Experience Page Visual Enhancements ---------- */
+.exp-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+.exp-card:hover { transform: translateY(-4px); box-shadow: 0 0 10px rgba(179,27,27,0.4); }
+.exp-header { display: flex; flex-direction: column; margin-bottom: 6px; }
+.exp-header h2 { color: var(--accent); font-size: 20px; margin: 0; }
+.exp-header h3 { color: var(--muted); font-size: 14px; margin: 4px 0 10px; }
+.exp-points { list-style: none; padding-left: 0; margin: 10px 0 0; }
+.exp-points li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.exp-points i { color: var(--accent); margin-top: 4px; }
+
+.tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: var(--line);
+  color: var(--text);
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+.tag:hover { background: var(--accent); color: #fff; }
+
+/* Leadership Section */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.leadership-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+.leadership-card:hover { transform: translateY(-3px); box-shadow: 0 0 8px rgba(179,27,27,0.4); }
+.leadership-card h3 {
+  color: var(--accent);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.leadership-card p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
 
 
 
