@@ -526,8 +526,14 @@ footer.site {
   padding-top: 2rem;
 }
 /* --- Remove dropdown arrows from top navigation menu --- */
-nav ul li a.active::after {
+.nav ul li::after,
+.nav ul li a::after,
+nav ul li::after,
+nav ul li a::after,
+.menu-item-has-children::after,
+.menu-item-has-children > a::after {
   content: none !important;
+  display: none !important;
 }
 
 
