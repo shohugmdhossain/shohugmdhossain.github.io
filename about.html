@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head>
+<title>About — Md Shohug Hossain</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+</head><body>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">Md Shohug Hossain</div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li><li><a href="about.html" class="active">About</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="skills.html">Skills</a></li><li><a href="publications.html">Publications</a></li><li><a href="awards.html">Awards</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="two about-hero">
+    <div class="photo fixed"><img src="profile.jpg" alt="Portrait"></div>
+    <div>
+      <div class="kicker">About</div>
+      <h1>Md Shohug Hossain</h1>
+      <p class="lead">I design end-to-end GeoAI workflows: dataset prep, GPU training (Slurm on LONI A100), and rigorous validation. My work spans planetary geomorphology in Mars CTX imagery and urban accessibility via street-level data.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="edu-item">
+        <img class="edu-logo" src="https://communications.louisiana.edu/sites/communications/files/ULLafayette_Horizontal_RGB.png" alt="UL Lafayette" />
+        <div><b>PhD, Earth &amp; Energy Sciences</b><br><span>University of Louisiana at Lafayette</span></div>
+      </div>
+      <div class="edu-item">
+        <img class="edu-logo" src="https://www.ucalgary.ca/sites/default/files/styles/ucws_image/public/2020-06/uc-horiz-rgb.png" alt="UCalgary" />
+        <div><b>MSc, Electrical &amp; Computer Engineering</b><br><span>University of Calgary</span></div>
+      </div>
+      <div class="edu-item">
+        <img class="edu-logo" src="https://www.northsouth.edu/newassets/images/logo/nsu_logo.png" alt="North South University" />
+        <div><b>BSc, Computer Science &amp; Engineering</b><br><span>North South University</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Core Research Interests</h2>
+    <div class="card">
+      GeoAI • Remote Sensing • Machine Learning • Planetary Science • Urban Accessibility • Bayesian & Uncertainty • GIS
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap bottom">
+    <div>© <span id="y"></span> Md Shohug Hossain — Built with HTML &amp; CSS</div>
+    <div class="logos">
+      <img src="https://communications.louisiana.edu/sites/communications/files/ULLafayette_Horizontal_RGB.png" alt="UL Lafayette" />
+      <img src="https://www.ucalgary.ca/sites/default/files/styles/ucws_image/public/2020-06/uc-horiz-rgb.png" alt="University of Calgary" />
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+</body></html>
