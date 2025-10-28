@@ -368,7 +368,6 @@ footer img {
   transform: translateY(0);
 }
 
-}
 /* === Final precise alignment fix for hero section === */
 .hero.two {
   align-items: start !important;
