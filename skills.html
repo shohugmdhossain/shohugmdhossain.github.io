@@ -1,34 +1,203 @@
 <!doctype html>
-<html lang="en"><head>
-<title>Skills — Md Shohug Hossain</title>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+  <title>Skills — M S Hossain</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-</head><body>
+  <style>
+    /* ---------- Skills Page Enhancements ---------- */
+    .skills-section {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .skill-category {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(179,27,27,0.4);
+    }
+
+    .skill-category h2 {
+      color: var(--accent);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .skill-category p {
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags .tag {
+      background: var(--line);
+      color: var(--text);
+      padding: 0.35em 0.8em;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .skill-tags .tag:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .skills-section {
+        gap: 30px;
+      }
+      .skill-category {
+        padding: 22px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
 
 <header class="site">
   <div class="wrap nav">
     <div class="brand">M S Hossain</div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="skills.html" class="active">Skills</a></li><li><a href="publications.html">Publications</a></li><li><a href="awards.html">Awards</a></li><li><a href="contact.html">Contact</a></li>
-    </ul></nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <main class="wrap">
-  <section>
-    <div class="kicker">Capabilities</div>
-    <h1>Skills</h1>
-    <div class="grid">
-      <div class="card"><b>Programming & Data</b><br>Python · R · Java · C/C++ · MATLAB · SQL · LaTeX · Shell</div>
-      <div class="card"><b>ML/AI</b><br>PyTorch · TensorFlow · Keras · Scikit-learn · MLflow · NumPy · Pandas · Matplotlib</div>
-      <div class="card"><b>Geospatial</b><br>ArcGIS · QGIS · ERDAS Imagine</div>
-      <div class="card"><b>HPC & Cloud</b><br>LONI · AWS · Azure · GCP · Hadoop · Spark</div>
-      <div class="card"><b>Web</b><br>HTML · CSS · React · Flask · Node.js</div>
+  <section class="skills-section">
+    <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Skills & Expertise</h1>
+    <p style="font-size:15px; color:var(--text); max-width:800px;">
+      A combination of technical, analytical, and leadership skills across software development, data science, remote sensing, and cloud infrastructure — strengthened by research and interdisciplinary collaboration.
+    </p>
+
+    <!-- Programming & Data Science -->
+    <div class="skill-category">
+      <h2><i class="fa-solid fa-code"></i> Programming & Data Science</h2>
+      <p>Advanced proficiency in programming, algorithm design, and applied machine learning for scientific and industrial applications.</p>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">R</span>
+        <span class="tag">C/C++</span>
+        <span class="tag">Java</span>
+        <span class="tag">SQL</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">Shell / Bash</span>
+        <span class="tag">LaTeX</span>
+      </div>
+    </div>
+
+    <!-- Machine Learning & AI -->
+    <div class="skill-category">
+      <h2><i class="fa-solid fa-brain"></i> Machine Learning & Artificial Intelligence</h2>
+      <p>Skilled in developing, training, and evaluating deep learning and traditional ML models for geospatial, scientific, and predictive analytics tasks.</p>
+      <div class="skill-tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">Keras</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">MLflow</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Deep Learning (CNN, UNet, R-CNN)</span>
+      </div>
+    </div>
+
+    <!-- Geospatial & Remote Sensing -->
+    <div class="skill-category">
+      <h2><i class="fa-solid fa-globe"></i> Geospatial & Remote Sensing</h2>
+      <p>Hands-on experience in processing, analyzing, and visualizing satellite data for planetary and Earth-observation applications.</p>
+      <div class="skill-tags">
+        <span class="tag">Google Earth Engine</span>
+        <span class="tag">QGIS</span>
+        <span class="tag">ArcGIS</span>
+        <span class="tag">ERDAS Imagine</span>
+        <span class="tag">GDAL</span>
+        <span class="tag">Raster & Vector Data Processing</span>
+        <span class="tag">Change Detection</span>
+        <span class="tag">Remote Sensing Analysis</span>
+      </div>
+    </div>
+
+    <!-- Cloud & HPC -->
+    <div class="skill-category">
+      <h2><i class="fa-solid fa-server"></i> Cloud & High-Performance Computing</h2>
+      <p>Proficient in leveraging distributed and GPU-based systems for scalable data processing, model training, and automation.</p>
+      <div class="skill-tags">
+        <span class="tag">LONI HPC</span>
+        <span class="tag">GPU Computing (A100)</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Azure</span>
+        <span class="tag">Google Cloud Platform</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Hadoop</span>
+        <span class="tag">Spark</span>
+      </div>
+    </div>
+
+    <!-- Web Development -->
+    <div class="skill-category">
+      <h2><i class="fa-solid fa-laptop-code"></i> Web & Application Development</h2>
+      <p>Designing user-centric and data-driven web applications for interactive analytics and automation workflows.</p>
+      <div class="skill-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">React</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">UI/UX Design</span>
+      </div>
+    </div>
+
+    <!-- Research & Leadership -->
+    <div class="skill-category">
+      <h2><i class="fa-solid fa-user-tie"></i> Research, Leadership & Communication</h2>
+      <p>Demonstrated ability to lead teams, communicate complex ideas clearly, and manage interdisciplinary research projects effectively.</p>
+      <div class="skill-tags">
+        <span class="tag">Research Design</span>
+        <span class="tag">Project Coordination</span>
+        <span class="tag">Technical Writing</span>
+        <span class="tag">Academic Mentorship</span>
+        <span class="tag">Public Speaking</span>
+        <span class="tag">Team Collaboration</span>
+      </div>
     </div>
   </section>
 </main>
@@ -41,6 +210,10 @@
     </div>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
-</body></html>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
