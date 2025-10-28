@@ -526,7 +526,7 @@ footer.site {
   padding-top: 2rem;
 }
 /* --- Remove dropdown arrows from top navigation menu --- */
-.nav ul li a::after {
+nav ul li a.active::after {
   content: none !important;
 }
 
