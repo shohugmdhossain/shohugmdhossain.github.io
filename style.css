@@ -247,12 +247,12 @@ li {
 }
 
 .current-projects b {
-  color: var(--text); /* make bullets and colons white */
+  color: var(--text) !important;   /* force white color */
   display: inline;
 }
 
 .current-projects b:first-child {
-  color: var(--accent); /* keep 'Currently Working On:' red */
+  color: var(--accent) !important; /* keep 'Currently Working On:' red */
 }
 
 /* ✅ Project Link Styles */
