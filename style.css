@@ -745,29 +745,59 @@ main li {
   cursor: pointer !important;
 }
 
-/* ===== CONTACT FORM BUTTON FIX ===== */
-form button,
-input[type="submit"],
-button[type="submit"] {
-  background: var(--card) !important;          /* dark card tone */
-  color: var(--accent) !important;             /* white text */
-  border: 1px solid var(--line) !important;    /* subtle outline */
+/* ===== CONTACT: force dark submit button with white text ===== */
+
+/* Handles <button>, <input type=submit>, and <a class="btn"> inside forms */
+form .btn,
+form .btn.red,
+form button[type="submit"],
+form input[type="submit"],
+.contact .btn,
+.contact .btn.red,
+.contact button[type="submit"],
+.contact input[type="submit"] {
+  background: var(--card) !important;        /* dark button */
+  color: var(--accent) !important;           /* white text */
+  border: 1px solid var(--line) !important;
   border-radius: 10px !important;
   padding: 10px 18px !important;
   font-size: 16px !important;
+  text-decoration: none !important;          /* fixes <a class="btn"> */
+  display: inline-block !important;          /* fixes anchor buttons */
   cursor: pointer !important;
-  transition: all 0.25s ease-in-out !important;
+  -webkit-appearance: none !important;       /* iOS/Safari */
+  appearance: none !important;
 }
 
-form button:hover,
-input[type="submit"]:hover,
-button[type="submit"]:hover {
-  background: rgba(255, 255, 255, 0.10) !important; /* soft white glow */
+/* Kill the “red = white bg” rule from your global .btn.red */
+form .btn.red,
+.contact .btn.red {
+  background: var(--card) !important;
   color: var(--accent) !important;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Hover/active to match your menu glow */
+form .btn:hover,
+form .btn.red:hover,
+form button[type="submit"]:hover,
+form input[type="submit"]:hover,
+.contact .btn:hover,
+.contact .btn.red:hover,
+.contact button[type="submit"]:hover,
+.contact input[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.10) !important;
+  color: var(--accent) !important;
+  text-shadow: 0 0 6px rgba(255,255,255,0.4) !important;
+  border-color: rgba(255,255,255,0.15) !important;
   transform: scale(1.03);
 }
+
+/* Prevent anchor underline/border on hover in forms */
+form a.btn:hover,
+.contact a.btn:hover {
+  border-bottom-color: transparent !important;
+}
+
 
 
 
