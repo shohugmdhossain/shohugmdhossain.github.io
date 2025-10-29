@@ -335,35 +335,51 @@ header.site {
   backdrop-filter: blur(8px);
 }
 /* ===== University Logo & Footer Logo Size Refinement ===== */
+/* ===== Force Logo Resize Across Entire Site ===== */
 
-/* --- University logos inside About/Education sections --- */
-.edu-logo {
-  height: 34px;               /* previously 60+px → smaller & balanced */
-  width: auto;
-  max-width: 120px;
-  object-fit: contain;
+/* --- Education / University Logos --- */
+img.edu-logo,
+.edu img,
+section img.edu-logo {
+  height: 34px !important;       /* Smaller balanced size */
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain !important;
   filter: brightness(0.95) contrast(1.05);
   transition: transform 0.3s ease, filter 0.3s ease;
+  display: inline-block;
   vertical-align: middle;
 }
 
-.edu-logo:hover {
+img.edu-logo:hover,
+.edu img:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
 
-/* --- Footer logos --- */
-footer .logos img {
-  height: 26px;               /* smaller for a sleek footer look */
-  max-width: 100px;
+/* --- Footer Logos --- */
+footer.site img,
+footer .logos img,
+footer.site .logos img {
+  height: 26px !important;
+  max-width: 100px !important;
   opacity: 0.9;
   filter: grayscale(40%) brightness(0.9);
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
+footer.site img:hover,
 footer .logos img:hover {
   opacity: 1;
   filter: grayscale(0%) brightness(1.1);
+}
+
+/* --- Optional: Center Footer Layout --- */
+footer .bottom {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
 }
 
 
