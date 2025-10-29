@@ -574,6 +574,25 @@ footer .bottom div {
   font-weight: 600;
   display: inline-block;
 }
+/* ===== FINAL ARROW CLEANUP FIX (Research Page) ===== */
+
+/* Remove all arrow bullets from the left of images or text blocks */
+.project-list li::before,
+.leftcol li::before,
+section li::before,
+main li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Remove extra left padding caused by arrows */
+.project-list li,
+.leftcol li,
+section li,
+main li {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
 
 
 
