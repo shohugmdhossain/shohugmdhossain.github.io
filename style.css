@@ -725,6 +725,25 @@ main li {
     max-width: 100% !important;
   }
 }
+/* ===== FORCE TAG HOVER FIX (Experience Page) ===== */
+.tag {
+  background: var(--line) !important;
+  color: var(--text) !important;
+  padding: 0.35em 0.8em !important;
+  border-radius: 999px !important;
+  font-size: 0.9rem !important;
+  transition: all 0.25s ease !important;
+  border: 1px solid transparent !important;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.10) !important; /* soft white glow */
+  color: var(--accent) !important;                  /* pure white text */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  transform: scale(1.03) !important;
+  cursor: pointer !important;
+}
 
 
 
