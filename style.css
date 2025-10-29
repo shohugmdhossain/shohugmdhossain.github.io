@@ -645,6 +645,25 @@ main li {
     max-width: 100% !important;
   }
 }
+/* ===== TAG HOVER FIX (Make tags glow like menu bar) ===== */
+.tag {
+  background: var(--line);
+  color: var(--text);
+  padding: 0.35em 0.8em;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.10); /* soft white glow */
+  color: var(--accent);                  /* pure white text */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: scale(1.03);
+  cursor: pointer;
+}
 
 /* ===== FINAL MOBILE MENU & BRAND FIX ===== */
 @media (max-width: 780px) {
