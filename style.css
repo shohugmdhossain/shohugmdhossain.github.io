@@ -357,30 +357,45 @@ img.edu-logo:hover,
   filter: brightness(1.1);
 }
 
-/* --- Footer Logos --- */
-footer.site img,
-footer .logos img,
+/* ==================== Footer Logo Final Size & Layout Fix ==================== */
+
+/* Footer logo image */
 footer.site .logos img {
-  height: 26px !important;
-  max-width: 100px !important;
-  opacity: 0.9;
+  height: 26px !important;        /* ✅ smaller balanced size */
+  width: auto !important;
+  max-width: 120px !important;
+  opacity: 0.85 !important;
   filter: grayscale(40%) brightness(0.9);
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  display: inline-block !important;
+  vertical-align: middle;
 }
 
-footer.site img:hover,
-footer .logos img:hover {
-  opacity: 1;
+/* Hover effect */
+footer.site .logos img:hover {
+  transform: scale(1.06);
   filter: grayscale(0%) brightness(1.1);
+  opacity: 1 !important;
 }
 
-/* --- Optional: Center Footer Layout --- */
+/* Center and space footer items */
 footer .bottom {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 8px !important;
+  padding: 10px 0 !important;
 }
+
+/* Footer text */
+footer .bottom div {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
 
 
 
