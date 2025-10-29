@@ -542,14 +542,38 @@ footer .bottom div {
   color: var(--muted) !important;
   margin: 0 !important;
   letter-spacing: 0.2p}
-/* ===== Fix: Remove unwanted arrows in research image section ===== */
-.leftcol ul li::before,
-.leftcol li::before,
-.hero .leftcol li::before {
-  content: "" !important;
+
+/* ===== Arrow fix: remove everywhere, then re-enable only where needed ===== */
+
+/* 1) Reset globally */
+.project-list li {
+  position: relative;
+  padding-left: 0;         /* remove extra indent that expected an icon */
+}
+.project-list li::before {
+  content: none !important;
   display: none !important;
 }
 
+/* 2) Re-enable arrows ONLY in intended areas */
+.rightcol .project-list li,
+.experience-section .project-list li,
+.exp-card .project-list li,
+.leadership-card .project-list li {
+  padding-left: 26px;      /* restore space for the arrow */
+}
+
+.rightcol .project-list li::before,
+.experience-section .project-list li::before,
+.exp-card .project-list li::before,
+.leadership-card .project-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-block;
+}
 
 
 
