@@ -308,6 +308,33 @@ footer.site {
   background: var(--bg2);
   border-top: 1px solid var(--line);
 }
+/* ===== Final Mobile Navigation Hover / Touch Fix ===== */
+nav a:hover,
+nav a:active,
+nav a:focus,
+nav a.active {
+  color: var(--accent) !important; /* pure white text */
+  background: rgba(255, 255, 255, 0.10) !important; /* soft white glow */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3); /* subtle glow on touch */
+  transition: background 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* Ensure tap feedback looks smooth (mobile Safari / Chrome) */
+nav a {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Prevent any black highlight fallback */
+nav a:visited {
+  color: var(--accent);
+}
+
+/* Optional: make menu background slightly brighter when scrolling */
+header.site {
+  background: rgba(11, 13, 16, 0.85);
+  backdrop-filter: blur(8px);
+}
+
 
 
 
