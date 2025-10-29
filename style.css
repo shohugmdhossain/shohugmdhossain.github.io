@@ -334,6 +334,37 @@ header.site {
   background: rgba(11, 13, 16, 0.85);
   backdrop-filter: blur(8px);
 }
+/* ===== University Logo & Footer Logo Size Refinement ===== */
+
+/* --- University logos inside About/Education sections --- */
+.edu-logo {
+  height: 34px;               /* previously 60+px → smaller & balanced */
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: brightness(0.95) contrast(1.05);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  vertical-align: middle;
+}
+
+.edu-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* --- Footer logos --- */
+footer .logos img {
+  height: 26px;               /* smaller for a sleek footer look */
+  max-width: 100px;
+  opacity: 0.9;
+  filter: grayscale(40%) brightness(0.9);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+footer .logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1.1);
+}
 
 
 
