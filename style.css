@@ -413,7 +413,75 @@ footer .logos {
   justify-content: center !important;
   margin-top: 6px !important;
 }
+/* ==================== 🔧 Education & Footer Alignment Fix ==================== */
 
+/* ---- Education section: keep logo and text in one line ---- */
+.edu-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.edu-item img,
+img.edu-logo {
+  height: 28px !important;
+  width: auto !important;
+  max-width: 100px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  filter: brightness(0.95) contrast(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.edu-item img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Text stays aligned with logo */
+.edu-item span,
+.edu-item div {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  font-size: 15px !important;
+  color: var(--text);
+  line-height: 1.5 !important;
+}
+
+/* ---- Footer alignment: keep © and logo centered together ---- */
+footer .bottom {
+  display: flex !important;
+  flex-direction: row !important;       /* side by side instead of stacked */
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  text-align: center !important;
+}
+
+footer .bottom div {
+  margin: 0 !important;
+  font-size: 14px !important;
+  color: var(--muted) !important;
+}
+
+footer .logos img {
+  height: 22px !important;
+  width: auto !important;
+  opacity: 0.85 !important;
+  filter: grayscale(30%) brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+footer .logos img:hover {
+  transform: scale(1.08);
+  filter: grayscale(0%) brightness(1.15);
+  opacity: 1 !important;
+}
 
 
 
