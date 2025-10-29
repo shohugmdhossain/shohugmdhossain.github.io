@@ -482,34 +482,33 @@ footer .logos img:hover {
   filter: grayscale(0%) brightness(1.15);
   opacity: 1 !important;
 }
-/* ==================== ✅ FINAL FIX: Education & Footer Alignment (Force Override) ==================== */
 /* ==================== ✅ FINAL EDUCATION & FOOTER FIX ==================== */
 
-/* ---- Education section: keep logo and text in one line ---- */
+/* ---- Education section: logo + text same line ---- */
 .edu-item {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: 10px !important;
   flex-wrap: nowrap !important;
+  gap: 10px !important;
   margin-bottom: 10px !important;
 }
 
 .edu-item img,
 img.edu-logo {
-  height: 26px !important;
+  height: 24px !important;
   width: auto !important;
   max-width: 90px !important;
   object-fit: contain !important;
   display: inline-block !important;
   vertical-align: middle !important;
   filter: brightness(0.95) contrast(1.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .edu-item img:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
 
 .edu-item span,
@@ -518,14 +517,14 @@ img.edu-logo {
   vertical-align: middle !important;
   font-size: 15px !important;
   color: var(--text) !important;
-  line-height: 1.6 !important;
+  line-height: 1.5 !important;
 }
 
-/* ---- Footer alignment ---- */
+/* ---- Footer alignment: centered logo + © ---- */
 footer.site {
   background: var(--bg2) !important;
   border-top: 1px solid var(--line);
-  padding: 18px 0 !important;
+  padding: 14px 0 !important;
 }
 
 footer .bottom {
@@ -533,42 +532,16 @@ footer .bottom {
   flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
-  text-align: center !important;
   flex-wrap: wrap !important;
-  gap: 10px !important;
-  padding: 8px 0 !important;
+  gap: 8px !important;
+  text-align: center !important;
 }
 
 footer .bottom div {
   font-size: 14px !important;
   color: var(--muted) !important;
   margin: 0 !important;
-}
-
-/* Footer logos */
-footer .logos {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 6px !important;
-}
-
-footer .logos img {
-  height: 20px !important;
-  width: auto !important;
-  max-width: 100px !important;
-  opacity: 0.8 !important;
-  filter: grayscale(40%) brightness(0.9);
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
-
-footer .logos img:hover {
-  transform: scale(1.08);
-  filter: grayscale(0%) brightness(1.15);
-  opacity: 1 !important;
-}
+  letter-spacing: 0.2p
 
 
 
