@@ -797,6 +797,37 @@ form a.btn:hover,
 .contact a.btn:hover {
   border-bottom-color: transparent !important;
 }
+/* ===== ✅ FINAL FIX: CONTACT PAGE BUTTON ===== */
+form .btn,
+form .btn.red,
+form button[type="submit"],
+form input[type="submit"],
+.contact .btn,
+.contact .btn.red,
+.contact button[type="submit"],
+.contact input[type="submit"] {
+  background: var(--card) !important;      /* dark button background */
+  color: var(--accent) !important;         /* white text */
+  border: 1px solid var(--line) !important;
+  border-radius: 10px !important;
+  padding: 12px 20px !important;
+  font-size: 16px !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 0 6px rgba(255,255,255,0.15);
+}
+
+form .btn:hover,
+form .btn.red:hover,
+.contact .btn:hover,
+.contact .btn.red:hover {
+  background: rgba(255, 255, 255, 0.1) !important; /* soft white glow */
+  color: var(--accent) !important;
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
+  border-color: rgba(255,255,255,0.2);
+  transform: scale(1.03);
+}
 
 
 
