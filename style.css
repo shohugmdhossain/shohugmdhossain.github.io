@@ -68,8 +68,9 @@ nav a {
 }
 nav a.active,
 nav a:hover {
-  color: #000;
-  background: rgba(255, 255, 255, 0.15);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 /* ==================== Global Text ==================== */
@@ -298,7 +299,15 @@ footer .bottom {
   font-size: 18px;
   margin-bottom: 8px;
 }
+html, body {
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  overflow-x: hidden;
+}
 
+footer.site {
+  background: var(--bg2);
+  border-top: 1px solid var(--line);
+}
 
 
 
