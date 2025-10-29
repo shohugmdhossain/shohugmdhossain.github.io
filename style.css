@@ -541,7 +541,15 @@ footer .bottom div {
   font-size: 14px !important;
   color: var(--muted) !important;
   margin: 0 !important;
-  letter-spacing: 0.2p
+  letter-spacing: 0.2p}
+/* ===== Fix: Remove unwanted arrows in research image section ===== */
+.leftcol ul li::before,
+.leftcol li::before,
+.hero .leftcol li::before {
+  content: "" !important;
+  display: none !important;
+}
+
 
 
 
