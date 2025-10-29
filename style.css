@@ -357,43 +357,61 @@ img.edu-logo:hover,
   filter: brightness(1.1);
 }
 
-/* ==================== Footer Logo Final Size & Layout Fix ==================== */
+/* ==================== 🔧 FINAL FOOTER LOGO FIX ==================== */
 
-/* Footer logo image */
-footer.site .logos img {
-  height: 26px !important;        /* ✅ smaller balanced size */
-  width: auto !important;
-  max-width: 120px !important;
-  opacity: 0.85 !important;
-  filter: grayscale(40%) brightness(0.9);
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-  display: inline-block !important;
-  vertical-align: middle;
+/* Footer site background stays dark and consistent */
+footer.site {
+  background: var(--bg2) !important;
+  border-top: 1px solid var(--line);
+  padding: 20px 0 !important;
 }
 
-/* Hover effect */
-footer.site .logos img:hover {
-  transform: scale(1.06);
-  filter: grayscale(0%) brightness(1.1);
-  opacity: 1 !important;
-}
-
-/* Center and space footer items */
+/* Centered layout for all footer elements */
 footer .bottom {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  gap: 8px !important;
-  padding: 10px 0 !important;
+  gap: 6px !important;
 }
 
-/* Footer text */
+/* Text formatting */
 footer .bottom div {
-  color: var(--muted);
-  font-size: 14px;
-  letter-spacing: 0.3px;
+  color: var(--muted) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.3px !important;
+  margin: 0 !important;
+}
+
+/* ✅ Footer logo resize & hover effect */
+footer.site .logos img,
+footer .logos img,
+footer img[src*="ul.png"] {
+  height: 22px !important;           /* 👈 smaller and cleaner */
+  width: auto !important;
+  max-width: 100px !important;
+  opacity: 0.8 !important;
+  filter: grayscale(40%) brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+footer.site .logos img:hover,
+footer .logos img:hover,
+footer img[src*="ul.png"]:hover {
+  transform: scale(1.06);
+  filter: grayscale(0%) brightness(1.15);
+  opacity: 1 !important;
+}
+
+/* Make sure the © text doesn’t push the logo */
+footer .logos {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 6px !important;
 }
 
 
