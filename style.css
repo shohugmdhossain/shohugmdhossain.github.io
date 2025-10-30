@@ -442,38 +442,16 @@ form .btn:hover,
     max-width: 100% !important;
   }
 }
-/* ===== Remove left-side red arrows or navigation indicators ===== */
-/* ===== Force-remove any left-side arrow or scroll navigation ===== */
-body [class*="arrow"],
-body [class*="Arrow"],
-body [class*="scroll"],
-body [class*="nav-arrow"],
-body [class*="page-navigation"],
-body [class*="nav-left"],
-body [class*="left-arrow"],
-body a[href^="#"]:has(i),
-body a[href^="#"]:not(.btn) {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  position: absolute !important;
-}
-/* === FINAL FIX: Remove Hugo-Blox left-side scroll arrows === */
-body > a[href^="#"],
-a[class*="scroll"],
-a[class*="arrow"],
-a[class*="nav"],
-div[class*="scroll"],
-div[class*="arrow"],
-div[class*="nav"],
-#TableOfContents,
-nav[aria-label="On this page"],
-nav.toc,
-.page-scroll,
-.page-nav,
-.nav-arrows,
-.scrollnav {
+/* === FINAL: Remove any auto-generated left-side arrows or scroll anchors === */
+a[href^="#"],
+a[href^="/#"],
+a[href*="#section"],
+a[href*="#about"],
+a[href*="#top"],
+a[href*="#page"],
+a[href*="#mars"],
+a[href*="#planetary"],
+a[href*="#earth"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
@@ -482,17 +460,28 @@ nav.toc,
   left: -9999px !important;
 }
 
-/* Hide any generated ::before or ::after arrows as well */
+/* Prevent browsers from generating pseudo-elements (arrows) */
+a::before,
+a::after,
 body::before,
 body::after,
 main::before,
-main::after,
-section::before,
-section::after,
-a::before,
-a::after {
+main::after {
   content: none !important;
   display: none !important;
+}
+
+/* Keep navigation, footer, and socials fully visible */
+header nav a,
+footer a,
+.socials a,
+.btn,
+.icon {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+  left: auto !important;
 }
 
 
