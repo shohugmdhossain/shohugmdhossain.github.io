@@ -483,5 +483,44 @@ footer a,
   position: static !important;
   left: auto !important;
 }
+/* ===== HARD BLOCK any floating arrow / anchor element ===== */
+a[href^="#"],
+a[href*="#"]:not(nav a):not(footer a):not(.btn):not(.icon),
+body > a:first-of-type,
+html > a:first-of-type,
+a[href="#top"],
+a[href="#"],
+a[href*="#section"],
+a[href*="#page"],
+a[href*="#mars"],
+a[href*="#planetary"],
+a[href*="#earth"],
+a[href*="#about"] {
+  all: unset !important;
+  display: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  z-index: -9999 !important;
+}
+
+/* also kill any pseudo elements that might render arrows */
+a::before, a::after, body::before, body::after, html::before, html::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* keep normal links, menu and socials visible */
+header a, footer a, nav a, .btn, .icon {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+}
 
 
