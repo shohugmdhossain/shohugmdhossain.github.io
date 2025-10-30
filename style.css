@@ -354,17 +354,20 @@ footer .logos img:hover {
   margin-top: 12px;
 }
 .tag {
-  background: #eeeeee;
-  color: #333333;
-  padding: 0.35em 0.8em;
+  background: #f2f2f2;
+  color: #222;
+  padding: 0.4em 0.85em;
   border-radius: 999px;
   font-size: 0.9rem;
+  border: 1px solid #ddd;
   transition: all 0.25s ease;
 }
 .tag:hover {
-  background: var(--accent);
-  color: #ffffff;
-  transform: scale(1.05);
+  background: #fff3f3;
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.03);
+  box-shadow: 0 0 6px rgba(177, 4, 14, 0.15);
   cursor: pointer;
 }
 
