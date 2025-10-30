@@ -13,125 +13,120 @@
 
 <body>
 
-<header class="site">
-  <div class="wrap nav">
-    <div class="brand">M S Hossain</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <!-- ==================== Header / Navigation ==================== -->
+  <header class="site">
+    <div class="wrap nav">
+      <div class="brand">M S Hossain</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="awards.html">Awards</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== About Section ==================== -->
+  <main class="wrap hero two">
+    <div class="leftcol">
+      <div class="photo-wrapper">
+        <div class="photo fixed">
+          <img src="profile.jpg" alt="Md Shohug Hossain portrait">
+        </div>
+      </div>
+
+      <div class="socials">
+        <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+        <a class="icon" href="https://github.com/shohugmdhossain" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="rightcol">
+      <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">
+        ABOUT ME
+      </div>
+
+      <h1 class="subtitle">Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science</h1>
+
+      <p>
+        I am <b>Md Shohug Hossain</b>, a Ph.D. researcher at the University of Louisiana at Lafayette, working at the intersection
+        of <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>Remote Sensing</b>, and <b>Earth & Planetary Science</b>.
+        My research integrates high-resolution satellite imagery, computer vision, and machine learning to understand surface
+        processes on Earth and Mars.
+      </p>
+
+      <p>
+        I am passionate about leveraging AI and large-scale satellite data to map environmental changes, analyze urban
+        infrastructure, and reveal geomorphic evolution on planetary surfaces. My recent work involves <b>Faster R-CNN</b>
+        and <b>YOLO-based object detection</b> applied to Martian CTX imagery and urban sidewalk inventories, using
+        <b>GPU-powered HPC clusters</b> for training and evaluation.
+      </p>
+
+      <h2>Education</h2>
+      <div class="edu-item">
+        <img class="edu-logo" src="ul.png" alt="UL Lafayette">
+        <div>
+          <b>Ph.D. in Earth & Energy Sciences</b><br>
+          <i>University of Louisiana at Lafayette, USA</i>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <img class="edu-logo" src="ucalgary.png" alt="University of Calgary">
+        <div>
+          <b>M.Sc. in Geomatics Engineering</b><br>
+          <i>University of Calgary, Canada</i>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <img class="edu-logo" src="nsu.png" alt="North South University">
+        <div>
+          <b>B.Sc. in Computer Science & Engineering</b><br>
+          <i>North South University, Bangladesh</i>
+        </div>
+      </div>
+
+      <h2>Research Interests</h2>
+      <ul class="project-list">
+        <li>Machine learning and deep learning for remote sensing</li>
+        <li>Planetary geomorphology and Mars surface mapping</li>
+        <li>Multispectral and hyperspectral image analysis</li>
+        <li>Urban analytics and infrastructure mapping using GeoAI</li>
+        <li>Physics-informed neural networks and interpretability</li>
       </ul>
-    </nav>
-  </div>
-</header>
 
-<main class="wrap hero two">
-  <!-- ================== LEFT COLUMN ================== -->
-  <div class="leftcol">
-    <div class="photo-wrapper">
-      <div class="photo fixed">
-        <img src="profile.jpg" alt="Md Shohug Hossain portrait">
+      <h2>Beyond Research</h2>
+      <p>
+        Outside of research, I enjoy building open-source tools, mentoring students in data analysis and visualization,
+        and contributing to academic collaborations across geoscience and computer vision. I’m deeply motivated by the idea
+        that Earth observation and planetary exploration share a common goal — understanding our dynamic world and beyond.
+      </p>
+    </div>
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="site">
+    <div class="wrap bottom">
+      <div>© <span id="y"></span> Md Shohug Hossain</div>
+      <div class="logos">
+        <img src="ul.png" alt="UL Lafayette">
       </div>
     </div>
+  </footer>
 
-    <!-- ================== EDUCATION UNDER IMAGE ================== -->
-    <div class="edu" style="margin-top:28px;">
-      <h3 style="color:var(--accent);font-size:18px;margin-bottom:10px;">Education</h3>
-
-      <div class="edu-item">
-        <img src="/ucalgary.png" class="edu-logo" alt="University of Calgary">
-        <div>
-          <b>Ph.D., Earth & Energy Sciences</b><br>
-          <span class="muted">University of Calgary</span><br>
-        </div>
-      </div>
-
-      <div class="edu-item">
-        <img src="/ucalgary.png" class="edu-logo" alt="University of Calgary">
-        <div>
-          <b>M.Sc., Electrical & Computer Eng.</b><br>
-          <span class="muted">University of Calgary</span>
-        </div>
-      </div>
-
-      <div class="edu-item">
-        <img src="/nsu.png" class="edu-logo" alt="North South University">
-        <div>
-          <b>B.Sc., Computer Science & Eng.</b><br>
-          <span class="muted">North South University</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================== RIGHT COLUMN ================== -->
-  <div class="rightcol">
-    <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">ABOUT ME</div>
-    
-    <p>
-      My academic journey began with a fascination for computing and problem-solving during my undergraduate studies in
-      <b>Computer Science and Engineering at North South University, Bangladesh</b>. I later pursued a
-      <b>Master’s in Electrical and Computer Engineering at the University of Calgary, Canada</b>, where I explored the integration
-      of data-driven techniques with environmental and geospatial systems.
-    </p>
-
-    <p>
-      Currently, I am a <b>Ph.D. Researcher in Earth and Energy Sciences at the University of Calgary</b>. My research focuses on <b>GeoAI-driven detection and classification of geomorphological features on Mars</b>
-      using high-resolution satellite imagery and high-performance computing (HPC) systems.
-    </p>
-
-    <h2>Research Focus</h2>
-    <p>
-      My research lies at the intersection of <b>remote sensing, geospatial data science, and artificial intelligence</b>.
-      I develop computer vision models and scalable workflows to extract meaningful environmental information from satellite imagery.
-      Beyond planetary mapping, I am broadly interested in <b>Earth observation for sustainability</b> —
-      leveraging GeoAI to monitor wetlands, urban infrastructure, and environmental change.
-    </p>
-
-    <h2>Technical Expertise</h2>
-    <p>
-      I have hands-on experience with <b>Detectron2, YOLO, Faster R-CNN</b>, <b>PyTorch</b>, and geospatial tools such as <b>ArcGIS</b> and <b>QGIS</b>.
-      My workflow integrates <b>HPC environments</b> and cloud systems for large-scale processing.
-      I also use <b>SHAP-based interpretability</b> methods to analyze and explain GeoAI models.
-    </p>
-
-    <h2>Vision</h2>
-    <p>
-      I aim to bridge planetary and Earth science through intelligent geospatial modeling — designing data-driven tools
-      that enhance our understanding of surface processes, climate change, and sustainable land use.
-      My broader vision is to enable GeoAI applications that support both planetary exploration and climate resilience on Earth.
-    </p>
-
-    <h2>Beyond Research</h2>
-    <p>
-      Beyond my academic work, I enjoy creating visual stories with data, following space exploration missions,
-      and contributing to open-source GeoAI projects. I’m also passionate about scientific communication —
-      making complex spatial ideas accessible through clear visual and computational storytelling.
-    </p>
-  </div>
-</main>
-
-<footer class="site">
-  <div class="wrap bottom">
-    <div>© <span id="y"></span> M S Hossain</div>
-    <div class="logos">
-      <img src="/ul.png" alt="UL Lafayette" />
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
-
-
-
