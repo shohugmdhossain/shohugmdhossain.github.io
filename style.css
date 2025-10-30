@@ -443,24 +443,20 @@ form .btn:hover,
   }
 }
 /* ===== Remove left-side red arrows or navigation indicators ===== */
-body::before,
-body::after,
-main::before,
-main::after,
-section::before,
-section::after,
-nav::before,
-nav::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Hide any fixed left-side arrow buttons */
-.arrow,
-.scroll-arrow,
-.scroll-indicator,
-a[href^="#"]:before,
-a[href^="#"]:after {
+/* ===== Force-remove any left-side arrow or scroll navigation ===== */
+body [class*="arrow"],
+body [class*="Arrow"],
+body [class*="scroll"],
+body [class*="nav-arrow"],
+body [class*="page-navigation"],
+body [class*="nav-left"],
+body [class*="left-arrow"],
+body a[href^="#"]:has(i),
+body a[href^="#"]:not(.btn) {
   display: none !important;
   visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
 }
+
