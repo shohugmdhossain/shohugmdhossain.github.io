@@ -9,6 +9,82 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Sidebar Education Layout (Left Column) --- */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .edu-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .edu-item img {
+      height: 28px;
+      width: auto;
+      max-width: 90px;
+      object-fit: contain;
+    }
+    .edu-item span {
+      font-size: 14.5px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    /* --- Technical Summary Section --- */
+    .tech-summary {
+      margin-top: 30px;
+      background: #fff8f8;
+      border: 1px solid #e8d7d7;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .tech-summary h2 {
+      margin-top: 0;
+      color: #b1040e;
+      font-size: 22px;
+    }
+    .tech-summary p {
+      margin: 8px 0 0;
+      color: #333;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* --- Download Button --- */
+    .btn.download {
+      margin-top: 24px;
+      background: #b1040e;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .btn.download:hover {
+      background: #7a0309;
+      transform: translateY(-2px);
+    }
+
+    /* --- Mobile Adjustments --- */
+    @media (max-width: 900px) {
+      .edu-list {
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+      .edu-item span { font-size: 15px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -48,8 +124,25 @@
         <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
+
+      <!-- ==================== Education (Moved Left) ==================== -->
+      <div class="edu-list">
+        <div class="edu-item">
+          <img src="ul.png" alt="UL Lafayette">
+          <span><b>Ph.D.</b> in Earth & Energy Sciences<br><i>University of Louisiana at Lafayette, USA</i></span>
+        </div>
+        <div class="edu-item">
+          <img src="ucalgary.png" alt="University of Calgary">
+          <span><b>M.Sc.</b> in Geomatics Engineering<br><i>University of Calgary, Canada</i></span>
+        </div>
+        <div class="edu-item">
+          <img src="nsu.png" alt="North South University">
+          <span><b>B.Sc.</b> in Computer Science & Engineering<br><i>North South University, Bangladesh</i></span>
+        </div>
+      </div>
     </div>
 
+    <!-- ==================== Right Column Content ==================== -->
     <div class="rightcol">
       <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">
         ABOUT ME
@@ -58,42 +151,19 @@
       <h1 class="subtitle">Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science</h1>
 
       <p>
-        I am <b>Md Shohug Hossain</b>, a Ph.D. researcher at the <b>University of Louisiana at Lafayette</b> in the <b>Earth & Energy Sciences</b> program. 
-        My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary surface analysis</b> to investigate both 
-        terrestrial and Martian landscapes. I use deep learning models such as <b>Faster R-CNN</b> and <b>YOLO</b> for feature detection and landscape interpretation 
+        I am <b>Md Shohug Hossain</b>, a Ph.D. researcher at the <b>University of Louisiana at Lafayette</b> in the
+        <b>Earth & Energy Sciences</b> program. My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>,
+        <b>remote sensing</b>, and <b>planetary surface analysis</b> to investigate both terrestrial and Martian landscapes.
+        I use deep learning models such as <b>Faster R-CNN</b> and <b>YOLO</b> for feature detection and landscape interpretation
         from satellite imagery on <b>HPC GPU systems</b>.
       </p>
 
       <p>
-        My goal is to build scalable GeoAI pipelines that improve the accuracy and interpretability of surface mapping, enabling scientists to 
-        better understand Earth’s environmental changes and planetary evolution. I have experience in <b>multispectral/hyperspectral data analysis</b>, 
-        <b>image segmentation</b>, <b>object detection</b>, and <b>geospatial data processing</b> using Python, TensorFlow, and PyTorch.
+        My goal is to build scalable GeoAI pipelines that improve the accuracy and interpretability of surface mapping,
+        enabling scientists to better understand Earth’s environmental changes and planetary evolution.
+        I have experience in <b>multispectral/hyperspectral data analysis</b>, <b>image segmentation</b>,
+        <b>object detection</b>, and <b>geospatial data processing</b> using Python, TensorFlow, and PyTorch.
       </p>
-
-      <h2>Education</h2>
-      <div class="edu-item">
-        <img class="edu-logo" src="ul.png" alt="UL Lafayette">
-        <div>
-          <b>Ph.D. in Earth & Energy Sciences</b><br>
-          <i>University of Louisiana at Lafayette, USA</i>
-        </div>
-      </div>
-
-      <div class="edu-item">
-        <img class="edu-logo" src="ucalgary.png" alt="University of Calgary">
-        <div>
-          <b>M.Sc. in Geomatics Engineering</b><br>
-          <i>University of Calgary, Canada</i>
-        </div>
-      </div>
-
-      <div class="edu-item">
-        <img class="edu-logo" src="nsu.png" alt="North South University">
-        <div>
-          <b>B.Sc. in Computer Science & Engineering</b><br>
-          <i>North South University, Bangladesh</i>
-        </div>
-      </div>
 
       <h2>Research Interests</h2>
       <ul class="project-list">
@@ -104,13 +174,25 @@
         <li>Physics-informed neural networks and model interpretability</li>
       </ul>
 
+      <!-- Technical Summary -->
+      <div class="tech-summary">
+        <h2>Technical Summary</h2>
+        <p>
+          Skilled in Python, TensorFlow, PyTorch, and ArcGIS for geospatial data processing, deep learning,
+          and satellite imagery analysis. Experienced with HPC systems (LONI QB-3/QB-4) for large-scale training
+          and accuracy validation using real-world geospatial datasets.
+        </p>
+      </div>
+
       <h2>Beyond Research</h2>
       <p>
-        Outside of research, I enjoy contributing to open-source projects, mentoring students, and collaborating on 
-        interdisciplinary problems that link computer vision, environmental science, and space exploration. 
-        My long-term vision is to advance explainable and transferable GeoAI systems that connect planetary and 
+        Outside of research, I enjoy contributing to open-source projects, mentoring students, and collaborating on
+        interdisciplinary problems that link computer vision, environmental science, and space exploration.
+        My long-term vision is to advance explainable and transferable GeoAI systems that connect planetary and
         Earth observation for sustainable exploration and decision-making.
       </p>
+
+      <a class="btn download" href="Shohug_CV.pdf" target="_blank">Download CV →</a>
     </div>
   </main>
 
@@ -130,6 +212,7 @@
 
 </body>
 </html>
+
 
 
 
