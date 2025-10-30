@@ -10,19 +10,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Page-specific tweaks: paragraph spacing + heading color + tidy sidebar -->
   <style>
-    /* Add a clear gap after each paragraph in the right column */
-    .rightcol p { margin-bottom: 18px; }
+    /* Paragraph spacing for easier reading */
+    .rightcol p { margin-bottom: 24px; }
 
-    /* Make About-page section headings use your accent red */
-    .rightcol h2 { color: var(--accent); }
+    /* Add spacing between entire sections */
+    .rightcol h2 {
+      color: var(--accent);
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
 
-    /* Sidebar education block under the photo */
+    /* Education block (fix alignment + spacing) */
     .edu-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       margin-top: 24px;
       background: #f7f7f7;
       border: 1px solid #ddd;
@@ -31,7 +34,7 @@
     }
     .edu-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
     }
     .edu-item img {
@@ -39,14 +42,15 @@
       width: auto;
       max-width: 90px;
       object-fit: contain;
+      margin-top: 2px;
     }
     .edu-item span {
       font-size: 14.5px;
       color: #333;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
-    /* Optional “Technical Summary” highlight card */
+    /* Technical Summary block */
     .tech-summary {
       margin-top: 30px;
       background: #fff8f8;
@@ -58,7 +62,6 @@
       margin-top: 0;
       font-size: 22px;
     }
-    .tech-summary p { margin: 8px 0 0; }
 
     /* Download CV button */
     .btn.download {
@@ -86,129 +89,124 @@
 
 <body>
 
-  <!-- ==================== Header / Navigation ==================== -->
-  <header class="site">
-    <div class="wrap nav">
-      <div class="brand">M S Hossain</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="awards.html">Awards</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ==================== About Section ==================== -->
-  <main class="wrap hero two">
-    <div class="leftcol">
-      <div class="photo-wrapper">
-        <div class="photo fixed">
-          <img src="profile.jpg" alt="Md Shohug Hossain portrait">
-        </div>
-      </div>
-
-      <div class="socials">
-        <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-        <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
-        <a class="icon" href="https://github.com/shohugmdhossain" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
-
-      <!-- ==================== Education (Left Sidebar) ==================== -->
-      <div class="edu-list">
-        <div class="edu-item">
-          <img src="ul.png" alt="UL Lafayette">
-          <span><b>Ph.D.</b> in Earth & Energy Sciences<br><i>University of Louisiana at Lafayette, USA</i></span>
-        </div>
-        <div class="edu-item">
-          <img src="ucalgary.png" alt="University of Calgary">
-          <span><b>M.Sc.</b> in Electrical & Computer Engineering<br><i>University of Calgary, Canada</i></span>
-        </div>
-        <div class="edu-item">
-          <img src="nsu.png" alt="North South University">
-          <span><b>B.Sc.</b> in Computer Science & Engineering<br><i>North South University, Bangladesh</i></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== Right Column Content ==================== -->
-    <div class="rightcol">
-      <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">
-        ABOUT ME
-      </div>
-
-      <h1 class="subtitle">Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science</h1>
-
-      <p>
-        I am <b>Md Shohug Hossain</b>, a Ph.D. researcher at the <b>University of Louisiana at Lafayette</b> in the
-        <b>Earth & Energy Sciences</b> program. My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>,
-        <b>remote sensing</b>, and <b>planetary surface analysis</b> to investigate both terrestrial and Martian landscapes.
-        I use deep learning models such as <b>Faster R-CNN</b> and <b>YOLO</b> for feature detection and landscape interpretation
-        from satellite imagery on <b>HPC GPU systems</b>.
-      </p>
-
-      <p>
-        My goal is to build scalable GeoAI pipelines that improve the accuracy and interpretability of surface mapping,
-        enabling scientists to better understand Earth’s environmental changes and planetary evolution.
-        I have experience in <b>multispectral/hyperspectral data analysis</b>, <b>image segmentation</b>,
-        <b>object detection</b>, and <b>geospatial data processing</b> using Python, TensorFlow, and PyTorch.
-      </p>
-
-      <h2>Research Interests</h2>
-      <ul class="project-list">
-        <li>Machine learning and deep learning for remote sensing</li>
-        <li>Planetary geomorphology and Mars surface mapping</li>
-        <li>Multispectral and hyperspectral image analysis</li>
-        <li>Urban analytics and infrastructure mapping using GeoAI</li>
-        <li>Physics-informed neural networks and model interpretability</li>
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">M S Hossain</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+    </nav>
+  </div>
+</header>
 
-      <!-- Optional short tech snapshot; keep Skills page for the full details -->
-      <div class="tech-summary">
-        <h2>Technical Summary</h2>
-        <p>
-          Python • TensorFlow • PyTorch • ArcGIS/QGIS • EO data pipelines (multispectral/hyperspectral) •
-          Object detection/segmentation • HPC training on LONI QB-3/QB-4 (A100 GPUs).
-        </p>
+<main class="wrap hero two">
+  <!-- Left column -->
+  <div class="leftcol">
+    <div class="photo-wrapper">
+      <div class="photo fixed">
+        <img src="profile.jpg" alt="Md Shohug Hossain portrait">
       </div>
-
-      <h2>Beyond Research</h2>
-      <p>
-        Outside of research, I enjoy contributing to open-source projects, mentoring students, and collaborating on
-        interdisciplinary problems that link computer vision, environmental science, and space exploration.
-        My long-term vision is to advance explainable and transferable GeoAI systems that connect planetary and
-        Earth observation for sustainable exploration and decision-making.
-      </p>
-
-      <!-- Remove if you don't want it -->
-      <a class="btn download" href="Shohug_CV.pdf" target="_blank">Download CV →</a>
     </div>
-  </main>
 
-  <!-- ==================== Footer ==================== -->
-  <footer class="site">
-    <div class="wrap bottom">
-      <div>© <span id="y"></span> Md Shohug Hossain</div>
-      <div class="logos">
+    <div class="socials">
+      <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+      <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+      <a class="icon" href="https://github.com/shohugmdhossain" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+
+    <!-- Education -->
+    <div class="edu-list">
+      <div class="edu-item">
         <img src="ul.png" alt="UL Lafayette">
+        <span><b>Ph.D.</b> in Earth & Energy Sciences<br><i>University of Louisiana at Lafayette, USA</i></span>
+      </div>
+      <div class="edu-item">
+        <img src="ucalgary.png" alt="University of Calgary">
+        <span><b>M.Sc.</b> in Electrical & Computer Engineering<br><i>University of Calgary, Canada</i></span>
+      </div>
+      <div class="edu-item">
+        <img src="nsu.png" alt="North South University">
+        <span><b>B.Sc.</b> in Computer Science & Engineering<br><i>North South University, Bangladesh</i></span>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <!-- Right column -->
+  <div class="rightcol">
+    <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">ABOUT ME</div>
+
+    <h1 class="subtitle">Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science</h1>
+
+    <p>
+      I am <b>Md Shohug Hossain</b>, a Ph.D. researcher at the <b>University of Louisiana at Lafayette</b> in the
+      <b>Earth & Energy Sciences</b> program. My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>,
+      <b>remote sensing</b>, and <b>planetary surface analysis</b> to investigate both terrestrial and Martian landscapes.
+      I use deep learning models such as <b>Faster R-CNN</b> and <b>YOLO</b> for feature detection and landscape interpretation
+      from satellite imagery on <b>HPC GPU systems</b>.
+    </p>
+
+    <p>
+      My goal is to build scalable GeoAI pipelines that improve the accuracy and interpretability of surface mapping,
+      enabling scientists to better understand Earth’s environmental changes and planetary evolution.
+      I have experience in <b>multispectral/hyperspectral data analysis</b>, <b>image segmentation</b>,
+      <b>object detection</b>, and <b>geospatial data processing</b> using Python, TensorFlow, and PyTorch.
+    </p>
+
+    <h2>Research Interests</h2>
+    <ul class="project-list">
+      <li>Machine learning and deep learning for remote sensing</li>
+      <li>Planetary geomorphology and Mars surface mapping</li>
+      <li>Multispectral and hyperspectral image analysis</li>
+      <li>Urban analytics and infrastructure mapping using GeoAI</li>
+      <li>Physics-informed neural networks and model interpretability</li>
+    </ul>
+
+    <div class="tech-summary">
+      <h2>Technical Summary</h2>
+      <p>
+        Python • TensorFlow • PyTorch • ArcGIS/QGIS • EO data pipelines (multispectral/hyperspectral) •
+        Object detection/segmentation • HPC training on LONI QB-3/QB-4 (A100 GPUs).
+      </p>
+    </div>
+
+    <h2>Beyond Research</h2>
+    <p>
+      Outside of research, I enjoy contributing to open-source projects, mentoring students, and collaborating on
+      interdisciplinary problems that link computer vision, environmental science, and space exploration.
+      My long-term vision is to advance explainable and transferable GeoAI systems that connect planetary and
+      Earth observation for sustainable exploration and decision-making.
+    </p>
+
+    <a class="btn download" href="Shohug_CV.pdf" target="_blank">Download CV →</a>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap bottom">
+    <div>© <span id="y"></span> Md Shohug Hossain</div>
+    <div class="logos">
+      <img src="ul.png" alt="UL Lafayette">
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
+
 
 
 
