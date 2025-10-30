@@ -5,131 +5,177 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Your global site styles -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Page-specific enhancements (safe to keep here) -->
   <style>
-    /* ===== Layout ===== */
-    main {
+    /* ---------- Layout ---------- */
+    main.research {
+      padding-top: 56px;
+      padding-bottom: 72px; /* ensures space above footer on mobile/desktop */
+    }
+    .research-layout {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 40px;
-      padding: 60px 40px 120px;
-      max-width: 1200px;
-      margin: auto;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      align-items: start;
     }
-
-    nav.sidebar {
+    /* Sticky left column */
+    .research-side {
       position: sticky;
-      top: 100px;
+      top: 90px;
       align-self: start;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
     }
 
-    nav.sidebar h3 {
-      color: #b1040e;
-      font-size: 18px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    nav.sidebar a {
-      display: block;
-      color: #333;
-      text-decoration: none;
-      padding: 6px 0;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-    nav.sidebar a:hover,
-    nav.sidebar a.active {
-      color: #b1040e;
-      font-weight: 600;
-    }
-
-    /* ===== Sections ===== */
-    section {
-      background: #fff;
-      border: 1px solid #e4e4e4;
-      border-radius: 16px;
-      padding: 36px 42px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h1.subtitle {
-      font-size: 32px;
-      color: #b1040e;
-      font-weight: 700;
-      border-bottom: 2px solid #b1040e;
-      display: inline-block;
-      padding-bottom: 6px;
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: #b1040e;
-      font-size: 22px;
-      margin-top: 0;
-    }
-
-    h3 {
-      color: #222;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-
-    p {
+    /* ---------- Sidebar blocks ---------- */
+    .side-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 16px;
       margin-bottom: 16px;
-      text-align: justify;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
     }
+    .side-card h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: #111;
+    }
+    .side-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .side-list li {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14.5px;
+    }
+    .side-list li:last-child { border-bottom: none; }
 
-    ul.project-list {
-      list-style: disc;
+    .side-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 6px;
+    }
+    .side-tags .tag { background: #eee; }
+
+    .side-actions {
+      display: flex; gap: 8px; flex-wrap: wrap;
       margin-top: 10px;
-      padding-left: 25px;
+    }
+    .btn.small {
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 14px;
     }
 
-    .category-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: #b1040e;
-      border-left: 6px solid #b1040e;
-      padding-left: 12px;
-      margin-bottom: 28px;
-      margin-top: 10px;
+    /* ---------- Section headings ---------- */
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 30px;
+      margin: 0 0 18px;
+      color: #111;
+    }
+    .section-desc {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 16px;
     }
 
-    /* ===== Mobile ===== */
-    @media (max-width: 900px) {
-      main { grid-template-columns: 1fr; padding: 40px 20px 100px; }
-      nav.sidebar {
-        position: relative;
-        top: 0;
-        margin-bottom: 20px;
+    /* ---------- Project grid & cards ---------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .project {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .project h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 20px;
+      margin: 0 0 6px;
+      color: #111;
+      line-height: 1.35;
+    }
+    .meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 11.5px;
+      letter-spacing: .02em;
+    }
+    .project p { margin: 0 0 12px; }
+    .bullets {
+      margin: 0 0 6px 16px;
+    }
+    .project .links {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 8px;
+    }
+    .link {
+      font-size: 14px;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      color: var(--accent);
+    }
+    .link:hover { border-bottom-color: var(--accent); }
+
+    /* ---------- Spacing between sections ---------- */
+    .section-block { margin-bottom: 56px; }
+    .section-block:last-of-type { margin-bottom: 0; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 980px) {
+      .research-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
+      .research-side { position: static; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 26px; }
     }
   </style>
 </head>
 
 <body>
 
+<!-- ======= Site Header ======= -->
 <header class="site">
   <div class="wrap nav">
     <div class="brand">M S Hossain</div>
@@ -148,114 +194,197 @@
   </div>
 </header>
 
-<main>
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <h3>Projects</h3>
-    <a href="#current">Current Research</a>
-    <a href="#crism">CRISM Spectral Study</a>
-    <a href="#past">Past Research</a>
-    <a href="#change">Change Detection (Bangladesh)</a>
-    <a href="#wetland">Wetland Mapping</a>
-  </nav>
+<!-- ======= Research Content ======= -->
+<main class="wrap research">
+  <div class="research-layout">
 
-  <!-- Main Content -->
-  <div>
+    <!-- ===== Left (Sticky) Column ===== -->
+    <aside class="research-side">
+      <div class="side-card">
+        <h3>Research Focus</h3>
+        <ul class="side-list">
+          <li>GeoAI for planetary & Earth systems</li>
+          <li>Object detection & segmentation</li>
+          <li>Physics-informed ML & interpretability</li>
+          <li>HPC training (LONI QB-3/QB-4, A100)</li>
+        </ul>
+      </div>
 
-    <h1 class="subtitle">Research Overview</h1>
-    <p>
-      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary surface analysis</b>
-      to investigate both terrestrial and extraterrestrial landscapes. I combine machine learning, image processing, and high-performance
-      computing to design interpretable and scalable models that extract meaningful patterns from satellite and spectral imagery.
-    </p>
+      <div class="side-card">
+        <h3>Techniques</h3>
+        <div class="side-tags">
+          <span class="tag">Faster/Mask R-CNN</span>
+          <span class="tag">Detectron2</span>
+          <span class="tag">YOLO</span>
+          <span class="tag">CRISM</span>
+          <span class="tag">CTX / HiRISE</span>
+          <span class="tag">SAR / Optical / TIR</span>
+          <span class="tag">COCO JSON</span>
+          <span class="tag">Confusion Matrices</span>
+        </div>
+      </div>
 
-    <!-- CURRENT RESEARCH -->
-    <div id="current" class="category-title">Current Research Projects</div>
+      <div class="side-card">
+        <h3>Collaborations</h3>
+        <ul class="side-list">
+          <li>UL Lafayette — Earth & Energy Sciences</li>
+          <li>Planetary mapping & morphology</li>
+          <li>JHU Applied Physics Lab (CRISM usage)</li>
+        </ul>
+      </div>
 
-    <section id="mars">
-      <h2>Planetary GeoAI — Mars Mound Detection</h2>
-      <p>
-        Developing <b>Faster R-CNN</b> and <b>Mask R-CNN</b> models within the <b>Detectron2</b> framework for detecting mound-like features
-        on Mars using <b>CTX imagery</b>. These geomorphological features provide insight into sedimentary and volcanic processes
-        shaping the Martian surface.
-      </p>
-      <ul class="project-list">
-        <li>Automated COCO-format labeling and JSON validation for large-scale CTX datasets.</li>
-        <li>Model training on <b>LONI QB-3/QB-4 A100 GPUs</b> with multi-class metrics.</li>
-        <li>Integrated confusion-matrix validation for class-level consistency.</li>
-      </ul>
-    </section>
+      <div class="side-card">
+        <h3>Contact</h3>
+        <div class="side-actions">
+          <a class="btn small" href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i>&nbsp; Email</a>
+          <a class="btn small" href="Shohug_CV.pdf" target="_blank"><i class="fa-solid fa-file"></i>&nbsp; CV</a>
+        </div>
+      </div>
+    </aside>
 
-    <section id="crism">
-      <h2>CRISM-Based Spectral Feature Analysis (with JHU Applied Physics Lab)</h2>
-      <p>
-        Collaborating with <b>Johns Hopkins University Applied Physics Laboratory</b> on hyperspectral data exploration using
-        <b>CRISM (Compact Reconnaissance Imaging Spectrometer for Mars)</b> datasets to characterize mineralogical variations
-        in mound-bearing terrains.
-      </p>
-      <ul class="project-list">
-        <li>Processing hyperspectral CRISM cubes for compositional unmixing and feature extraction.</li>
-        <li>Integration with high-resolution CTX and HiRISE data for contextual interpretation.</li>
-        <li>Developing spectral clustering and PCA-based mineral classification workflows.</li>
-      </ul>
-    </section>
-
-    <section id="earth">
-      <h2>Earth Observation & Urban GeoAI</h2>
-      <p>
-        Designing AI-powered geospatial systems to map urban accessibility, infrastructure conditions, and environmental patterns
-        using satellite and street-level imagery. This research connects urban science with sustainability and inclusive design.
-      </p>
-      <ul class="project-list">
-        <li>Developed a <b>sidewalk and curb-ramp inventory</b> for urban accessibility mapping.</li>
-        <li>Created GeoAI pipelines integrating TensorFlow, PyTorch, and OpenCV.</li>
-        <li>Validated model performance through per-class F1 metrics and automated label reviews.</li>
-      </ul>
-    </section>
-
-    <!-- PAST RESEARCH -->
-    <div id="past" class="category-title">Past Projects & Explorations</div>
-
-    <section id="change">
-      <h3>A Machine Learning Approach to Change Detection in Bangladesh</h3>
-      <p>
-        Conducted spatio-temporal land cover change analysis using <b>Landsat 8</b> and <b>Sentinel-2</b> imagery to quantify
-        urban expansion and vegetation loss in coastal regions of Bangladesh. Employed machine learning-based
-        classification and spectral differencing to track long-term transformations.
-      </p>
-      <ul class="project-list">
-        <li>Used Random Forest and SVM classifiers for multi-year change mapping.</li>
-        <li>Developed NDVI and NDBI-based indices to analyze vegetation–urban transitions.</li>
-      </ul>
-    </section>
-
-    <section id="wetland">
-      <h3>Wetland and Ecosystem Mapping using Multispectral Imagery</h3>
-      <p>
-        Applied multispectral and radar-based remote sensing to identify wetland boundaries and vegetation dynamics
-        across monsoon cycles. This study demonstrated the potential of <b>Sentinel-1 SAR</b> and <b>Landsat 8 OLI</b>
-        fusion for ecosystem monitoring.
-      </p>
-      <ul class="project-list">
-        <li>Developed spectral threshold models for seasonal wetland detection.</li>
-        <li>Generated vegetation dynamics maps for change trend visualization.</li>
-      </ul>
-    </section>
-
+    <!-- ===== Right (Main) Column ===== -->
     <section>
-      <h3>Foundational Work on Physics-Informed Neural Networks for Terrain Analysis</h3>
-      <p>
-        Early experiments applying <b>physics-informed ML</b> models to couple geomorphic parameters (slope, curvature, and albedo)
-        with model-driven surface predictions. This line of work informs explainable GeoAI development for both Earth and Mars.
-      </p>
-    </section>
 
-    <div class="btns">
-      <a class="btn red" href="publications.html">View Publications →</a>
-    </div>
+      <!-- Intro -->
+      <div class="section-kicker">RESEARCH</div>
+      <h1 class="section-title">Exploring GeoAI for Planetary and Earth Systems</h1>
+      <p class="section-desc">
+        I build scalable computer-vision pipelines for multi-sensor remote sensing (optical, SAR, thermal/CRISM) across
+        Earth and Mars. My work combines deep learning, geospatial analysis, and HPC to extract structure, change, and
+        process-level insights from imagery.
+      </p>
+
+      <!-- Current Projects -->
+      <div class="section-block" id="current">
+        <div class="section-kicker">CURRENT PROJECTS</div>
+        <h2 class="section-title">Active Research</h2>
+        <div class="projects-grid">
+
+          <!-- Mars Mounds -->
+          <article class="project">
+            <div class="meta"><span class="badge">2025—</span><span>Planetary GeoAI</span></div>
+            <h3>Mars Mounds Detection with Faster/Mask R-CNN (CTX)</h3>
+            <p>
+              Detecting & classifying mound-like geomorphic features in CTX imagery using Detectron2.
+              Focus on scalable mapping within craters and morphological validation.
+            </p>
+            <ul class="bullets">
+              <li>COCO annotations with custom JSON cleaners</li>
+              <li>Training/eval on LONI A100 80GB GPU nodes</li>
+              <li>Per-feature metrics & label-quality reviews</li>
+            </ul>
+            <div class="links">
+              <a class="link" href="research.html#mars">Methods</a>
+              <a class="link" href="publications.html">Outputs</a>
+            </div>
+          </article>
+
+          <!-- Planetary Surface Evolution -->
+          <article class="project">
+            <div class="meta"><span class="badge">2025—</span><span>Multi-sensor</span></div>
+            <h3>Planetary Surface Evolution via Multi-Modal GeoAI</h3>
+            <p>
+              Integrating optical (CTX/HiRISE), radar (SAR), and thermal to infer surface dynamics and terrain evolution
+              under varying illumination and environmental conditions.
+            </p>
+            <ul class="bullets">
+              <li>Physics-informed priors for stability & trust</li>
+              <li>XAI to align predictions with geology</li>
+            </ul>
+            <div class="links">
+              <a class="link" href="research.html#planetary">Overview</a>
+            </div>
+          </article>
+
+          <!-- CRISM / JHU APL item -->
+          <article class="project">
+            <div class="meta"><span class="badge">2025—</span><span>Spectral</span></div>
+            <h3>CRISM-Guided Mineral Mapping (inspired by JHU APL CRISM workflows)</h3>
+            <p>
+              Using CRISM spectral indices and lightweight unmixing to flag alteration signatures co-located with
+              geomorphic contexts (e.g., crater rims, fans), then fusing with high-res texture cues.
+            </p>
+            <ul class="bullets">
+              <li>Spectral indices → semantic priors for CV models</li>
+              <li>Joint spatial–spectral candidates for follow-up</li>
+            </ul>
+            <div class="links">
+              <a class="link" href="publications.html">Notes & figures</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Past Projects -->
+      <div class="section-block" id="past">
+        <div class="section-kicker">PAST PROJECTS</div>
+        <h2 class="section-title">Previous Studies</h2>
+        <div class="projects-grid">
+
+          <!-- Bangladesh change detection -->
+          <article class="project">
+            <div class="meta"><span class="badge">2023–2024</span><span>Change Detection</span></div>
+            <h3>A ML Approach to Change Detection in Bangladesh Using Remote Sensing</h3>
+            <p>
+              Supervised and semi-supervised pipelines (Landsat/Sentinel) to map land-cover transitions in deltaic and
+              urbanizing regions; harmonized time-series and bias-aware validation.
+            </p>
+            <ul class="bullets">
+              <li>Cloud/shadow masking & reflectance harmonization</li>
+              <li>Post-classification refinement & uncertainty maps</li>
+            </ul>
+            <div class="links">
+              <a class="link" href="publications.html">Report</a>
+            </div>
+          </article>
+
+          <!-- Wetland dynamics -->
+          <article class="project">
+            <div class="meta"><span class="badge">2022–2023</span><span>EO Wetlands</span></div>
+            <h3>Wetland Dynamics from Multi-Sensor Fusion</h3>
+            <p>
+              Combined SAR backscatter, NDWI, and seasonal composites to track hydroperiod and edge shifts in
+              vegetated wetlands; lightweight CNNs for surface-state classification.
+            </p>
+            <ul class="bullets">
+              <li>Seasonal phenology features for robustness</li>
+              <li>Cross-site generalization tests</li>
+            </ul>
+          </article>
+
+          <!-- Urban surface condition -->
+          <article class="project">
+            <div class="meta"><span class="badge">2021–2022</span><span>Urban EO</span></div>
+            <h3>Urban Surface Condition Mapping from Multiresolution Imagery</h3>
+            <p>
+              Mapped surface types and degradation indicators by fusing medium-res satellite imagery with sparse
+              high-res tiles; transfer-learning to reduce label costs.
+            </p>
+            <ul class="bullets">
+              <li>Tile-level domain adaptation</li>
+              <li>Confidence-weighted ensembling</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Collaborations & Future Directions -->
+      <div class="section-block" id="future">
+        <div class="section-kicker">COLLABORATIONS & NEXT</div>
+        <h2 class="section-title">Toward Trustworthy, Transferable GeoAI</h2>
+        <p class="section-desc">
+          Next steps include unified planetary–Earth pretraining corpora, interpretable modules that expose physics-aware
+          failure modes, and open benchmarks for spectral-spatial fusion at scale.
+        </p>
+      </div>
+
+    </section>
   </div>
 </main>
 
+<!-- ======= Footer ======= -->
 <footer class="site">
   <div class="wrap bottom">
     <div>© <span id="y"></span> M S Hossain</div>
@@ -268,28 +397,8 @@
 </footer>
 
 <script>
-  // Footer year
   document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Smooth scroll
-  document.querySelectorAll('nav.sidebar a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Fade-in animation on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('section').forEach(sec => observer.observe(sec));
 </script>
-
 </body>
 </html>
+
