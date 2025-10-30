@@ -459,23 +459,21 @@ body a[href^="#"]:not(.btn) {
   pointer-events: none !important;
   position: absolute !important;
 }
-/* ======= Force Remove Left-Side Navigation Arrows (Hugo Blox style) ======= */
-div[data-testid*="scroll"], 
-div[class*="scroll"], 
-a[class*="scroll"], 
-a[href^="#"]:not(.btn):not(.icon), 
-a[href="#mars"], 
-a[href="#planetary"], 
-a[href="#earth"],
-nav.toc, 
+/* === FINAL FIX: Remove Hugo-Blox left-side scroll arrows === */
+body > a[href^="#"],
+a[class*="scroll"],
+a[class*="arrow"],
+a[class*="nav"],
+div[class*="scroll"],
+div[class*="arrow"],
+div[class*="nav"],
+#TableOfContents,
 nav[aria-label="On this page"],
-#TableOfContents, 
-nav[class*="page-nav"],
-.page-nav, 
-.page-scroll, 
-.nav-arrows, 
-.scrollnav, 
-body > a[href^="#"]:not(.btn) {
+nav.toc,
+.page-scroll,
+.page-nav,
+.nav-arrows,
+.scrollnav {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
@@ -483,4 +481,18 @@ body > a[href^="#"]:not(.btn) {
   position: absolute !important;
   left: -9999px !important;
 }
+
+/* Hide any generated ::before or ::after arrows as well */
+body::before,
+body::after,
+main::before,
+main::after,
+section::before,
+section::after,
+a::before,
+a::after {
+  content: none !important;
+  display: none !important;
+}
+
 
