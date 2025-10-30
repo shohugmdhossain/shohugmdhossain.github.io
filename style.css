@@ -3,212 +3,214 @@
   --bg2: #f9f9f9;
   --text: #222222;
   --muted: #555555;
-  --accent: #b1040e; /* Stanford Red */
+  --accent: #b1040e; /* Stanford red */
   --card: #ffffff;
   --line: #dddddd;
-  --max: 1100px;
+  --max: 1000px;
 }
 
 /* ==================== Reset & Basics ==================== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
+
 body {
+  margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Inter", system-ui, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.7;
 }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
+}
+a:hover { border-bottom: 1px solid var(--accent); }
+
 .wrap {
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 40px;
 }
 
-/* ==================== Header & Navigation ==================== */
+/* ==================== Navigation ==================== */
 header.site {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 50;
   background: var(--accent);
-  color: #fff;
-  border-bottom: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 68px;
-  position: relative;
 }
 .brand {
   font-weight: 700;
   font-size: 20px;
-  color: #fff;
-  letter-spacing: 0.2px;
+  color: #ffffff;
 }
-
-/* --- Nav Links --- */
 nav ul {
   display: flex;
   gap: 18px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 nav a {
-  color: #fff;
-  padding: 8px 10px;
+  color: #ffffff;
+  padding: 8px 12px;
   border-radius: 10px;
-  transition: background 0.2s ease, text-shadow 0.2s ease;
+  transition: background 0.2s;
 }
-nav a:hover,
-nav a.active {
-  background: rgba(255,255,255,0.15);
-  text-shadow: 0 0 6px rgba(255,255,255,0.6);
+nav a.active,
+nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
 }
-
-/* --- Search Bar --- */
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.search-bar input {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-.search-bar button {
-  background: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.2s ease;
-}
-.search-bar button:hover { color: #ffd9d9; }
-
-/* --- Hamburger (3 lines) --- */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ==================== Text Styling ==================== */
-p, li, div.card, section, .grid, .wrap {
-  text-align: justify;
-  text-justify: inter-word;
-}
-h1, h2, h3 {
-  font-family: "Libre Baskerville", Georgia, serif;
-  color: #111;
-  line-height: 1.3;
-  margin-bottom: 10px;
-}
-h1 { font-size: 42px; }
-h2 { font-size: 28px; color: var(--accent); margin-top: 40px; }
-
-/* ==================== Buttons ==================== */
-.btn {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 10px;
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: #fff;
-  transition: 0.25s ease;
-  text-decoration: none;
-}
-.btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
 /* ==================== Layout ==================== */
-.hero { padding: 64px 0; }
+.hero {
+  padding: 80px 0;
+}
 .two {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+  align-items: start;
 }
 
-/* ==================== Lists ==================== */
-ul.project-list {
-  margin: 14px 0 30px 22px;
+/* ==================== Left Column ==================== */
+.leftcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-.project-list li {
-  margin-bottom: 8px;
-  position: relative;
+.photo.fixed {
+  width: 240px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-.project-list li::before {
-  content: "•";
+.photo.fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.socials {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.icon {
+  font-size: 20px;
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+.icon:hover { color: var(--accent); }
+
+/* ==================== Right Column ==================== */
+.rightcol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kicker.red {
   color: var(--accent);
-  font-weight: 900;
-  position: absolute;
-  left: -18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.subtitle {
+  font-size: 24px;
+  color: #222;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.4;
+}
+p { text-align: justify; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+.card b:first-child {
+  color: var(--accent);
+}
+
+.btns {
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background: #7a0309;
+  transform: translateY(-2px);
 }
 
 /* ==================== Footer ==================== */
 footer.site {
   background: var(--accent);
-  color: #fff;
   padding: 40px 0;
+  margin-top: 60px;
+  color: #fff;
   text-align: center;
-  border-top: 2px solid #a00000;
 }
 footer .bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-}
-footer .bottom div {
-  font-size: 15px;
-  line-height: 1.6;
+  gap: 20px;
 }
 footer .logos {
   display: flex;
-  gap: 24px;
+  gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
 }
 footer .logos img {
   height: 50px;
   width: auto;
-  transition: transform 0.3s ease;
+  opacity: 0.95;
+  transition: all 0.3s ease;
 }
 footer .logos img:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 /* ==================== Responsive ==================== */
 @media (max-width: 900px) {
-  .wrap { padding: 0 20px; }
-  h1 { font-size: 34px; }
-  .menu-toggle { display: block; }
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: var(--accent);
-    position: absolute;
-    top: 68px;
-    left: 0;
-    width: 100%;
-    padding: 18px 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
+  .two {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  nav ul.show { display: flex; }
-  nav ul li { text-align: center; padding: 10px 0; }
-  .search-bar { display: none; }
-  footer .logos img { height: 40px; }
+  .photo.fixed {
+    width: 200px;
+    height: 220px;
+  }
+  .hero { padding: 60px 0; }
+  footer .logos img { height: 42px; }
 }
 
-/* ==================== Subtle Animation ==================== */
-main.wrap { animation: fadeIn 0.8s ease-in-out; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
-}
 
 
 
