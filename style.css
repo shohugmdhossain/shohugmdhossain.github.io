@@ -459,4 +459,28 @@ body a[href^="#"]:not(.btn) {
   pointer-events: none !important;
   position: absolute !important;
 }
+/* ======= Force Remove Left-Side Navigation Arrows (Hugo Blox style) ======= */
+div[data-testid*="scroll"], 
+div[class*="scroll"], 
+a[class*="scroll"], 
+a[href^="#"]:not(.btn):not(.icon), 
+a[href="#mars"], 
+a[href="#planetary"], 
+a[href="#earth"],
+nav.toc, 
+nav[aria-label="On this page"],
+#TableOfContents, 
+nav[class*="page-nav"],
+.page-nav, 
+.page-scroll, 
+.nav-arrows, 
+.scrollnav, 
+body > a[href^="#"]:not(.btn) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
 
