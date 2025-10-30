@@ -1,11 +1,11 @@
 :root {
-  --bg: #0b0d10;
-  --bg2: #121212;
-  --text: #e5e5e5;
-  --muted: #b6b6b6;
-  --accent: #ffffff;
-  --card: #16181c;
-  --line: #222428;
+  --bg: #ffffff;
+  --bg2: #f9f9f9;
+  --text: #222222;
+  --muted: #555555;
+  --accent: #b1040e;  /* Stanford red */
+  --card: #ffffff;
+  --line: #dddddd;
   --max: 1000px;
 }
 
@@ -16,14 +16,14 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.7;
 }
 
 a {
-  color: var(--text);
+  color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: 0.2s ease;
@@ -41,9 +41,9 @@ header.site {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 13, 16, 0.7);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: var(--accent);
+  color: #ffffff;
+  border-bottom: none;
 }
 .nav {
   display: flex;
@@ -54,6 +54,7 @@ header.site {
 .brand {
   font-weight: 700;
   letter-spacing: 0.2px;
+  color: #ffffff;
 }
 nav ul {
   display: flex;
@@ -63,14 +64,14 @@ nav ul {
   padding: 0;
 }
 nav a {
+  color: #ffffff;
   padding: 8px 10px;
   border-radius: 10px;
 }
 nav a.active,
 nav a:hover {
-  color: var(--accent);
-  background: rgba(255, 255, 255, 0.08);
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
 }
 
 /* ==================== Global Text ==================== */
@@ -83,12 +84,13 @@ h1, h2, h3 {
   line-height: 1.2;
   margin: 0 0 10px;
   text-align: left;
+  color: #111111;
 }
 h1 { font-size: 42px; }
 h2 { font-size: 28px; margin-top: 8px; }
 
 .kicker {
-  color: var(--muted);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 12px;
@@ -104,7 +106,7 @@ h2 { font-size: 28px; margin-top: 8px; }
 }
 .subtitle {
   font-size: 18px;
-  color: #d8d8d8;
+  color: var(--muted);
 }
 
 /* ==================== Buttons ==================== */
@@ -118,15 +120,12 @@ h2 { font-size: 28px; margin-top: 8px; }
   display: inline-block;
   padding: 10px 14px;
   border-radius: 12px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #ffffff;
   transition: 0.2s ease;
 }
-.btn.red {
-  background: var(--accent);
-  color: #000;
-  border-color: transparent;
-}
-.btn.ghost { background: transparent; }
+.btn.ghost { background: transparent; color: var(--accent); }
 .btn:hover { opacity: 0.9; }
 
 /* ==================== Hero Layout ==================== */
@@ -136,9 +135,7 @@ h2 { font-size: 28px; margin-top: 8px; }
   gap: 36px;
   align-items: start;
 }
-.hero {
-  padding: 64px 0;
-}
+.hero { padding: 64px 0; }
 .leftcol {
   display: flex;
   flex-direction: column;
@@ -150,7 +147,7 @@ h2 { font-size: 28px; margin-top: 8px; }
   height: 360px;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--line);
   position: sticky;
   top: 90px;
@@ -169,7 +166,7 @@ h2 { font-size: 28px; margin-top: 8px; }
 }
 .icon {
   font-size: 20px;
-  color: #b6b6b6;
+  color: var(--muted);
   border: none;
 }
 .icon:hover { color: var(--accent); }
@@ -189,12 +186,12 @@ section {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 18px;
-  box-shadow: 0 0 0 1px var(--line);
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
   transition: 0.3s ease;
 }
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
 /* ==================== Current Projects ==================== */
@@ -214,13 +211,13 @@ section {
 
 /* ==================== Project Links ==================== */
 .project-link {
-  color: var(--text);
+  color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .project-link:hover {
-  color: var(--accent);
+  color: #7a0309;
   border-bottom: 1px solid var(--accent);
 }
 
@@ -244,9 +241,10 @@ main.wrap {
 
 /* ==================== Footer ==================== */
 footer.site {
-  border-top: 1px solid var(--line);
+  background: var(--accent);
+  border-top: none;
   padding: 24px 0;
-  color: var(--muted);
+  color: #ffffff;
 }
 footer .bottom {
   display: flex;
@@ -255,6 +253,17 @@ footer .bottom {
   gap: 30px;
   flex-wrap: wrap;
   text-align: center;
+}
+footer .bottom div {
+  color: #ffffff;
+  font-size: 14px;
+}
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #ffd9d9;
 }
 
 /* ==================== Responsive ==================== */
@@ -271,12 +280,12 @@ footer .bottom {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 28px 32px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.25);
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 .exp-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .exp-card h2 { color: var(--accent); font-size: 22px; }
 .exp-card h3 { color: var(--muted); font-size: 16px; }
@@ -287,396 +296,107 @@ footer .bottom {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px 22px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 .leadership-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+  box-shadow: 0 0 8px rgba(0,0,0,0.12);
 }
 .leadership-card h3 {
   color: var(--accent);
   font-size: 18px;
   margin-bottom: 8px;
 }
-html, body {
-  background: linear-gradient(180deg, var(--bg), var(--bg2));
-  overflow-x: hidden;
-}
 
-footer.site {
-  background: var(--bg2);
-  border-top: 1px solid var(--line);
-}
-/* ===== Final Mobile Navigation Hover / Touch Fix ===== */
-nav a:hover,
-nav a:active,
-nav a:focus,
-nav a.active {
-  color: var(--accent) !important; /* pure white text */
-  background: rgba(255, 255, 255, 0.10) !important; /* soft white glow */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3); /* subtle glow on touch */
-  transition: background 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
-}
-
-/* Ensure tap feedback looks smooth (mobile Safari / Chrome) */
-nav a {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Prevent any black highlight fallback */
-nav a:visited {
-  color: var(--accent);
-}
-
-/* Optional: make menu background slightly brighter when scrolling */
-header.site {
-  background: rgba(11, 13, 16, 0.85);
-  backdrop-filter: blur(8px);
-}
-/* ===== University Logo & Footer Logo Size Refinement ===== */
-/* ===== Force Logo Resize Across Entire Site ===== */
-
-/* --- Education / University Logos --- */
-img.edu-logo,
-.edu img,
-section img.edu-logo {
-  height: 34px !important;       /* Smaller balanced size */
-  width: auto !important;
-  max-width: 120px !important;
-  object-fit: contain !important;
-  filter: brightness(0.95) contrast(1.05);
-  transition: transform 0.3s ease, filter 0.3s ease;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-img.edu-logo:hover,
-.edu img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* ==================== 🔧 FINAL FOOTER LOGO FIX ==================== */
-
-/* Footer site background stays dark and consistent */
-footer.site {
-  background: var(--bg2) !important;
-  border-top: 1px solid var(--line);
-  padding: 20px 0 !important;
-}
-
-/* Centered layout for all footer elements */
-footer .bottom {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  gap: 6px !important;
-}
-
-/* Text formatting */
-footer .bottom div {
-  color: var(--muted) !important;
-  font-size: 14px !important;
-  letter-spacing: 0.3px !important;
-  margin: 0 !important;
-}
-
-/* ✅ Footer logo resize & hover effect */
-footer.site .logos img,
-footer .logos img,
-footer img[src*="ul.png"] {
-  height: 22px !important;           /* 👈 smaller and cleaner */
-  width: auto !important;
-  max-width: 100px !important;
-  opacity: 0.8 !important;
-  filter: grayscale(40%) brightness(0.9);
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
-
-footer.site .logos img:hover,
-footer .logos img:hover,
-footer img[src*="ul.png"]:hover {
-  transform: scale(1.06);
-  filter: grayscale(0%) brightness(1.15);
-  opacity: 1 !important;
-}
-
-/* Make sure the © text doesn’t push the logo */
-footer .logos {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-top: 6px !important;
-}
-/* ==================== 🔧 Education & Footer Alignment Fix ==================== */
-
-/* ---- Education section: keep logo and text in one line ---- */
-.edu-item {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  flex-wrap: nowrap !important;
-  gap: 10px !important;
-  margin-bottom: 10px !important;
-}
-
-.edu-item img,
+/* ==================== Education Logos ==================== */
 img.edu-logo {
-  height: 28px !important;
-  width: auto !important;
-  max-width: 100px !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-  filter: brightness(0.95) contrast(1.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 30px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
+img.edu-logo:hover { transform: scale(1.05); }
 
-.edu-item img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* Text stays aligned with logo */
-.edu-item span,
-.edu-item div {
-  display: inline-block !important;
-  vertical-align: middle !important;
-  font-size: 15px !important;
-  color: var(--text);
-  line-height: 1.5 !important;
-}
-
-/* ---- Footer alignment: keep © and logo centered together ---- */
-footer .bottom {
-  display: flex !important;
-  flex-direction: row !important;       /* side by side instead of stacked */
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  flex-wrap: wrap !important;
-  text-align: center !important;
-}
-
-footer .bottom div {
-  margin: 0 !important;
-  font-size: 14px !important;
-  color: var(--muted) !important;
-}
-
+/* ==================== Footer Alignment ==================== */
 footer .logos img {
-  height: 22px !important;
-  width: auto !important;
-  opacity: 0.85 !important;
-  filter: grayscale(30%) brightness(0.9);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 22px;
+  width: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 footer .logos img:hover {
   transform: scale(1.08);
-  filter: grayscale(0%) brightness(1.15);
-  opacity: 1 !important;
+  opacity: 1;
 }
-/* ==================== ✅ FINAL EDUCATION & FOOTER FIX ==================== */
 
-/* ---- Education section: logo + text same line ---- */
+/* ==================== Education Alignment ==================== */
 .edu-item {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  flex-wrap: nowrap !important;
-  gap: 10px !important;
-  margin-bottom: 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.edu-item img {
+  height: 24px;
+  width: auto;
+  max-width: 90px;
+  object-fit: contain;
+}
+.edu-item span {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.5;
 }
 
-.edu-item img,
-img.edu-logo {
-  height: 24px !important;
-  width: auto !important;
-  max-width: 90px !important;
-  object-fit: contain !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-  filter: brightness(0.95) contrast(1.1);
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.edu-item img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-.edu-item span,
-.edu-item div {
-  display: inline-block !important;
-  vertical-align: middle !important;
-  font-size: 15px !important;
-  color: var(--text) !important;
-  line-height: 1.5 !important;
-}
-
-/* ---- Footer alignment: centered logo + © ---- */
-footer.site {
-  background: var(--bg2) !important;
-  border-top: 1px solid var(--line);
-  padding: 14px 0 !important;
-}
-
-footer .bottom {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-  gap: 8px !important;
-  text-align: center !important;
-}
-
-footer .bottom div {
-  font-size: 14px !important;
-  color: var(--muted) !important;
-  margin: 0 !important;
-  letter-spacing: 0.2p}
-
-/* ===== Arrow fix: remove everywhere, then re-enable only where needed ===== */
-
-/* 1) Reset globally */
-.project-list li {
-  position: relative;
-  padding-left: 0;         /* remove extra indent that expected an icon */
-}
-.project-list li::before {
-  content: none !important;
-  display: none !important;
-}
-
-/* 2) Re-enable arrows ONLY in intended areas */
-.rightcol .project-list li,
-.experience-section .project-list li,
-.exp-card .project-list li,
-.leadership-card .project-list li {
-  padding-left: 26px;      /* restore space for the arrow */
-}
-
-.rightcol .project-list li::before,
-.experience-section .project-list li::before,
-.exp-card .project-list li::before,
-.leadership-card .project-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 600;
-  display: inline-block;
-}
-/* ===== FINAL ARROW CLEANUP FIX (Research Page) ===== */
-
-/* Remove all arrow bullets from the left of images or text blocks */
-.project-list li::before,
-.leftcol li::before,
-section li::before,
-main li::before {
-  content: none !important;
-  display: none !important;
-}
-
-/* Remove extra left padding caused by arrows */
-.project-list li,
-.leftcol li,
-section li,
-main li {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-}
-
-/* ===== FINAL MOBILE MENU & BRAND FIX ===== */
-@media (max-width: 780px) {
-  /* allow menu to wrap cleanly into two lines */
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center !important;
-    gap: 8px;
-    height: auto;
-    padding: 10px 0;
-  }
-
-  /* make brand take full width on first line */
-  .brand {
-    flex: 0 0 100%;
-    text-align: center;
-    font-size: 20px;
-    white-space: normal;  /* allows M S Hossain to wrap nicely */
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-
-  /* allow nav links to flow to second line */
-  header.site nav {
-    flex: 0 0 100%;
-    order: 2;
-    width: 100%;
-  }
-
-  header.site nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 12px;
-    margin: 0;
-    padding: 0;
-  }
-
-  header.site nav a {
-    font-size: 15px;
-    padding: 6px 10px;
-    border-radius: 6px;
-  }
-
-  /* ensure no hidden part on right side */
-  html, body, header.site {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-  }
-}
-/* ===== TAG HOVER FIX (Make tags glow like menu bar) ===== */
-/* --- Tag Style (Matches Menu Bar Glow) --- */
+/* ==================== Tags ==================== */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
 }
-
 .tag {
-  background: var(--line);
-  color: var(--text);
+  background: #eeeeee;
+  color: #333333;
   padding: 0.35em 0.8em;
   border-radius: 999px;
   font-size: 0.9rem;
   transition: all 0.25s ease;
-  border: 1px solid transparent;
-  display: inline-block;
 }
-
 .tag:hover {
-  background: rgba(255, 255, 255, 0.10); /* soft white glow */
-  color: var(--accent);                  /* pure white text */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--accent);
+  color: #ffffff;
   transform: scale(1.05);
   cursor: pointer;
 }
 
-/* ===== FINAL MOBILE MENU & BRAND FIX ===== */
+/* ==================== Contact Buttons ==================== */
+form .btn,
+form .btn.red,
+form button[type="submit"],
+form input[type="submit"],
+.contact .btn,
+.contact .btn.red {
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+form .btn:hover,
+.contact .btn:hover {
+  background: #7a0309;
+  transform: scale(1.03);
+}
+
+/* ==================== Mobile Navigation ==================== */
 @media (max-width: 780px) {
-  /* allow menu to wrap cleanly into two lines */
   .nav {
     display: flex;
     flex-wrap: wrap;
@@ -687,17 +407,15 @@ main li {
     padding: 10px 0;
   }
 
-  /* make brand take full width on first line */
   .brand {
     flex: 0 0 100%;
     text-align: center;
     font-size: 20px;
-    white-space: normal;  /* allows M S Hossain to wrap nicely */
+    white-space: normal;
     line-height: 1.2;
     margin-bottom: 6px;
   }
 
-  /* allow nav links to flow to second line */
   header.site nav {
     flex: 0 0 100%;
     order: 2;
@@ -719,117 +437,8 @@ main li {
     border-radius: 6px;
   }
 
-  /* ensure no hidden part on right side */
   html, body, header.site {
     overflow-x: hidden !important;
     max-width: 100% !important;
   }
 }
-/* ===== FORCE TAG HOVER FIX (Experience Page) ===== */
-.tag {
-  background: var(--line) !important;
-  color: var(--text) !important;
-  padding: 0.35em 0.8em !important;
-  border-radius: 999px !important;
-  font-size: 0.9rem !important;
-  transition: all 0.25s ease !important;
-  border: 1px solid transparent !important;
-}
-
-.tag:hover {
-  background: rgba(255, 255, 255, 0.10) !important; /* soft white glow */
-  color: var(--accent) !important;                  /* pure white text */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  transform: scale(1.03) !important;
-  cursor: pointer !important;
-}
-
-/* ===== CONTACT: force dark submit button with white text ===== */
-
-/* Handles <button>, <input type=submit>, and <a class="btn"> inside forms */
-form .btn,
-form .btn.red,
-form button[type="submit"],
-form input[type="submit"],
-.contact .btn,
-.contact .btn.red,
-.contact button[type="submit"],
-.contact input[type="submit"] {
-  background: var(--card) !important;        /* dark button */
-  color: var(--accent) !important;           /* white text */
-  border: 1px solid var(--line) !important;
-  border-radius: 10px !important;
-  padding: 10px 18px !important;
-  font-size: 16px !important;
-  text-decoration: none !important;          /* fixes <a class="btn"> */
-  display: inline-block !important;          /* fixes anchor buttons */
-  cursor: pointer !important;
-  -webkit-appearance: none !important;       /* iOS/Safari */
-  appearance: none !important;
-}
-
-/* Kill the “red = white bg” rule from your global .btn.red */
-form .btn.red,
-.contact .btn.red {
-  background: var(--card) !important;
-  color: var(--accent) !important;
-}
-
-/* Hover/active to match your menu glow */
-form .btn:hover,
-form .btn.red:hover,
-form button[type="submit"]:hover,
-form input[type="submit"]:hover,
-.contact .btn:hover,
-.contact .btn.red:hover,
-.contact button[type="submit"]:hover,
-.contact input[type="submit"]:hover {
-  background: rgba(255, 255, 255, 0.10) !important;
-  color: var(--accent) !important;
-  text-shadow: 0 0 6px rgba(255,255,255,0.4) !important;
-  border-color: rgba(255,255,255,0.15) !important;
-  transform: scale(1.03);
-}
-
-/* Prevent anchor underline/border on hover in forms */
-form a.btn:hover,
-.contact a.btn:hover {
-  border-bottom-color: transparent !important;
-}
-/* ===== ✅ FINAL FIX: CONTACT PAGE BUTTON ===== */
-form .btn,
-form .btn.red,
-form button[type="submit"],
-form input[type="submit"],
-.contact .btn,
-.contact .btn.red,
-.contact button[type="submit"],
-.contact input[type="submit"] {
-  background: var(--card) !important;      /* dark button background */
-  color: var(--accent) !important;         /* white text */
-  border: 1px solid var(--line) !important;
-  border-radius: 10px !important;
-  padding: 12px 20px !important;
-  font-size: 16px !important;
-  display: inline-block !important;
-  cursor: pointer !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 0 6px rgba(255,255,255,0.15);
-}
-
-form .btn:hover,
-form .btn.red:hover,
-.contact .btn:hover,
-.contact .btn.red:hover {
-  background: rgba(255, 255, 255, 0.1) !important; /* soft white glow */
-  color: var(--accent) !important;
-  text-shadow: 0 0 6px rgba(255,255,255,0.4);
-  border-color: rgba(255,255,255,0.2);
-  transform: scale(1.03);
-}
-
-
-
-
-
