@@ -9,8 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Page-specific tweaks: paragraph spacing + heading color + tidy sidebar -->
   <style>
-    /* --- Sidebar Education Layout (Left Column) --- */
+    /* Add a clear gap after each paragraph in the right column */
+    .rightcol p { margin-bottom: 18px; }
+
+    /* Make About-page section headings use your accent red */
+    .rightcol h2 { color: var(--accent); }
+
+    /* Sidebar education block under the photo */
     .edu-list {
       display: flex;
       flex-direction: column;
@@ -38,7 +46,7 @@
       line-height: 1.4;
     }
 
-    /* --- Technical Summary Section --- */
+    /* Optional “Technical Summary” highlight card */
     .tech-summary {
       margin-top: 30px;
       background: #fff8f8;
@@ -48,20 +56,14 @@
     }
     .tech-summary h2 {
       margin-top: 0;
-      color: #b1040e;
       font-size: 22px;
     }
-    .tech-summary p {
-      margin: 8px 0 0;
-      color: #333;
-      font-size: 15px;
-      line-height: 1.6;
-    }
+    .tech-summary p { margin: 8px 0 0; }
 
-    /* --- Download Button --- */
+    /* Download CV button */
     .btn.download {
       margin-top: 24px;
-      background: #b1040e;
+      background: var(--accent);
       color: #fff;
       text-decoration: none;
       padding: 10px 16px;
@@ -75,13 +77,8 @@
       transform: translateY(-2px);
     }
 
-    /* --- Mobile Adjustments --- */
     @media (max-width: 900px) {
-      .edu-list {
-        background: transparent;
-        border: none;
-        padding: 0;
-      }
+      .edu-list { background: transparent; border: none; padding: 0; }
       .edu-item span { font-size: 15px; }
     }
   </style>
@@ -125,7 +122,7 @@
         <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
 
-      <!-- ==================== Education (Moved Left) ==================== -->
+      <!-- ==================== Education (Left Sidebar) ==================== -->
       <div class="edu-list">
         <div class="edu-item">
           <img src="ul.png" alt="UL Lafayette">
@@ -174,13 +171,12 @@
         <li>Physics-informed neural networks and model interpretability</li>
       </ul>
 
-      <!-- Technical Summary -->
+      <!-- Optional short tech snapshot; keep Skills page for the full details -->
       <div class="tech-summary">
         <h2>Technical Summary</h2>
         <p>
-          Skilled in Python, TensorFlow, PyTorch, and ArcGIS for geospatial data processing, deep learning,
-          and satellite imagery analysis. Experienced with HPC systems for large-scale training
-          and accuracy validation using real-world geospatial datasets.
+          Python • TensorFlow • PyTorch • ArcGIS/QGIS • EO data pipelines (multispectral/hyperspectral) •
+          Object detection/segmentation • HPC training on LONI QB-3/QB-4 (A100 GPUs).
         </p>
       </div>
 
@@ -192,6 +188,7 @@
         Earth observation for sustainable exploration and decision-making.
       </p>
 
+      <!-- Remove if you don't want it -->
       <a class="btn download" href="Shohug_CV.pdf" target="_blank">Download CV →</a>
     </div>
   </main>
@@ -212,6 +209,7 @@
 
 </body>
 </html>
+
 
 
 
