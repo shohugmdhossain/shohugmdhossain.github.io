@@ -1,194 +1,273 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <title>Research — M S Hossain</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+:root {
+  --bg: #ffffff;
+  --bg2: #f9f9f9;
+  --text: #222222;
+  --muted: #555555;
+  --accent: #b1040e; /* Stanford red */
+  --card: #ffffff;
+  --line: #dddddd;
+  --max: 1000px;
+}
 
-  <style>
-    main.wrap {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 64px 20px 80px;
-      text-align: justify;
-    }
+/* ==================== Reset & Basics ==================== */
+* { box-sizing: border-box; }
 
-    h1.subtitle {
-      font-size: 22px;
-      color: #555;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
+html { scroll-behavior: smooth; }
 
-    h2.section-title {
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 26px;
-      margin-top: 64px;
-      margin-bottom: 20px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #b1040e;
-      color: #111;
-      letter-spacing: 0.5px;
-    }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
 
-    h3 {
-      font-size: 20px;
-      color: #b1040e;
-      margin-top: 28px;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
+}
+a:hover { border-bottom: 1px solid var(--accent); }
 
-    p {
-      margin-bottom: 20px;
-      color: #333;
-      line-height: 1.7;
-    }
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
 
-    ul.project-list {
-      margin: 0 0 22px 20px;
-      padding: 0;
-    }
-    ul.project-list li {
-      margin-bottom: 8px;
-      line-height: 1.6;
-      list-style-type: disc;
-    }
+/* ==================== Navigation ==================== */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--accent);
+  color: #ffffff;
+  border-bottom: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  font-size: 20px;
+}
+nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+nav a.active,
+nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
 
-    .btns {
-      margin-top: 30px;
-    }
+/* ==================== Text ==================== */
+p {
+  margin: 0 0 22px;
+  text-align: justify;
+}
+h1, h2, h3 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  color: #111;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+h1 { font-size: 42px; margin-bottom: 20px; }
+h2 { font-size: 26px; margin-top: 48px; border-left: 4px solid var(--accent); padding-left: 10px; transition: color 0.3s; }
+h2:hover { color: var(--accent); }
+h3 { font-size: 20px; color: var(--muted); }
 
-    /* Mobile spacing fix */
-    @media (max-width: 800px) {
-      main.wrap { padding-bottom: 100px; }
-      h2.section-title { font-size: 24px; }
-      h3 { font-size: 18px; }
-    }
-  </style>
-</head>
+.kicker.red {
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
-<body>
+.subtitle {
+  font-size: 18px;
+  color: var(--muted);
+}
 
-<header class="site">
-  <div class="wrap nav">
-    <div class="brand">M S Hossain</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+/* ==================== Buttons ==================== */
+.btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  transition: 0.25s ease;
+}
+.btn:hover {
+  background: #7a0309;
+  transform: translateY(-2px);
+}
 
-<main class="wrap">
+/* ==================== Layout ==================== */
+.two {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.hero { padding: 70px 0; }
+.leftcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.photo.fixed {
+  width: 320px;
+  height: 360px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 90px;
+}
+.photo.fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">RESEARCH</div>
-  <h1 class="subtitle">Exploring GeoAI, Remote Sensing & Planetary Systems</h1>
+/* ==================== Lists & Sections ==================== */
+ul.project-list {
+  list-style: none;
+  padding-left: 20px;
+}
+.project-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+.project-list li::before {
+  content: "▸";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
 
-  <!-- ================= CURRENT RESEARCH ================= -->
-  <h2 class="section-title">Current Research</h2>
+section {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+}
 
-  <h3>Mars GeoAI: Automated Mound Detection & Classification</h3>
-  <p>
-    I develop <b>Faster R-CNN</b> and <b>Mask R-CNN</b> models using <b>Detectron2</b> for identifying mound-like geomorphological features 
-    across Martian craters using <b>CTX imagery</b>. This work helps quantify sedimentary and volcanic patterns, 
-    advancing planetary surface interpretation through <b>AI-based feature detection</b> and validation pipelines on 
-    <b>LONI HPC GPU clusters (A100)</b>.
-  </p>
-  <ul class="project-list">
-    <li>COCO-style dataset generation and label correction with custom Python scripts.</li>
-    <li>Training pipelines optimized for GPU memory management and batch scheduling.</li>
-    <li>Per-feature performance tracking with confusion matrices and automated label review.</li>
-  </ul>
+/* ==================== Cards ==================== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
 
-  <h3>CRISM-Driven Surface Mineral Mapping (Johns Hopkins APL Collaboration)</h3>
-  <p>
-    Integrating <b>CRISM hyperspectral data</b> from NASA’s Mars Reconnaissance Orbiter to develop 
-    <b>spectral-spatial neural networks</b> that infer mineralogical composition and hydration indices. 
-    This study combines <b>physics-based reflectance models</b> with deep learning feature extraction 
-    for semi-automated mineral mapping in Martian terrains.
-  </p>
-  <ul class="project-list">
-    <li>Pre-processing of CRISM data using ENVI & Python spectral libraries.</li>
-    <li>Feature fusion of spectral, topographic, and textural layers in CNN architectures.</li>
-    <li>Comparative validation using HiRISE and MOLA contextual data.</li>
-  </ul>
+/* ==================== Tags ==================== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.tag {
+  background: #eee;
+  color: #333;
+  padding: 0.35em 0.8em;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+.tag:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.05);
+  cursor: default;
+}
 
-  <h3>Planetary Surface Evolution Modeling</h3>
-  <p>
-    Developing a <b>multi-modal GeoAI framework</b> that integrates optical, radar, and thermal datasets 
-    to capture the geomorphic evolution of Martian and lunar terrains. 
-    This includes <b>physics-informed AI models</b> that combine morphological and environmental indicators 
-    to reconstruct surface dynamics across time.
-  </p>
+/* ==================== Footer ==================== */
+footer.site {
+  background: var(--accent);
+  color: #fff;
+  padding: 28px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+footer .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+footer .bottom div {
+  font-size: 14px;
+}
+footer .logos img {
+  height: 22px;
+  width: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+footer .logos img:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
 
-  <!-- ================= PAST RESEARCH ================= -->
-  <h2 class="section-title">Past Research</h2>
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .two { grid-template-columns: 1fr; }
+  .hero { padding: 50px 0; }
+  .wrap { padding: 0 20px; }
+  h1 { font-size: 34px; }
+  footer.site { padding: 36px 20px; }
+}
 
-  <h3>Machine Learning Approach for Land-Cover Change Detection in Bangladesh</h3>
-  <p>
-    Implemented an <b>ML-based change-detection model</b> using <b>Landsat 8 OLI and Sentinel-2 imagery</b> 
-    to evaluate urban expansion and agricultural transformation in flood-prone regions of Bangladesh. 
-    The study combined <b>random forest classification</b> with <b>spectral indices differencing</b> 
-    to identify land-use shifts between 2013 and 2023.
-  </p>
-  <ul class="project-list">
-    <li>Supervised classification and time-series analysis using Google Earth Engine.</li>
-    <li>Integration of NDVI, NDBI, and MNDWI indices for environmental impact assessment.</li>
-    <li>Accuracy validation through confusion matrices and regional field survey data.</li>
-  </ul>
+/* ==================== Remove Arrows ==================== */
+body [class*="arrow"],
+body [class*="Arrow"],
+body [class*="scroll"],
+body [class*="nav-arrow"],
+body [class*="page-navigation"],
+body [class*="left-arrow"],
+a[href^="#"]:not(.btn):not(.icon) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+}
 
-  <h3>Geospatial Modeling of Wetland Degradation in Coastal Ecosystems</h3>
-  <p>
-    Conducted a <b>remote sensing-based spatiotemporal analysis</b> of wetland loss using 
-    <b>Sentinel-1 SAR and Landsat series</b>.  
-    Designed automated thresholding algorithms and spatial overlays to detect hydroperiod variation 
-    and vegetation decline under climate stress.
-  </p>
-
-  <h3>Urban Heat and Surface Reflectivity Mapping</h3>
-  <p>
-    Analyzed <b>thermal infrared data</b> and <b>albedo retrievals</b> to examine the correlation 
-    between built-up density and surface heat intensity across Dhaka and Chattogram megacities.  
-    The project supported urban planners in identifying critical heat islands through 
-    <b>Land Surface Temperature (LST)</b> and NDVI-based indices.
-  </p>
-
-  <div class="btns">
-    <a class="btn red" href="publications.html">View Publications →</a>
-  </div>
-
-</main>
-
-<footer class="site">
-  <div class="wrap bottom">
-    <div>© <span id="y"></span> M S Hossain</div>
-    <div class="logos">
-      <img src="/ul.png" alt="UL Lafayette" />
-      <img src="/ucalgary.png" alt="University of Calgary" />
-      <img src="/nsu.png" alt="North South University" />
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
 
 
