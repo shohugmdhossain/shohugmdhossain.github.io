@@ -210,22 +210,23 @@ section {
 /* ==================== Research Section (with Animation) ==================== */
 
 /* Card default */
-.research-card {
-  background: var(--card);
-  border: 1px solid var(--line);
+.research-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   border-radius: 14px;
-  padding: 26px 28px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 12px rgba(177, 4, 14, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  transform: scale(1.02);
+  pointer-events: none;
 }
 
-/* Hover animation */
-.research-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  border-color: var(--accent);
+.research-card:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 18px rgba(177, 4, 14, 0.25);
+  transform: scale(1);
 }
 
 /* Animated glowing edge */
