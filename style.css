@@ -672,6 +672,93 @@ section.research-block:nth-of-type(2) {
     padding: 5px 9px;
   }
 }
+/* === Research Page Fine-Tuning === */
+
+/* Remove section dividers and tighten spacing */
+section.research-block {
+  border-top: none !important;
+  margin-top: 40px !important;
+  margin-bottom: 60px !important; /* reduced */
+  padding-top: 0 !important;
+}
+
+/* Adjust research cards spacing */
+.research-card {
+  margin-bottom: 28px !important; /* reduced space between cards */
+  padding: 26px 28px !important;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+/* Remove top borders and keep compact card layout */
+.research-card:first-of-type {
+  margin-top: 0 !important;
+}
+
+/* Compact section titles */
+section.research-block h2 {
+  margin-top: 0 !important;
+  margin-bottom: 22px !important;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--accent);
+  border: none;
+}
+
+/* Compact paragraph and badge spacing */
+.research-card p {
+  margin-top: 10px !important;
+  margin-bottom: 12px !important;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #222;
+}
+
+/* Tool badges refined */
+.tools {
+  margin-top: 8px !important;
+}
+
+.tool-link {
+  background: #f8f8f8;
+  color: #333;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #e6e6e6;
+  transition: all 0.2s ease;
+}
+.tool-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Meta info styling */
+.research-meta {
+  color: #777;
+  font-size: 14px;
+  margin-top: 4px;
+  font-style: italic;
+  letter-spacing: 0.2px;
+}
+.research-meta::before {
+  content: "📅 ";
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+/* Slightly reduce section spacing on mobile too */
+@media (max-width: 800px) {
+  section.research-block {
+    margin-bottom: 40px !important;
+  }
+  .research-card {
+    padding: 20px 18px !important;
+  }
+}
 
 
 
