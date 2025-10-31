@@ -170,6 +170,7 @@ h2 { font-size: 28px; margin-top: 8px; }
     height: 220px;
     margin: 0 auto;
   }
+}
 
 .socials {
   display: flex;
@@ -251,31 +252,35 @@ main.wrap {
   to { opacity: 1; transform: none; }
 }
 
-/* ==================== Footer ==================== */
+/* ==================== Footer (Unified Centered) ==================== */
 footer.site {
   background: var(--accent);
-  border-top: none;
-  padding: 24px 0;
-  color: #ffffff;
-}
-footer .bottom {
+  color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
   text-align: center;
+  height: 70px;              /* compact height */
+  margin-top: 80px;
 }
-footer .bottom div {
-  color: #ffffff;
-  font-size: 14px;
+footer.site .wrap {
+  max-width: 900px;
+  padding: 0 16px;
 }
-footer a {
-  color: #ffffff;
-  text-decoration: underline;
+footer.site p {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
-footer a:hover {
-  color: #ffd9d9;
+@media (max-width: 600px) {
+  footer.site {
+    height: auto;
+    padding: 16px 0;
+  }
+  footer.site p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
 }
 
 /* ==================== Responsive ==================== */
@@ -320,38 +325,6 @@ footer a:hover {
   font-size: 18px;
   margin-bottom: 8px;
 }
-
-/* ==================== Footer Logos ==================== */
-.footer {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #aaa;
-  padding: 12px 0;
-  border-top: 1px solid #222;
-  background: #0b0d10; /* matches your site background */
-}
-
-.footer p {
-  margin: 0;
-  font-weight: 400;
-  color: #ccc;
-}
-
-.footer .social-links {
-  margin-top: 6px;
-}
-
-.footer .social-links a {
-  color: #bbb;
-  margin: 0 6px;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-}
-
-.footer .social-links a:hover {
-  color: #00aced; /* accent blue or your preferred theme color */
-}
-
 
 /* ==================== Arrow / Scroll Element Removal ==================== */
 body [class*="arrow"],
