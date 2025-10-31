@@ -347,20 +347,24 @@ body a[href^="#"]:not(.btn) {
   }
 }
 
-/* ==================== Footer (Bottom Aligned on All Pages) ==================== */
-/* Layout foundation: body as column flex container */
+/* === Sticky-bottom footer: clean and final === */
+
+/* Let the page fill at least the viewport height */
 html, body {
-  height: 100%;
+  min-height: 100vh;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Make MAIN fill available space so footer is pushed down */
-body > main {
+/* Main grows to fill remaining space */
+body > main,
+main.wrap.hero.two {
   flex: 1 0 auto;
+  min-height: 0; /* important when using grid */
 }
 
-/* Footer appearance */
+/* Footer stays at the very bottom */
 footer.site {
   flex-shrink: 0;
   background: var(--accent, #b1040e);
@@ -373,7 +377,7 @@ footer.site {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
+  margin-top: auto; /* ensures bottom alignment */
 }
 
 footer.site .wrap {
@@ -392,6 +396,7 @@ footer.site p {
     line-height: 1.5;
   }
 }
+
 
 
 
