@@ -256,3 +256,21 @@ footer.site .wrap { max-width: 900px; padding: 0 16px; }
   .award-card, .exp-card, .research-card, .leadership-card { padding: 20px 16px; }
   footer.site { padding: 14px 0; font-size: 0.85rem; }
 }
+/* ---------- Research Page Spacing Fix ---------- */
+body.research-page .research-section {
+  margin-top: 30px;        /* reduced top space */
+  gap: 24px;               /* tighter vertical gap between cards */
+}
+
+body.research-page .research-intro {
+  margin: 20px 0 20px 0;   /* smaller gap above and below intro */
+  padding: 18px 22px;
+}
+
+body.research-page .research-block {
+  margin-bottom: 35px;     /* balanced spacing between project groups */
+}
+
+body.research-page .research-card {
+  margin-bottom: 25px;     /* adds clean separation between boxes */
+}
