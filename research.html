@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* --- Research Portfolio Modern Layout --- */
     main.research {
       max-width: var(--max);
       margin: 80px auto;
@@ -19,19 +18,19 @@
     }
 
     main.research h1 {
-      text-align: center;
-      color: var(--accent);
       font-size: 36px;
-      margin-bottom: 12px;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     main.research p.intro {
-      text-align: justify;
-      font-size: 16px;
-      color: var(--muted);
       max-width: 880px;
       margin: 0 auto 60px;
+      color: var(--muted);
+      font-size: 16px;
       line-height: 1.8;
+      text-align: justify;
     }
 
     section.research-block {
@@ -40,43 +39,40 @@
 
     section.research-block h2 {
       font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 26px;
       color: var(--accent);
+      font-size: 26px;
+      font-weight: 700;
       margin-bottom: 36px;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 4px;
     }
 
-    /* --- Project Entries --- */
-    .project {
-      position: relative;
-      border-left: 4px solid var(--accent);
-      padding-left: 24px;
-      margin-bottom: 50px;
+    .research-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--accent);
     }
 
-    .project h3 {
-      margin: 0;
+    .research-card h3 {
       font-size: 20px;
       color: var(--accent);
-      font-weight: 600;
+      margin: 0;
     }
 
-    .project small {
-      display: block;
+    .research-meta {
       color: var(--muted);
       font-size: 14px;
       margin-top: 4px;
     }
 
-    .project p {
-      margin-top: 12px;
-      margin-bottom: 14px;
+    .research-card p {
+      font-size: 15.5px;
       color: var(--text);
       line-height: 1.7;
-      font-size: 15.5px;
       text-align: justify;
+      margin: 14px 0;
     }
 
     .tools {
@@ -98,10 +94,8 @@
         margin: 60px auto;
         padding: 0 20px;
       }
-      .project {
-        border-left-width: 3px;
-        padding-left: 16px;
-        margin-bottom: 40px;
+      .research-card {
+        padding: 22px 20px;
       }
     }
   </style>
@@ -126,65 +120,64 @@
     </div>
   </header>
 
-  <!-- ===== Research Content ===== -->
+  <!-- ===== Main Research Section ===== -->
   <main class="research">
     <h1>Research Overview</h1>
     <p class="intro">
-      My research focuses on <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and 
-      <b>planetary surface analysis</b>. I develop interpretable AI systems to process multisensor 
-      satellite imagery for understanding geomorphic, climatic, and urban processes across Earth and Mars. 
-      My work integrates physics-informed modeling, machine learning, and high-performance computing 
-      to enable more reliable geospatial interpretations.
+      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, 
+      and <b>planetary science</b> to analyze multisensor Earth and planetary data. 
+      I focus on interpretable machine learning models, large-scale data processing, 
+      and physics-informed frameworks to enhance environmental and planetary understanding.
     </p>
 
-    <!-- Current Projects -->
+    <!-- Current & Ongoing Projects -->
     <section class="research-block">
       <h2>Current & Ongoing Projects</h2>
 
-      <div class="project">
+      <div class="research-card">
         <h3>Mars Mound Detection Using Deep Learning</h3>
-        <small>Planetary Geomorphology · 2024–Present</small>
+        <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
         <p>
-          Detecting and classifying mound-like structures on Mars using <b>Faster R-CNN</b> and 
-          <b>Mask R-CNN</b> architectures trained on <b>CTX imagery</b>. Leveraging 
-          <b>LONI A100 GPU clusters</b> for large-scale morphological mapping and validation.
+          Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic 
+          features in <b>CTX imagery</b> from Mars. Leveraging <b>LONI A100 GPU clusters</b> for model training 
+          and large-scale geological surface mapping with improved accuracy.
         </p>
         <div class="tools">
           <span>Faster R-CNN</span>
           <span>Detectron2</span>
           <span>COCO JSON</span>
-          <span>GPU (A100)</span>
+          <span>LONI GPU</span>
         </div>
       </div>
 
-      <div class="project">
+      <div class="research-card">
         <h3>CRISM Spectral Mineral Mapping</h3>
-        <small>Planetary Spectroscopy · 2024–Present</small>
+        <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
         <p>
-          Mapping surface mineral diversity on Mars through <b>CRISM hyperspectral data</b>. 
-          Implementing <b>autoencoder-based spectral unmixing</b> to identify hydrated mineral signatures 
-          and reconstruct past aqueous processes.
+          Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface 
+          mineral diversity and identify hydrated minerals. The study aims to infer past aqueous environments 
+          and mineralogical transitions in Martian terrains.
         </p>
         <div class="tools">
           <span>CRISM</span>
           <span>Autoencoders</span>
-          <span>Spectral Python (SPy)</span>
-          <span>Deep Unmixing</span>
+          <span>Spectral Python</span>
+          <span>Deep Learning</span>
         </div>
       </div>
 
-      <div class="project">
+      <div class="research-card">
         <h3>Urban Accessibility Mapping with AI</h3>
-        <small>Computer Vision · 2024</small>
+        <div class="research-meta">Computer Vision · 2024</div>
         <p>
-          Developing a <b>vision-based GeoAI pipeline</b> to detect sidewalk elements — curb ramps, 
-          crosswalks, and traffic controls — for urban accessibility assessment. Introduced 
-          <b>LLM-assisted label auditing</b> to refine ground truth data and enhance detection reliability.
+          Constructing a vision-based workflow to identify sidewalk elements—such as curb ramps and crosswalks— 
+          from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>. Enhanced validation accuracy through 
+          <b>LLM-assisted label review</b> and systematic dataset correction.
         </p>
         <div class="tools">
           <span>YOLOv8</span>
-          <span>Faster R-CNN</span>
           <span>Python</span>
+          <span>Faster R-CNN</span>
           <span>LLM QA</span>
         </div>
       </div>
@@ -192,15 +185,15 @@
 
     <!-- Past Projects -->
     <section class="research-block">
-      <h2>Past Research Projects</h2>
+      <h2>Past Projects</h2>
 
-      <div class="project">
+      <div class="research-card">
         <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
-        <small>Remote Sensing · 2023</small>
+        <div class="research-meta">Remote Sensing · 2023</div>
         <p>
-          Combined <b>Sentinel-1 SAR</b> and <b>MODIS NDVI time-series</b> to study water level 
-          variation and vegetation resilience in coastal wetland systems. Highlighted radar-optical 
-          synergy for hydrological monitoring during monsoon cycles.
+          Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level 
+          fluctuations and vegetation stress in coastal wetlands. Demonstrated radar-optical synergy 
+          for dynamic hydrologic mapping in monsoon-influenced ecosystems.
         </p>
         <div class="tools">
           <span>Sentinel-1</span>
@@ -210,29 +203,29 @@
         </div>
       </div>
 
-      <div class="project">
+      <div class="research-card">
         <h3>Land-Cover Change Detection in Bangladesh</h3>
-        <small>Geospatial ML · 2022</small>
+        <div class="research-meta">Geospatial ML · 2022</div>
         <p>
-          Designed an ensemble-based framework integrating <b>Random Forest</b> and <b>XGBoost</b> 
-          to quantify urban expansion and vegetation loss using <b>Landsat 8</b> and <b>Sentinel-2</b> data.
-          Provided insights into spatial transformation and ecosystem impact.
+          Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions 
+          using <b>Landsat 8</b> and <b>Sentinel-2</b> data. Produced spatial insights on urban growth and 
+          vegetation loss over a decade.
         </p>
         <div class="tools">
           <span>Landsat 8</span>
           <span>Sentinel-2</span>
-          <span>Random Forest</span>
           <span>XGBoost</span>
+          <span>Random Forest</span>
         </div>
       </div>
 
-      <div class="project">
+      <div class="research-card">
         <h3>Urban Heat Island Modeling</h3>
-        <small>Urban Climate · 2021</small>
+        <div class="research-meta">Urban Climate · 2021</div>
         <p>
-          Examined surface temperature anomalies and emissivity corrections using 
-          <b>Landsat TIR</b> and <b>MODIS</b> datasets to enhance urban heat island analysis 
-          across major South Asian cities.
+          Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b> 
+          and <b>MODIS emissivity</b> data. Developed improved models for urban heat island analysis 
+          and emissivity-based correction.
         </p>
         <div class="tools">
           <span>Landsat TIR</span>
@@ -256,6 +249,7 @@
   </script>
 </body>
 </html>
+
 
 
 
