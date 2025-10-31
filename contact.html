@@ -213,6 +213,14 @@
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+<script>
+  const toggle = document.createElement("div");
+  toggle.className = "menu-toggle";
+  toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  document.querySelector("header.site .nav").prepend(toggle);
+  const menu = document.querySelector("nav ul");
+  toggle.addEventListener("click", () => menu.classList.toggle("show"));
+</script>
 
 </body>
 </html>
