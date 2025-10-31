@@ -8,173 +8,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    :root {
-      --accent: #b1040e;
-      --bg: #ffffff;
-      --text: #222;
-      --muted: #555;
-      --line: #ddd;
-      --max: 900px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Inter", system-ui, sans-serif;
-      line-height: 1.75;
-    }
-
-    /* ===== NAVIGATION ===== */
-    header.site {
-      background: var(--accent);
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 20px;
-    }
-    .brand { font-weight: 700; font-size: 20px; letter-spacing: 0.3px; }
-    nav ul {
-      display: flex; gap: 16px; list-style: none; margin: 0; padding: 0;
-    }
-    nav a {
-      color: #fff; text-decoration: none; padding: 6px 10px; border-radius: 6px;
-      transition: background 0.2s ease;
-    }
-    nav a:hover, nav a.active { background: rgba(255,255,255,0.2); }
-
-    /* ===== MAIN CONTENT ===== */
-    main {
-      max-width: var(--max);
-      margin: 60px auto 80px;
-      padding: 0 24px;
-      animation: fadeIn 0.8s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: none; }
-    }
-
-    h1, h2, h3 {
-      font-family: "Libre Baskerville", Georgia, serif;
-      color: #111;
-      margin-bottom: 10px;
-    }
-    h1 { font-size: 38px; margin-top: 0; }
-    h2 { color: var(--accent); margin-top: 40px; font-size: 26px; }
-    h3 { color: #222; font-size: 20px; margin-top: 28px; }
-
-    p { text-align: justify; margin-bottom: 22px; }
-
-    .section {
-      border-top: 1px solid var(--line);
-      padding-top: 40px;
-      margin-top: 40px;
-    }
-
-    .project {
-      margin-bottom: 36px;
-    }
-    .project b { color: var(--accent); }
-    .project a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .project a:hover {
-      border-bottom: 1px solid var(--accent);
-      color: #7a0309;
-    }
-
-    /* ===== TECHNIQUES SECTION ===== */
-    .techniques {
-      background: #fff6f6;
-      border: 1px solid #ebdede;
-      border-radius: 12px;
-      padding: 28px 22px;
-      margin-top: 60px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .techniques h2 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-    .tools-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .tool {
-      background: #f0f0f0;
-      color: #222;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 15px;
-      transition: all 0.25s ease;
-    }
-    .tool:hover {
-      background: var(--accent);
-      color: #fff;
-      transform: scale(1.05);
-    }
-
-    /* ===== FOOTER ===== */
-    footer.site {
-      background: var(--accent);
-      color: #fff;
-      padding: 50px 0 60px;
-      text-align: center;
-    }
-    footer .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    footer .logos {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-    footer .logos img {
-      height: 65px;
-      width: auto;
-      opacity: 0.95;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    footer .logos img:hover {
-      transform: scale(1.08);
-      opacity: 1;
-    }
-
-    @media (max-width: 800px) {
-      nav ul { flex-wrap: wrap; justify-content: center; }
-      h1 { font-size: 30px; }
-      main { padding: 0 16px; margin-bottom: 100px; }
-      footer .logos img { height: 50px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- ===== NAVIGATION ===== -->
+  <!-- ==================== Header / Navigation ==================== -->
   <header class="site">
-    <div class="nav">
+    <div class="wrap nav">
       <div class="brand">M S Hossain</div>
       <nav>
         <ul>
@@ -182,7 +22,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="research.html" class="active">Research</a></li>
           <li><a href="experience.html">Experience</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="awards.html">Awards</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -191,107 +30,147 @@
     </div>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
+  <!-- ==================== Hero Banner ==================== -->
+  <section class="research-hero">
+    <div class="hero-overlay">
+      <h1>Research in GeoAI & Planetary Science</h1>
+      <p>Integrating artificial intelligence, remote sensing, and planetary data to explore Earth and beyond.</p>
+    </div>
+  </section>
+
+  <!-- ==================== Research Content ==================== -->
+  <main class="research">
     <h1>Research Overview</h1>
-    <p>
-      My research lies at the intersection of <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b>.
-      I develop interpretable deep-learning models to analyze multi-sensor satellite imagery for understanding geomorphic and environmental processes.
-      By integrating physical insights with AI-based feature extraction, my work bridges data-driven and physics-based approaches to advance
-      planetary surface analysis and Earth observation.
+    <p class="subtitle">
+      My research focuses on combining data-driven deep learning and physically informed models
+      to interpret multi-sensor satellite imagery for both Earth and planetary environments.
     </p>
 
-    <!-- ===== CURRENT PROJECTS ===== -->
-    <div class="section">
-      <h2>Current Research Projects</h2>
+    <!-- ===== Current Research ===== -->
+    <div class="section-label">Current Research</div>
+    <div class="research-grid">
 
-      <div class="project">
-        <h3>Mars Mound Detection Using Faster R-CNN</h3>
+      <div class="research-card">
+        <h2>Mars Mound Detection Using Deep Learning</h2>
+        <div class="research-meta">
+          <i class="fa-solid fa-rocket"></i> Planetary Geomorphology · 2025
+        </div>
         <p>
-          This project applies <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect and classify mound-like structures on the Martian surface using
-          <b>CTX (Context Camera)</b> imagery. The study leverages <b>LONI A100 GPU clusters</b> for high-resolution training and aims to improve morphological mapping accuracy across Martian craters.
+          This project applies <b>Faster R-CNN</b> and <b>Mask R-CNN</b> to detect mound-like
+          structures across Martian <b>CTX</b> imagery. Leveraging <b>LONI A100 GPU clusters</b>,
+          the study refines detection pipelines and accuracy assessments to automate
+          crater-related geomorphological analysis.
         </p>
-        <a href="#">Read more →</a>
+        <p>
+          Results aim to improve automated planetary surface mapping and contribute to understanding
+          ancient aqueous and volcanic processes that shaped Martian landscapes.
+        </p>
+        <div class="tools">
+          <span class="tool-tag">PyTorch</span>
+          <span class="tool-tag">Detectron2</span>
+          <span class="tool-tag">GPU Computing</span>
+          <span class="tool-tag">Planetary Imagery</span>
+        </div>
       </div>
 
-      <div class="project">
-        <h3>CRISM-Based Mineralogy Mapping (JHU/APL Collaboration)</h3>
+      <div class="research-card">
+        <h2>CRISM Spectral Mineral Mapping</h2>
+        <div class="research-meta">
+          <i class="fa-solid fa-microscope"></i> Spectroscopy · JHU/APL Collaboration
+        </div>
         <p>
-          Conducted with scientists at the <b>Johns Hopkins Applied Physics Laboratory</b>, this work utilizes <b>CRISM spectral data</b> to map surface mineralogy
-          and compositional diversity across Mars. Deep feature learning and spectral unmixing methods are combined to interpret geochemical signatures and
-          infer past aqueous environments.
+          This project uses <b>CRISM hyperspectral data</b> to map surface mineralogy across Mars.
+          Combining <b>deep spectral unmixing</b> and <b>autoencoder networks</b>, the model identifies
+          compositional transitions that signal aqueous alteration zones.
         </p>
-        <a href="#">Read more →</a>
+        <p>
+          The findings bridge geomorphological observations and geochemical processes, enhancing
+          planetary mineral exploration workflows.
+        </p>
+        <div class="tools">
+          <span class="tool-tag">CRISM</span>
+          <span class="tool-tag">Hyperspectral Analysis</span>
+          <span class="tool-tag">Spectral Unmixing</span>
+          <span class="tool-tag">Python + SPy</span>
+        </div>
       </div>
+
     </div>
 
-    <!-- ===== PAST PROJECTS ===== -->
-    <div class="section">
-      <h2>Past Research Projects</h2>
+    <!-- ===== Past Research ===== -->
+    <div class="section-label">Past Research</div>
+    <div class="research-grid">
 
-      <div class="project">
-        <h3>Machine Learning for Land-Cover Change Detection in Bangladesh</h3>
+      <div class="research-card">
+        <h2>Land-Cover Change Detection Using Machine Learning</h2>
+        <div class="research-meta">
+          <i class="fa-solid fa-globe"></i> Remote Sensing · Bangladesh · 2022–2023
+        </div>
         <p>
-          Designed a change detection pipeline integrating <b>Landsat 8</b> and <b>Sentinel-2</b> imagery to monitor land-cover dynamics in Bangladesh.
-          Applied <b>Random Forest</b> and <b>XGBoost</b> classifiers with NDVI-based spectral differencing to evaluate urban expansion and vegetation loss.
+          Designed a supervised classification system using <b>Landsat 8</b> and <b>Sentinel-2</b>
+          imagery to detect urban expansion and vegetation loss. The workflow integrates
+          <b>Random Forest</b> and <b>XGBoost</b> models, achieving high accuracy for spatiotemporal change mapping.
         </p>
-        <a href="#">Read more →</a>
+        <div class="tools">
+          <span class="tool-tag">Landsat 8</span>
+          <span class="tool-tag">Sentinel-2</span>
+          <span class="tool-tag">XGBoost</span>
+          <span class="tool-tag">Remote Sensing</span>
+        </div>
       </div>
 
-      <div class="project">
-        <h3>Wetland Hydrodynamics and Vegetation Mapping</h3>
+      <div class="research-card">
+        <h2>Wetland Hydrodynamics and Vegetation Monitoring</h2>
+        <div class="research-meta">
+          <i class="fa-solid fa-water"></i> Ecosystem Dynamics · 2019–2021
+        </div>
         <p>
-          Used <b>Sentinel-1 SAR</b> and <b>MODIS optical time series</b> to track wetland water dynamics, vegetation stress, and phenology.
-          The study demonstrated the synergy of radar and optical sensors in monitoring coastal ecosystem resilience.
+          Analyzed <b>Sentinel-1 SAR</b> and <b>MODIS optical time series</b> to model
+          hydrodynamic behavior and phenological cycles in wetlands.
+          This study demonstrated how radar–optical synergy captures vegetation stress
+          and seasonal flooding with high temporal fidelity.
         </p>
-        <a href="#">Read more →</a>
+        <div class="tools">
+          <span class="tool-tag">Sentinel-1</span>
+          <span class="tool-tag">MODIS</span>
+          <span class="tool-tag">Time Series Analysis</span>
+          <span class="tool-tag">Wetland Ecology</span>
+        </div>
       </div>
 
-      <div class="project">
-        <h3>Urban Reflectance and Thermal Variability Modeling</h3>
+      <div class="research-card">
+        <h2>Urban Reflectance and Thermal Variability Modeling</h2>
+        <div class="research-meta">
+          <i class="fa-solid fa-city"></i> Urban Climate · 2020
+        </div>
         <p>
-          Investigated surface temperature patterns in urban microclimates using <b>Landsat TIR</b> and <b>MODIS emissivity bands</b>.
-          Findings supported improvements in urban heat island modeling and land-surface emissivity correction techniques.
+          Investigated surface emissivity and thermal heterogeneity in dense urban areas
+          using <b>Landsat TIR</b> and <b>MODIS LST</b> products.
+          The study provided insights into microclimate variability and
+          improved land-surface temperature correction methods for urban heat analysis.
         </p>
-        <a href="#">Read more →</a>
+        <div class="tools">
+          <span class="tool-tag">Thermal Infrared</span>
+          <span class="tool-tag">MODIS LST</span>
+          <span class="tool-tag">Urban Heat Modeling</span>
+        </div>
       </div>
-    </div>
 
-    <!-- ===== TECHNIQUES & TOOLS ===== -->
-    <div class="techniques">
-      <h2>Techniques & Tools</h2>
-      <p>
-        My research integrates computational, analytical, and geospatial workflows across multiple platforms.
-        I focus on scalable AI pipelines for planetary and Earth observation data using both supervised and self-supervised architectures.
-      </p>
-      <div class="tools-grid">
-        <div class="tool">Python</div>
-        <div class="tool">PyTorch</div>
-        <div class="tool">TensorFlow</div>
-        <div class="tool">Detectron2</div>
-        <div class="tool">GDAL / Rasterio</div>
-        <div class="tool">ArcGIS Pro</div>
-        <div class="tool">QGIS</div>
-        <div class="tool">HPC (LONI A100)</div>
-        <div class="tool">OpenCV</div>
-        <div class="tool">Spectral Python (SPy)</div>
-        <div class="tool">Scikit-learn</div>
-        <div class="tool">COCO Annotation</div>
-      </div>
     </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ==================== Footer ==================== -->
   <footer class="site">
     <div class="wrap">
       <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
     </div>
   </footer>
-  
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
