@@ -11,209 +11,142 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ==================== Research Layout ==================== */
-    main.research {
-      max-width: var(--max);
-      margin: 80px auto;
-      padding: 0 28px;
+    /* ---------- Research Page Unified Design ---------- */
+    .research-section {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
-    main.research h1 {
-      font-size: 36px;
-      color: var(--accent);
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    main.research p.intro {
-      max-width: 880px;
-      margin: 0 auto 60px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
+    .research-intro {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
       text-align: justify;
-      background: rgba(255,255,255,0.85);
-      padding: 18px 24px;
-      border-radius: 10px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      max-width: 850px;
+      margin-bottom: 40px;
     }
 
-    section.research-block {
-      margin-bottom: 80px;
-    }
-
-    section.research-block h2 {
-      font-family: "Libre Baskerville", Georgia, serif;
-      color: var(--accent);
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 36px;
-      text-align: left;
-    }
-
-    /* ==================== Softer Research Card Hover Effect ==================== */
     .research-card {
-      position: relative;
-      background: rgba(255,255,255,0.98);
+      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 28px 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      overflow: hidden;
-    }
-
-    /* Gentle light glow border */
-    .research-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
-      border: 2px solid transparent;
-      background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(177,4,14,0.18), rgba(255,255,255,0.4)) border-box;
-      opacity: 0;
-      transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-      transform: scale(1.03);
-      z-index: 0;
-    }
-
-    .research-card:hover::after {
-      opacity: 1;
-      transform: scale(1);
-      box-shadow: 0 0 20px rgba(177, 4, 14, 0.12);
+      border-radius: 16px;
+      padding: 26px 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .research-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    /* Keep readable text and smooth color */
-    .research-card h3,
-    .research-card p,
-    .research-meta {
-      position: relative;
-      z-index: 2;
+      box-shadow: 0 0 10px rgba(179,27,27,0.4);
     }
 
     .research-card h3 {
-      font-size: 20px;
       color: var(--accent);
+      font-size: 20px;
       margin: 0;
+      font-weight: 700;
     }
 
     .research-meta {
       color: var(--muted);
       font-size: 14px;
-      margin-top: 4px;
+      font-style: italic;
+      margin-bottom: 8px;
     }
 
     .research-card p {
-      font-size: 15.5px;
       color: var(--text);
-      line-height: 1.75;
+      font-size: 15.5px;
+      line-height: 1.7;
       text-align: justify;
-      margin: 14px 0;
+      margin: 0 0 10px;
     }
 
-    /* ==================== Tool Badges ==================== */
+    /* --- Tool Tags --- */
     .tools {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      position: relative;
-      z-index: 2;
+      margin-top: 10px;
     }
 
     .tool-link {
-      display: inline-block;
       background: #f8f8f8;
       color: #333;
-      font-size: 13px;
-      padding: 5px 11px;
+      padding: 0.35em 0.8em;
       border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid #e5e5e5;
       text-decoration: none;
-      border: 1px solid #e6e6e6;
-      transition: all 0.25s ease;
+      transition: all 0.3s ease;
     }
 
     .tool-link:hover {
       background: var(--accent);
       color: #fff;
       border-color: var(--accent);
-      transform: scale(1.08);
-      box-shadow: 0 0 10px rgba(177, 4, 14, 0.25);
+      transform: scale(1.05);
     }
 
-    /* ==================== Responsive Fix ==================== */
+    .research-block {
+      margin-bottom: 60px;
+    }
+
+    .research-block h2 {
+      color: var(--accent);
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-family: "Libre Baskerville", Georgia, serif;
+    }
+
+    /* --- Responsive --- */
     @media (max-width: 900px) {
-      main.research {
-        margin: 60px auto;
-        padding: 0 18px;
-      }
-      .research-card {
-        padding: 22px 18px;
-        margin-bottom: 24px;
-      }
-      section.research-block h2 {
-        font-size: 22px;
-        margin-bottom: 20px;
-      }
-      .tool-link {
-        font-size: 12.5px;
-        padding: 5px 9px;
-      }
+      .research-card { padding: 24px 22px; }
+      .research-block h2 { font-size: 20px; }
     }
 
     @media (max-width: 600px) {
-      main.research p.intro {
-        padding: 14px 16px;
-        margin: 20px 8px 40px;
-        font-size: 15px;
-      }
-      .research-card h3 {
-        font-size: 18px;
-      }
-      .research-card p {
-        font-size: 15px;
-      }
+      .research-section { margin-top: 30px; gap: 26px; }
+      .research-card { padding: 20px 16px; }
+      .research-card h3 { font-size: 18px; }
     }
   </style>
 </head>
 
-<body class="research-page">
-  <!-- ===== Header ===== -->
-  <header class="site">
-    <div class="wrap nav">
-      <div class="brand">M S Hossain</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="research.html" class="active">Research</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="awards.html">Awards</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">M S Hossain</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- ===== Main Research Section ===== -->
-  <main class="research">
-    <h1>Research Overview</h1>
-    <p class="intro">
-      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, 
-      and <b>planetary science</b> to analyze multisensor Earth and planetary data. 
-      I focus on interpretable machine learning models, large-scale data processing, 
+<main class="wrap">
+  <section class="research-section">
+    <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Research Overview</h1>
+    <p class="research-intro">
+      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b> 
+      to analyze multisensor Earth and planetary data. I focus on interpretable machine learning models, large-scale data processing, 
       and physics-informed frameworks to enhance environmental and planetary understanding.
     </p>
 
-    <!-- Current & Ongoing Projects -->
-    <section class="research-block">
+    <!-- Current Projects -->
+    <div class="research-block">
       <h2>Current & Ongoing Projects</h2>
 
       <div class="research-card">
@@ -221,13 +154,12 @@
         <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
         <p>
           Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic 
-          features in <b>CTX imagery</b> from Mars. Leveraging <b>LONI A100 GPU clusters</b> for model training 
-          and large-scale geological surface mapping with improved accuracy.
+          features in <b>CTX imagery</b> from Mars. Leveraging <b>LONI A100 GPU clusters</b> for large-scale geological surface mapping.
         </p>
         <div class="tools">
-          <a class="tool-link" href="https://pytorch.org">Faster R-CNN</a>
-          <a class="tool-link" href="https://github.com/facebookresearch/detectron2">Detectron2</a>
-          <a class="tool-link" href="https://cocodataset.org">COCO JSON</a>
+          <a class="tool-link" href="#">Faster R-CNN</a>
+          <a class="tool-link" href="#">Detectron2</a>
+          <a class="tool-link" href="#">COCO JSON</a>
           <a class="tool-link" href="#">LONI GPU</a>
         </div>
       </div>
@@ -237,13 +169,12 @@
         <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
         <p>
           Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface 
-          mineral diversity and identify hydrated minerals. The study aims to infer past aqueous environments 
-          and mineralogical transitions in Martian terrains.
+          mineral diversity and identify hydrated minerals. The study aims to infer past aqueous environments in Martian terrains.
         </p>
         <div class="tools">
           <a class="tool-link" href="#">CRISM</a>
           <a class="tool-link" href="#">Autoencoders</a>
-          <a class="tool-link" href="https://github.com/spectralpython/SpectralPython">Spectral Python</a>
+          <a class="tool-link" href="#">Spectral Python</a>
           <a class="tool-link" href="#">Deep Learning</a>
         </div>
       </div>
@@ -263,10 +194,10 @@
           <a class="tool-link" href="#">LLM QA</a>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Past Projects -->
-    <section class="research-block">
+    <div class="research-block">
       <h2>Past Projects</h2>
 
       <div class="research-card">
@@ -316,19 +247,19 @@
           <a class="tool-link" href="#">Python</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- ===== Footer ===== -->
-  <footer class="site">
-    <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<footer class="site">
+  <div class="wrap">
+    <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
 
