@@ -9,10 +9,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---- Table Refinement ---- */
+    .research-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .research-table th {
+      background: #fafafa;
+      color: #111;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 600;
+      border-bottom: 2px solid var(--line);
+    }
+    .research-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e5e5e5;
+      vertical-align: top;
+      text-align: left;  /* fixed justification issue */
+    }
+    .research-table td p { margin: 0 0 8px; }
+
+    /* ---- Section Headers ---- */
+    .section-header {
+      color: var(--accent);
+      font-family: "Libre Baskerville", Georgia, serif;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px;
+      margin-top: 60px;
+      margin-bottom: 12px;
+      font-size: 26px;
+    }
+
+    /* ---- Row hover / readability ---- */
+    .research-table tr:hover {
+      background-color: #fff8f8;
+      transition: background 0.2s ease;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 800px) {
+      .research-table thead { display: none; }
+      .research-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+      }
+      .research-table td {
+        display: block;
+        padding: 8px 0;
+      }
+      .research-table td::before {
+        font-weight: 600;
+        display: block;
+        color: var(--accent);
+      }
+      .research-table td:nth-child(1)::before { content: "Project"; }
+      .research-table td:nth-child(2)::before { content: "Description"; }
+      .research-table td:nth-child(3)::before { content: "Methods / Tools"; }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- ========== Header ========== -->
+  <!-- ===== Header ===== -->
   <header class="site">
     <div class="wrap nav">
       <div class="brand">M S Hossain</div>
@@ -30,99 +97,99 @@
     </div>
   </header>
 
-  <!-- ========== Main Research Section ========== -->
+  <!-- ===== Main ===== -->
   <main class="wrap" style="margin-top:60px; margin-bottom:80px;">
-    <h1 style="color:var(--accent); text-align:center;">Research Overview</h1>
-    <p style="text-align:justify; max-width:900px; margin:20px auto;">
-      My research integrates <b>remote sensing</b>, <b>machine learning</b>, and <b>planetary science</b> to investigate
-      geomorphological and environmental processes on Earth and Mars.  
-      I emphasize interpretable AI models, physics-based reasoning, and high-performance computing for large-scale geospatial analysis.
+    <h1 style="text-align:center; color:var(--accent);">Research Overview</h1>
+    <p style="max-width:900px; margin:0 auto 40px; text-align:justify;">
+      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b>.
+      I build interpretable deep-learning models and scalable processing workflows to study geomorphology, mineralogy, and urban systems.
+      My work emphasizes reproducible AI for both <b>Earth observation</b> and <b>planetary exploration</b>.
     </p>
 
-    <!-- ===== Current Projects ===== -->
-    <h2 style="border-bottom:2px solid var(--accent); padding-bottom:6px; margin-top:60px;">Current Projects (2024–2025)</h2>
-
-    <table style="width:100%; border-collapse:collapse; margin-top:18px;">
+    <!-- === Current Projects === -->
+    <h2 class="section-header">Current Projects (2024–2025)</h2>
+    <table class="research-table">
       <thead>
-        <tr style="background:#f8f8f8;">
-          <th style="width:25%; text-align:left; padding:10px;">Project</th>
-          <th style="width:55%; text-align:left; padding:10px;">Description</th>
-          <th style="width:20%; text-align:left; padding:10px;">Methods / Tools</th>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th>Methods / Tools</th>
         </tr>
       </thead>
       <tbody>
-        <tr style="border-top:1px solid var(--line);">
-          <td style="padding:10px;"><b>Mars Mound Detection</b></td>
-          <td style="padding:10px;">
-            Automated identification of mound-like structures on Mars using <b>Faster R-CNN</b> and <b>Mask R-CNN</b> models trained on
-            <b>CTX imagery</b> via LONI A100 GPUs, improving crater morphology mapping.
+        <tr>
+          <td><b>Mars Mound Detection Using Deep Learning</b><br><small>Planetary Geomorphology | 2024–Present</small></td>
+          <td>
+            Developing <b>Faster R-CNN</b> and <b>Mask R-CNN</b> models for detecting mound-like features on <b>CTX imagery</b>.
+            Using <b>LONI A100 GPU clusters</b> for training, the project enhances morphological mapping of Martian craters.
+            Outcomes include a high-accuracy object-detection model and a curated geospatial dataset of over 5,000 labeled features.
           </td>
-          <td style="padding:10px;">Detectron2 · PyTorch · Planetary AI</td>
+          <td>Detectron2 · PyTorch · COCO JSON · GPU Training</td>
         </tr>
 
-        <tr style="border-top:1px solid var(--line);">
-          <td style="padding:10px;"><b>CRISM Spectral Mapping</b></td>
-          <td style="padding:10px;">
-            Deep spectral-unmixing models for <b>CRISM hyperspectral data</b> in collaboration with <b>JHU/APL</b>,
-            revealing aqueous alteration minerals across Martian terrains.
+        <tr>
+          <td><b>CRISM Spectral Mineral Mapping</b><br><small>JHU/APL Collaboration | 2024–Present</small></td>
+          <td>
+            Applying <b>autoencoder-based deep unmixing</b> for <b>CRISM hyperspectral data</b> to identify alteration minerals on Mars.
+            The work supports spectral characterization of aqueous environments and improves material classification using AI-driven feature extraction.
           </td>
-          <td style="padding:10px;">Autoencoder · Spectral Python · CRISM</td>
+          <td>CRISM · Autoencoders · Spectral Python (SPy) · Unmixing</td>
         </tr>
 
-        <tr style="border-top:1px solid var(--line);">
-          <td style="padding:10px;"><b>Urban Accessibility AI</b></td>
-          <td style="padding:10px;">
-            Using <b>YOLOv8</b> and <b>Faster R-CNN</b> for automatic detection of sidewalk elements (curb ramps, crosswalks, traffic controls)
-            to support accessibility and urban analytics.
+        <tr>
+          <td><b>Urban Accessibility AI (Sidewalk Project)</b><br><small>Remote Sensing & Computer Vision | 2024</small></td>
+          <td>
+            Constructing computer-vision pipelines for detecting sidewalk elements — curb ramps, crosswalks, and traffic-control features —
+            using <b>YOLOv8</b> and <b>Faster R-CNN</b>. Includes <b>automated label verification</b> through LLM-assisted review,
+            boosting validation accuracy by 10–15%.
           </td>
-          <td style="padding:10px;">YOLOv8 · Computer Vision · LLM Validation</td>
+          <td>YOLOv8 · Faster R-CNN · LLM Vision QA · Pandas</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- ===== Past Projects ===== -->
-    <h2 style="border-bottom:2px solid var(--accent); padding-bottom:6px; margin-top:80px;">Past Projects (Before 2024)</h2>
-
-    <table style="width:100%; border-collapse:collapse; margin-top:18px;">
+    <!-- === Past Projects === -->
+    <h2 class="section-header">Past Projects (Before 2024)</h2>
+    <table class="research-table">
       <thead>
-        <tr style="background:#f8f8f8;">
-          <th style="width:25%; text-align:left; padding:10px;">Project</th>
-          <th style="width:55%; text-align:left; padding:10px;">Description</th>
-          <th style="width:20%; text-align:left; padding:10px;">Methods / Tools</th>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th>Methods / Tools</th>
         </tr>
       </thead>
       <tbody>
-        <tr style="border-top:1px solid var(--line);">
-          <td style="padding:10px;"><b>Wetland Hydrodynamics</b></td>
-          <td style="padding:10px;">
-            Modeled water-level dynamics and vegetation stress using <b>Sentinel-1 SAR</b> and <b>MODIS</b> optical series,
-            demonstrating radar–optical synergy for coastal wetland monitoring.
+        <tr>
+          <td><b>Wetland Hydrodynamics & Vegetation Monitoring</b><br><small>Remote Sensing | 2023</small></td>
+          <td>
+            Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series imagery to monitor seasonal inundation
+            and vegetation dynamics across coastal wetlands. Demonstrated radar–optical synergy for tracking flood events.
           </td>
-          <td style="padding:10px;">Sentinel-1 · MODIS · Google Earth Engine</td>
+          <td>Sentinel-1 · MODIS · Google Earth Engine · Python</td>
         </tr>
 
-        <tr style="border-top:1px solid var(--line);">
-          <td style="padding:10px;"><b>Land-Cover Change Detection</b></td>
-          <td style="padding:10px;">
-            Mapped urban expansion and vegetation loss in Bangladesh using <b>Landsat 8</b> + <b>Sentinel-2</b> imagery with
-            <b>XGBoost</b> and <b>Random Forest</b> classifiers.
+        <tr>
+          <td><b>Land-Cover Change Detection in Bangladesh</b><br><small>Geospatial ML | 2022</small></td>
+          <td>
+            Designed a <b>Random Forest</b> and <b>XGBoost</b>-based system for monitoring land-cover change using
+            <b>Landsat 8</b> and <b>Sentinel-2</b> imagery. Evaluated vegetation loss and urban sprawl between 2013–2022.
           </td>
-          <td style="padding:10px;">Landsat 8 · Sentinel-2 · XGBoost</td>
+          <td>Landsat 8 · Sentinel-2 · XGBoost · Random Forest</td>
         </tr>
 
-        <tr style="border-top:1px solid var(--line);">
-          <td style="padding:10px;"><b>Urban Heat Island Modeling</b></td>
-          <td style="padding:10px;">
-            Analyzed surface-temperature variability using <b>Landsat TIR</b> and <b>MODIS emissivity</b>
-            to quantify correlations between land-cover patterns and heat anomalies.
+        <tr>
+          <td><b>Urban Heat Island Modeling</b><br><small>Climate & Urban Systems | 2021</small></td>
+          <td>
+            Investigated surface temperature variability using <b>Landsat TIR</b> and <b>MODIS emissivity</b> datasets.
+            Quantified spatial correlations between land-cover type and heat intensity in South Asian megacities.
           </td>
-          <td style="padding:10px;">MODIS · Landsat TIR · Python</td>
+          <td>Landsat TIR · MODIS · ArcGIS Pro · Python</td>
         </tr>
       </tbody>
     </table>
   </main>
 
-  <!-- ========== Footer ========== -->
+  <!-- ===== Footer ===== -->
   <footer class="site">
     <div class="wrap">
       <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
@@ -130,10 +197,11 @@
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
