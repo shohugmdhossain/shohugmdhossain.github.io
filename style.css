@@ -349,4 +349,61 @@ footer.site p { margin: 0; }
 @media (max-width: 600px) {
   footer.site { padding: 14px 0; font-size: 0.85rem; line-height: 1.5; }
 }
+/* ==================== Research Section Fix (Red Gradient & Readability) ==================== */
+
+/* Soften the background color gradient */
+body.research-page {
+  background: linear-gradient(180deg, #fff 0%, #f8f8f8 60%, #fff 100%);
+}
+
+/* Give the research intro (overview) text a subtle backdrop for readability */
+.research-intro {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Research section headers */
+section.research-block h2 {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+/* Fix overly bright hover effect (make it soft) */
+.research-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 10px rgba(177, 4, 14, 0.18);
+  border-color: rgba(177, 4, 14, 0.3);
+}
+
+/* Ensure cards don't overlap with background gradient */
+.research-card {
+  background: rgba(255, 255, 255, 0.96);
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .research-intro {
+    margin: 20px 12px;
+    padding: 16px;
+  }
+  .research-card {
+    margin: 16px 0;
+    padding: 20px 16px;
+  }
+  section.research-block h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
 
