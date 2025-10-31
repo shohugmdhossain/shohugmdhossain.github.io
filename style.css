@@ -392,6 +392,15 @@ footer.site p {
     line-height: 1.5;
   }
 }
+/* ===== Force remove all arrow pseudo-elements ===== */
+li::before,
+.project-list li::before,
+ul.project-list li::before {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  position: static !important;
+}
 
 
 
