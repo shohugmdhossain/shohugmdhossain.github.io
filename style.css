@@ -172,6 +172,7 @@ h2 { font-size: 28px; margin-top: 8px; }
   }
 }
 
+/* ==================== Social Icons ==================== */
 .socials {
   display: flex;
   gap: 14px;
@@ -207,56 +208,53 @@ section {
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
-/* ==================== Research Section (with Animation) ==================== */
+/* ==================== Research Section (Animated Border Glow) ==================== */
+.research-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
 
-/* Card default */
+/* Glow layer */
 .research-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 14px;
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 12px rgba(177, 4, 14, 0.15);
-  opacity: 0;
-  transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
-  transform: scale(1.02);
-  pointer-events: none;
-}
-
-.research-card:hover::after {
-  opacity: 1;
-  box-shadow: 0 0 18px rgba(177, 4, 14, 0.25);
-  transform: scale(1);
-}
-
-/* Animated glowing edge */
-.research-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
+  border-radius: 16px;
   border: 2px solid transparent;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent) border-box;
+  background: linear-gradient(90deg, rgba(177, 4, 14, 0.1), rgba(177, 4, 14, 0.3), rgba(177, 4, 14, 0.1)) border-box;
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: scale(1.05);
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  transform: scale(1.02);
   z-index: -1;
 }
+
 .research-card:hover::after {
   opacity: 1;
+  animation: pulseBorder 2.5s ease-in-out infinite alternate;
   transform: scale(1);
 }
 
-/* Smooth heading and text color change */
-.research-card h2,
-.research-card p {
-  transition: color 0.3s ease;
-}
-.research-card:hover h2 {
-  color: var(--accent);
+/* Glow animation */
+@keyframes pulseBorder {
+  0% { box-shadow: 0 0 10px rgba(177,4,14,0.15); }
+  50% { box-shadow: 0 0 25px rgba(177,4,14,0.25); }
+  100% { box-shadow: 0 0 10px rgba(177,4,14,0.15); }
 }
 
-/* Tools badge enhancement */
+.research-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.research-card h2, .research-card p { transition: color 0.3s ease; }
+.research-card:hover h2 { color: var(--accent); }
+
 .tool-link {
   background: #f8f8f8;
   color: #333;
@@ -272,10 +270,10 @@ section {
   color: #fff;
   border-color: var(--accent);
   transform: scale(1.08);
-  box-shadow: 0 0 10px rgba(177, 4, 14, 0.3);
+  box-shadow: 0 0 10px rgba(177,4,14,0.3);
 }
 
-/* Compact and clean spacing */
+/* ==================== Compact Layout ==================== */
 section.research-block {
   border-top: none !important;
   margin-top: 40px !important;
@@ -292,8 +290,6 @@ section.research-block {
   line-height: 1.7;
   color: #222;
 }
-
-/* Meta info styling */
 .research-meta {
   color: #777;
   font-size: 14px;
@@ -301,17 +297,26 @@ section.research-block {
   font-style: italic;
   letter-spacing: 0.2px;
 }
-.research-meta::before {
-  content: none !important;
-}
+.research-meta::before { content: none !important; }
 
-/* Mobile refinement */
+/* ==================== Mobile Optimization ==================== */
 @media (max-width: 800px) {
-  section.research-block {
-    margin-bottom: 40px !important;
-  }
   .research-card {
-    padding: 20px 18px !important;
+    padding: 20px;
+    border-radius: 12px;
+    transition: none;
+  }
+  .research-card::after {
+    opacity: 0;
+    animation: none;
+  }
+  .research-card:hover {
+    transform: none;
+    box-shadow: 0 0 10px rgba(177,4,14,0.1);
+  }
+  .tool-link {
+    font-size: 12px;
+    padding: 5px 8px;
   }
 }
 
@@ -322,12 +327,7 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-
-body > main,
-main.wrap.hero.two {
-  flex: 1 0 auto;
-  min-height: 0;
-}
+body > main, main.wrap.hero.two { flex: 1 0 auto; min-height: 0; }
 
 footer.site {
   flex-shrink: 0;
@@ -343,14 +343,10 @@ footer.site {
   justify-content: center;
   margin-top: auto;
 }
-
 footer.site .wrap { max-width: 900px; padding: 0 16px; }
 footer.site p { margin: 0; }
 
 @media (max-width: 600px) {
-  footer.site {
-    padding: 14px 0;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
+  footer.site { padding: 14px 0; font-size: 0.85rem; line-height: 1.5; }
 }
+
