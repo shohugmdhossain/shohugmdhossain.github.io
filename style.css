@@ -491,9 +491,7 @@ section.research-block h2 {
   letter-spacing: 0.2px;
 }
 .research-meta::before {
-  content: "📅 ";
-  color: var(--accent);
-  margin-right: 4px;
+  content: none !important;
 }
 
 /* Slightly reduce section spacing on mobile too */
