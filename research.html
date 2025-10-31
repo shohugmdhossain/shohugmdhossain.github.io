@@ -52,7 +52,6 @@
       padding: 28px 30px;
       margin-bottom: 30px;
       box-shadow: 0 0 6px rgba(0,0,0,0.05);
-      border-top: 4px solid var(--accent);
     }
 
     .research-card h3 {
@@ -75,18 +74,27 @@
       margin: 14px 0;
     }
 
+    /* --- Clickable Tool Badges --- */
     .tools {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .tools span {
+    .tool-link {
+      display: inline-block;
       background: #f4f4f4;
       color: #333;
       font-size: 13px;
       padding: 5px 10px;
       border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .tool-link:hover {
+      background: var(--accent);
+      color: #fff;
     }
 
     @media (max-width: 800px) {
@@ -143,10 +151,10 @@
           and large-scale geological surface mapping with improved accuracy.
         </p>
         <div class="tools">
-          <span>Faster R-CNN</span>
-          <span>Detectron2</span>
-          <span>COCO JSON</span>
-          <span>LONI GPU</span>
+          <a class="tool-link" href="https://pytorch.org">Faster R-CNN</a>
+          <a class="tool-link" href="https://github.com/facebookresearch/detectron2">Detectron2</a>
+          <a class="tool-link" href="https://cocodataset.org">COCO JSON</a>
+          <a class="tool-link" href="#">LONI GPU</a>
         </div>
       </div>
 
@@ -159,10 +167,10 @@
           and mineralogical transitions in Martian terrains.
         </p>
         <div class="tools">
-          <span>CRISM</span>
-          <span>Autoencoders</span>
-          <span>Spectral Python</span>
-          <span>Deep Learning</span>
+          <a class="tool-link" href="#">CRISM</a>
+          <a class="tool-link" href="#">Autoencoders</a>
+          <a class="tool-link" href="https://github.com/spectralpython/SpectralPython">Spectral Python</a>
+          <a class="tool-link" href="#">Deep Learning</a>
         </div>
       </div>
 
@@ -175,10 +183,10 @@
           <b>LLM-assisted label review</b> and systematic dataset correction.
         </p>
         <div class="tools">
-          <span>YOLOv8</span>
-          <span>Python</span>
-          <span>Faster R-CNN</span>
-          <span>LLM QA</span>
+          <a class="tool-link" href="#">YOLOv8</a>
+          <a class="tool-link" href="#">Python</a>
+          <a class="tool-link" href="#">Faster R-CNN</a>
+          <a class="tool-link" href="#">LLM QA</a>
         </div>
       </div>
     </section>
@@ -196,10 +204,10 @@
           for dynamic hydrologic mapping in monsoon-influenced ecosystems.
         </p>
         <div class="tools">
-          <span>Sentinel-1</span>
-          <span>MODIS</span>
-          <span>NDVI</span>
-          <span>Google Earth Engine</span>
+          <a class="tool-link" href="#">Sentinel-1</a>
+          <a class="tool-link" href="#">MODIS</a>
+          <a class="tool-link" href="#">NDVI</a>
+          <a class="tool-link" href="#">Google Earth Engine</a>
         </div>
       </div>
 
@@ -212,10 +220,10 @@
           vegetation loss over a decade.
         </p>
         <div class="tools">
-          <span>Landsat 8</span>
-          <span>Sentinel-2</span>
-          <span>XGBoost</span>
-          <span>Random Forest</span>
+          <a class="tool-link" href="#">Landsat 8</a>
+          <a class="tool-link" href="#">Sentinel-2</a>
+          <a class="tool-link" href="#">XGBoost</a>
+          <a class="tool-link" href="#">Random Forest</a>
         </div>
       </div>
 
@@ -228,10 +236,10 @@
           and emissivity-based correction.
         </p>
         <div class="tools">
-          <span>Landsat TIR</span>
-          <span>MODIS</span>
-          <span>ArcGIS Pro</span>
-          <span>Python</span>
+          <a class="tool-link" href="#">Landsat TIR</a>
+          <a class="tool-link" href="#">MODIS</a>
+          <a class="tool-link" href="#">ArcGIS Pro</a>
+          <a class="tool-link" href="#">Python</a>
         </div>
       </div>
     </section>
@@ -249,6 +257,7 @@
   </script>
 </body>
 </html>
+
 
 
 
