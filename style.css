@@ -417,6 +417,63 @@ ul.project-list li::before,
   margin: 0 !important;
   padding: 0 !important;
 }
+/* ==================== Research Hero Banner ==================== */
+.research-hero {
+  position: relative;
+  height: 360px;
+  background: url('https://mars.nasa.gov/system/resources/detail_files/7682_PIA25021-FigureA-web.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 4px solid var(--accent);
+}
+
+.research-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-overlay {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 40px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.hero-overlay p {
+  font-size: 17px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #eee;
+}
+
+@media (max-width: 700px) {
+  .research-hero { height: 260px; }
+  .hero-overlay h1 { font-size: 28px; }
+  .hero-overlay p { font-size: 15px; }
+}
+
+/* Subtle zoom animation on hero background */
+.research-hero {
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
 
 
 
