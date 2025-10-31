@@ -30,114 +30,84 @@
     </div>
   </header>
 
-  <!-- ==================== Hero Banner ==================== -->
-  <section class="research-hero">
-    <div class="hero-overlay">
-      <h1>Research in GeoAI & Planetary Science</h1>
-      <p>Artificial Intelligence for Earth Observation and Planetary Exploration</p>
-    </div>
-  </section>
-
   <!-- ==================== Main Research Content ==================== -->
-  <main class="research">
-    <h1>Research Overview</h1>
-    <p class="subtitle">
-      My work bridges machine learning and geoscience to analyze planetary surfaces and environmental processes.
-      I develop interpretable AI models using multi-sensor satellite data, physics-informed learning, and geospatial analytics.
+  <main class="wrap" style="margin-top:60px; margin-bottom:80px;">
+    <h1 style="color:var(--accent); text-align:center;">Research Overview</h1>
+    <p style="text-align:justify; max-width:900px; margin:20px auto;">
+      My research lies at the intersection of <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b>.
+      I develop interpretable deep-learning models that integrate physics-based reasoning with data-driven discovery to improve our understanding of landscapes on Earth and Mars.
     </p>
 
     <!-- ===== Current Projects ===== -->
-    <div class="section-label">Current Projects (2024–2025)</div>
-    <div class="research-grid">
+    <h2 style="border-bottom:2px solid var(--accent); padding-bottom:6px; margin-top:60px;">Current Projects (2024–2025)</h2>
 
-      <div class="research-card">
-        <h2>Mars Mound Detection Using Deep Learning</h2>
-        <div class="research-meta"><i class="fa-solid fa-rocket"></i> Planetary Geomorphology · Ongoing</div>
+    <div class="research-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px;">
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">Mars Mound Detection Using Deep Learning</h3>
         <p>
-          Developing deep-learning frameworks (<b>Faster R-CNN</b>, <b>Mask R-CNN</b>) on <b>CTX imagery</b> to automatically detect mound-like features on Mars.
-          Trained on <b>LONI A100 GPUs</b>, the project enhances automated crater analysis and supports geomorphological mapping.
+          Developing <b>Faster R-CNN</b> and <b>Mask R-CNN</b> models to detect mound-like structures on Mars from <b>CTX imagery</b>.
+          The project leverages <b>LONI A100 GPU</b> computing and <b>Detectron2</b> pipelines to improve crater morphology mapping.
         </p>
-        <div class="tools">
-          <span class="tool-tag">Detectron2</span>
-          <span class="tool-tag">PyTorch</span>
-          <span class="tool-tag">Planetary AI</span>
-          <span class="tool-tag">GPU Computing</span>
-        </div>
+        <p><b>Keywords:</b> Detectron2 · PyTorch · GPU · Planetary AI</p>
       </div>
 
-      <div class="research-card">
-        <h2>CRISM Spectral Mineral Mapping</h2>
-        <div class="research-meta"><i class="fa-solid fa-microscope"></i> JHU/APL Collaboration</div>
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">CRISM Spectral Mineralogy Mapping</h3>
         <p>
-          Applying <b>autoencoder-based unmixing</b> on <b>CRISM hyperspectral data</b> to map alteration minerals on Mars.
-          The work supports mineralogical interpretation of aqueous environments through spectral feature learning and radiative-transfer modeling.
+          Applying <b>deep spectral unmixing</b> on <b>CRISM hyperspectral data</b> in collaboration with <b>Johns Hopkins APL</b>.
+          The study identifies alteration minerals on Martian surfaces and reconstructs past aqueous environments.
         </p>
-        <div class="tools">
-          <span class="tool-tag">CRISM</span>
-          <span class="tool-tag">Spectral Python</span>
-          <span class="tool-tag">Deep Unmixing</span>
-        </div>
+        <p><b>Keywords:</b> CRISM · Spectral Python · Deep Unmixing · JHU/APL</p>
       </div>
 
-      <div class="research-card">
-        <h2>AI-Assisted Label Validation for Street Imagery</h2>
-        <div class="research-meta"><i class="fa-solid fa-robot"></i> Urban Accessibility · Ongoing</div>
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">Urban Accessibility Mapping with AI</h3>
         <p>
-          Building automated label-auditing pipelines using <b>LLM-assisted verification</b> and <b>computer vision</b> models (YOLOv8, Faster R-CNN) for sidewalk element detection.
-          Focuses on increasing data reliability and explainability in AI-driven urban datasets.
+          Building computer vision workflows using <b>YOLOv8</b> and <b>Faster R-CNN</b> for automated detection of curb ramps,
+          crosswalks, and traffic-control devices from street imagery. The system enhances sidewalk inventory datasets.
         </p>
-        <div class="tools">
-          <span class="tool-tag">YOLOv8</span>
-          <span class="tool-tag">LLM Vision</span>
-          <span class="tool-tag">Python</span>
-        </div>
+        <p><b>Keywords:</b> YOLOv8 · Computer Vision · Accessibility · Deep Learning</p>
+      </div>
+
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">AI Label Validation for Remote Sensing</h3>
+        <p>
+          Designing automated pipelines for <b>label correction</b> and <b>validation quality assessment</b>
+          in large geospatial datasets using LLM-assisted review and confusion-matrix analytics.
+        </p>
+        <p><b>Keywords:</b> Data Curation · Label QA · Confusion Matrix · LLM Vision</p>
       </div>
     </div>
 
     <!-- ===== Past Projects ===== -->
-    <div class="section-label">Past Projects (Before 2024)</div>
-    <div class="research-grid">
+    <h2 style="border-bottom:2px solid var(--accent); padding-bottom:6px; margin-top:70px;">Past Projects (Before 2024)</h2>
 
-      <div class="research-card">
-        <h2>Wetland Hydrodynamics & Vegetation Monitoring</h2>
-        <div class="research-meta"><i class="fa-solid fa-water"></i> Ecosystem Dynamics · 2023</div>
+    <div class="research-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px;">
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">Wetland Hydrodynamics & Vegetation Monitoring</h3>
         <p>
-          Integrated <b>Sentinel-1 SAR</b> and <b>MODIS</b> optical time series to model floodplain hydrology and vegetation stress.
-          Demonstrated radar–optical synergy for detecting water-level variation and vegetation phenology.
+          Combined <b>Sentinel-1 SAR</b> and <b>MODIS</b> time-series imagery to model water dynamics and vegetation stress
+          across coastal wetlands, demonstrating radar–optical synergy for monitoring ecosystem resilience.
         </p>
-        <div class="tools">
-          <span class="tool-tag">SAR</span>
-          <span class="tool-tag">MODIS</span>
-          <span class="tool-tag">Earth Observation</span>
-        </div>
+        <p><b>Keywords:</b> Sentinel-1 · MODIS · Time Series · Wetland Dynamics</p>
       </div>
 
-      <div class="research-card">
-        <h2>Land-Cover Change Detection in Bangladesh</h2>
-        <div class="research-meta"><i class="fa-solid fa-globe"></i> Remote Sensing · 2022</div>
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">Land-Cover Change Detection in Bangladesh</h3>
         <p>
-          Designed a <b>Random Forest</b> and <b>XGBoost</b> classification system using <b>Landsat-8</b> and <b>Sentinel-2</b> imagery to detect vegetation loss and urban expansion.
-          Achieved 92% accuracy through spectral–temporal feature fusion.
+          Developed <b>Random Forest</b> and <b>XGBoost</b> classifiers integrating <b>Landsat 8</b> and <b>Sentinel-2</b> imagery
+          to monitor vegetation loss and urban expansion with over 90% accuracy.
         </p>
-        <div class="tools">
-          <span class="tool-tag">Landsat</span>
-          <span class="tool-tag">Sentinel-2</span>
-          <span class="tool-tag">XGBoost</span>
-        </div>
+        <p><b>Keywords:</b> Landsat 8 · Sentinel-2 · XGBoost · Land-Use Change</p>
       </div>
 
-      <div class="research-card">
-        <h2>Urban Heat Island Modeling</h2>
-        <div class="research-meta"><i class="fa-solid fa-temperature-high"></i> Climate Analytics · 2021</div>
+      <div class="research-card" style="border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <h3 style="color:var(--accent); margin-top:0;">Urban Heat Island Modeling</h3>
         <p>
-          Modeled surface temperature variability using <b>Landsat TIR</b> and <b>MODIS emissivity</b> data.
-          Quantified correlations between urban morphology and heat anomalies across megacities in South Asia.
+          Analyzed urban surface temperatures using <b>Landsat TIR</b> and <b>MODIS emissivity</b>
+          to explore correlations between surface reflectance and thermal patterns.
         </p>
-        <div class="tools">
-          <span class="tool-tag">MODIS</span>
-          <span class="tool-tag">Landsat TIR</span>
-          <span class="tool-tag">Python</span>
-        </div>
+        <p><b>Keywords:</b> MODIS · TIR · Urban Climate · Remote Sensing</p>
       </div>
     </div>
   </main>
@@ -150,10 +120,11 @@
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
