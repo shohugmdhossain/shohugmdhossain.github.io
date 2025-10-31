@@ -11,12 +11,12 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ---------- Research Page Unified Design ---------- */
+    /* ---------- Research Page Unified Styling ---------- */
     .research-section {
-      margin-top: 40px;
+      margin-top: 25px;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 0;
     }
 
     .research-intro {
@@ -25,7 +25,20 @@
       line-height: 1.7;
       text-align: justify;
       max-width: 850px;
-      margin-bottom: 40px;
+      margin: 10px 0 25px 0;
+      padding: 18px 22px;
+    }
+
+    .research-block {
+      margin-bottom: 45px;
+    }
+
+    .research-block h2 {
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-family: "Libre Baskerville", Georgia, serif;
     }
 
     .research-card {
@@ -37,7 +50,8 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      margin-bottom: 28px; /* Equal space between cards */
     }
 
     .research-card:hover {
@@ -93,17 +107,6 @@
       transform: scale(1.05);
     }
 
-    .research-block {
-      margin-bottom: 60px;
-    }
-
-    .research-block h2 {
-      color: var(--accent);
-      font-size: 22px;
-      margin-bottom: 12px;
-      font-family: "Libre Baskerville", Georgia, serif;
-    }
-
     /* --- Responsive --- */
     @media (max-width: 900px) {
       .research-card { padding: 24px 22px; }
@@ -111,14 +114,14 @@
     }
 
     @media (max-width: 600px) {
-      .research-section { margin-top: 30px; gap: 26px; }
-      .research-card { padding: 20px 16px; }
+      .research-section { margin-top: 20px; }
+      .research-card { padding: 20px 16px; margin-bottom: 24px; }
       .research-card h3 { font-size: 18px; }
     }
   </style>
 </head>
 
-<body>
+<body class="research-page">
 <header class="site">
   <div class="wrap nav">
     <div class="brand">M S Hossain</div>
@@ -262,4 +265,6 @@
 </script>
 </body>
 </html>
+
+
 
