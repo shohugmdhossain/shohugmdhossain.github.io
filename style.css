@@ -322,16 +322,36 @@ footer a:hover {
 }
 
 /* ==================== Footer Logos ==================== */
-footer .logos img {
-  height: 22px;
-  width: auto;
-  opacity: 0.9;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+  padding: 12px 0;
+  border-top: 1px solid #222;
+  background: #0b0d10; /* matches your site background */
 }
-footer .logos img:hover {
-  transform: scale(1.08);
-  opacity: 1;
+
+.footer p {
+  margin: 0;
+  font-weight: 400;
+  color: #ccc;
 }
+
+.footer .social-links {
+  margin-top: 6px;
+}
+
+.footer .social-links a {
+  color: #bbb;
+  margin: 0 6px;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.footer .social-links a:hover {
+  color: #00aced; /* accent blue or your preferred theme color */
+}
+
 
 /* ==================== Arrow / Scroll Element Removal ==================== */
 body [class*="arrow"],
