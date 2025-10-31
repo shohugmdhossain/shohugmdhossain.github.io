@@ -142,7 +142,7 @@ h2 { font-size: 28px; margin-top: 8px; }
   align-items: center;
   gap: 14px;
 }
-/* Profile Image (Home/About Page) */
+/* Profile Image */
 .photo.fixed {
   width: 300px;
   height: 340px;
@@ -252,45 +252,6 @@ main.wrap {
   to { opacity: 1; transform: none; }
 }
 
-/* ==================== Footer (Unified Centered) ==================== */
-footer.site {
-  background: var(--accent);
-  color: #fff;
-  display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;       /* centers vertically */
-  text-align: center;
-  height: 70px;              /* compact height */
-  margin-top: 80px;
-}
-footer.site .wrap {
-  max-width: 900px;
-  padding: 0 16px;
-}
-footer.site p {
-  margin: 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-}
-@media (max-width: 600px) {
-  footer.site {
-    height: auto;
-    padding: 16px 0;
-  }
-  footer.site p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-}
-
-/* ==================== Responsive ==================== */
-@media (max-width: 900px) {
-  .two { grid-template-columns: 1fr; }
-  .hero { padding: 44px 0; }
-  .wrap { padding: 0 20px; }
-  h1 { font-size: 34px; }
-}
-
 /* ==================== Experience Cards ==================== */
 .exp-card {
   background: var(--card);
@@ -383,6 +344,48 @@ body a[href^="#"]:not(.btn) {
   html, body, header.site {
     overflow-x: hidden !important;
     max-width: 100% !important;
+  }
+}
+
+/* ==================== Footer (Final Consistent + Bottom Aligned) ==================== */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main, .wrap.hero.two {
+  flex: 1; /* pushes footer down */
+}
+
+footer.site {
+  background: var(--accent, #b1040e);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer.site .wrap {
+  max-width: 900px;
+  padding: 0 16px;
+}
+
+footer.site p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  footer.site {
+    padding: 14px 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 }
 
