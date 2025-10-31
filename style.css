@@ -284,3 +284,43 @@ body.research-page .research-card {
 body.research-page .research-block:last-of-type {
   margin-bottom: 60px;   /* avoids footer sticking too close */
 }
+/* ==================== Restore Photo Size & Footer Space ==================== */
+
+/* --- Fix Home & About Page Image Size --- */
+.photo.fixed,
+.about-photo,
+.hero img {
+  width: 260px !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 20px !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+}
+
+/* --- Smaller image on mobile --- */
+@media (max-width: 900px) {
+  .photo.fixed,
+  .about-photo,
+  .hero img {
+    width: 180px !important;
+    height: 210px !important;
+  }
+}
+
+/* --- Add space before footer for all pages --- */
+main.wrap,
+main.research,
+main.about,
+main.experience-section,
+main.skills,
+main.publications,
+main.contact {
+  padding-bottom: 60px !important;
+}
+
+footer.site {
+  margin-top: 40px !important;
+}
