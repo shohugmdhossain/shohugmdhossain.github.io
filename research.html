@@ -52,58 +52,62 @@
       text-align: left;
     }
 
-    /* ==================== Card Styling ==================== */
+    /* ==================== Softer Research Card Hover Effect ==================== */
     .research-card {
       position: relative;
-      background: rgba(255,255,255,0.97);
+      background: rgba(255,255,255,0.98);
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 28px 30px;
       margin-bottom: 30px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-      overflow: hidden;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
+      overflow: hidden;
     }
 
-    /* Hover animation (soft glowing border) */
+    /* Gentle light glow border */
     .research-card::after {
       content: "";
       position: absolute;
       inset: 0;
       border-radius: 14px;
       border: 2px solid transparent;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent) border-box;
+      background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(177,4,14,0.18), rgba(255,255,255,0.4)) border-box;
       opacity: 0;
       transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-      transform: scale(1.05);
+      transform: scale(1.03);
       z-index: 0;
     }
 
     .research-card:hover::after {
       opacity: 1;
       transform: scale(1);
-      box-shadow: 0 0 14px rgba(177, 4, 14, 0.18);
+      box-shadow: 0 0 20px rgba(177, 4, 14, 0.12);
     }
 
     .research-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Keep readable text and smooth color */
+    .research-card h3,
+    .research-card p,
+    .research-meta {
+      position: relative;
+      z-index: 2;
     }
 
     .research-card h3 {
       font-size: 20px;
       color: var(--accent);
       margin: 0;
-      position: relative;
-      z-index: 2;
     }
 
     .research-meta {
       color: var(--muted);
       font-size: 14px;
       margin-top: 4px;
-      position: relative;
-      z-index: 2;
     }
 
     .research-card p {
@@ -112,8 +116,6 @@
       line-height: 1.75;
       text-align: justify;
       margin: 14px 0;
-      position: relative;
-      z-index: 2;
     }
 
     /* ==================== Tool Badges ==================== */
@@ -142,7 +144,7 @@
       color: #fff;
       border-color: var(--accent);
       transform: scale(1.08);
-      box-shadow: 0 0 10px rgba(177, 4, 14, 0.3);
+      box-shadow: 0 0 10px rgba(177, 4, 14, 0.25);
     }
 
     /* ==================== Responsive Fix ==================== */
@@ -173,6 +175,9 @@
       }
       .research-card h3 {
         font-size: 18px;
+      }
+      .research-card p {
+        font-size: 15px;
       }
     }
   </style>
@@ -326,3 +331,4 @@
   </script>
 </body>
 </html>
+
