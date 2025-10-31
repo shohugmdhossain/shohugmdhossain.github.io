@@ -401,6 +401,22 @@ ul.project-list li::before {
   visibility: hidden !important;
   position: static !important;
 }
+/* ======= FINAL FIX: Remove all arrow pseudo-elements sitewide ======= */
+li::before,
+ul::before,
+ol::before,
+.project-list li::before,
+ul.project-list li::before,
+[class*="project"] li::before,
+[class*="arrow"]::before {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 
 
