@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+    /* ==================== Research Layout ==================== */
     main.research {
       max-width: var(--max);
       margin: 80px auto;
@@ -31,6 +32,11 @@
       font-size: 16px;
       line-height: 1.8;
       text-align: justify;
+      background: rgba(255,255,255,0.85);
+      padding: 18px 24px;
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
     }
 
     section.research-block {
@@ -43,73 +49,136 @@
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 36px;
+      text-align: left;
     }
 
+    /* ==================== Card Styling ==================== */
     .research-card {
-      background: var(--card);
+      position: relative;
+      background: rgba(255,255,255,0.97);
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 28px 30px;
       margin-bottom: 30px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    /* Hover animation (soft glowing border) */
+    .research-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent) border-box;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+      transform: scale(1.05);
+      z-index: 0;
+    }
+
+    .research-card:hover::after {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0 14px rgba(177, 4, 14, 0.18);
+    }
+
+    .research-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     }
 
     .research-card h3 {
       font-size: 20px;
       color: var(--accent);
       margin: 0;
+      position: relative;
+      z-index: 2;
     }
 
     .research-meta {
       color: var(--muted);
       font-size: 14px;
       margin-top: 4px;
+      position: relative;
+      z-index: 2;
     }
 
     .research-card p {
       font-size: 15.5px;
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.75;
       text-align: justify;
       margin: 14px 0;
+      position: relative;
+      z-index: 2;
     }
 
-    /* --- Clickable Tool Badges --- */
+    /* ==================== Tool Badges ==================== */
     .tools {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      position: relative;
+      z-index: 2;
     }
 
     .tool-link {
       display: inline-block;
-      background: #f4f4f4;
+      background: #f8f8f8;
       color: #333;
       font-size: 13px;
-      padding: 5px 10px;
+      padding: 5px 11px;
       border-radius: 999px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      border: 1px solid #e6e6e6;
+      transition: all 0.25s ease;
     }
 
     .tool-link:hover {
       background: var(--accent);
       color: #fff;
+      border-color: var(--accent);
+      transform: scale(1.08);
+      box-shadow: 0 0 10px rgba(177, 4, 14, 0.3);
     }
 
-    @media (max-width: 800px) {
+    /* ==================== Responsive Fix ==================== */
+    @media (max-width: 900px) {
       main.research {
         margin: 60px auto;
-        padding: 0 20px;
+        padding: 0 18px;
       }
       .research-card {
-        padding: 22px 20px;
+        padding: 22px 18px;
+        margin-bottom: 24px;
+      }
+      section.research-block h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      .tool-link {
+        font-size: 12.5px;
+        padding: 5px 9px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main.research p.intro {
+        padding: 14px 16px;
+        margin: 20px 8px 40px;
+        font-size: 15px;
+      }
+      .research-card h3 {
+        font-size: 18px;
       }
     }
   </style>
 </head>
 
-<body>
+<body class="research-page">
   <!-- ===== Header ===== -->
   <header class="site">
     <div class="wrap nav">
@@ -257,15 +326,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
