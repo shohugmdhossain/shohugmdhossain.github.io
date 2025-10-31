@@ -34,128 +34,114 @@
   <section class="research-hero">
     <div class="hero-overlay">
       <h1>Research in GeoAI & Planetary Science</h1>
-      <p>Integrating artificial intelligence, remote sensing, and planetary data to explore Earth and beyond.</p>
+      <p>Exploring Earth and Mars using Artificial Intelligence, Remote Sensing, and Geospatial Analytics</p>
     </div>
   </section>
 
-  <!-- ==================== Research Content ==================== -->
+  <!-- ==================== Research Overview ==================== -->
   <main class="research">
     <h1>Research Overview</h1>
     <p class="subtitle">
-      My research focuses on combining data-driven deep learning and physically informed models
-      to interpret multi-sensor satellite imagery for both Earth and planetary environments.
+      My research integrates deep learning, physics-based modeling, and multi-sensor satellite data to
+      understand geomorphological, environmental, and climatic processes across Earth and planetary systems.
     </p>
 
     <!-- ===== Current Research ===== -->
-    <div class="section-label">Current Research</div>
+    <div class="section-label">Current Projects</div>
     <div class="research-grid">
 
       <div class="research-card">
         <h2>Mars Mound Detection Using Deep Learning</h2>
-        <div class="research-meta">
-          <i class="fa-solid fa-rocket"></i> Planetary Geomorphology · 2025
-        </div>
+        <div class="research-meta"><i class="fa-solid fa-rocket"></i> Planetary Geomorphology · 2025</div>
         <p>
-          This project applies <b>Faster R-CNN</b> and <b>Mask R-CNN</b> to detect mound-like
-          structures across Martian <b>CTX</b> imagery. Leveraging <b>LONI A100 GPU clusters</b>,
-          the study refines detection pipelines and accuracy assessments to automate
-          crater-related geomorphological analysis.
+          Developing an automated system to detect and classify mound-like geomorphological features on Mars using
+          <b>Faster R-CNN</b> and <b>Mask R-CNN</b>. The workflow leverages <b>LONI A100 GPUs</b> to train models on
+          high-resolution <b>CTX imagery</b>, improving our understanding of crater-related landforms.
         </p>
         <p>
-          Results aim to improve automated planetary surface mapping and contribute to understanding
-          ancient aqueous and volcanic processes that shaped Martian landscapes.
+          This project bridges machine learning with planetary science by automating the mapping of mounds that
+          may indicate volcanic or sedimentary origins — offering new insights into Mars' geologic past.
         </p>
         <div class="tools">
           <span class="tool-tag">PyTorch</span>
           <span class="tool-tag">Detectron2</span>
+          <span class="tool-tag">Planetary Science</span>
           <span class="tool-tag">GPU Computing</span>
-          <span class="tool-tag">Planetary Imagery</span>
         </div>
       </div>
 
       <div class="research-card">
-        <h2>CRISM Spectral Mineral Mapping</h2>
-        <div class="research-meta">
-          <i class="fa-solid fa-microscope"></i> Spectroscopy · JHU/APL Collaboration
-        </div>
+        <h2>CRISM Spectral Mineral Mapping (JHU/APL Collaboration)</h2>
+        <div class="research-meta"><i class="fa-solid fa-microscope"></i> Hyperspectral Analysis · 2025</div>
         <p>
-          This project uses <b>CRISM hyperspectral data</b> to map surface mineralogy across Mars.
-          Combining <b>deep spectral unmixing</b> and <b>autoencoder networks</b>, the model identifies
-          compositional transitions that signal aqueous alteration zones.
+          Working with scientists at the <b>Johns Hopkins Applied Physics Laboratory</b> to develop deep-learning
+          spectral unmixing pipelines for <b>CRISM hyperspectral data</b>. These models extract mineralogical
+          compositions, revealing the presence of aqueous alteration minerals across Martian terrains.
         </p>
         <p>
-          The findings bridge geomorphological observations and geochemical processes, enhancing
-          planetary mineral exploration workflows.
+          The study integrates convolutional feature learning with physical reflectance modeling to interpret
+          ancient hydrological activity on Mars.
         </p>
         <div class="tools">
           <span class="tool-tag">CRISM</span>
-          <span class="tool-tag">Hyperspectral Analysis</span>
-          <span class="tool-tag">Spectral Unmixing</span>
-          <span class="tool-tag">Python + SPy</span>
+          <span class="tool-tag">Spectral Python</span>
+          <span class="tool-tag">Autoencoder</span>
+          <span class="tool-tag">Hyperspectral Imaging</span>
         </div>
       </div>
-
     </div>
 
-    <!-- ===== Past Research ===== -->
-    <div class="section-label">Past Research</div>
+    <!-- ===== Earth Observation Research ===== -->
+    <div class="section-label">Earth Observation & GeoAI</div>
     <div class="research-grid">
 
       <div class="research-card">
-        <h2>Land-Cover Change Detection Using Machine Learning</h2>
-        <div class="research-meta">
-          <i class="fa-solid fa-globe"></i> Remote Sensing · Bangladesh · 2022–2023
-        </div>
+        <h2>Wetland Hydrodynamics and Vegetation Monitoring</h2>
+        <div class="research-meta"><i class="fa-solid fa-water"></i> Ecosystem Dynamics · 2023</div>
         <p>
-          Designed a supervised classification system using <b>Landsat 8</b> and <b>Sentinel-2</b>
-          imagery to detect urban expansion and vegetation loss. The workflow integrates
-          <b>Random Forest</b> and <b>XGBoost</b> models, achieving high accuracy for spatiotemporal change mapping.
+          Used <b>Sentinel-1 SAR</b> and <b>MODIS optical data</b> to model hydrological cycles, vegetation
+          seasonality, and floodplain dynamics. The integration of radar and optical sensors enables high temporal
+          resolution mapping of wetland health and ecosystem resilience.
+        </p>
+        <div class="tools">
+          <span class="tool-tag">Sentinel-1</span>
+          <span class="tool-tag">MODIS</span>
+          <span class="tool-tag">Google Earth Engine</span>
+          <span class="tool-tag">SAR Analytics</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <h2>Urban GeoAI for Accessibility Mapping</h2>
+        <div class="research-meta"><i class="fa-solid fa-city"></i> Computer Vision · 2024</div>
+        <p>
+          Created an AI-powered <b>sidewalk element inventory</b> system using <b>YOLOv8</b> and <b>Faster R-CNN</b>
+          to detect sidewalk features (curb ramps, crosswalks, buffers) from street-level imagery.
+          Post-validation workflows integrate confusion matrices for per-feature accuracy analysis.
+        </p>
+        <div class="tools">
+          <span class="tool-tag">YOLOv8</span>
+          <span class="tool-tag">Computer Vision</span>
+          <span class="tool-tag">Geospatial AI</span>
+          <span class="tool-tag">Model Validation</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <h2>Land-Cover Change Detection in Bangladesh</h2>
+        <div class="research-meta"><i class="fa-solid fa-globe"></i> Remote Sensing · 2022</div>
+        <p>
+          Developed a change-detection workflow using <b>Landsat 8</b> and <b>Sentinel-2</b> imagery to track urban
+          growth and vegetation loss. The integration of <b>XGBoost</b> and <b>Random Forest</b> classifiers with NDVI
+          differencing achieved over 90% classification accuracy.
         </p>
         <div class="tools">
           <span class="tool-tag">Landsat 8</span>
           <span class="tool-tag">Sentinel-2</span>
           <span class="tool-tag">XGBoost</span>
-          <span class="tool-tag">Remote Sensing</span>
+          <span class="tool-tag">NDVI</span>
         </div>
       </div>
-
-      <div class="research-card">
-        <h2>Wetland Hydrodynamics and Vegetation Monitoring</h2>
-        <div class="research-meta">
-          <i class="fa-solid fa-water"></i> Ecosystem Dynamics · 2019–2021
-        </div>
-        <p>
-          Analyzed <b>Sentinel-1 SAR</b> and <b>MODIS optical time series</b> to model
-          hydrodynamic behavior and phenological cycles in wetlands.
-          This study demonstrated how radar–optical synergy captures vegetation stress
-          and seasonal flooding with high temporal fidelity.
-        </p>
-        <div class="tools">
-          <span class="tool-tag">Sentinel-1</span>
-          <span class="tool-tag">MODIS</span>
-          <span class="tool-tag">Time Series Analysis</span>
-          <span class="tool-tag">Wetland Ecology</span>
-        </div>
-      </div>
-
-      <div class="research-card">
-        <h2>Urban Reflectance and Thermal Variability Modeling</h2>
-        <div class="research-meta">
-          <i class="fa-solid fa-city"></i> Urban Climate · 2020
-        </div>
-        <p>
-          Investigated surface emissivity and thermal heterogeneity in dense urban areas
-          using <b>Landsat TIR</b> and <b>MODIS LST</b> products.
-          The study provided insights into microclimate variability and
-          improved land-surface temperature correction methods for urban heat analysis.
-        </p>
-        <div class="tools">
-          <span class="tool-tag">Thermal Infrared</span>
-          <span class="tool-tag">MODIS LST</span>
-          <span class="tool-tag">Urban Heat Modeling</span>
-        </div>
-      </div>
-
     </div>
   </main>
 
@@ -171,6 +157,7 @@
   </script>
 </body>
 </html>
+
 
 
 
