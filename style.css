@@ -221,5 +221,22 @@ main.wrap, main.research, main.about, main.experience-section {
     transform: scale(1.05);
     cursor: pointer;
 }
+/* ======== FINAL FIX: Experience Page Tag Colors ======== */
+body.experience-page .experience-section .tag,
+body.experience-page .leadership-volunteer .tag {
+  background: var(--accent) !important;   /* Red background */
+  color: #fff !important;                 /* White text */
+  border: 1px solid var(--accent) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+body.experience-page .experience-section .tag:hover,
+body.experience-page .leadership-volunteer .tag:hover {
+  background: #fff !important;            /* White background on hover */
+  color: var(--accent) !important;        /* Red text */
+  border-color: var(--accent) !important;
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
 
