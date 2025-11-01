@@ -34,7 +34,7 @@ a:hover { border-bottom: 1px solid var(--accent); }
   padding: 0 40px;
 }
 
-/* ==================== NAVIGATION (RED SINGLE-LINE + HAMBURGER ALWAYS VISIBLE) ==================== */
+/* ==================== NAVIGATION (RED BAR, INLINE + HAMBURGER) ==================== */
 header.site {
   position: sticky;
   top: 0;
@@ -62,59 +62,24 @@ header.site {
   white-space: nowrap;
 }
 
-/* --- Hamburger Menu (always visible) --- */
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: #fff;
-  display: block;       /* always visible */
-  cursor: pointer;
-  z-index: 2000;
-  margin-left: auto;
-}
-.menu-toggle i { pointer-events: none; }
-
-/* --- Navigation Links --- */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
+/* --- Navigation Links (always visible inline) --- */
 .nav-links {
-  display: none; /* hidden until toggled */
+  display: flex;
   gap: 1.2rem;
   list-style: none;
   margin: 0;
   padding: 0;
   flex-wrap: nowrap;
-  background: var(--accent);
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 100%;
-  flex-direction: column;
-  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-.nav-links.active {
-  display: flex;
-}
-
-.nav-links li {
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
+.nav-links li { white-space: nowrap; }
 
 .nav-links a {
   font-weight: 500;
   color: #fff;
-  padding: 0.8rem;
+  padding: 6px 10px;
   border-radius: 6px;
   transition: background 0.2s ease, color 0.2s ease;
-  white-space: nowrap;
-  display: block;
 }
 .nav-links a.active,
 .nav-links a:hover {
@@ -122,7 +87,7 @@ nav {
   text-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
-/* --- Search Box (inline on desktop, full width on mobile) --- */
+/* --- Search Box --- */
 .search-box {
   margin-left: 1rem;
 }
@@ -138,10 +103,61 @@ nav {
 }
 .search-box input::placeholder { color: #f3f3f3; }
 
-/* ==================== RESPONSIVE NAV ==================== */
+/* --- Hamburger Menu (at right corner) --- */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  z-index: 2000;
+  margin-left: 1rem;
+}
+
+/* --- Dropdown Menu (activated by hamburger) --- */
+.dropdown-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  background: var(--accent);
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.dropdown-nav.active {
+  display: flex;
+}
+
+.dropdown-nav li {
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-nav a {
+  display: block;
+  color: #fff;
+  padding: 0.9rem 0;
+  text-decoration: none;
+}
+.dropdown-nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* --- Nav Bar Layout --- */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
   .nav-links {
-    width: 100%;
+    display: none; /* hide inline menu on small screens */
   }
 
   .search-box {
@@ -154,6 +170,10 @@ nav {
   .search-box input {
     width: 85%;
     background: rgba(255,255,255,0.25);
+  }
+
+  .dropdown-nav {
+    width: 100%;
   }
 }
 
@@ -257,19 +277,6 @@ main.wrap.hero.two {
   transform: scale(1.05);
 }
 
-/* ==================== RESEARCH INTRO ==================== */
-body.research-page {
-  background: linear-gradient(180deg,#fff 0%,#f8f8f8 60%,#fff 100%);
-}
-.research-intro {
-  background: rgba(255,255,255,0.85);
-  padding: 18px 22px;
-  border-radius: 12px;
-  max-width: 900px;
-  margin: 20px auto 25px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
 /* ==================== FOOTER ==================== */
 footer.site {
   background: var(--accent);
@@ -281,12 +288,7 @@ footer.site {
 }
 footer.site p { margin: 0; }
 
-/* ==================== GLOBAL SPACING ==================== */
-main.wrap, main.research, main.about, main.experience-section {
-  padding-bottom: 60px;
-}
-
-/* ==================== RESPONSIVE ==================== */
+/* ==================== RESPONSIVE TEXT ==================== */
 @media (max-width: 600px) {
   h1 { font-size: 32px; }
   h2 { font-size: 22px; }
