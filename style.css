@@ -203,22 +203,7 @@ main.wrap, main.research, main.about, main.experience-section {
   .award-card, .exp-card, .research-card, .leadership-card { padding: 20px 16px; }
   footer.site { padding: 14px 0; font-size: 0.85rem; }
 }
-/* --- Keyword (Tag) Hover Color Adjustment --- */
-.tag {
-  background: var(--accent);
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
 
-.tag:hover {
-  background: #fff;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  cursor: pointer;
-}
 /* ---------- Fix tag color & hover (force override) ---------- */
 .exp-card .tag,
 .leadership-card .tag {
