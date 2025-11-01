@@ -7,11 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=3.1">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css?v=4.0">
 
   <style>
-    /* ===== Experience Page Fixes ===== */
+    /* ===== Experience Page Styles ===== */
     .experience-section, .leadership-volunteer {
       margin-top: 30px;
       display: flex;
@@ -19,7 +25,6 @@
       gap: 25px;
     }
 
-    /* --- Title and Line Alignment --- */
     .section-title {
       display: flex;
       align-items: center;
@@ -37,7 +42,6 @@
       background: var(--accent);
       opacity: 0.5;
       margin-left: 15px;
-      margin-right: 0;
     }
 
     .experience-section > p,
@@ -48,7 +52,6 @@
       max-width: 1000px;
     }
 
-    /* --- Box Cards --- */
     .exp-card, .leadership-card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -100,7 +103,6 @@
       color: var(--accent);
     }
 
-    /* --- Keyword Tags --- */
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -108,30 +110,27 @@
       margin-top: 8px;
     }
 
-    /* === FINAL FIX: Keyword Tag Colors === */
     body.experience-page .exp-card .tag,
     body.experience-page .leadership-card .tag {
-      background: var(--accent) !important;     /* red background */
-      color: #fff !important;                   /* white text */
-      border: 1px solid var(--accent) !important;
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
       padding: 4px 10px;
       border-radius: 20px;
       font-size: 12px;
-      transition: all 0.3s ease-in-out !important;
-      text-decoration: none;
+      transition: all 0.3s ease-in-out;
       display: inline-block;
     }
 
     body.experience-page .exp-card .tag:hover,
     body.experience-page .leadership-card .tag:hover {
-      background: #fff !important;              /* white background */
-      color: var(--accent) !important;          /* red text */
-      border-color: var(--accent) !important;
+      background: #fff;
+      color: var(--accent);
+      border-color: var(--accent);
       transform: scale(1.05);
       cursor: pointer;
     }
 
-    /* --- Leadership Cards --- */
     .leadership-card {
       display: flex;
       align-items: flex-start;
@@ -164,19 +163,20 @@
       .leadership-icon { font-size: 22px; }
     }
   </style>
- <!-- ==================== Header / Navigation ==================== -->
+</head>
+
+<body class="experience-page">
+
+  <!-- ==================== Header / Navigation ==================== -->
   <header class="site">
     <div class="wrap nav">
       <div class="brand">M S Hossain</div>
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="research.html">Research</a></li>
-          <li><a href="experience.html">Experience</a></li>
+          <li><a href="experience.html" class="active">Experience</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="awards.html">Awards</a></li>
@@ -185,18 +185,35 @@
         <div class="search-box">
           <input type="text" placeholder="Search..." id="searchInput">
         </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </div>
+
+    <!-- Dropdown menu for mobile -->
+    <ul class="dropdown-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="awards.html">Awards</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </header>
 
+  <!-- ==================== MAIN CONTENT ==================== -->
   <main class="wrap">
-    <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+    <!-- PROFESSIONAL EXPERIENCE -->
     <section class="experience-section">
       <div class="section-title">
         <h1>Professional Experience</h1>
       </div>
       <p>A journey across academia, research, and industry — integrating AI, geospatial analytics, and computational innovation to solve real-world challenges.</p>
 
+      <!-- (Keep all exp-card content here unchanged) -->
       <!-- UL Lafayette -->
       <div class="exp-card">
         <div class="exp-header">
@@ -284,7 +301,7 @@
       </div>
     </section>
 
-    <!-- ================= LEADERSHIP & VOLUNTEERING ================= -->
+    <!-- LEADERSHIP & VOLUNTEERING -->
     <section class="leadership-volunteer">
       <div class="section-title">
         <span>Leadership & Volunteering</span>
@@ -321,22 +338,21 @@
     </section>
   </main>
 
+  <!-- ==================== Footer ==================== -->
   <footer class="site">
     <div class="wrap">
       <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
     </div>
   </footer>
 
+  <!-- ==================== JS ==================== -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <script>
-    const toggle = document.createElement("div");
-    toggle.className = "menu-toggle";
-    toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    document.querySelector("header.site .nav").prepend(toggle);
-    const menu = document.querySelector("nav ul");
-    toggle.addEventListener("click", () => menu.classList.toggle("show"));
+    const menuToggle = document.querySelector('.menu-toggle');
+    const dropdownNav = document.querySelector('.dropdown-nav');
+    menuToggle.addEventListener('click', () => {
+      dropdownNav.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
