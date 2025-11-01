@@ -8,38 +8,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3.1">
 
   <style>
-    /* ---------- Research Page Unified Styling ---------- */
+    /* ---------- Research Page Alignment Fix ---------- */
     .research-section {
-      margin-top: 30px;                 /* match Experience section spacing */
+      margin-top: 30px;
       display: flex;
       flex-direction: column;
-      gap: 25px;                        /* match Experience section gap */
+      gap: 25px;
     }
 
-    /* Heading: remove extra space and keep left-aligned */
     .research-section h1 {
       color: var(--accent);
       font-size: 28px;
       font-weight: 600;
-      margin: 0;                        /* remove gap after heading */
+      margin: 0;
       padding: 0;
       text-align: left;
     }
 
-    /* Paragraph: identical to Experience intro paragraph */
     .research-intro {
-      margin-top: 10px;                 /* same as Experience */
-      margin-bottom: 0;                 /* same as Experience */
-      text-align: justify;              /* same as Experience */
+      margin-top: 10px;
+      margin-bottom: 0;
+      text-align: justify;
       text-justify: inter-word;
       hyphens: auto;
-      max-width: 1000px;                /* same line width as Experience */
+      max-width: 1000px;
+      width: 100%;
       color: var(--text);
       font-size: 15px;
       line-height: 1.7;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
     }
 
     .research-block {
@@ -65,7 +67,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 28px; /* Equal space between cards */
+      margin-bottom: 28px;
     }
 
     .research-card:hover {
@@ -95,7 +97,6 @@
       margin: 0 0 10px;
     }
 
-    /* --- Tool Tags --- */
     .tools {
       display: flex;
       flex-wrap: wrap;
@@ -121,7 +122,6 @@
       transform: scale(1.05);
     }
 
-    /* --- Responsive --- */
     @media (max-width: 900px) {
       .research-card { padding: 24px 22px; }
       .research-block h2 { font-size: 20px; }
@@ -290,6 +290,7 @@
 
 </body>
 </html>
+
 
 
 
