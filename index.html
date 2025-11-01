@@ -119,17 +119,22 @@
   </footer>
 
   <!-- ==================== JS ==================== -->
-  <script>
-    // Auto-year
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const year = document.getElementById('y');
+    if (year) year.textContent = new Date().getFullYear();
 
-    // Hamburger dropdown logic
     const menuToggle = document.querySelector('.menu-toggle');
     const dropdownNav = document.querySelector('.dropdown-nav');
-    menuToggle.addEventListener('click', () => {
-      dropdownNav.classList.toggle('active');
-    });
-  </script>
+
+    if (menuToggle && dropdownNav) {
+      menuToggle.addEventListener('click', () => {
+        dropdownNav.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
 
 </body>
 </html>
