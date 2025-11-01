@@ -11,11 +11,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* --- Experience Page Specific Styling --- */
-    body.experience-page main.wrap {
-      padding-bottom: 60px;
-    }
-
+    /* ===== Experience Page Fixes ===== */
     .experience-section, .leadership-volunteer {
       margin-top: 30px;
       display: flex;
@@ -23,6 +19,36 @@
       gap: 25px;
     }
 
+    /* --- Title and Line Alignment --- */
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 28px;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1.5px;
+      background: var(--accent);
+      opacity: 0.5;
+      margin-left: 15px;
+      margin-right: 0;
+    }
+
+    .experience-section > p,
+    .leadership-volunteer > p {
+      margin-top: 10px;
+      margin-bottom: 0;
+      text-align: justify;
+      max-width: 1000px;
+    }
+
+    /* --- Box Cards --- */
     .exp-card, .leadership-card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -33,25 +59,8 @@
     }
 
     .exp-card:hover, .leadership-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
       box-shadow: 0 0 10px rgba(177,4,14,0.4);
-    }
-
-    /* --- Header Title Line --- */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 28px;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0; /* remove bottom gap */
-    }
-    .section-line {
-      flex: 1;
-      height: 2px;
-      background: var(--accent);
-      opacity: 0.4;
     }
 
     .exp-header h2 {
@@ -91,6 +100,7 @@
       color: var(--accent);
     }
 
+    /* --- Keyword Tags --- */
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -98,20 +108,22 @@
       margin-top: 8px;
     }
 
-    /* --- Keyword Tag Hover Style --- */
-    .exp-card .tag, .leadership-card .tag {
-      background: var(--accent);
-      color: #fff;
-      border: 1px solid var(--accent);
+    .exp-card .tag,
+    .leadership-card .tag {
+      background-color: var(--accent) !important;
+      color: #fff !important;
+      border: 1px solid var(--accent) !important;
       padding: 4px 10px;
       border-radius: 20px;
       font-size: 12px;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out !important;
     }
-    .exp-card .tag:hover, .leadership-card .tag:hover {
-      background: #fff;
-      color: var(--accent);
-      border-color: var(--accent);
+
+    .exp-card .tag:hover,
+    .leadership-card .tag:hover {
+      background: #fff !important;
+      color: var(--accent) !important;
+      border-color: var(--accent) !important;
       transform: scale(1.05);
       cursor: pointer;
     }
@@ -145,10 +157,7 @@
     }
 
     @media (max-width: 900px) {
-      .leadership-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .leadership-card { flex-direction: column; align-items: flex-start; }
       .leadership-icon { font-size: 22px; }
     }
   </style>
@@ -180,9 +189,7 @@
         <span>Professional Experience</span>
         <div class="section-line"></div>
       </div>
-      <p style="font-size:15px; color:var(--text); max-width:800px;">
-        A journey across academia, research, and industry — integrating AI, geospatial analytics, and computational innovation to solve real-world challenges.
-      </p>
+      <p>A journey across academia, research, and industry — integrating AI, geospatial analytics, and computational innovation to solve real-world challenges.</p>
 
       <!-- UL Lafayette -->
       <div class="exp-card">
@@ -277,9 +284,7 @@
         <span>Leadership & Volunteering</span>
         <div class="section-line"></div>
       </div>
-      <p style="font-size:15px; color:var(--text); max-width:800px;">
-        Leadership roles and community engagements that foster collaboration, innovation, and mentorship within academic and professional environments.
-      </p>
+      <p>Leadership roles and community engagements that foster collaboration, innovation, and mentorship within academic and professional environments.</p>
 
       <div class="leadership-card">
         <div class="leadership-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
@@ -329,6 +334,7 @@
   </script>
 </body>
 </html>
+
 
 
 
