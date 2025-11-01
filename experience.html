@@ -9,6 +9,158 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==================== EXPERIENCE SECTION ==================== */
+    .experience-section, .leadership-volunteer {
+      margin-top: 50px;
+    }
+
+    .experience-section h1,
+    .leadership-volunteer h1 {
+      color: var(--accent);
+      font-size: 28px;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .experience-section p,
+    .leadership-volunteer p {
+      font-size: 15px;
+      color: var(--text);
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+
+    /* --- Experience Cards --- */
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 25px 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .exp-header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .exp-header h3 {
+      margin: 5px 0 10px 0;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .exp-card p {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .exp-points {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .exp-points li {
+      margin-bottom: 8px;
+    }
+
+    .exp-points i {
+      margin-right: 8px;
+      color: var(--accent);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--accent);
+      color: white;
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* ==================== LEADERSHIP SECTION ==================== */
+    .leadership-volunteer {
+      margin-top: 90px;
+    }
+
+    .leadership-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .leadership-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .leadership-icon i {
+      font-size: 26px;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .leadership-content h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .leadership-content p {
+      margin-top: 6px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+      .leadership-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+      .exp-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -32,10 +184,8 @@
 
   <main class="wrap">
     <section class="experience-section">
-      <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Professional Experience</h1>
-      <p style="font-size:15px; color:var(--text); max-width:800px;">
-        A journey across academia, research, and industry — integrating AI, geospatial analytics, and computational innovation to solve real-world challenges.
-      </p>
+      <h1>Professional Experience</h1>
+      <p>A journey across academia, research, and industry — integrating AI, geospatial analytics, and computational innovation to solve real-world challenges.</p>
 
       <!-- UL Lafayette -->
       <div class="exp-card">
@@ -43,10 +193,7 @@
           <h2>Research Assistant — University of Louisiana at Lafayette</h2>
           <h3>Lafayette, LA, USA | 2025 – Present</h3>
         </div>
-        <p>
-          Engaged in <b>GeoAI and planetary science research</b> focused on detecting and analyzing Martian surface features. 
-          Developed an end-to-end <b>Faster R-CNN pipeline</b> using the Detectron2 framework on high-performance GPU infrastructure (LONI).
-        </p>
+        <p>Engaged in <b>GeoAI and planetary science research</b> focused on detecting and analyzing Martian surface features. Developed an end-to-end <b>Faster R-CNN pipeline</b> using the Detectron2 framework on high-performance GPU infrastructure (LONI).</p>
         <ul class="exp-points">
           <li><i class="fa-solid fa-database"></i> Built automated COCO-style annotation pipelines for CTX image subframes.</li>
           <li><i class="fa-solid fa-microchip"></i> Deployed large-scale training on A100 GPUs, optimizing inference speed and precision.</li>
@@ -64,10 +211,7 @@
           <h2>Data Engineer — TELUS</h2>
           <h3>Calgary, Canada | 2023 – 2024</h3>
         </div>
-        <p>
-          Collaborated within TELUS’s enterprise data modernization team to streamline analytics pipelines and automate ETL workflows. 
-          Improved data quality, scalability, and accessibility across cloud-based systems supporting customer insight initiatives.
-        </p>
+        <p>Collaborated within TELUS’s enterprise data modernization team to streamline analytics pipelines and automate ETL workflows. Improved data quality, scalability, and accessibility across cloud-based systems supporting customer insight initiatives.</p>
         <ul class="exp-points">
           <li><i class="fa-solid fa-cloud"></i> Developed ingestion scripts integrating Snowflake, Power BI, and Python APIs.</li>
           <li><i class="fa-solid fa-gears"></i> Engineered QA layers and health checks improving pipeline reliability by 30%.</li>
@@ -84,10 +228,7 @@
           <h2>Graduate Teaching Assistant — University of Calgary</h2>
           <h3>Calgary, Canada | 2021 – 2023</h3>
         </div>
-        <p>
-          Supported instruction for <b>Python programming</b> and <b>Agent-Based Software Engineering</b> courses. 
-          Provided hands-on guidance in object-oriented programming, debugging, and system modeling for undergraduate and graduate students.
-        </p>
+        <p>Supported instruction for <b>Python programming</b> and <b>Agent-Based Software Engineering</b> courses. Provided hands-on guidance in object-oriented programming, debugging, and system modeling for undergraduate and graduate students.</p>
         <ul class="exp-points">
           <li><i class="fa-solid fa-laptop-code"></i> Delivered lab demonstrations and tutorials for 100+ students.</li>
           <li><i class="fa-solid fa-code-branch"></i> Built automated grading tools using Python scripts and regex validators.</li>
@@ -104,10 +245,7 @@
           <h2>Research Assistant — SPARRSO (Bangladesh Space Research & Remote Sensing Organization)</h2>
           <h3>Dhaka, Bangladesh | 2020 – 2021</h3>
         </div>
-        <p>
-          Contributed to national-scale research on <b>wetland mapping</b> and <b>climate resilience</b> using multispectral satellite imagery. 
-          Applied deep-learning-based segmentation models to quantify hydrological and land-cover dynamics in the Ganges-Brahmaputra Delta.
-        </p>
+        <p>Contributed to national-scale research on <b>wetland mapping</b> and <b>climate resilience</b> using multispectral satellite imagery. Applied deep-learning-based segmentation models to quantify hydrological and land-cover dynamics in the Ganges-Brahmaputra Delta.</p>
         <ul class="exp-points">
           <li><i class="fa-solid fa-earth-asia"></i> Preprocessed Landsat and Sentinel datasets in Google Earth Engine and QGIS.</li>
           <li><i class="fa-solid fa-brain"></i> Trained UNet models for temporal change detection and accuracy validation.</li>
@@ -124,10 +262,7 @@
           <h2>Research Assistant — North South University</h2>
           <h3>Dhaka, Bangladesh | 2019 – 2020</h3>
         </div>
-        <p>
-          Developed an <b>implicit recommender system</b> using <b>mouse-movement analytics</b> to predict learner interest in digital environments. 
-          Focused on enhancing user personalization and adaptive content delivery through behavioral data mining.
-        </p>
+        <p>Developed an <b>implicit recommender system</b> using <b>mouse-movement analytics</b> to predict learner interest in digital environments. Focused on enhancing user personalization and adaptive content delivery through behavioral data mining.</p>
         <ul class="exp-points">
           <li><i class="fa-solid fa-mouse-pointer"></i> Engineered behavioral datasets from human-computer interaction logs.</li>
           <li><i class="fa-solid fa-network-wired"></i> Built collaborative filtering models using cosine similarity and latent factors.</li>
@@ -141,10 +276,8 @@
 
     <!-- Leadership & Volunteering -->
     <section class="leadership-volunteer">
-      <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Leadership & Volunteering</h1>
-      <p style="font-size:15px; color:var(--text); max-width:800px;">
-        Leadership roles and community engagements that foster collaboration, innovation, and mentorship within academic and professional environments.
-      </p>
+      <h1>Leadership & Volunteering</h1>
+      <p>Leadership roles and community engagements that foster collaboration, innovation, and mentorship within academic and professional environments.</p>
 
       <div class="leadership-grid">
         <div class="leadership-card">
@@ -184,13 +317,13 @@
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
   <script>
-  const toggle = document.createElement("div");
-  toggle.className = "menu-toggle";
-  toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-  document.querySelector("header.site .nav").prepend(toggle);
-  const menu = document.querySelector("nav ul");
-  toggle.addEventListener("click", () => menu.classList.toggle("show"));
-</script>
+    const toggle = document.createElement("div");
+    toggle.className = "menu-toggle";
+    toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    document.querySelector("header.site .nav").prepend(toggle);
+    const menu = document.querySelector("nav ul");
+    toggle.addEventListener("click", () => menu.classList.toggle("show"));
+  </script>
 
 </body>
 </html>
