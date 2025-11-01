@@ -13,21 +13,30 @@
   <style>
     /* ---------- Research Page Unified Styling ---------- */
     .research-section {
-      margin-top: 15px;
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    /* Research Overview paragraph aligned exactly with boxes */
+    /* Heading now flush-left, no center alignment */
+    .research-section h1 {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      text-align: left;
+    }
+
+    /* Paragraph matches box width on both sides */
     .research-intro {
       font-size: 15px;
       color: var(--text);
       line-height: 1.7;
       text-align: justify;
       max-width: 1000px;
-      margin: 0 auto 14px auto;   /* centers inside same width as boxes */
-      padding: 0 30px;            /* left/right padding = card padding */
+      margin: 0;
+      padding: 0 10px; /* small side padding like your Experience page */
       box-sizing: border-box;
     }
 
@@ -39,13 +48,9 @@
       color: var(--accent);
       font-size: 22px;
       font-weight: 700;
-      margin: 0 0 18px 0;
+      margin: 20px 0 18px 0;
       font-family: "Libre Baskerville", Georgia, serif;
-      max-width: 1000px;          /* same width alignment */
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 30px;
-      box-sizing: border-box;
+      text-align: left;
     }
 
     .research-card {
@@ -53,13 +58,12 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 26px 30px;
-      max-width: 1000px;          /* consistent width */
-      margin: 0 auto 28px auto;   /* centered same as text */
       box-shadow: 0 2px 8px rgba(0,0,0,0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      margin-bottom: 28px; /* Equal space between cards */
     }
 
     .research-card:hover {
@@ -117,17 +121,16 @@
 
     /* --- Responsive --- */
     @media (max-width: 900px) {
-      .research-card, .research-intro, .research-block h2 {
-        max-width: 100%;
-        padding: 0 22px;
-      }
+      .research-card { padding: 24px 22px; }
+      .research-block h2 { font-size: 20px; }
+      .research-intro { max-width: 100%; padding: 0 12px; }
     }
 
     @media (max-width: 600px) {
       .research-section { margin-top: 10px; }
       .research-card { padding: 20px 16px; margin-bottom: 24px; }
       .research-card h3 { font-size: 18px; }
-      .research-block h2, .research-intro { padding: 0 16px; }
+      .research-block h2, .research-intro { padding: 0 10px; }
     }
   </style>
 </head>
@@ -152,7 +155,7 @@
 
 <main class="wrap">
   <section class="research-section">
-    <h1 style="color: var(--accent); font-size: 28px; margin: 0 auto; max-width: 1000px; padding: 0 30px;">Research Overview</h1>
+    <h1>Research Overview</h1>
     <p class="research-intro">
       My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b> 
       to analyze multisensor Earth and planetary data. I focus on interpretable machine learning models, large-scale data processing, 
@@ -285,5 +288,6 @@
 
 </body>
 </html>
+
 
 
