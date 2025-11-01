@@ -11,9 +11,13 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ---------- Experience Page Styling (Awards-matched) ---------- */
+    /* --- Experience Page Specific Styling --- */
+    body.experience-page main.wrap {
+      padding-bottom: 60px;
+    }
+
     .experience-section, .leadership-volunteer {
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       flex-direction: column;
       gap: 25px;
@@ -29,8 +33,25 @@
     }
 
     .exp-card:hover, .leadership-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 10px rgba(179,27,27,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(177,4,14,0.4);
+    }
+
+    /* --- Header Title Line --- */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0; /* remove bottom gap */
+    }
+    .section-line {
+      flex: 1;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.4;
     }
 
     .exp-header h2 {
@@ -51,6 +72,7 @@
       font-size: 15px;
       line-height: 1.65;
       margin-bottom: 10px;
+      text-align: justify;
     }
 
     .exp-points {
@@ -76,32 +98,25 @@
       margin-top: 8px;
     }
 
-    /* ---------- TAG (KEYWORD) COLORS — force override & hover invert ---------- */
-    .tags .tag,
-    .exp-card .tag,
-    .leadership-card .tag {
-      display: inline-block;
-      line-height: 1;
-      background: var(--accent) !important;   /* red background by default */
-      color: #ffffff !important;              /* white text by default */
-      border: 1px solid transparent !important;
-      font-size: 12px;
+    /* --- Keyword Tag Hover Style --- */
+    .exp-card .tag, .leadership-card .tag {
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
       padding: 4px 10px;
       border-radius: 20px;
-      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
-      text-decoration: none !important;
+      font-size: 12px;
+      transition: all 0.3s ease-in-out;
     }
-
-    .tags .tag:hover,
-    .exp-card .tag:hover,
-    .leadership-card .tag:hover {
-      background: #ffffff !important;         /* white background on hover */
-      color: var(--accent) !important;        /* red text on hover */
-      border-color: var(--accent) !important; /* red outline on hover */
+    .exp-card .tag:hover, .leadership-card .tag:hover {
+      background: #fff;
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.05);
       cursor: pointer;
     }
 
-    /* ---------- Leadership Cards ---------- */
+    /* --- Leadership Cards --- */
     .leadership-card {
       display: flex;
       align-items: flex-start;
@@ -126,6 +141,7 @@
       font-size: 15px;
       line-height: 1.65;
       margin: 0;
+      text-align: justify;
     }
 
     @media (max-width: 900px) {
@@ -160,7 +176,10 @@
   <main class="wrap">
     <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
     <section class="experience-section">
-      <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Professional Experience</h1>
+      <div class="section-title">
+        <span>Professional Experience</span>
+        <div class="section-line"></div>
+      </div>
       <p style="font-size:15px; color:var(--text); max-width:800px;">
         A journey across academia, research, and industry — integrating AI, geospatial analytics, and computational innovation to solve real-world challenges.
       </p>
@@ -254,7 +273,10 @@
 
     <!-- ================= LEADERSHIP & VOLUNTEERING ================= -->
     <section class="leadership-volunteer">
-      <h1 style="color: var(--accent); font-size: 28px; margin-bottom: 10px;">Leadership & Volunteering</h1>
+      <div class="section-title">
+        <span>Leadership & Volunteering</span>
+        <div class="section-line"></div>
+      </div>
       <p style="font-size:15px; color:var(--text); max-width:800px;">
         Leadership roles and community engagements that foster collaboration, innovation, and mentorship within academic and professional environments.
       </p>
@@ -305,9 +327,9 @@
     const menu = document.querySelector("nav ul");
     toggle.addEventListener("click", () => menu.classList.toggle("show"));
   </script>
-
 </body>
 </html>
+
 
 
 
