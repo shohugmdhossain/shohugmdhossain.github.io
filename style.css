@@ -247,5 +247,124 @@ footer {
   text-align: center;
   border-top: 1px solid var(--line);
 }
+/* ==================== HEADER & NAV ==================== */
+header.site {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.wrap.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+/* --- Navigation Links --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* --- Search Box --- */
+.search-box input {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  background: var(--bg2);
+  color: var(--text);
+}
+.search-box input::placeholder {
+  color: var(--muted);
+}
+
+/* --- Hamburger Menu --- */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--text);
+  display: none;
+  cursor: pointer;
+}
+
+/* ==================== RESPONSIVE NAV ==================== */
+@media (max-width: 800px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.8rem 0;
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+    padding: 0.6rem 0;
+  }
+}
+
+/* ==================== FIX MOBILE SPACING ==================== */
+html, body {
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
 
