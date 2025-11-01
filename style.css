@@ -223,5 +223,29 @@ body.experience-page .leadership-volunteer .tag:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
+/* ====== Sticky Footer Fix ====== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* This pushes the footer to the bottom */
+}
+
+/* Footer styling */
+footer {
+  margin-top: auto;
+  background: var(--bg2);
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
 
 
