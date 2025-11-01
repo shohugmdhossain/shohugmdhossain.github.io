@@ -34,7 +34,7 @@ a:hover { border-bottom: 1px solid var(--accent); }
   padding: 0 40px;
 }
 
-/* ==================== NAVIGATION (RED SINGLE-LINE) ==================== */
+/* ==================== NAVIGATION (RED SINGLE-LINE + HAMBURGER ALWAYS VISIBLE) ==================== */
 header.site {
   position: sticky;
   top: 0;
@@ -62,39 +62,67 @@ header.site {
   white-space: nowrap;
 }
 
+/* --- Hamburger Menu (always visible) --- */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;       /* always visible */
+  cursor: pointer;
+  z-index: 2000;
+  margin-left: auto;
+}
+.menu-toggle i { pointer-events: none; }
+
 /* --- Navigation Links --- */
 nav {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
 }
 
 .nav-links {
-  display: flex;
+  display: none; /* hidden until toggled */
   gap: 1.2rem;
   list-style: none;
   margin: 0;
   padding: 0;
   flex-wrap: nowrap;
+  background: var(--accent);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  flex-direction: column;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-nav a {
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.nav-links a {
   font-weight: 500;
   color: #fff;
-  padding: 6px 10px;
+  padding: 0.8rem;
   border-radius: 6px;
   transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
+  display: block;
 }
-nav a.active,
-nav a:hover {
+.nav-links a.active,
+.nav-links a:hover {
   background: rgba(255,255,255,0.15);
   text-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
-/* --- Search Box (inline) --- */
+/* --- Search Box (inline on desktop, full width on mobile) --- */
 .search-box {
   margin-left: 1rem;
 }
@@ -110,51 +138,9 @@ nav a:hover {
 }
 .search-box input::placeholder { color: #f3f3f3; }
 
-/* --- Hamburger Menu --- */
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: #fff;
-  display: none;
-  cursor: pointer;
-}
-
 /* ==================== RESPONSIVE NAV ==================== */
 @media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background: var(--accent);
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-
   .nav-links {
-    flex-direction: column;
-    display: none;
-    width: 100%;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 0.9rem 0;
     width: 100%;
   }
 
@@ -338,6 +324,7 @@ header.site { animation: fadeIn 0.6s ease-in-out; }
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
