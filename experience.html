@@ -108,21 +108,24 @@
       margin-top: 8px;
     }
 
-    .exp-card .tag,
-    .leadership-card .tag {
-      background-color: var(--accent) !important;
-      color: #fff !important;
+    /* === FINAL FIX: Keyword Tag Colors === */
+    body.experience-page .exp-card .tag,
+    body.experience-page .leadership-card .tag {
+      background: var(--accent) !important;     /* red background */
+      color: #fff !important;                   /* white text */
       border: 1px solid var(--accent) !important;
       padding: 4px 10px;
       border-radius: 20px;
       font-size: 12px;
       transition: all 0.3s ease-in-out !important;
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .exp-card .tag:hover,
-    .leadership-card .tag:hover {
-      background: #fff !important;
-      color: var(--accent) !important;
+    body.experience-page .exp-card .tag:hover,
+    body.experience-page .leadership-card .tag:hover {
+      background: #fff !important;              /* white background */
+      color: var(--accent) !important;          /* red text */
       border-color: var(--accent) !important;
       transform: scale(1.05);
       cursor: pointer;
@@ -333,8 +336,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
