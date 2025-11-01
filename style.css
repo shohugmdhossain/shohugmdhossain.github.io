@@ -4,7 +4,7 @@
   --bg2: #f9f9f9;
   --text: #222222;
   --muted: #555555;
-  --accent: #b1040e;
+  --accent: #b1040e; /* Stanford red */
   --card: #ffffff;
   --line: #dddddd;
   --max: 1000px;
@@ -20,51 +20,140 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
-a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.2s ease; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
+}
 a:hover { border-bottom: 1px solid var(--accent); }
 
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
 
-/* ==================== NAVIGATION ==================== */
+/* ==================== NAVIGATION (FINAL RED VERSION) ==================== */
 header.site {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   background: var(--accent);
   color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.nav {
+
+.wrap.nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 64px;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
 }
-.brand { font-weight: 700; font-size: 1.2rem; color: #fff; }
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* --- Navigation Links --- */
 nav ul {
-  display: flex;
-  gap: 18px;
   list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
-nav a { color: #fff; padding: 8px 10px; border-radius: 10px; }
-nav a.active, nav a:hover {
+
+nav a {
+  font-weight: 500;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a.active,
+nav a:hover {
   background: rgba(255,255,255,0.15);
   text-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
-/* --- Mobile Hamburger --- */
-.menu-toggle { display: none; font-size: 24px; cursor: pointer; color: #fff; }
+/* --- Search Box --- */
+.search-box input {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #f3f3f3;
+}
+
+/* --- Hamburger Menu --- */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+
+/* ==================== RESPONSIVE NAV ==================== */
 @media (max-width: 850px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: var(--accent);
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
     position: absolute;
-    top: 64px; left: 0;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: var(--accent);
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    display: none;
     width: 100%;
   }
-  nav ul.show { display: flex; }
-  .menu-toggle { display: block; }
-  nav ul li { text-align: center; padding: 12px 0; }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.9rem 0;
+    width: 100%;
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+    padding: 0.6rem 0 0.8rem;
+  }
+
+  .search-box input {
+    width: 90%;
+    background: rgba(255,255,255,0.25);
+  }
 }
 
 /* ==================== HOME PAGE ==================== */
@@ -204,11 +293,11 @@ main.wrap, main.research, main.about, main.experience-section {
   footer.site { padding: 14px 0; font-size: 0.85rem; }
 }
 
-/* ======== FINAL FIX: Experience Page Tag Colors ======== */
+/* ======== EXPERIENCE PAGE TAG COLORS ======== */
 body.experience-page .experience-section .tag,
 body.experience-page .leadership-volunteer .tag {
-  background: var(--accent) !important;   /* Red background */
-  color: #fff !important;                 /* White text */
+  background: var(--accent) !important;
+  color: #fff !important;
   border: 1px solid var(--accent) !important;
   transition: all 0.3s ease-in-out !important;
   text-decoration: none;
@@ -217,154 +306,23 @@ body.experience-page .leadership-volunteer .tag {
 
 body.experience-page .experience-section .tag:hover,
 body.experience-page .leadership-volunteer .tag:hover {
-  background: #fff !important;            /* White background on hover */
-  color: var(--accent) !important;        /* Red text */
+  background: #fff !important;
+  color: var(--accent) !important;
   border-color: var(--accent) !important;
   transform: scale(1.05);
   cursor: pointer;
 }
-/* ====== Sticky Footer Fix ====== */
+
+/* ====== STICKY FOOTER FIX ====== */
 html, body {
   height: 100%;
   margin: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
-main {
-  flex: 1; /* This pushes the footer to the bottom */
-}
-
-/* Footer styling */
-footer {
-  margin-top: auto;
-  background: var(--bg2);
-  padding: 20px 0;
-  text-align: center;
-  border-top: 1px solid var(--line);
-}
-/* ==================== HEADER & NAV ==================== */
-header.site {
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.wrap.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-}
-
-.brand {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--accent);
-  letter-spacing: 0.5px;
-}
-
-/* --- Navigation Links --- */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  font-weight: 500;
-  color: var(--text);
-  transition: color 0.2s;
-}
-nav a:hover {
-  color: var(--accent);
-}
-
-/* --- Search Box --- */
-.search-box input {
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
-  background: var(--bg2);
-  color: var(--text);
-}
-.search-box input::placeholder {
-  color: var(--muted);
-}
-
-/* --- Hamburger Menu --- */
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  color: var(--text);
-  display: none;
-  cursor: pointer;
-}
-
-/* ==================== RESPONSIVE NAV ==================== */
-@media (max-width: 800px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    background: var(--bg);
-    border-top: 1px solid var(--line);
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0;
-    display: none;
-    width: 100%;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 0.8rem 0;
-  }
-
-  .search-box {
-    display: flex;
-    justify-content: center;
-    padding: 0.6rem 0;
-  }
-}
-
-/* ==================== FIX MOBILE SPACING ==================== */
-html, body {
-  overflow-x: hidden;
-}
-
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+main { flex: 1; }
 
 
