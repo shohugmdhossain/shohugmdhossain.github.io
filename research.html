@@ -19,7 +19,7 @@
       gap: 10px;
     }
 
-    /* Heading flush-left like Experience */
+    /* Heading flush-left */
     .research-section h1 {
       color: var(--accent);
       font-size: 28px;
@@ -29,15 +29,15 @@
       padding-left: 0;
     }
 
-    /* Perfect paragraph alignment to match box width */
+    /* Paragraph aligns slightly wider on both sides */
     .research-intro {
       font-size: 15px;
       color: var(--text);
       line-height: 1.7;
       text-align: justify;
-      max-width: 1040px;       /* slightly wider */
-      margin: 0 0 15px -10px;  /* shift left */
-      padding: 0 65px 0 10px;  /* extend right edge */
+      max-width: 1000px;
+      margin: 0 0 15px -10px;   /* moves 10px left */
+      padding: 0 40px 0 10px;   /* adds more room right side */
       box-sizing: border-box;
     }
 
@@ -124,7 +124,7 @@
     @media (max-width: 900px) {
       .research-card { padding: 24px 22px; }
       .research-block h2 { font-size: 20px; }
-      .research-intro { margin-left: 0; padding: 0 20px; max-width: 100%; }
+      .research-intro { margin-left: 0; padding: 0 20px; }
     }
 
     @media (max-width: 600px) {
@@ -289,6 +289,7 @@
 
 </body>
 </html>
+
 
 
 
