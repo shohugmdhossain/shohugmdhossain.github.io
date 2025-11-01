@@ -7,273 +7,171 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="stylesheet" href="style.css?v=7.0">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    /* ==================== NAVBAR STYLES ==================== */
+    :root {
+      --accent: #b1040e;
+      --bg: #ffffff;
+      --bg2: #f9f9f9;
+      --text: #222;
+      --muted: #555;
+      --line: #dddddd;
+      --max: 1100px;
+    }
+
+    /* ==================== NAVBAR ==================== */
     .site-header {
       width: 100%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.75);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-
     .nav-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: var(--max, 1100px);
+      max-width: var(--max);
       margin: 0 auto;
       padding: 14px 22px;
     }
-
     .brand {
       font-family: "Libre Baskerville", serif;
       font-size: 22px;
       font-weight: 700;
-      color: var(--accent, #b1040e);
-      white-space: nowrap;
+      color: #fff;
+      letter-spacing: 0.5px;
     }
 
-    /* Desktop nav links */
-    .nav-links {
-      display: flex;
-      gap: 22px;
-    }
-
-    .nav-links a {
-      color: var(--text, #222);
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent, #b1040e);
-    }
-
-    /* Search box */
-    .search-box input {
-      border: 1px solid var(--line, #ddd);
-      border-radius: 8px;
-      padding: 6px 10px;
-      background: var(--bg2, #f9f9f9);
-      color: var(--text, #222);
-      width: 160px;
-      transition: all 0.3s ease;
-    }
-
-    .search-box input:focus {
-      outline: none;
-      border-color: var(--accent, #b1040e);
-      width: 200px;
-    }
-
-    /* Social icons (desktop) */
-    .social-icons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .social-icons a {
-      color: var(--muted, #555);
-      font-size: 18px;
-      transition: color 0.2s;
-    }
-
-    .social-icons a:hover {
-      color: var(--accent, #b1040e);
-    }
-
-    /* Hamburger menu (mobile only) */
     .menu-toggle {
-      display: none;
       background: none;
       border: none;
-      font-size: 22px;
-      color: var(--accent, #b1040e);
+      font-size: 24px;
+      color: #fff;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s;
     }
+    .menu-toggle:hover { transform: scale(1.15); }
 
-    .menu-toggle:hover {
-      transform: scale(1.15);
-    }
-
-    /* Dropdown navigation for mobile */
+    /* Hidden by default until activated */
     .dropdown-nav {
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 0;
       left: 0;
       right: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid var(--line, #ddd);
-      flex-direction: column;
-      overflow: hidden;
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.35s ease;
-      z-index: 999;
-    }
-
-    .dropdown-nav.active {
+      bottom: 0;
+      background: rgba(177, 4, 14, 0.97);
+      backdrop-filter: blur(6px);
       display: flex;
-      max-height: 500px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-20px);
+      transition: all 0.35s ease;
+    }
+    .dropdown-nav.active {
       opacity: 1;
+      pointer-events: auto;
       transform: translateY(0);
     }
-
     .dropdown-nav a {
-      color: var(--text, #222);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      transition: background 0.2s, color 0.2s;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s;
     }
-
     .dropdown-nav a:hover {
-      background: var(--bg2, #f9f9f9);
-      color: var(--accent, #b1040e);
+      opacity: 0.8;
     }
-
-    /* Mobile social icons */
+    .dropdown-nav .close-menu {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 26px;
+      cursor: pointer;
+    }
     .mobile-social {
       display: flex;
       justify-content: center;
-      gap: 18px;
-      padding: 12px 0 14px;
+      gap: 16px;
+      margin-top: 24px;
     }
-
     .mobile-social a {
-      color: var(--muted, #555);
-      font-size: 18px;
-      transition: color 0.2s;
+      color: #fff;
+      font-size: 22px;
     }
 
-    .mobile-social a:hover {
-      color: var(--accent, #b1040e);
-    }
-
-    /* Responsive Rules */
-    @media (max-width: 980px) {
-      .nav-links,
-      .search-box,
-      .social-icons {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .dropdown-nav a {
-        font-size: 16px;
-        padding: 12px 24px;
-      }
-
-      main.wrap.hero {
-        margin-top: 20px;
-      }
-    }
-
-    /* ==================== HERO SECTION ==================== */
+    /* ==================== HERO ==================== */
     .hero {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
-      margin-top: 40px;
       align-items: flex-start;
+      gap: 50px;
+      max-width: var(--max);
+      margin: 60px auto;
+      padding: 0 20px;
     }
-
     .leftcol {
       flex: 1;
       min-width: 280px;
+      text-align: center;
     }
-
     .photo img {
-      width: 220px;
-      height: 220px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      box-shadow: 0 0 12px rgba(0,0,0,0.25);
     }
-
     .socials {
       display: flex;
-      gap: 12px;
+      justify-content: center;
+      gap: 18px;
       margin-top: 16px;
     }
-
     .socials a {
-      color: var(--muted, #555);
-      font-size: 18px;
-      transition: color 0.2s;
+      color: var(--accent);
+      font-size: 22px;
+      transition: opacity 0.2s;
     }
+    .socials a:hover { opacity: 0.8; }
 
-    .socials a:hover {
-      color: var(--accent, #b1040e);
-    }
-
-    .rightcol {
-      flex: 2;
-      min-width: 300px;
-    }
-
+    .rightcol { flex: 2; min-width: 300px; }
     .kicker {
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--accent, #b1040e);
+      color: var(--accent);
       margin-bottom: 12px;
     }
-
     .subtitle {
-      font-size: 26px;
+      font-size: 28px;
       line-height: 1.4;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
-
     .current-projects {
       margin-top: 14px;
-      background: var(--card, #fff);
+      background: var(--bg2);
       padding: 18px;
       border-radius: 10px;
-      border: 1px solid var(--line, #ddd);
+      border: 1px solid var(--line);
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
     .project-link {
-      color: var(--accent, #b1040e);
+      color: var(--accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
-
-    .project-link:hover {
-      border-color: var(--accent, #b1040e);
-    }
-
-    .btns {
-      margin-top: 18px;
-    }
-
+    .project-link:hover { border-color: var(--accent); }
+    .btns { margin-top: 18px; }
     .btn.red {
-      display: inline-block;
-      background: var(--accent, #b1040e);
+      background: var(--accent);
       color: #fff;
       padding: 10px 18px;
       border-radius: 8px;
@@ -281,78 +179,56 @@
       font-weight: 500;
       transition: opacity 0.2s;
     }
-
-    .btn.red:hover {
-      opacity: 0.9;
-    }
+    .btn.red:hover { opacity: 0.9; }
 
     /* ==================== FOOTER ==================== */
     footer.site {
-      margin-top: 60px;
-      padding: 20px 0;
-      border-top: 1px solid var(--line, #ddd);
+      background: var(--accent);
+      color: #fff;
       text-align: center;
-      color: var(--muted, #555);
-      background: var(--bg2, #f9f9f9);
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+    footer.site p { margin: 0; font-size: 15px; }
+
+    @media (max-width: 700px) {
+      .photo img { width: 260px; height: 260px; }
+      .subtitle { font-size: 24px; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- ==================== HEADER ==================== -->
+  <!-- ==================== NAVBAR ==================== -->
   <header class="site-header">
-    <div class="wrap nav-bar">
+    <div class="nav-bar">
       <div class="brand">M S Hossain</div>
-
-      <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="experience.html">Experience</a>
-        <a href="skills.html">Skills</a>
-        <a href="publications.html">Publications</a>
-        <a href="awards.html">Awards</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="search-box">
-        <input type="text" placeholder="Search..." id="searchInput">
-      </div>
-
-      <div class="social-icons">
-        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-      </div>
-
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <div class="dropdown-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="research.html">Research</a>
-      <a href="experience.html">Experience</a>
-      <a href="skills.html">Skills</a>
-      <a href="publications.html">Publications</a>
-      <a href="awards.html">Awards</a>
-      <a href="contact.html">Contact</a>
-
-      <div class="mobile-social">
-        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <main class="wrap hero">
+  <!-- Dropdown / Fullscreen Menu -->
+  <div class="dropdown-nav">
+    <div class="close-menu"><i class="fas fa-times"></i></div>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Experience</a>
+    <a href="skills.html">Skills</a>
+    <a href="publications.html">Publications</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="mobile-social">
+      <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+    </div>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <main class="hero">
     <div class="leftcol">
       <div class="photo">
         <img src="profile.jpg" alt="Md Shohug Hossain portrait">
@@ -368,28 +244,18 @@
 
     <div class="rightcol">
       <div class="kicker">EARTH & PLANETARY SCIENCE • GEOAI</div>
-      <h1 class="subtitle">
-        Turning satellite data into actionable insights for Earth and planetary science
-      </h1>
+      <h1 class="subtitle">Turning satellite data into actionable insights for Earth and planetary science</h1>
       <p>
         I’m a Ph.D. researcher specializing in remote sensing, satellite imagery, and geospatial AI. My work combines
-        machine learning and high-performance computing to study landscapes on Earth and Mars. I am passionate about
-        advancing planetary exploration and Earth sustainability through remote sensing. I have hands-on experience with
-        multispectral and hyperspectral data analysis, geospatial modeling, and large-scale satellite data processing.
-        Beyond the technical side, I focus on translating complex datasets into insights that drive climate action,
-        urban planning, and planetary science.
+        machine learning and high-performance computing to study landscapes on Earth and Mars.
       </p>
-
       <div class="current-projects">
-        <b>Currently Working On:</b><br>
-        <b>• <a href="research.html#mars" class="project-link">Mars Mounds Detection and Classification</a>:</b>
-        Developing and training Faster R-CNN models on Mars CTX imagery to detect and categorize mound-like
-        geomorphological structures across the Martian surface.<br><br>
-        <b>• <a href="research.html#planetary" class="project-link">Planetary Surface Evolution Modeling</a>:</b>
-        Integrating multispectral datasets to model geomorphic evolution and temporal surface dynamics
-        across planetary environments.
+        <b>Currently Working On:</b><br><br>
+        <b>• <a href="research.html#mars" class="project-link">Mars Mounds Detection</a></b> — Using Faster R-CNN to map
+        geomorphological structures on Mars.<br><br>
+        <b>• <a href="research.html#planetary" class="project-link">Planetary Surface Evolution</a></b> — Modeling temporal
+        surface dynamics using multispectral datasets.
       </div>
-
       <div class="btns">
         <a class="btn red" href="about.html">Learn more →</a>
       </div>
@@ -398,29 +264,31 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="site">
-    <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
-    </div>
+    <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
   </footer>
 
   <!-- ==================== JS ==================== -->
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const year = document.getElementById('y');
-    if (year) year.textContent = new Date().getFullYear();
-
+    document.getElementById('y').textContent = new Date().getFullYear();
     const menuToggle = document.querySelector('.menu-toggle');
     const dropdownNav = document.querySelector('.dropdown-nav');
-
+    const closeBtn = document.querySelector('.close-menu');
     if (menuToggle && dropdownNav) {
       menuToggle.addEventListener('click', () => {
         dropdownNav.classList.toggle('active');
+      });
+    }
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        dropdownNav.classList.remove('active');
       });
     }
   });
   </script>
 </body>
 </html>
+
 
 
 
