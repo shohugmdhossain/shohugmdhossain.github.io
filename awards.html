@@ -184,14 +184,22 @@
   </footer>
 
   <!-- ==================== JS ==================== -->
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const year = document.getElementById('y');
+    if (year) year.textContent = new Date().getFullYear();
+
     const menuToggle = document.querySelector('.menu-toggle');
     const dropdownNav = document.querySelector('.dropdown-nav');
-    menuToggle.addEventListener('click', () => {
-      dropdownNav.classList.toggle('active');
-    });
-  </script>
+
+    if (menuToggle && dropdownNav) {
+      menuToggle.addEventListener('click', () => {
+        dropdownNav.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
 
