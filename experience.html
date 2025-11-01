@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ---------- Experience Page Styling (Matched with Awards Design) ---------- */
+    /* ---------- Experience Page Styling (Awards-matched) ---------- */
     .experience-section, .leadership-volunteer {
       margin-top: 40px;
       display: flex;
@@ -76,12 +76,29 @@
       margin-top: 8px;
     }
 
-    .tag {
-      background: var(--accent);
-      color: white;
+    /* ---------- TAG (KEYWORD) COLORS — force override & hover invert ---------- */
+    .tags .tag,
+    .exp-card .tag,
+    .leadership-card .tag {
+      display: inline-block;
+      line-height: 1;
+      background: var(--accent) !important;   /* red background by default */
+      color: #ffffff !important;              /* white text by default */
+      border: 1px solid transparent !important;
       font-size: 12px;
       padding: 4px 10px;
       border-radius: 20px;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+      text-decoration: none !important;
+    }
+
+    .tags .tag:hover,
+    .exp-card .tag:hover,
+    .leadership-card .tag:hover {
+      background: #ffffff !important;         /* white background on hover */
+      color: var(--accent) !important;        /* red text on hover */
+      border-color: var(--accent) !important; /* red outline on hover */
+      cursor: pointer;
     }
 
     /* ---------- Leadership Cards ---------- */
@@ -247,6 +264,7 @@
         <div class="leadership-content">
           <h3>President — ECE Graduate Group, University of Calgary</h3>
           <p>Directed graduate initiatives promoting interdisciplinary collaboration. Organized research seminars, mentorship programs, and technical panels connecting students with industry leaders.</p>
+          <div class="tags"><span class="tag">Mentorship</span><span class="tag">Leadership</span></div>
         </div>
       </div>
 
@@ -255,6 +273,7 @@
         <div class="leadership-content">
           <h3>Vice President — Schulich School of Engineering Consortium & BSA</h3>
           <p>Led multicultural engagement events, mentorship activities, and academic support programs to enhance inclusion and community growth within the engineering faculty.</p>
+          <div class="tags"><span class="tag">Community</span><span class="tag">Events</span></div>
         </div>
       </div>
 
@@ -263,6 +282,7 @@
         <div class="leadership-content">
           <h3>Executive Member — NSU Computer Engineering Club</h3>
           <p>Coordinated hackathons, coding workshops, and research expos. Supported undergraduate innovation in AI and data science through mentoring and event organization.</p>
+          <div class="tags"><span class="tag">Hackathons</span><span class="tag">Workshops</span></div>
         </div>
       </div>
     </section>
@@ -288,5 +308,6 @@
 
 </body>
 </html>
+
 
 
