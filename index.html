@@ -141,20 +141,21 @@
 
   <!-- ==================== JS ==================== -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const year = document.getElementById('y');
-    if (year) year.textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+  const year = document.getElementById('y');
+  if (year) year.textContent = new Date().getFullYear();
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const dropdownNav = document.querySelector('.dropdown-nav');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const dropdownNav = document.querySelector('.dropdown-nav');
 
-    if (menuToggle && dropdownNav) {
-      menuToggle.addEventListener('click', () => {
-        dropdownNav.classList.toggle('active');
-      });
-    }
-  });
+  if (menuToggle && dropdownNav) {
+    menuToggle.addEventListener('click', () => {
+      dropdownNav.classList.toggle('active');
+    });
+  }
+});
 </script>
+
 
 
 </body>
