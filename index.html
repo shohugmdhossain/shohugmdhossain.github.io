@@ -13,7 +13,7 @@
 
   <style>
     :root {
-      --accent:#b1040e; /* Stanford red */
+      --accent:#b1040e;
       --bg:#ffffff;
       --bg2:#f9f9f9;
       --text:#222;
@@ -33,10 +33,8 @@
       line-height:1.7;
     }
     main{flex:1}
-
     a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
     a:hover{border-bottom-color:var(--accent)}
-
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 
     /* ===== NAVBAR ===== */
@@ -56,15 +54,11 @@
     .nav-links{display:flex;gap:20px}
     .nav-links a{color:#fff;border:0;font-size:15px}
     .nav-links a:hover,.nav-links a.active{opacity:.85;text-decoration:underline}
-
     .search-box input{
       border:none;border-radius:8px;background:rgba(255,255,255,.95);
       color:#222;padding:7px 10px;width:170px;transition:width .25s;
     }
     .search-box input:focus{outline:none;width:220px}
-    .social-icons{display:flex;gap:12px;margin-left:16px}
-    .social-icons a{color:#fff;border:0;font-size:18px}
-    .social-icons a:hover{opacity:.85}
     .menu-toggle{
       background:none;border:none;color:#fff;font-size:24px;
       cursor:pointer;margin-left:14px
@@ -87,11 +81,9 @@
     .dropdown-search input{
       border:none;border-radius:10px;padding:10px 14px;width:min(82vw,420px)
     }
-    .mobile-social{display:flex;gap:16px;margin-top:16px}
-    .mobile-social a{color:#fff;font-size:22px}
 
     @media(max-width:980px){
-      .nav-links,.search-box,.social-icons{display:none}
+      .nav-links,.search-box{display:none}
     }
 
     /* ===== HERO ===== */
@@ -111,25 +103,12 @@
     .socials a{color:var(--accent);font-size:22px;border:0}
     .socials a:hover{opacity:.8}
 
-    /* ---- New profile info block ---- */
     .profile-meta{
       font-size:15px;color:var(--muted);
       margin-top:10px;line-height:1.5;
     }
-    .profile-interests{
-      margin-top:10px;font-size:15px;color:var(--text);
-      font-style:italic;
-    }
-    .recent-news{
-      margin-top:12px;background:var(--bg2);
-      padding:10px;border-radius:8px;font-size:14px;
-      border:1px solid var(--line);
-    }
-    .profile-hobby{
-      margin-top:10px;color:var(--muted);font-size:14px;
-    }
 
-    .rightcol{flex:2;min-width:300px}
+    .rightcol{flex:2;min-width:300px;text-align:justify}
     .kicker{font-weight:600;text-transform:uppercase;color:var(--accent);margin-bottom:12px;letter-spacing:.12em}
     .subtitle{font-size:28px;line-height:1.4;margin:0 0 18px}
     .current-projects{
@@ -140,6 +119,13 @@
     .btns{margin-top:18px}
     .btn.red{background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;border:0;text-decoration:none}
     .btn.red:hover{opacity:.9}
+
+    /* ---- Right side additional info ---- */
+    .profile-info-block{
+      margin-top:20px;background:var(--bg2);border:1px solid var(--line);
+      padding:16px;border-radius:10px;font-size:15px;line-height:1.6;
+    }
+    .profile-info-block b{color:var(--accent)}
 
     /* ===== FOOTER ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:40px}
@@ -167,12 +153,6 @@
         <div class="search-box">
           <input type="text" placeholder="Search..." id="searchInput">
         </div>
-        <div class="social-icons">
-          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-        </div>
         <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
@@ -192,12 +172,6 @@
     <div class="dropdown-search">
       <input type="text" placeholder="Search the site…">
     </div>
-    <div class="mobile-social">
-      <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-    </div>
   </div>
 
   <!-- ===== MAIN ===== -->
@@ -216,28 +190,16 @@
           <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
         </div>
 
-        <!-- Title, location, interests, news, hobby -->
         <p class="profile-meta">
           Ph.D. Researcher, GeoAI & Remote Sensing<br>
           Lafayette, Louisiana · Calgary, Alberta
-        </p>
-
-        <p class="profile-interests">
-          Research interests: planetary geomorphology, Earth observation, deep learning, and climate applications.
-        </p>
-
-        <div class="recent-news">
-          <b>Recent Update:</b> Presented Mars Mounds detection results at UL-L Geoscience Seminar (Oct 2025).
-        </div>
-
-        <p class="profile-hobby">
-          Outside research: photography, astronomy, and exploring geological formations.
         </p>
       </div>
 
       <div class="rightcol">
         <div class="kicker">EARTH & PLANETARY SCIENCE • GEOAI</div>
         <h1 class="subtitle">Turning satellite data into actionable insights for Earth and planetary science</h1>
+
         <p>
           I’m a Ph.D. researcher specializing in remote sensing, satellite imagery, and geospatial AI. My work combines
           machine learning and high-performance computing to study landscapes on Earth and Mars. I focus on translating
@@ -250,6 +212,12 @@
           Developing Faster R-CNN models for mapping mound-like geomorphology in CTX imagery.<br><br>
           <b>• <a href="research.html#planetary" class="project-link">Planetary Surface Evolution Modeling</a></b> —
           Integrating multispectral datasets to analyze temporal surface dynamics across planetary environments.
+        </div>
+
+        <div class="profile-info-block">
+          <b>Research Interests:</b> planetary geomorphology, Earth observation, deep learning, and climate applications.<br><br>
+          <b>Recent Update:</b> Presented Mars Mounds detection results at UL-L Geoscience Seminar (Oct 2025).<br><br>
+          <b>Outside Research:</b> photography, astronomy, and exploring geological formations.
         </div>
 
         <div class="btns">
@@ -283,6 +251,7 @@
   </script>
 </body>
 </html>
+
 
 
 
