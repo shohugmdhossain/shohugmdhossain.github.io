@@ -155,17 +155,18 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-<script>
-  const toggle = document.createElement("div");
-  toggle.className = "menu-toggle";
-  toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-  document.querySelector("header.site .nav").prepend(toggle);
-  const menu = document.querySelector("nav ul");
-  toggle.addEventListener("click", () => menu.classList.toggle("show"));
-</script>
+  <!-- ==================== JS ==================== -->
+  <script>
+    // auto-year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // hamburger menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
