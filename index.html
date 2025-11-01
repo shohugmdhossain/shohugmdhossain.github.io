@@ -103,6 +103,48 @@
       margin-top:10px;line-height:1.5;
     }
 
+    /* ===== Collapsible Left Info ===== */
+    .left-info {
+      margin-top:25px;
+      text-align:left;
+      font-size:15px;
+      color:var(--text);
+      line-height:1.6;
+    }
+    .left-info section {
+      border-top:1px solid var(--line);
+      padding-top:10px;margin-top:10px;
+    }
+    .left-info h3 {
+      color:var(--accent);
+      font-size:16px;
+      margin-bottom:6px;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .left-info h3 i {
+      color:var(--accent);
+      font-size:14px;
+      transition:transform 0.3s;
+    }
+    .left-info .content {
+      overflow:hidden;
+      max-height:500px;
+      transition:max-height 0.4s ease;
+    }
+    .left-info.collapsed .content {
+      max-height:0;
+    }
+    .left-info.collapsed h3 i {
+      transform:rotate(-90deg);
+    }
+    .left-info p{margin:0 0 8px}
+    .left-info b{color:var(--accent)}
+
     .rightcol{flex:2;min-width:300px;text-align:justify}
     .kicker{font-weight:600;text-transform:uppercase;color:var(--accent);margin-bottom:12px;letter-spacing:.12em}
     .subtitle{font-size:28px;line-height:1.4;margin:0 0 18px}
@@ -115,22 +157,22 @@
     .btn.red{background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;border:0;text-decoration:none}
     .btn.red:hover{opacity:.9}
 
-    /* ---- Refined info section ---- */
+    /* ---- Right info refined ---- */
     .profile-info {
-      margin-top:28px;
-      border-left:4px solid var(--accent);
-      padding-left:18px;
+      margin-top:30px;
     }
     .profile-info div {
-      margin-bottom:14px;
+      margin-bottom:20px;
     }
-    .profile-info b {
+    .profile-info h3 {
       color:var(--accent);
-      display:block;
-      font-size:15px;
-      margin-bottom:4px;
+      font-size:16px;
       letter-spacing:0.5px;
       text-transform:uppercase;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin:0 0 5px;
     }
     .profile-info p {
       margin:0;
@@ -203,6 +245,33 @@
           Ph.D. Researcher, GeoAI & Remote Sensing<br>
           Lafayette, Louisiana · Calgary, Alberta
         </p>
+
+        <!-- Collapsible Left Info -->
+        <div class="left-info" id="leftInfo">
+          <section>
+            <h3><span><i class="fa-solid fa-user-graduate"></i> Education</span><i class="fa-solid fa-chevron-down"></i></h3>
+            <div class="content">
+              <p><b>Ph.D.</b> Earth & Energy Sciences, UL Lafayette</p>
+              <p><b>M.Sc.</b> Electrical & Computer Engineering, University of Calgary</p>
+              <p><b>B.Sc.</b> Computer Science & Engineering, North South University</p>
+            </div>
+          </section>
+
+          <section>
+            <h3><span><i class="fa-solid fa-building-columns"></i> Affiliation</span><i class="fa-solid fa-chevron-down"></i></h3>
+            <div class="content">
+              <p>University of Louisiana at Lafayette</p>
+              <p>GeoAI & Planetary Imaging Research Group</p>
+            </div>
+          </section>
+
+          <section>
+            <h3><span><i class="fa-solid fa-envelope"></i> Contact</span><i class="fa-solid fa-chevron-down"></i></h3>
+            <div class="content">
+              <p><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
+            </div>
+          </section>
+        </div>
       </div>
 
       <div class="rightcol">
@@ -223,18 +292,17 @@
           Integrating multispectral datasets to analyze temporal surface dynamics across planetary environments.
         </div>
 
-        <!-- Elegant info section -->
         <div class="profile-info">
           <div>
-            <b><i class="fa-solid fa-microscope"></i> Research Interests</b>
+            <h3><i class="fa-solid fa-microscope"></i> Research Interests</h3>
             <p>Planetary geomorphology, Earth observation, deep learning, and climate applications.</p>
           </div>
           <div>
-            <b><i class="fa-solid fa-bullhorn"></i> Recent Update</b>
+            <h3><i class="fa-solid fa-bullhorn"></i> Recent Update</h3>
             <p>Presented Mars Mounds detection results at UL-L Geoscience Seminar (Oct 2025).</p>
           </div>
           <div>
-            <b><i class="fa-solid fa-mountain-sun"></i> Outside Research</b>
+            <h3><i class="fa-solid fa-mountain-sun"></i> Outside Research</h3>
             <p>Photography, astronomy, and exploring geological formations.</p>
           </div>
         </div>
@@ -256,7 +324,10 @@
   <!-- ===== JS ===== -->
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
-      const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+      const y=document.getElementById('y'); 
+      if(y) y.textContent=new Date().getFullYear();
+
+      // Navbar
       const toggle=document.querySelector('.menu-toggle');
       const overlay=document.getElementById('overlayMenu');
       const closeBtn=document.querySelector('.dropdown-close');
@@ -266,6 +337,25 @@
       if(closeBtn) closeBtn.addEventListener('click',closeMenu);
       document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
       overlay.addEventListener('click',e=>{if(e.target===overlay) closeMenu();});
+
+      // Collapsible animation
+      const sections=document.querySelectorAll('.left-info section');
+      sections.forEach(sec=>{
+        const header=sec.querySelector('h3');
+        const content=sec.querySelector('.content');
+        if(window.innerWidth<=900){
+          content.style.maxHeight='0';
+          header.addEventListener('click',()=>{
+            if(sec.classList.contains('open')){
+              sec.classList.remove('open');
+              content.style.maxHeight='0';
+            }else{
+              sec.classList.add('open');
+              content.style.maxHeight=content.scrollHeight+'px';
+            }
+          });
+        }
+      });
     });
   </script>
 </body>
