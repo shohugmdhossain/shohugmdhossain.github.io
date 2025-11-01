@@ -204,23 +204,6 @@ main.wrap, main.research, main.about, main.experience-section {
   footer.site { padding: 14px 0; font-size: 0.85rem; }
 }
 
-/* ---------- Fix tag color & hover (force override) ---------- */
-.exp-card .tag,
-.leadership-card .tag {
-    background-color: var(--accent) !important;
-    color: #fff !important;
-    border: 1px solid var(--accent) !important;
-    transition: all 0.3s ease !important;
-}
-
-.exp-card .tag:hover,
-.leadership-card .tag:hover {
-    background-color: #fff !important;
-    color: var(--accent) !important;
-    border-color: var(--accent) !important;
-    transform: scale(1.05);
-    cursor: pointer;
-}
 /* ======== FINAL FIX: Experience Page Tag Colors ======== */
 body.experience-page .experience-section .tag,
 body.experience-page .leadership-volunteer .tag {
@@ -228,6 +211,8 @@ body.experience-page .leadership-volunteer .tag {
   color: #fff !important;                 /* White text */
   border: 1px solid var(--accent) !important;
   transition: all 0.3s ease-in-out !important;
+  text-decoration: none;
+  display: inline-block;
 }
 
 body.experience-page .experience-section .tag:hover,
