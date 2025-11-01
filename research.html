@@ -13,10 +13,10 @@
   <style>
     /* ---------- Research Page Unified Styling ---------- */
     .research-section {
-      margin-top: 30px;
+      margin-top: 15px; /* reduced vertical gap */
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 10px; /* small consistent spacing */
     }
 
     .research-intro {
@@ -24,9 +24,9 @@
       color: var(--text);
       line-height: 1.7;
       text-align: justify;
-      max-width: 850px;
-      margin: 10px 0 25px 0;
-      padding: 18px 22px;
+      max-width: 1000px; /* matches box width */
+      margin: 0 0 15px 0; /* removed large bottom gap */
+      padding: 0 30px; /* same left-right padding as boxes */
     }
 
     .research-block {
@@ -111,12 +111,14 @@
     @media (max-width: 900px) {
       .research-card { padding: 24px 22px; }
       .research-block h2 { font-size: 20px; }
+      .research-intro { padding: 0 20px; }
     }
 
     @media (max-width: 600px) {
-      .research-section { margin-top: 20px; }
+      .research-section { margin-top: 10px; }
       .research-card { padding: 20px 16px; margin-bottom: 24px; }
       .research-card h3 { font-size: 18px; }
+      .research-intro { padding: 0 16px; }
     }
   </style>
 </head>
@@ -263,7 +265,7 @@
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
-  <script>
+<script>
   const toggle = document.createElement("div");
   toggle.className = "menu-toggle";
   toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
@@ -274,6 +276,3 @@
 
 </body>
 </html>
-
-
-
