@@ -13,28 +13,30 @@
   <style>
     /* ---------- Research Page Unified Styling ---------- */
     .research-section {
-      margin-top: 30px;
+      margin-top: 30px;                 /* match Experience section spacing */
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 25px;                        /* match Experience section gap */
     }
 
-    /* Heading identical to Experience section */
+    /* Heading: remove extra space and keep left-aligned */
     .research-section h1 {
       color: var(--accent);
       font-size: 28px;
       font-weight: 600;
-      margin: 0;
+      margin: 0;                        /* remove gap after heading */
       padding: 0;
       text-align: left;
     }
 
-    /* Paragraph identical to Experience section paragraph */
+    /* Paragraph: identical to Experience intro paragraph */
     .research-intro {
-      margin-top: 10px;
-      margin-bottom: 0;
-      text-align: justify;
-      max-width: 1000px; /* exactly like Experience paragraph */
+      margin-top: 10px;                 /* same as Experience */
+      margin-bottom: 0;                 /* same as Experience */
+      text-align: justify;              /* same as Experience */
+      text-justify: inter-word;
+      hyphens: auto;
+      max-width: 1000px;                /* same line width as Experience */
       color: var(--text);
       font-size: 15px;
       line-height: 1.7;
@@ -288,6 +290,7 @@
 
 </body>
 </html>
+
 
 
 
