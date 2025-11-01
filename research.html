@@ -13,32 +13,31 @@
   <style>
     /* ---------- Research Page Unified Styling ---------- */
     .research-section {
-      margin-top: 20px;
+      margin-top: 30px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 25px;
     }
 
-    /* Heading flush-left */
+    /* Heading identical to Experience section */
     .research-section h1 {
       color: var(--accent);
       font-size: 28px;
-      font-weight: 700;
-      margin: 0 0 8px 0;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
       text-align: left;
-      padding-left: 0;
     }
 
-    /* Paragraph aligns slightly wider on both sides */
+    /* Paragraph identical to Experience section paragraph */
     .research-intro {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.7;
+      margin-top: 10px;
+      margin-bottom: 0;
       text-align: justify;
-      max-width: 1080px;
-      margin: 0 0 15px -10px;   /* moves 10px left */
-      padding: 0 50px 0 0;   /* adds more room right side */
-      box-sizing: border-box;
+      max-width: 1000px; /* exactly like Experience paragraph */
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     .research-block {
@@ -49,7 +48,7 @@
       color: var(--accent);
       font-size: 22px;
       font-weight: 700;
-      margin: 20px 0 18px 0;
+      margin-bottom: 18px;
       font-family: "Libre Baskerville", Georgia, serif;
       text-align: left;
     }
@@ -64,7 +63,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 28px; /* Equal space between cards */
     }
 
     .research-card:hover {
@@ -124,14 +123,14 @@
     @media (max-width: 900px) {
       .research-card { padding: 24px 22px; }
       .research-block h2 { font-size: 20px; }
-      .research-intro { margin-left: 0; padding: 0 20px; }
+      .research-intro { max-width: 100%; padding: 0 20px; }
     }
 
     @media (max-width: 600px) {
-      .research-section { margin-top: 10px; }
+      .research-section { margin-top: 20px; }
       .research-card { padding: 20px 16px; margin-bottom: 24px; }
       .research-card h3 { font-size: 18px; }
-      .research-intro { margin-left: 0; padding: 0 16px; }
+      .research-intro { padding: 0 16px; }
     }
   </style>
 </head>
@@ -289,6 +288,7 @@
 
 </body>
 </html>
+
 
 
 
