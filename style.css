@@ -219,4 +219,21 @@ main.wrap, main.research, main.about, main.experience-section {
   border: 1px solid var(--accent);
   cursor: pointer;
 }
+/* ---------- Fix tag color & hover (force override) ---------- */
+.exp-card .tag,
+.leadership-card .tag {
+  background-color: var(--accent) !important; /* red background */
+  color: #fff !important;                     /* white text */
+  border: 1px solid var(--accent) !important;
+  transition: all 0.3s ease !important;
+}
+
+.exp-card .tag:hover,
+.leadership-card .tag:hover {
+  background-color: #fff !important;          /* white background on hover */
+  color: var(--accent) !important;            /* red text on hover */
+  border-color: var(--accent) !important;
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
