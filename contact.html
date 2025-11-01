@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=4.0">
 
   <style>
     /* ---------- Contact Page Styling ---------- */
@@ -20,15 +20,24 @@
       align-items: start;
     }
 
-    .contact-info {
+    .contact-info,
+    .contact-form {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 30px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .contact-info h2 {
+    .contact-info:hover,
+    .contact-form:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 10px rgba(177,4,14,0.4);
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
       color: var(--accent);
       font-size: 22px;
       margin-bottom: 16px;
@@ -39,6 +48,7 @@
       line-height: 1.7;
       margin-bottom: 12px;
       font-size: 15px;
+      text-align: justify;
     }
 
     .contact-info .info-item {
@@ -66,20 +76,6 @@
     }
 
     /* Form styling */
-    .contact-form {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    }
-
-    .contact-form h2 {
-      color: var(--accent);
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-
     form {
       display: flex;
       flex-direction: column;
@@ -147,87 +143,104 @@
   </style>
 </head>
 
-<body>
+<body class="contact-page">
 
- <!-- ==================== Header / Navigation ==================== -->
+  <!-- ==================== Header / Navigation ==================== -->
   <header class="site">
     <div class="wrap nav">
       <div class="brand">M S Hossain</div>
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="experience.html">Experience</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="awards.html">Awards</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <div class="search-box">
           <input type="text" placeholder="Search..." id="searchInput">
         </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </div>
+
+    <!-- Dropdown for mobile -->
+    <ul class="dropdown-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="awards.html">Awards</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
   </header>
 
-<main class="wrap">
-  <section class="contact-section">
+  <!-- ==================== Main Content ==================== -->
+  <main class="wrap">
+    <section class="contact-section">
 
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <h2>Get in Touch</h2>
-      <p>If you’d like to discuss research collaboration, professional opportunities, or any project ideas — feel free to reach out through the form or my contact channels below.</p>
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>
+          If you’d like to discuss research collaboration, professional opportunities, or project ideas, 
+          feel free to reach out through this form or my contact channels below.
+        </p>
 
-      <div class="info-item"><i class="fa-solid fa-envelope"></i><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></div>
-      <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Calgary, Ab, Canada</span></div>
-      <div class="info-item"><i class="fa-solid fa-phone"></i><a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></div>
+        <div class="info-item"><i class="fa-solid fa-envelope"></i><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></div>
+        <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Lafayette, LA · Calgary, AB</span></div>
+        <div class="info-item"><i class="fa-solid fa-phone"></i><a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></div>
 
-      <div class="social-links">
-        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/shohugmdhossain" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/shohugmdhossain" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+        <div class="social-links">
+          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+        </div>
       </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send a Message</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="_replyto" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject">
+          <textarea name="message" placeholder="Your Message..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p style="font-size:13px; color:var(--muted); margin-top:10px;">
+          This form uses <a href="https://formspree.io" style="color:var(--accent);">Formspree</a> for secure message delivery.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="site">
+    <div class="wrap">
+      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
     </div>
+  </footer>
 
-    <!-- Contact Form -->
-    <div class="contact-form">
-      <h2>Send a Message</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="message" placeholder="Your Message..." required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p style="font-size:13px; color:var(--muted); margin-top:10px;">
-        This form uses <a href="https://formspree.io" style="color:var(--accent);">Formspree</a> for secure delivery.
-      </p>
-    </div>
-  </section>
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-<script>
-  const toggle = document.createElement("div");
-  toggle.className = "menu-toggle";
-  toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-  document.querySelector("header.site .nav").prepend(toggle);
-  const menu = document.querySelector("nav ul");
-  toggle.addEventListener("click", () => menu.classList.toggle("show"));
-</script>
+  <!-- ==================== JS ==================== -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const menuToggle = document.querySelector('.menu-toggle');
+    const dropdownNav = document.querySelector('.dropdown-nav');
+    menuToggle.addEventListener('click', () => {
+      dropdownNav.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
+
