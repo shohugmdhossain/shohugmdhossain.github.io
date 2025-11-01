@@ -103,7 +103,7 @@
       margin-top:10px;line-height:1.5;
     }
 
-    /* ===== Collapsible Left Info ===== */
+    /* ===== LEFT INFO ===== */
     .left-info {
       margin-top:25px;
       text-align:left;
@@ -122,14 +122,6 @@
       text-transform:uppercase;
       letter-spacing:0.6px;
       cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .left-info h3 i {
-      color:var(--accent);
-      font-size:14px;
-      transition:transform 0.3s;
     }
     .left-info .content {
       overflow:hidden;
@@ -138,9 +130,6 @@
     }
     .left-info.collapsed .content {
       max-height:0;
-    }
-    .left-info.collapsed h3 i {
-      transform:rotate(-90deg);
     }
     .left-info p{margin:0 0 8px}
     .left-info b{color:var(--accent)}
@@ -157,12 +146,12 @@
     .btn.red{background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;border:0;text-decoration:none}
     .btn.red:hover{opacity:.9}
 
-    /* ---- Right info refined ---- */
+    /* ===== RIGHT INFO ===== */
     .profile-info {
       margin-top:30px;
     }
     .profile-info div {
-      margin-bottom:20px;
+      margin-bottom:25px;
     }
     .profile-info h3 {
       color:var(--accent);
@@ -172,14 +161,16 @@
       display:flex;
       align-items:center;
       gap:8px;
-      margin:0 0 5px;
+      margin:0 0 8px;
     }
-    .profile-info p {
-      margin:0;
+    .profile-info p, .profile-info ul {
       font-size:15px;
       color:var(--text);
       text-align:justify;
+      margin:0;
     }
+    .profile-info ul {padding-left:20px; margin-top:5px;}
+    .profile-info li {margin-bottom:6px;}
 
     /* ===== FOOTER ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:40px}
@@ -246,10 +237,9 @@
           Lafayette, Louisiana · Calgary, Alberta
         </p>
 
-        <!-- Collapsible Left Info -->
         <div class="left-info" id="leftInfo">
           <section>
-            <h3><span><i class="fa-solid fa-user-graduate"></i> Education</span><i class="fa-solid fa-chevron-down"></i></h3>
+            <h3><i class="fa-solid fa-user-graduate"></i> Education</h3>
             <div class="content">
               <p><b>Ph.D.</b> Earth & Energy Sciences, UL Lafayette</p>
               <p><b>M.Sc.</b> Electrical & Computer Engineering, University of Calgary</p>
@@ -258,7 +248,7 @@
           </section>
 
           <section>
-            <h3><span><i class="fa-solid fa-building-columns"></i> Affiliation</span><i class="fa-solid fa-chevron-down"></i></h3>
+            <h3><i class="fa-solid fa-building-columns"></i> Affiliation</h3>
             <div class="content">
               <p>University of Louisiana at Lafayette</p>
               <p>GeoAI & Planetary Imaging Research Group</p>
@@ -266,7 +256,7 @@
           </section>
 
           <section>
-            <h3><span><i class="fa-solid fa-envelope"></i> Contact</span><i class="fa-solid fa-chevron-down"></i></h3>
+            <h3><i class="fa-solid fa-envelope"></i> Contact</h3>
             <div class="content">
               <p><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
             </div>
@@ -295,15 +285,30 @@
         <div class="profile-info">
           <div>
             <h3><i class="fa-solid fa-microscope"></i> Research Interests</h3>
-            <p>Planetary geomorphology, Earth observation, deep learning, and climate applications.</p>
+            <ul>
+              <li>Planetary geomorphology and landscape evolution on Mars and Earth.</li>
+              <li>Automated crater, mound, and surface feature detection using deep learning and computer vision.</li>
+              <li>GeoAI for Earth observation, hazard mapping, and climate analytics.</li>
+              <li>Integrating multispectral and radar data for planetary surface interpretation.</li>
+            </ul>
           </div>
+
           <div>
-            <h3><i class="fa-solid fa-bullhorn"></i> Recent Update</h3>
-            <p>Presented Mars Mounds detection results at UL-L Geoscience Seminar (Oct 2025).</p>
+            <h3><i class="fa-solid fa-bullhorn"></i> Recent Updates</h3>
+            <ul>
+              <li>Presented <b>“Mars Mounds Detection with Deep Learning”</b> at UL-L Geoscience Seminar (Oct 2025).</li>
+              <li>Preparing a manuscript on <b>automated mound morphology classification</b> using CNN-based feature extraction.</li>
+              <li>Building a new <b>Martian surface benchmark dataset</b> combining CTX and HiRISE imagery.</li>
+            </ul>
           </div>
+
           <div>
-            <h3><i class="fa-solid fa-mountain-sun"></i> Outside Research</h3>
-            <p>Photography, astronomy, and exploring geological formations.</p>
+            <h3><i class="fa-solid fa-bullseye"></i> Next Goals</h3>
+            <ul>
+              <li>Publish <b>Mounds Detection Dataset v2</b> with public COCO annotations for planetary ML research.</li>
+              <li>Collaborate on <b>cross-planet geomorphology modeling</b> integrating Earth analogs with Martian terrains.</li>
+              <li>Expand <b>GeoAI methods</b> to detect ancient fluvial and volcanic features in high-resolution imagery.</li>
+            </ul>
           </div>
         </div>
 
@@ -323,43 +328,55 @@
 
   <!-- ===== JS ===== -->
   <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      const y=document.getElementById('y'); 
-      if(y) y.textContent=new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
 
-      // Navbar
-      const toggle=document.querySelector('.menu-toggle');
-      const overlay=document.getElementById('overlayMenu');
-      const closeBtn=document.querySelector('.dropdown-close');
-      function openMenu(){overlay.classList.add('active');}
-      function closeMenu(){overlay.classList.remove('active');}
-      if(toggle) toggle.addEventListener('click',openMenu);
-      if(closeBtn) closeBtn.addEventListener('click',closeMenu);
-      document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
-      overlay.addEventListener('click',e=>{if(e.target===overlay) closeMenu();});
+      const toggle = document.querySelector('.menu-toggle');
+      const overlay = document.getElementById('overlayMenu');
+      const closeBtn = document.querySelector('.dropdown-close');
 
-      // Collapsible animation
-      const sections=document.querySelectorAll('.left-info section');
-      sections.forEach(sec=>{
-        const header=sec.querySelector('h3');
-        const content=sec.querySelector('.content');
-        if(window.innerWidth<=900){
-          content.style.maxHeight='0';
-          header.addEventListener('click',()=>{
-            if(sec.classList.contains('open')){
+      function toggleMenu() {
+        overlay.classList.toggle('active');
+      }
+      function closeMenu() {
+        overlay.classList.remove('active');
+      }
+
+      if (toggle) toggle.addEventListener('click', toggleMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      overlay.addEventListener('click', e => {
+        if (e.target === overlay) closeMenu();
+      });
+
+      // Collapsible panels for mobile
+      if (window.innerWidth <= 900) {
+        const sections = document.querySelectorAll('.left-info section');
+        sections.forEach(sec => {
+          const header = sec.querySelector('h3');
+          const content = sec.querySelector('.content');
+          content.style.maxHeight = '0';
+          header.addEventListener('click', () => {
+            if (sec.classList.contains('open')) {
               sec.classList.remove('open');
-              content.style.maxHeight='0';
-            }else{
+              content.style.maxHeight = '0';
+            } else {
               sec.classList.add('open');
-              content.style.maxHeight=content.scrollHeight+'px';
+              content.style.maxHeight = content.scrollHeight + 'px';
             }
           });
-        }
-      });
+        });
+      }
     });
   </script>
 </body>
 </html>
+
 
 
 
