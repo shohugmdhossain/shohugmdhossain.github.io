@@ -16,17 +16,18 @@
       margin-top: 15px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
     }
 
+    /* Research Overview paragraph aligned exactly with boxes */
     .research-intro {
       font-size: 15px;
       color: var(--text);
       line-height: 1.7;
       text-align: justify;
-      width: 100%;
-      margin: 0;
-      padding: 0 30px; /* same padding as card boxes */
+      max-width: 1000px;
+      margin: 0 auto 14px auto;   /* centers inside same width as boxes */
+      padding: 0 30px;            /* left/right padding = card padding */
       box-sizing: border-box;
     }
 
@@ -40,7 +41,11 @@
       font-weight: 700;
       margin: 0 0 18px 0;
       font-family: "Libre Baskerville", Georgia, serif;
-      padding: 0 30px; /* aligns title with box width */
+      max-width: 1000px;          /* same width alignment */
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 30px;
+      box-sizing: border-box;
     }
 
     .research-card {
@@ -48,12 +53,13 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 26px 30px;
+      max-width: 1000px;          /* consistent width */
+      margin: 0 auto 28px auto;   /* centered same as text */
       box-shadow: 0 2px 8px rgba(0,0,0,0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 28px;
     }
 
     .research-card:hover {
@@ -111,17 +117,17 @@
 
     /* --- Responsive --- */
     @media (max-width: 900px) {
-      .research-card { padding: 24px 22px; }
-      .research-block h2 { padding: 0 22px; }
-      .research-intro { padding: 0 22px; }
+      .research-card, .research-intro, .research-block h2 {
+        max-width: 100%;
+        padding: 0 22px;
+      }
     }
 
     @media (max-width: 600px) {
       .research-section { margin-top: 10px; }
       .research-card { padding: 20px 16px; margin-bottom: 24px; }
-      .research-block h2 { padding: 0 16px; }
       .research-card h3 { font-size: 18px; }
-      .research-intro { padding: 0 16px; }
+      .research-block h2, .research-intro { padding: 0 16px; }
     }
   </style>
 </head>
@@ -146,10 +152,10 @@
 
 <main class="wrap">
   <section class="research-section">
-    <h1 style="color: var(--accent); font-size: 28px; margin: 0; padding: 0 30px;">Research Overview</h1>
+    <h1 style="color: var(--accent); font-size: 28px; margin: 0 auto; max-width: 1000px; padding: 0 30px;">Research Overview</h1>
     <p class="research-intro">
-      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b>
-      to analyze multisensor Earth and planetary data. I focus on interpretable machine learning models, large-scale data processing,
+      My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b> 
+      to analyze multisensor Earth and planetary data. I focus on interpretable machine learning models, large-scale data processing, 
       and physics-informed frameworks to enhance environmental and planetary understanding.
     </p>
 
@@ -161,7 +167,7 @@
         <h3>Mars Mound Detection Using Deep Learning</h3>
         <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
         <p>
-          Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic
+          Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic 
           features in <b>CTX imagery</b> from Mars. Leveraging <b>LONI A100 GPU clusters</b> for large-scale geological surface mapping.
         </p>
         <div class="tools">
@@ -176,7 +182,7 @@
         <h3>CRISM Spectral Mineral Mapping</h3>
         <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
         <p>
-          Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface
+          Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface 
           mineral diversity and identify hydrated minerals. The study aims to infer past aqueous environments in Martian terrains.
         </p>
         <div class="tools">
@@ -191,8 +197,8 @@
         <h3>Urban Accessibility Mapping with AI</h3>
         <div class="research-meta">Computer Vision · 2024</div>
         <p>
-          Constructing a vision-based workflow to identify sidewalk elements—such as curb ramps and crosswalks—
-          from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>. Enhanced validation accuracy through
+          Constructing a vision-based workflow to identify sidewalk elements—such as curb ramps and crosswalks— 
+          from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>. Enhanced validation accuracy through 
           <b>LLM-assisted label review</b> and systematic dataset correction.
         </p>
         <div class="tools">
@@ -212,8 +218,8 @@
         <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
         <div class="research-meta">Remote Sensing · 2023</div>
         <p>
-          Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level
-          fluctuations and vegetation stress in coastal wetlands. Demonstrated radar-optical synergy
+          Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level 
+          fluctuations and vegetation stress in coastal wetlands. Demonstrated radar-optical synergy 
           for dynamic hydrologic mapping in monsoon-influenced ecosystems.
         </p>
         <div class="tools">
@@ -228,8 +234,8 @@
         <h3>Land-Cover Change Detection in Bangladesh</h3>
         <div class="research-meta">Geospatial ML · 2022</div>
         <p>
-          Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions
-          using <b>Landsat 8</b> and <b>Sentinel-2</b> data. Produced spatial insights on urban growth and
+          Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions 
+          using <b>Landsat 8</b> and <b>Sentinel-2</b> data. Produced spatial insights on urban growth and 
           vegetation loss over a decade.
         </p>
         <div class="tools">
@@ -244,8 +250,8 @@
         <h3>Urban Heat Island Modeling</h3>
         <div class="research-meta">Urban Climate · 2021</div>
         <p>
-          Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b>
-          and <b>MODIS emissivity</b> data. Developed improved models for urban heat island analysis
+          Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b> 
+          and <b>MODIS emissivity</b> data. Developed improved models for urban heat island analysis 
           and emissivity-based correction.
         </p>
         <div class="tools">
@@ -279,4 +285,5 @@
 
 </body>
 </html>
+
 
