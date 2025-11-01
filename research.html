@@ -19,24 +19,25 @@
       gap: 10px;
     }
 
-    /* Heading now flush-left, no center alignment */
+    /* Heading flush-left */
     .research-section h1 {
       color: var(--accent);
       font-size: 28px;
       font-weight: 700;
       margin: 0 0 8px 0;
       text-align: left;
+      padding-left: 0;
     }
 
-    /* Paragraph matches box width on both sides */
+    /* Paragraph aligns slightly wider on both sides */
     .research-intro {
       font-size: 15px;
       color: var(--text);
       line-height: 1.7;
       text-align: justify;
       max-width: 1000px;
-      margin: 0;
-      padding: 0 10px; /* small side padding like your Experience page */
+      margin: 0 0 15px -10px;   /* moves 10px left */
+      padding: 0 40px 0 10px;   /* adds more room right side */
       box-sizing: border-box;
     }
 
@@ -63,7 +64,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 28px; /* Equal space between cards */
+      margin-bottom: 28px;
     }
 
     .research-card:hover {
@@ -123,14 +124,14 @@
     @media (max-width: 900px) {
       .research-card { padding: 24px 22px; }
       .research-block h2 { font-size: 20px; }
-      .research-intro { max-width: 100%; padding: 0 12px; }
+      .research-intro { margin-left: 0; padding: 0 20px; }
     }
 
     @media (max-width: 600px) {
       .research-section { margin-top: 10px; }
       .research-card { padding: 20px 16px; margin-bottom: 24px; }
       .research-card h3 { font-size: 18px; }
-      .research-block h2, .research-intro { padding: 0 10px; }
+      .research-intro { margin-left: 0; padding: 0 16px; }
     }
   </style>
 </head>
@@ -288,6 +289,7 @@
 
 </body>
 </html>
+
 
 
 
