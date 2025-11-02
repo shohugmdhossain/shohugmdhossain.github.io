@@ -7,7 +7,6 @@
 
   <!-- SEO -->
   <meta name="description" content="About Md Shohug Hossain — Ph.D. researcher in GeoAI, remote sensing, and planetary science.">
-  <meta name="keywords" content="Md Shohug Hossain, GeoAI, Remote Sensing, Planetary Science, Machine Learning, UL Lafayette, University of Calgary, North South University">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,24 +16,34 @@
 
   <style>
     :root {
-      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9; --text:#222;
-      --muted:#555; --line:#ddd; --max:1100px;
+      --accent:#b1040e;
+      --bg:#fff;
+      --bg2:#f9f9f9;
+      --text:#222;
+      --muted:#555;
+      --line:#ddd;
+      --max:1100px;
+      --headerH:62px;
     }
 
     html,body{height:100%;}
     body{
-      margin:0;background:var(--bg);color:var(--text);
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      display:flex;flex-direction:column;line-height:1.7;
+      line-height:1.7;
     }
+
     main{flex:1;}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
     a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
     a:hover{border-bottom-color:var(--accent);}
 
-    /* ===== NAVBAR ===== */
+    /* ===== NAVBAR (fixed) ===== */
     .site-header{
-      position:sticky; top:0; z-index:1000;
+      position:fixed; top:0; left:0; right:0;
+      z-index:1000;
       background:var(--accent); color:#fff;
       box-shadow:0 3px 10px rgba(0,0,0,.1);
       transition:all .25s ease;
@@ -54,26 +63,25 @@
     }
     .search-box input:focus{outline:none;width:220px;}
 
-    /* ===== OVERLAY MENU ===== */
+    /* Overlay Menu */
     .dropdown-nav{
       position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(177,4,14,.75);
-      backdrop-filter:blur(10px);display:flex;flex-direction:column;
-      align-items:center;justify-content:center;gap:24px;z-index:9999;
-      opacity:0;visibility:hidden;transition:.3s;
+      backdrop-filter:blur(10px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:24px;z-index:9999;opacity:0;visibility:hidden;transition:.3s;
     }
     .dropdown-nav.active{opacity:1;visibility:visible;}
     .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;}
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
 
     /* ===== ABOUT SECTION ===== */
-    .about-section{margin:60px auto;display:flex;flex-wrap:wrap;gap:60px;}
+    .about-section{margin:calc(var(--headerH) + 40px) auto 60px;display:flex;flex-wrap:wrap;gap:60px;}
     .about-left{flex:1;min-width:280px;text-align:center;}
     .about-photo img{width:320px;height:320px;border-radius:50%;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.25);}
     .socials{display:flex;justify-content:center;gap:18px;margin-top:18px;}
     .socials a{color:var(--accent);font-size:22px;border:0;}
     .socials a:hover{opacity:.85;}
 
-    /* SKILLS BOX */
     .skills-section{
       margin-top:25px;background:var(--bg2);padding:18px;border-radius:14px;
       border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.08);
@@ -84,7 +92,6 @@
     .skills-list li{margin-bottom:6px;color:var(--text);}
     .skills-list i{color:var(--accent);margin-right:8px;}
 
-    /* INTERESTS BOX */
     .personal-interests{
       margin-top:20px;background:var(--bg2);padding:15px;border-radius:14px;
       border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.05);
@@ -97,7 +104,6 @@
     .about-right h1{font-size:32px;color:var(--accent);margin-top:0;}
     .about-right p{margin-bottom:16px;}
 
-    /* CV BUTTON */
     .cv-download{text-align:center;margin-top:25px;}
     .cv-download .btn.red{
       background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;
@@ -106,7 +112,6 @@
     }
     .cv-download .btn.red:hover{opacity:.9;transform:scale(1.04);}
 
-    /* ACADEMIC JOURNEY */
     .academic-journey{
       background:var(--bg2);border-radius:14px;border:1px solid var(--line);
       padding:25px;margin-top:30px;box-shadow:0 2px 8px rgba(0,0,0,.08);
@@ -115,7 +120,6 @@
     .academic-details img{width:32px;height:32px;object-fit:contain;vertical-align:middle;margin-right:8px;}
     .academic-details p{margin-bottom:14px;line-height:1.8;}
 
-    /* BEYOND RESEARCH */
     .beyond-research{
       margin-top:40px;background:linear-gradient(135deg,#fff,var(--bg2));
       padding:25px;border-radius:14px;border:1px solid var(--line);
@@ -128,7 +132,6 @@
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
 
-    /* Shrink Navbar on Scroll */
     .site-header.shrink {padding:4px 0 !important; box-shadow:0 3px 10px rgba(0,0,0,0.25);}
     .site-header.shrink .brand {font-size:18px;}
 
@@ -166,7 +169,6 @@
     </div>
   </header>
 
-  <!-- Overlay Menu -->
   <div class="dropdown-nav" id="overlayMenu">
     <button class="dropdown-close"><i class="fas fa-times"></i></button>
     <a href="index.html">Home</a>
@@ -252,24 +254,41 @@
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const toggle=document.querySelector('.menu-toggle');
-    const overlay=document.getElementById('overlayMenu');
-    const closeBtn=document.querySelector('.dropdown-close');
-    toggle.addEventListener('click',()=>overlay.classList.toggle('active'));
-    closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
-    overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('active');});
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
 
-    // Navbar shrink on scroll
-    window.addEventListener('scroll', () => {
       const header = document.querySelector('.site-header');
-      if (window.scrollY > 50) header.classList.add('shrink');
-      else header.classList.remove('shrink');
+      const overlay = document.getElementById('overlayMenu');
+      const toggle = document.querySelector('.menu-toggle');
+      const closeBtn = document.querySelector('.dropdown-close');
+
+      function applyTopOffset() {
+        document.body.style.paddingTop = header.getBoundingClientRect().height + 'px';
+      }
+
+      const toggleMenu = () => overlay.classList.toggle('active');
+      const closeMenu = () => overlay.classList.remove('active');
+
+      toggle.addEventListener('click', toggleMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeMenu(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+      applyTopOffset();
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) header.classList.add('shrink');
+        else header.classList.remove('shrink');
+        applyTopOffset();
+      });
+
+      window.addEventListener('resize', applyTopOffset);
     });
   </script>
 </body>
 </html>
+
 
 
 
