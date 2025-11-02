@@ -4,7 +4,7 @@
   <title>About — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="About Md Shohug Hossain — Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science.">
+  <meta name="description" content="About Md Shohug Hossain — Ph.D. Researcher in GeoAI, Remote Sensing, and Planetary Science.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,13 +13,12 @@
 
   <style>
     :root{
-      --accent:#b1040e; --bg:#fff; --bg2:#fdf9f9;
+      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
       --text:#222; --muted:#555; --line:#ddd; --max:1100px;
     }
     body{
-      margin:0;
+      margin:0; background:var(--bg);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,var(--bg2),#fff);
       color:var(--text); line-height:1.7;
     }
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
@@ -57,34 +56,40 @@
       font-size:26px;border:none;background:none;cursor:pointer;
     }
 
-    /* ===== HERO ===== */
-    .hero{
-      text-align:center;padding:60px 0 40px;
-    }
-    .hero h1{font-size:34px;margin:0;color:var(--accent);}
-    .hero p{margin-top:6px;font-size:16px;color:var(--muted);}
-
-    /* ===== ABOUT SECTION ===== */
-    .about-section{
-      display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;margin-bottom:40px;
-    }
-    .about-photo img{
-      width:300px;height:300px;object-fit:cover;border-radius:12px;
+    /* ===== MAIN PROFILE ===== */
+    .profile-section{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin:60px 0 40px;}
+    .photo img{
+      width:220px;height:220px;object-fit:cover;border-radius:50%;
       box-shadow:0 4px 12px rgba(0,0,0,.15);
     }
-    .socials{
-      margin-top:14px;display:flex;gap:16px;justify-content:center;
-    }
+    .socials{margin-top:14px;display:flex;gap:14px;}
     .socials a{color:var(--accent);font-size:20px;}
-    .about-text{flex:1;min-width:280px;}
-    .about-text h2{color:var(--accent);margin-top:0;font-size:22px;}
-    .about-text p{text-align:justify;margin-bottom:12px;font-size:15.5px;}
+    .profile-text{flex:1;min-width:280px;}
+    .profile-text h2{margin-top:0;color:var(--accent);font-size:24px;}
+    .profile-text p{text-align:justify;margin-bottom:14px;font-size:15.5px;}
+
+    /* ===== ACADEMIC JOURNEY ===== */
+    section{padding:30px 0;}
+    section h2{text-align:center;color:var(--accent);margin-bottom:14px;}
+    .journey{
+      max-width:850px;margin:0 auto;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .journey-item{
+      display:flex;align-items:flex-start;gap:12px;
+      background:#fff;border:1px solid var(--line);
+      padding:14px 18px;border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,.06);
+    }
+    .journey-item i{color:var(--accent);font-size:18px;margin-top:4px;}
+    .journey-item div h4{margin:0;font-size:16px;color:var(--accent);}
+    .journey-item div p{margin:4px 0 0;font-size:14.5px;color:var(--muted);text-align:justify;}
 
     /* ===== EXPERTISE ===== */
-    section{padding:40px 0;}
-    section h2{text-align:center;color:var(--accent);margin-bottom:16px;}
-    section p{text-align:center;max-width:800px;margin:0 auto 20px;font-size:15.5px;}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+    .cards{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;margin-top:16px;
+    }
     .card{
       background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;
       box-shadow:0 2px 6px rgba(0,0,0,.08);transition:.2s;
@@ -94,22 +99,16 @@
     .card h3{margin:6px 0;font-size:17px;}
     .card p{font-size:14.5px;color:var(--muted);text-align:justify;}
 
-    /* ===== TIMELINE (HORIZONTAL) ===== */
-    .timeline{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-    .tcard{
-      background:#fff;border:1px solid var(--line);border-radius:10px;
-      padding:18px;width:300px;text-align:left;box-shadow:0 2px 6px rgba(0,0,0,.08);
-    }
-    .tcard h4{color:var(--accent);margin:0 0 6px;font-size:16px;}
-    .tcard p{font-size:14.5px;color:var(--muted);margin:0;}
-
-    /* ===== FOOTER ===== */
+    /* ===== BEYOND RESEARCH ===== */
+    .beyond p{text-align:justify;max-width:850px;margin:0 auto 25px;font-size:15.5px;color:var(--text);}
     footer{background:var(--accent);color:#fff;text-align:center;padding:18px 0;margin-top:40px;}
     footer p{margin:0;font-size:15px;}
 
     @media(max-width:900px){
       .nav-links{display:none;}
       .search-box{display:none;}
+      .profile-section{flex-direction:column;text-align:center;}
+      .socials{justify-content:center;}
     }
   </style>
 </head>
@@ -149,15 +148,9 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero wrap">
-    <h1>About Md Shohug Hossain</h1>
-    <p>Ph.D. Researcher · GeoAI · Remote Sensing · Planetary Science</p>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <div class="wrap about-section">
-    <div class="about-photo">
+  <!-- ===== PROFILE SECTION ===== -->
+  <div class="wrap profile-section">
+    <div class="photo">
       <img src="profile.jpg" alt="Md Shohug Hossain portrait">
       <div class="socials">
         <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
@@ -167,48 +160,62 @@
         <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
-    <div class="about-text">
-      <h2>Professional Overview</h2>
+    <div class="profile-text">
+      <h2>About Md Shohug Hossain</h2>
       <p>
-        Md Shohug Hossain is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI and planetary remote sensing. He bridges machine learning, geology, and satellite data science to analyze Earth and Martian landscapes. His research focuses on deep learning models for geomorphological mapping and planetary surface evolution.
+        Md Shohug Hossain is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI, remote sensing, and planetary science. His research explores the intersection of machine learning and geoscience to analyze geomorphological evolution on Earth and Mars.
       </p>
       <p>
-        He is motivated by the idea that artificial intelligence can extend human observation beyond Earth, transforming planetary data into scientific insight for climate change and space exploration. 
+        He is passionate about developing deep learning systems that transform planetary imagery into scientific knowledge—bridging computation, observation, and environmental understanding.
       </p>
     </div>
   </div>
 
-  <!-- ===== EXPERTISE ===== -->
-  <section class="wrap">
-    <h2>Areas of Expertise</h2>
-    <div class="cards">
-      <div class="card"><i class="fa-solid fa-brain"></i><h3>GeoAI & Deep Learning</h3><p>Designing neural networks for geospatial feature recognition and spatiotemporal analysis across planetary datasets.</p></div>
-      <div class="card"><i class="fa-solid fa-globe"></i><h3>Remote Sensing & GIS</h3><p>Processing multispectral satellite imagery to analyze landform changes and surface composition patterns.</p></div>
-      <div class="card"><i class="fa-solid fa-server"></i><h3>HPC & Cloud Computing</h3><p>Deploying AI pipelines on GPU clusters and cloud environments for large-scale planetary data processing.</p></div>
-    </div>
-  </section>
-
-  <!-- ===== TIMELINE ===== -->
-  <section class="wrap">
+  <!-- ===== ACADEMIC JOURNEY ===== -->
+  <section>
     <h2>Academic & Research Journey</h2>
-    <div class="timeline">
-      <div class="tcard"><h4>2025 — Ph.D., University of Louisiana at Lafayette</h4><p>Doctoral research on deep learning applications in planetary geomorphology and GeoAI.</p></div>
-      <div class="tcard"><h4>2023 — M.Sc., University of Calgary</h4><p>Master’s research focused on AI for satellite imagery and computer vision applications in geoscience.</p></div>
-      <div class="tcard"><h4>2019 — B.Sc., North South University</h4><p>Computer Science & Engineering; merit scholarship recipient and research assistant in image processing.</p></div>
+    <div class="journey">
+      <div class="journey-item">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <div>
+          <h4>Ph.D. — University of Louisiana at Lafayette (2025–Present)</h4>
+          <p>Doctoral research in GeoAI and planetary geomorphology using deep learning and high-resolution satellite data.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <i class="fa-solid fa-university"></i>
+        <div>
+          <h4>M.Sc. — University of Calgary (2023)</h4>
+          <p>Master’s research focused on machine learning and satellite image analysis for Earth observation and computer vision.</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <i class="fa-solid fa-laptop-code"></i>
+        <div>
+          <h4>B.Sc. — North South University (2019)</h4>
+          <p>Computer Science & Engineering major with specialization in data analysis and image processing; merit scholarship recipient.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== BEYOND ===== -->
-  <section class="wrap">
+  <!-- ===== EXPERTISE ===== -->
+  <section>
+    <h2>Areas of Expertise</h2>
+    <div class="wrap cards">
+      <div class="card"><i class="fa-solid fa-brain"></i><h3>GeoAI & Deep Learning</h3><p>Developing convolutional and transformer-based neural networks for planetary surface mapping and geoscientific pattern detection.</p></div>
+      <div class="card"><i class="fa-solid fa-globe"></i><h3>Remote Sensing & GIS</h3><p>Processing and interpreting multispectral satellite data to study terrain features, morphology, and temporal change detection.</p></div>
+      <div class="card"><i class="fa-solid fa-server"></i><h3>HPC & Cloud Computing</h3><p>Leveraging GPU clusters and cloud pipelines for scalable Earth and planetary image analytics.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== BEYOND RESEARCH ===== -->
+  <section class="beyond">
     <h2>Beyond Research</h2>
     <p>
-      Outside academia, Shohug enjoys photography, astronomy, and geological field exploration. He mentors young researchers and advocates for accessible AI education in Earth and space science.
+      Outside academia, Shohug enjoys combining art, science, and exploration. His interests include astrophotography, stargazing, and discovering geological landscapes that mirror planetary forms. 
+      He also mentors junior researchers and promotes scientific outreach to inspire curiosity about space, Earth systems, and AI for sustainability.
     </p>
-    <div class="cards">
-      <div class="card"><i class="fa-solid fa-camera"></i><h3>Photography</h3><p>Documenting natural textures and landscapes through visual storytelling and scientific imaging.</p></div>
-      <div class="card"><i class="fa-solid fa-star"></i><h3>Astronomy</h3><p>Exploring planetary dynamics and telescope imaging of celestial surfaces and craters.</p></div>
-      <div class="card"><i class="fa-solid fa-mountain"></i><h3>Exploration</h3><p>Connecting field observations with satellite data to study Earth’s and Mars’ geomorphology.</p></div>
-    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -230,6 +237,7 @@
   </script>
 </body>
 </html>
+
 
 
 
