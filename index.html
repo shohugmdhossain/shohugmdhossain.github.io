@@ -28,7 +28,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -70,38 +69,66 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ===== MAIN (UPDATED BODY) ===== -->
+  <!-- ===== MAIN ===== -->
   <main>
-    <div class="wrap hero" id="intro" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:60px;margin-top:140px;margin-bottom:80px;text-align:center;">
-      
+    <div class="wrap hero" id="intro">
       <div class="leftcol">
-        <div class="photo">
-          <img src="profile.jpg" alt="Portrait of Md Shohug Hossain" width="320" height="320" style="border-radius:50%;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.25);">
+        <div class="photo fade-in fade-1">
+          <img src="profile.jpg" alt="Portrait of Md Shohug Hossain" width="320" height="320" loading="lazy">
         </div>
 
-        <div class="socials" style="display:flex;justify-content:center;gap:18px;margin-top:16px;">
-          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap" style="color:#4285F4;"></i></a>
-          <a href="mailto:shohugmdhossain@gmail.com" aria-label="Email Shohug"><i class="fa-solid fa-envelope" style="color:#EA4335;"></i></a>
-          <a href="https://github.com/shohugmdhossain" target="_blank" aria-label="GitHub"><i class="fab fa-github" style="color:#333;"></i></a>
-          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin" style="color:#0A66C2;"></i></a>
-          <a href="https://x.com/Hmdshohug10" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter" style="color:#000;"></i></a>
+        <div class="socials fade-in fade-2">
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="mailto:shohugmdhossain@gmail.com" aria-label="Email Shohug"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/shohugmdhossain" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+
+        <p class="profile-meta fade-in fade-3">
+          Ph.D. Researcher, GeoAI & Remote Sensing<br>
+          Lafayette, Louisiana · Calgary, Alberta
+        </p>
+
+        <div class="left-info">
+          <section>
+            <h3>Affiliation</h3>
+            <p>University of Louisiana at Lafayette</p>
+            <p>GeoAI & Planetary Imaging Research Group</p>
+          </section>
+          <section>
+            <h3>Contact</h3>
+            <p><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
+          </section>
         </div>
       </div>
 
-      <div class="rightcol" style="max-width:600px;text-align:center;">
-        <h1 style="font-family:'Libre Baskerville',serif;font-size:32px;margin-bottom:10px;">Md Shohug Hossain</h1>
-        <p style="font-weight:500;color:#555;margin:0 0 15px;">Ph.D. Researcher, University of Louisiana at Lafayette</p>
-        <p style="font-size:16px;line-height:1.7;margin-bottom:25px;">
-          Exploring how GeoAI and remote sensing can reveal surface processes across Earth and Mars. 
-          My research bridges planetary geomorphology and artificial intelligence to understand 
-          patterns of terrain evolution and environmental change.
+      <div class="rightcol">
+        <div class="kicker fade-in fade-1">EARTH & PLANETARY SCIENCE • GEOAI</div>
+        <h1 class="subtitle fade-in fade-2">Turning satellite data into actionable insights for Earth and planetary science</h1>
+        <p class="fade-in fade-3">
+          I’m a Ph.D. researcher specializing in GeoAI, remote sensing, and planetary surface analysis. My work integrates 
+          machine learning, geospatial data science, and high-performance computing to study landscapes on Earth and Mars. 
+          I focus on developing automated deep learning frameworks to map geomorphological features, monitor surface changes, 
+          and extract meaningful patterns from large-scale satellite imagery. Through my research, I aim to bridge planetary 
+          science and data-driven Earth observation, contributing to climate resilience, resource mapping, and planetary 
+          exploration initiatives.
         </p>
 
-        <div class="btns" style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-          <a class="btn red" href="about.html" style="background:#b1040e;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:500;">About Me</a>
-          <a class="btn red" href="research.html" style="background:#b1040e;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:500;">Research</a>
-          <a class="btn red" href="publications.html" style="background:#b1040e;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:500;">Publications</a>
-          <a class="btn" href="cv.pdf" target="_blank" style="border:1px solid #b1040e;color:#b1040e;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:500;">CV</a>
+        <div class="profile-info fade-in fade-3">
+          <div>
+            <h3><i class="fa-solid fa-microscope"></i> Research Interests</h3>
+            <ul>
+              <li>Planetary geomorphology and landscape evolution on Mars and Earth.</li>
+              <li>Automated crater, mound, and surface feature detection using deep learning and computer vision.</li>
+              <li>GeoAI for Earth observation, hazard mapping, and climate analytics.</li>
+              <li>Integrating multispectral and radar data for planetary surface interpretation.</li>
+            </ul>
+          </div>
+
+          <div class="btns">
+            <a class="btn red" href="about.html">Learn more →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -110,7 +137,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p>
+      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
     </div>
   </footer>
 
@@ -149,6 +176,7 @@
   </script>
 </body>
 </html>
+
 
 
 
