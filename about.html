@@ -84,9 +84,30 @@
     .skills-list li{margin-bottom:6px;color:var(--text);}
     .skills-list i{color:var(--accent);margin-right:8px;}
 
+    /* ===== INTERESTS ===== */
+    .personal-interests{
+      margin-top:20px;background:var(--bg2);padding:15px;border-radius:14px;
+      border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.05);
+      text-align:left;font-size:14px;
+    }
+    .personal-interests h2{
+      color:var(--accent);font-size:17px;margin-top:0;margin-bottom:8px;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .personal-interests p{margin:0;color:var(--text);text-align:center;}
+
     .about-right{flex:2;min-width:320px;text-align:justify;}
     .about-right h1{font-size:32px;color:var(--accent);margin-top:0;}
     .about-right p{margin-bottom:16px;}
+
+    /* ===== CV BUTTON ===== */
+    .cv-download{text-align:center;margin-top:25px;}
+    .cv-download .btn.red{
+      background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;
+      text-decoration:none;border:0;font-size:15px;display:inline-flex;
+      align-items:center;gap:8px;transition:.2s;box-shadow:0 3px 8px rgba(0,0,0,0.15);
+    }
+    .cv-download .btn.red:hover{opacity:.9;transform:scale(1.04);}
 
     /* ===== ACADEMIC JOURNEY ===== */
     .academic-journey{
@@ -184,70 +205,56 @@
             <li><i class="fa-solid fa-brain"></i> Deep Learning (PyTorch, Detectron2, YOLOv8)</li>
             <li><i class="fa-solid fa-satellite"></i> Remote Sensing, Google Earth Engine</li>
             <li><i class="fa-solid fa-layer-group"></i> GIS: ArcGIS, QGIS, PostGIS</li>
-            <li><i class="fa-solid fa-server"></i> HPC, Linux, Slurm, Shell scripting</li>
+            <li><i class="fa-solid fa-server"></i> HPC, Linux, Slurm</li>
             <li><i class="fa-solid fa-database"></i> SQL, Data Engineering</li>
             <li><i class="fa-solid fa-chart-line"></i> Data Visualization & Analysis</li>
             <li><i class="fa-solid fa-code"></i> Web Development (HTML, CSS, JS)</li>
           </ul>
+        </div>
+
+        <!-- INTERESTS MINI-SECTION -->
+        <div class="personal-interests">
+          <h2><i class="fa-solid fa-heart"></i> Interests</h2>
+          <p>Web design, astrophotography, academic outreach, creative visualization.</p>
         </div>
       </div>
 
       <!-- RIGHT -->
       <div class="about-right">
         <h1>About Me</h1>
-        <p>
-          I am <b>Md Shohug Hossain</b>, a <b>Ph.D. researcher</b> at the <b>University of Louisiana at Lafayette</b>, where I study 
-          <b>GeoAI, Remote Sensing, and Planetary Science</b>. My research merges machine learning and satellite imagery 
-          to understand geomorphic processes across Earth and Mars. I specialize in developing AI systems that automatically 
-          detect and classify surface landforms using optical and radar data.
-        </p>
-        <p>
-          My work involves large-scale image processing, deep-learning architecture optimization, and data integration across 
-          multi-mission sensors such as <i>CTX</i>, <i>HiRISE</i>, <i>Sentinel</i>, and <i>Landsat</i>. Through high-performance 
-          computing environments (HPC), I conduct experiments that enhance model reproducibility and accelerate inference pipelines 
-          for planetary terrain analysis.
-        </p>
-        <p>
-          I hold an <b>M.Sc. in Electrical & Computer Engineering</b> from the <b>University of Calgary</b>, where my graduate work 
-          focused on intelligent automation and data-driven systems. Earlier, I completed a <b>B.Sc. in Computer Science & Engineering</b> 
-          from <b>North South University</b>, where I first developed my interest in computer vision, AI, and environmental modeling.
-        </p>
-        <p>
-          My current academic interests span planetary geomorphology, GeoAI, and Earth observation systems. Beyond scientific research, 
-          I am passionate about interdisciplinary collaboration, open-source data, and teaching advanced AI tools for Earth and planetary science.
-        </p>
+        <p>I am <b>Md Shohug Hossain</b>, a <b>Ph.D. researcher</b> at the <b>University of Louisiana at Lafayette</b> specializing in <b>GeoAI, Remote Sensing, and Planetary Science</b>. My research explores how artificial intelligence can decode geomorphic and environmental processes on Earth and Mars through high-resolution imagery and data analytics.</p>
+        <p>I focus on building deep-learning frameworks for automatic landform detection, geomorphic classification, and planetary terrain mapping using satellite imagery from missions such as <i>CTX</i>, <i>HiRISE</i>, and <i>Sentinel</i>. My goal is to advance our understanding of landscape evolution while contributing to climate, hazard, and planetary exploration research.</p>
+        <p>Before joining UL Lafayette, I completed my <b>M.Sc. in Electrical & Computer Engineering</b> at the <b>University of Calgary</b> and a <b>B.Sc. in Computer Science & Engineering</b> at <b>North South University</b>. My academic path bridges software systems, computer vision, and data-driven geoscience, allowing me to translate large datasets into actionable insights.</p>
+        
+        <!-- Centered CV Button -->
+        <div class="cv-download">
+          <a href="files/Md_Shohug_Hossain_CV.pdf" target="_blank" class="btn red">
+            <i class="fa-solid fa-file-pdf"></i> Download Full CV
+          </a>
+        </div>
 
-        <!-- Academic Journey -->
         <div class="academic-journey">
           <h2><i class="fa-solid fa-user-graduate"></i> Academic Journey</h2>
           <div class="academic-details">
             <p><img src="ul.png" alt="UL Lafayette"> <b>Ph.D. in Earth & Energy Sciences</b> — University of Louisiana at Lafayette<br>
-              Focus: Planetary geomorphology, machine learning for Mars mounds detection, and remote-sensing-based GeoAI.</p>
+            Focus: Planetary geomorphology, machine learning for Mars mounds detection, and remote-sensing-based GeoAI.</p>
             <p><img src="ucalgary.png" alt="University of Calgary"> <b>M.Sc. in Electrical & Computer Engineering</b> — University of Calgary<br>
-              Focus: Intelligent automation, geospatial analytics, and data-driven systems.</p>
+            Focus: Intelligent automation, geospatial analytics, and data-driven systems.</p>
             <p><img src="nsu.png" alt="North South University"> <b>B.Sc. in Computer Science & Engineering</b> — North South University<br>
-              Focus: Software engineering, computer vision, and data science foundations.</p>
+            Focus: Software engineering, computer vision, and data science foundations.</p>
           </div>
         </div>
 
-        <!-- Beyond Research -->
         <div class="beyond-research">
           <h2><i class="fa-solid fa-seedling"></i> Beyond Research</h2>
-          <p>
-            Outside academia, I’m passionate about science outreach, leadership, and creative design. I’ve served as 
-            <b>President of the ECE Graduate Group</b> and <b>Vice-President of the Schulich Graduate Engineering Consortium</b> 
-            at the University of Calgary, helping students engage with innovation and research communities.
-          </p>
-          <p>
-            I also enjoy developing academic websites, visualizing data creatively, and mentoring early-career researchers. 
-            My approach blends analytical depth with design thinking — aiming to make complex ideas accessible and visually engaging.
-          </p>
+          <p>Outside academia, I’m passionate about science outreach, creative design, and student mentorship. I served as <b>President of the ECE Graduate Group</b> and <b>Vice-President of the Schulich Graduate Engineering Consortium</b> at the University of Calgary, fostering collaboration and research networking among graduate students.</p>
+          <p>I also enjoy building academic websites, creating visual data stories, and exploring ways technology and art can intersect to make science more accessible.</p>
+          <p>Explore my current <a href="projects.html">projects</a> and full list of <a href="publications.html">publications</a> to learn more about my ongoing research.</p>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap">
       <p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p>
