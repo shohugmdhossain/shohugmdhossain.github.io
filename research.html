@@ -12,157 +12,105 @@
 
   <style>
     :root {
-      --accent:#b1040e;
-      --mars:#b1040e;
-      --earth:#1976d2;
-      --geo:#0f766e;
-      --bg:#fff;
-      --bg2:#f9f9f9;
-      --text:#222;
-      --muted:#555;
-      --line:#ddd;
-      --max:1100px;
+      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
+      --text:#222; --muted:#555; --line:#ddd; --max:1100px;
     }
-
-    html,body {height:100%;}
-    body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.7;
+    html,body{height:100%;}
+    body{
+      margin:0;background:var(--bg);color:var(--text);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;
+      display:flex;flex-direction:column;
     }
-    .wrap {max-width:var(--max); margin:0 auto; padding:0 40px;}
-    a {color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s;}
-    a:hover {border-bottom-color:var(--accent);}
+    main{flex:1;}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
+    a:hover{border-bottom-color:var(--accent);}
 
     /* ===== NAVBAR ===== */
-    .site-header {
-      position:fixed; top:0; left:0; right:0; z-index:1000;
-      background:var(--accent); color:#fff;
+    .site-header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--accent);color:#fff;
       box-shadow:0 3px 10px rgba(0,0,0,.1);
+      transition:all .25s ease;
     }
-    .nav-bar {display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
-    .brand {font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px;}
-    .nav-links {display:flex; gap:20px;}
-    .nav-links a {color:#fff; border:0; font-size:15px;}
-    .nav-links a.active,.nav-links a:hover {text-decoration:underline; opacity:.9;}
-    .right-cluster {display:flex; align-items:center; gap:14px;}
-    .search-box input {
-      border:none; border-radius:8px; background:rgba(255,255,255,.95);
-      color:#222; padding:7px 10px; width:170px; transition:width .25s;
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
+    .nav-links{display:flex;gap:20px;align-items:center;}
+    .nav-links a{color:#fff;border:0;font-size:15px;}
+    .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
+    .right-cluster{display:flex;align-items:center;gap:14px;}
+    .search-box form{display:flex;}
+    .search-box input{
+      border:none;border-radius:8px;background:rgba(255,255,255,.95);
+      color:#222;padding:7px 10px;width:170px;transition:width .25s;
     }
-    .search-box input:focus {outline:none; width:220px;}
-    .menu-toggle {background:none; border:none; color:#fff; font-size:24px; cursor:pointer;}
+    .search-box input:focus{outline:none;width:220px;}
+    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
+    .menu-toggle:hover{transform:scale(1.1);}
 
     /* ===== OVERLAY MENU ===== */
-    .dropdown-nav {
-      position:fixed; top:0; left:0; right:0; bottom:0;
-      background:rgba(177,4,14,0.75); backdrop-filter:blur(10px);
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s;
+    .dropdown-nav{
+      position:fixed;top:0;left:0;right:0;bottom:0;
+      background:rgba(177,4,14,0.75);backdrop-filter:blur(10px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:24px;z-index:9999;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;
     }
-    .dropdown-nav.active {opacity:1; visibility:visible;}
-    .dropdown-nav a {color:#fff; font-size:22px;}
-    .dropdown-close {position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer;}
+    .dropdown-nav.active{opacity:1;visibility:visible;}
+    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;}
+    .dropdown-close{
+      position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
+      border:none;background:none;cursor:pointer;transition:transform .2s ease;
+    }
+    .dropdown-close:hover{transform:rotate(90deg);}
 
-    /* ===== HERO GRADIENT ===== */
-    .hero-gradient {
-      margin-top:64px;
-      background:linear-gradient(115deg,rgba(177,4,14,0.95) 0%,rgba(177,4,14,0.85) 20%,rgba(25,118,210,0.85) 80%,rgba(25,118,210,0.95) 100%);
-      color:#fff; position:relative;
-    }
-    .hero-gradient::after {
-      content:""; display:block; height:70px;
-      background:linear-gradient(to bottom,rgba(25,118,210,0.85) 0%,#ffffff 100%);
-    }
-    .hero-inner {padding:50px 0; display:flex; flex-direction:column; gap:10px;}
-    .hero-title {
+    /* ===== BODY ===== */
+    .research-section{margin-top:90px;display:flex;flex-direction:column;gap:30px;}
+    .intro h1{
       font-family:"Libre Baskerville",serif;
-      font-size:30px; font-weight:700; margin:0; text-align:left;
+      font-size:28px;font-weight:700;margin-bottom:10px;color:var(--accent);
     }
-    .hero-sub {
-      max-width:1000px; margin:0; font-size:15.5px; line-height:1.8;
-      opacity:.95; text-align:justify;
+    .intro p{
+      font-size:15.5px;line-height:1.8;text-align:justify;margin:0;
+      max-width:1000px;
     }
-    .hero-badges {
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;
+    .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+    .hero-badge{
+      border:1px solid var(--accent);color:var(--accent);
+      background:transparent;padding:6px 10px;border-radius:999px;
+      font-size:13px;transition:all .2s ease;
     }
-    .hero-badge {
-      border:1px solid rgba(255,255,255,.7); color:#fff;
-      background:rgba(255,255,255,.12);
-      padding:6px 10px; border-radius:999px; font-size:13px;
+    .hero-badge:hover{background:var(--accent);color:#fff;}
+
+    .research-block h2{
+      color:var(--accent);font-family:"Libre Baskerville",serif;
+      font-size:22px;font-weight:700;margin-bottom:18px;
     }
 
-    /* ===== THEMED CARDS ===== */
-    .themes {padding:34px 0 10px;}
-    .theme-grid {display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-    .theme {
-      border-radius:14px; padding:22px 20px; color:#fff;
-      display:flex; gap:14px; align-items:flex-start;
-      box-shadow:0 2px 8px rgba(0,0,0,0.15);
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .theme:hover {transform:translateY(-4px); box-shadow:0 6px 16px rgba(0,0,0,0.25);}
-    .theme .icon {
-      width:42px; height:42px; border-radius:10px;
-      background:rgba(255,255,255,0.2);
-      display:flex; align-items:center; justify-content:center; font-size:18px;
-    }
-    .theme h3 {margin:0 0 6px; font-size:17px; font-family:"Libre Baskerville",serif;}
-    .theme p {margin:0; font-size:14.5px; line-height:1.7;}
-
-    /* Individual gradients */
-    .theme.planetary {background:linear-gradient(135deg,#b1040e,#e53935);}
-    .theme.earth {background:linear-gradient(135deg,#1976d2,#64b5f6);}
-    .theme.geo {background:linear-gradient(135deg,#0f766e,#26a69a);}
-
-    /* ===== PROJECT CARDS ===== */
-    .section-head {
-      margin:34px 0 16px; display:flex; align-items:center; gap:10px;
-      color:var(--accent); font-family:"Libre Baskerville",serif; font-size:22px; font-weight:700;
-    }
-    .proj {
-      background:var(--bg2); border:1px solid var(--line);
-      border-radius:16px; padding:22px; display:grid;
-      grid-template-columns:64px 1fr; gap:16px; align-items:start;
+    .research-card{
+      background:var(--bg2);border:1px solid var(--line);
+      border-radius:16px;padding:24px 28px;margin-bottom:24px;
       box-shadow:0 2px 8px rgba(0,0,0,0.08);
-      transition:transform .25s ease, box-shadow .25s ease;
+      transition:transform .25s ease,box-shadow .25s ease;
     }
-    .proj:hover {transform:translateY(-4px); box-shadow:0 8px 18px rgba(177,4,14,0.18);}
-    .proj + .proj {margin-top:16px;}
-    .proj .thumb {
-      width:64px; height:64px; border-radius:12px;
-      display:flex; align-items:center; justify-content:center;
-      color:#fff; font-size:22px;
+    .research-card:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,0.15);}
+    .research-card h3{margin:0;color:var(--accent);font-size:18px;}
+    .research-meta{color:var(--muted);font-size:14px;margin:6px 0 10px;}
+    .research-card p{text-align:justify;font-size:15px;margin:0 0 10px;}
+    .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+    .tool-link{
+      background:#fff;border:1px solid var(--accent);color:var(--accent);
+      padding:4px 10px;border-radius:999px;font-size:13px;transition:.2s ease;
     }
-    .thumb.mars{background:var(--mars);}
-    .thumb.crism{background:#6a1b9a;}
-    .thumb.city{background:#37474f;}
-    .thumb.wetland{background:#2e7d32;}
-    .thumb.land{background:#8d6e63;}
-    .thumb.heat{background:#ef6c00;}
-    .proj h4 {margin:0; color:var(--accent); font-size:18px;}
-    .meta {color:var(--muted); font-size:14px; margin:4px 0 10px;}
-    .proj p {margin:0; color:var(--text); font-size:15px; text-align:justify;}
-    .chips {display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
-    .chip {
-      background:#fff; color:var(--accent);
-      border:1px solid var(--accent); padding:4px 10px;
-      border-radius:999px; font-size:13px; transition:.2s ease;
-    }
-    .chip:hover {background:var(--accent); color:#fff;}
+    .tool-link:hover{background:var(--accent);color:#fff;}
 
-    footer.site {background:var(--accent); color:#fff; text-align:center; margin-top:60px;}
-    footer.site .wrap {padding:20px;} footer.site p {margin:0; font-size:15px;}
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:40px;}
+    footer.site .wrap{padding:20px 20px;}
+    footer.site p{margin:0;font-size:15px;}
 
-    @media(max-width:1000px){.theme-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:900px){
       .nav-links{display:none;}
-      .wrap{padding:0 24px;}
-      .theme-grid{grid-template-columns:1fr;}
-      .proj{grid-template-columns:56px 1fr;}
-      .proj .thumb{width:56px;height:56px;font-size:20px;}
+      .wrap{padding:0 22px;}
+      .research-section{margin-top:70px;}
     }
   </style>
 </head>
@@ -205,55 +153,106 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- HERO -->
-  <section class="hero-gradient">
-    <div class="wrap hero-inner">
-      <h1 class="hero-title">Exploring Earth and Beyond: GeoAI for Planetary & Environmental Discovery</h1>
-      <p class="hero-sub">
-        Integrating <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary data analytics</b> to understand surface evolution across Earth and Mars.
-        I build interpretable ML workflows on high-performance GPUs to translate multispectral and radar imagery into geophysical insight.
-      </p>
-      <div class="hero-badges">
-        <span class="hero-badge"><i class="fa-solid fa-satellite"></i> Planetary Geomorphology</span>
-        <span class="hero-badge"><i class="fa-solid fa-globe"></i> Earth Observation</span>
-        <span class="hero-badge"><i class="fa-solid fa-brain"></i> Deep Learning</span>
-        <span class="hero-badge"><i class="fa-solid fa-microchip"></i> HPC (A100)</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- THEMES -->
-  <section class="themes">
-    <div class="wrap">
-      <div class="theme-grid">
-        <div class="theme planetary">
-          <div class="icon"><i class="fa-solid fa-satellite"></i></div>
-          <div>
-            <h3>Planetary Science & GeoAI</h3>
-            <p>Detecting and interpreting mound-like landforms and spectral signatures to reconstruct Martian surface history.</p>
-          </div>
-        </div>
-        <div class="theme earth">
-          <div class="icon"><i class="fa-solid fa-globe"></i></div>
-          <div>
-            <h3>Earth & Environmental Analytics</h3>
-            <p>Urban accessibility and wetland dynamics using vision models with SAR/optical fusion and robust validation.</p>
-          </div>
-        </div>
-        <div class="theme geo">
-          <div class="icon"><i class="fa-solid fa-map"></i></div>
-          <div>
-            <h3>Geospatial Modeling & Land Dynamics</h3>
-            <p>Long-term land-cover change, thermal patterns, and landscape modeling with ensemble learning.</p>
-          </div>
+  <!-- MAIN -->
+  <main>
+    <div class="wrap research-section">
+      <div class="intro">
+        <h1>Exploring Earth and Beyond: GeoAI for Planetary & Environmental Discovery</h1>
+        <p>
+          Integrating <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary data analytics</b> to understand surface evolution across Earth and Mars.
+          I build interpretable ML workflows on high-performance GPUs to translate multispectral and radar imagery into geophysical insight.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge"><i class="fa-solid fa-satellite"></i> Planetary Geomorphology</span>
+          <span class="hero-badge"><i class="fa-solid fa-globe"></i> Earth Observation</span>
+          <span class="hero-badge"><i class="fa-solid fa-brain"></i> Deep Learning</span>
+          <span class="hero-badge"><i class="fa-solid fa-microchip"></i> HPC (A100)</span>
         </div>
       </div>
+
+      <!-- ========== Current & Ongoing Projects ========== -->
+      <div class="research-block">
+        <h2>Current & Ongoing Projects</h2>
+
+        <div class="research-card">
+          <h3>Mars Mound Detection Using Deep Learning</h3>
+          <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
+          <p>Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic
+          features in <b>CTX imagery</b> from Mars. Leveraging <b>LONI A100 GPU clusters</b> for large-scale geological surface mapping.</p>
+          <div class="tools">
+            <a class="tool-link">Faster R-CNN</a><a class="tool-link">Detectron2</a>
+            <a class="tool-link">COCO JSON</a><a class="tool-link">LONI GPU</a>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <h3>CRISM Spectral Mineral Mapping</h3>
+          <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
+          <p>Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface
+          mineral diversity and identify hydrated minerals. The study aims to infer past aqueous environments in Martian terrains.</p>
+          <div class="tools">
+            <a class="tool-link">CRISM</a><a class="tool-link">Autoencoders</a>
+            <a class="tool-link">Spectral Python</a><a class="tool-link">Deep Learning</a>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <h3>Urban Accessibility Mapping with AI</h3>
+          <div class="research-meta">Computer Vision · 2024</div>
+          <p>Constructing a vision-based workflow to identify sidewalk elements—such as curb ramps and crosswalks—
+          from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>. Enhanced validation accuracy through
+          <b>LLM-assisted label review</b> and systematic dataset correction.</p>
+          <div class="tools">
+            <a class="tool-link">YOLOv8</a><a class="tool-link">Python</a>
+            <a class="tool-link">Faster R-CNN</a><a class="tool-link">LLM QA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Past Projects ========== -->
+      <div class="research-block">
+        <h2>Past Projects</h2>
+
+        <div class="research-card">
+          <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
+          <div class="research-meta">Remote Sensing · 2023</div>
+          <p>Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level
+          fluctuations and vegetation stress in coastal wetlands. Demonstrated radar-optical synergy
+          for dynamic hydrologic mapping in monsoon-influenced ecosystems.</p>
+          <div class="tools">
+            <a class="tool-link">Sentinel-1</a><a class="tool-link">MODIS</a>
+            <a class="tool-link">NDVI</a><a class="tool-link">Google Earth Engine</a>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <h3>Land-Cover Change Detection in Bangladesh</h3>
+          <div class="research-meta">Geospatial ML · 2022</div>
+          <p>Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions
+          using <b>Landsat 8</b> and <b>Sentinel-2</b> data. Produced spatial insights on urban growth and
+          vegetation loss over a decade.</p>
+          <div class="tools">
+            <a class="tool-link">Landsat 8</a><a class="tool-link">Sentinel-2</a>
+            <a class="tool-link">XGBoost</a><a class="tool-link">Random Forest</a>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <h3>Urban Heat Island Modeling</h3>
+          <div class="research-meta">Urban Climate · 2021</div>
+          <p>Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b>
+          and <b>MODIS emissivity</b> data. Developed improved models for urban heat island analysis
+          and emissivity-based correction.</p>
+          <div class="tools">
+            <a class="tool-link">Landsat TIR</a><a class="tool-link">MODIS</a>
+            <a class="tool-link">ArcGIS Pro</a><a class="tool-link">Python</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Projects (same as before) -->
-  <!-- You can keep all project sections exactly as in the previous version -->
-
+  <!-- FOOTER -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
