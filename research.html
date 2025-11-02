@@ -60,21 +60,25 @@
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
 
     /* ===== FIX: SPACER BELOW NAVBAR ===== */
-    .nav-spacer{height:85px;} /* reduced to match about/home spacing */
+    .nav-spacer{height:85px;} /* matches home/about */
 
     /* ===== CONTENT ===== */
     main{margin-bottom:80px;}
     p{text-align:justify;text-justify:inter-word;}
 
-    .intro{text-align:justify;margin-bottom:50px;}
+    .intro{margin-bottom:50px;}
     .intro h1{
       font-size:30px;color:var(--accent);margin-bottom:20px;
       text-align:left;font-family:"Libre Baskerville",serif;
     }
+
+    /* Stretch paragraph to both sides */
     .intro p{
       font-size:16px;color:var(--text);
-      max-width:1000px; /* extend width */
-      margin:0 auto;line-height:1.9;text-align:justify;text-justify:inter-word;
+      margin:0;line-height:1.9;
+      text-align:justify;text-justify:inter-word;
+      padding-left:0;padding-right:0;
+      width:100%;
     }
 
     .research-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px;}
@@ -142,19 +146,7 @@
     </div>
   </header>
 
-  <!-- Spacer below navbar -->
   <div class="nav-spacer"></div>
-
-  <!-- ===== OVERLAY MENU ===== -->
-  <div class="dropdown-nav" id="overlayMenu">
-    <button class="dropdown-close"><i class="fas fa-times"></i></button>
-    <a href="about.html">About</a>
-    <a href="research.html" class="active">Research</a>
-    <a href="experience.html">Experience</a>
-    <a href="publications.html">Publications</a>
-    <a href="awards.html">Awards</a>
-    <a href="contact.html">Contact</a>
-  </div>
 
   <!-- ===== MAIN CONTENT ===== -->
   <main class="wrap">
@@ -226,7 +218,6 @@
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
@@ -253,6 +244,7 @@
   </script>
 </body>
 </html>
+
 
 
 
