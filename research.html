@@ -36,7 +36,7 @@
     a:hover{border-bottom-color:var(--accent);}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
 
-    /* ===== NAVBAR (matches About) ===== */
+    /* ===== NAVBAR ===== */
     .site-header{position:fixed;top:0;left:0;right:0;background:var(--accent);
       color:#fff;z-index:1000;box-shadow:0 3px 10px rgba(0,0,0,.1);}
     .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
@@ -52,7 +52,7 @@
       color:#222;padding:7px 10px;width:170px;transition:width .25s;}
     .search-box input:focus{outline:none;width:220px;}
 
-    /* ===== OVERLAY MENU (matches About) ===== */
+    /* ===== OVERLAY MENU ===== */
     .dropdown-nav{position:fixed;top:0;left:0;right:0;bottom:0;
       background:rgba(177,4,14,.75);backdrop-filter:blur(10px);
       display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -62,15 +62,13 @@
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
       border:none;background:none;cursor:pointer;}
 
-    /* ===== PAGE LAYOUT ===== */
+    /* ===== CONTENT ===== */
     main{margin-top:100px;margin-bottom:80px;}
     .section{margin-bottom:60px;}
-    .section h1{font-size:30px;color:var(--accent);margin-bottom:15px;}
-    .section h2{color:var(--accent);font-size:22px;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+    .section h1{font-size:30px;color:var(--accent);margin-bottom:12px;}
+    .section h2{color:var(--accent);font-size:22px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
     .section h2 i{color:var(--accent);}
     .section p{font-size:16px;line-height:1.85;text-align:justify;max-width:950px;margin:0 auto 14px;}
-    .key-list{max-width:950px;margin:10px auto 14px;padding-left:18px;}
-    .key-list li{margin:6px 0;}
 
     /* ===== FOOTER ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:80px;}
@@ -121,102 +119,55 @@
 
   <!-- ===== MAIN ===== -->
   <main class="wrap">
-
-    <!-- Research Overview -->
     <section class="section">
       <h1>Research Overview</h1>
       <p>
-        My research lies at the intersection of <b>GeoAI, remote sensing, and planetary geomorphology</b>. I develop machine-learning
-        systems to detect, map, and interpret surface features across Earth and Mars, integrating <b>physics-informed modeling</b>,
-        <b>multi-sensor data fusion</b>, and <b>high-performance computing (HPC)</b>. Methodologically, I focus on trustworthy pipelines,
-        rigorous dataset curation, and reproducible evaluation — balancing accuracy, interpretability, and scientific utility.
+        My research explores the integration of <b>artificial intelligence, geospatial analytics, and remote sensing</b> to
+        understand and model the physical processes shaping planetary and terrestrial environments.
+        Below are the main themes that guide my current and ongoing work.
       </p>
     </section>
 
-    <!-- Planetary GeoAI -->
-    <section class="section" id="planetary-geoai">
-      <h2><i class="fa-solid fa-mars"></i> Planetary GeoAI: Mars Mound Detection</h2>
+    <section class="section">
+      <h2><i class="fa-solid fa-mars"></i> Planetary GeoAI and Martian Surface Analysis</h2>
       <p>
-        I build object-detection pipelines to identify mounds and crater-like landforms in <b>CTX</b> imagery. Architectures include
-        <b>Faster R-CNN (ResNet-50-FPN)</b> via Detectron2 and <b>YOLOv8</b> variants. Early runs exposed important dataset issues:
-        overlapping categories (<i>“mounds-rVCN”</i> and <i>“mounds”</i>) produced class-metadata conflicts, while unlabeled/empty entries
-        in COCO caused zero-AP evaluations. I rebuilt the dataset as a single-class (<i>“mound”</i>) COCO set, filtered empty images,
-        and verified <code>category_id</code> mappings. This restored stable validation and test metrics.
+        My planetary research investigates how deep learning and computer vision can reveal geomorphic patterns and
+        sedimentary processes on Mars. I develop GeoAI frameworks to detect and classify surface mounds, craters, and
+        related landforms using high-resolution orbital imagery. These approaches support the reconstruction of past
+        hydrological and climatic conditions and contribute to the broader understanding of planetary evolution and
+        habitability.
       </p>
       <p>
-        On the <b>LONI A100</b> HPC (QB-3/4), I trained and evaluated with custom Slurm scripts (e.g., <i>evaluate_mounds_fixed.py</i>,
-        <i>evaluate_mounds_long.py</i>, <i>infer_mounds.py</i>, <i>visualize_predictions.py</i>) and organized outputs under a consistent
-        structure (<code>/work/shohug/Mars_CTX/Mounds_2/Mounds2/{train,valid,test,outputs}</code>). After dataset repairs, the
-        single-class setup yielded moderate validation results (~<b>56% AP50</b>) and test ~<b>59% AP50</b>, with overall accuracy still
-        constrained (~28–30%) due to underfitting when the classifier head re-initialized. I’m extending training schedules and
-        augmentations (mosaic/cutout, scale jitter, brightness/contrast) to improve recall.
+        The work bridges geoscience and machine learning by combining quantitative surface mapping with data-driven
+        geomorphological interpretation, helping advance autonomous planetary exploration and comparative planetology.
       </p>
-      <p>
-        Current directions include (i) <b>two-class</b> mapping to distinguish morphologies (<i>mounds</i> vs <i>mounds-rVCN</i>) using
-        <code>ROI_HEADS.NUM_CLASSES=2</code> and explicit class mapping, (ii) <b>physics-aware post-filtering</b> (shape/relief priors),
-        (iii) <b>domain-adaptive fine-tuning</b> for CTX regions with different SNR/sun angles, and (iv) <b>joint inference</b> with
-        neighboring context tiles to stabilize predictions at tile edges. All runs are versioned; logs, COCO evals, and visualizations
-        are exported (CSV/PDF/PNG) for transparent comparison.
-      </p>
-      <ul class="key-list">
-        <li><b>Data:</b> Roboflow-COCO (CTX tiles, filtered to labeled imagery; consistent <code>category_id</code>).</li>
-        <li><b>Models:</b> Faster-RCNN-R50-FPN, YOLOv8; moving toward multi-class heads with calibrated thresholds.</li>
-        <li><b>HPC:</b> LONI A100 queues; Slurm jobs for training/eval; artifact logging and reproducible seeds.</li>
-        <li><b>Metrics:</b> COCO AP/AP50/AP75; precision-recall trade-offs; qualitative overlays for geomorphic plausibility.</li>
-      </ul>
     </section>
 
-    <!-- Earth Observation & Walkability -->
-    <section class="section" id="walkability">
-      <h2><i class="fa-solid fa-earth-americas"></i> Earth Observation & Walkability Mapping</h2>
+    <section class="section">
+      <h2><i class="fa-solid fa-earth-americas"></i> Earth Observation and Urban Accessibility</h2>
       <p>
-        I lead a sidewalk-assets and walkability project combining aerial/street-level imagery with deep learning to map
-        accessibility features. Beyond overall accuracy, stakeholders needed <b>per-feature metrics</b> — buffers, curb ramps,
-        traffic control, marked crosswalks, sidewalks, and surfaces. I expanded evaluation to produce <b>confusion matrices</b> and
-        per-feature precision/recall/F1, enabling targeted error analysis and label-quality improvements.
+        On Earth, my research focuses on data-driven urban analytics and environmental monitoring. I apply remote sensing
+        and AI methods to evaluate <b>walkability, accessibility, and infrastructure resilience</b> through automated mapping of
+        sidewalks, curb ramps, crosswalks, and surface conditions. This work links geospatial data with human-centered
+        design, supporting inclusive and sustainable urban development.
       </p>
       <p>
-        Using a curated <b>300-sample validation dataset</b>, I implemented analysis scripts (<i>analysis/merge_results.py</i>,
-        <i>auto_label_review.py</i>, <i>extract_low_accuracy_sets.py</i>) to flag low-confidence/mismatch cases for manual review.
-        After a focused re-label pass (23–25 items), we observed measurable gains: the largest was
-        <b>traffic_control_T</b> (+0.128 F1), with improvements on <b>surface_T</b> (+0.075), <b>curb_ramp_T</b> (+0.019),
-        and <b>buffer_T</b> (+0.017), while <b>sidewalk_T</b> and <b>marked_crosswalk_T</b> remained stable. Deliverables included
-        side-by-side <i>Before/After</i> F1 tables, confusion matrices, and rationale summarizing the impact of label quality.
+        By integrating multi-source imagery and spatial validation frameworks, I aim to produce accurate, scalable
+        datasets that inform city planning, transportation equity, and climate adaptation strategies.
       </p>
-      <p>
-        Next steps prioritize (i) <b>hard-negative mining</b> for look-alike urban features, (ii) <b>temporal robustness</b> checks across
-        seasons/lighting, (iii) <b>uncertainty estimates</b> for map layers (e.g., MC-dropout or deep ensembles), and (iv) integrating
-        a <b>human-in-the-loop</b> cycle that routes low-confidence detections to reviewers, improving datasets over time.
-      </p>
-      <ul class="key-list">
-        <li><b>Data:</b> Mixed aerial/street-level; 300-sample validation subset for per-feature scoring.</li>
-        <li><b>Models:</b> YOLO-based detectors with class-wise thresholds; optional two-stage refinement for small objects.</li>
-        <li><b>Evaluation:</b> Per-feature confusion matrices; drift checks; error slices by context (intersection type, lighting).</li>
-        <li><b>Outputs:</b> CSV/PDF/PNG packs; summary briefs for urban-planning stakeholders.</li>
-      </ul>
     </section>
 
-    <!-- Physics-Informed ML & Data Fusion -->
-    <section class="section" id="pinn-fusion">
-      <h2><i class="fa-solid fa-atom"></i> Physics-Informed Machine Learning & Multi-Sensor Fusion</h2>
+    <section class="section">
+      <h2><i class="fa-solid fa-atom"></i> Physics-Informed Machine Learning and Multi-Sensor Fusion</h2>
       <p>
-        I’m advancing <b>physics-informed neural networks</b> and <b>multi-sensor fusion</b> (optical, radar, thermal) to improve
-        generalization and interpretability for both terrestrial and planetary analyses. On Earth, fusing <b>SAR</b> backscatter with
-        optical indices enhances surface/structure discrimination under cloud or low-light conditions; on Mars, combining CTX-scale
-        morphology with illumination/photometric context constrains false positives and supports more stable detection thresholds.
+        A central direction of my research is embedding physical reasoning into AI models for Earth and planetary
+        sciences. I explore <b>physics-informed neural networks</b> and <b>multi-sensor fusion</b> of optical, radar, and thermal
+        observations to achieve robust and interpretable predictions of surface and subsurface phenomena.
       </p>
       <p>
-        The framework integrates <b>soft physical priors</b> (e.g., plausible shape/texture ranges, slope/relief relationships),
-        <b>uncertainty-aware calibration</b> (temperature scaling, conformal prediction), and <b>cross-modal attention</b> to guide the
-        model toward geophysically plausible solutions. On HPC, I orchestrate <b>multi-GPU</b> experiments, tracking runs with
-        reproducible configs and artifact logging to enable ablation and sensitivity studies.
+        This work contributes to the broader effort to create trustworthy GeoAI systems that integrate domain knowledge
+        with data-driven learning, enabling more reliable analysis of environmental and planetary processes at scale.
       </p>
-      <ul class="key-list">
-        <li><b>Fusion:</b> Optical-SAR-thermal stacks; tile-edge context windows; attention across modalities/scales.</li>
-        <li><b>Physics priors:</b> Morphological constraints, relief/illumination cues, topographic context where available.</li>
-        <li><b>Trust & QA:</b> Uncertainty-aware maps; calibrated thresholds; reviewer routing for low-confidence tiles.</li>
-        <li><b>HPC:</b> Distributed training/eval on LONI A100; versioned runs; scripted exports (CSV/PDF/PNG).</li>
-      </ul>
     </section>
   </main>
 
@@ -252,6 +203,7 @@
   </script>
 </body>
 </html>
+
 
 
 
