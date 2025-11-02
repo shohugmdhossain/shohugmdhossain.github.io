@@ -71,20 +71,25 @@
     .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;border:0;}
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
 
-    /* ===== PAGE CONTENT ===== */
-    main{margin-top:calc(var(--headerH)+30px);}
-    .research-header h1{
-      color:var(--accent);
-      font-family:"Libre Baskerville",serif;
-      font-size:30px;
-      margin-bottom:10px;
+    /* ===== PAGE HEADING ===== */
+    .page-heading {
+      margin-top: calc(var(--headerH) + 20px);
+      margin-bottom: 40px;
     }
-    .research-header p{
-      color:var(--text);
-      font-size:15.5px;
-      line-height:1.8;
-      text-align:justify;
-      margin-bottom:40px;
+    .page-title {
+      color: var(--accent);
+      font-family: "Libre Baskerville", serif;
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .page-subtitle {
+      color: var(--text);
+      font-size: 15.5px;
+      line-height: 1.8;
+      text-align: justify;
+      margin: 0;
+      max-width: 1000px;
     }
 
     /* ===== CURRENT PROJECTS ===== */
@@ -158,6 +163,7 @@
 
     @media(max-width:900px){
       .nav-links{display:none;}
+      .wrap{padding:0 24px;}
     }
   </style>
 </head>
@@ -202,10 +208,14 @@
 
   <!-- ===== MAIN ===== -->
   <main class="wrap">
-    <section class="research-header">
-      <h1>Research Overview</h1>
-      <p>
-        My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b> to understand and model surface evolution on Earth and Mars. I focus on using interpretable machine learning frameworks, multispectral analysis, and large-scale data processing on high-performance GPU environments.
+    <!-- Page Heading -->
+    <section class="page-heading">
+      <h1 class="page-title">Research Overview</h1>
+      <p class="page-subtitle">
+        Integrating <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary data analytics</b>
+        to understand surface evolution across Earth and Mars. My work bridges
+        machine learning, multispectral imaging, and high-performance computing
+        to extract geophysical insights from complex planetary datasets.
       </p>
     </section>
 
@@ -214,10 +224,9 @@
       <p>Developing Faster R-CNN models for mapping Martian mound geomorphology in CTX imagery and deep unmixing networks for CRISM hyperspectral data. Integrating LONI A100 GPU pipelines for model optimization and validation.</p>
     </div>
 
-    <!-- ===== Planetary Science ===== -->
+    <!-- Planetary Science -->
     <section class="research-section">
       <h2 class="section-title"><i class="fa-solid fa-satellite"></i> Planetary Science & GeoAI</h2>
-
       <div class="research-card">
         <h3>Mars Mound Detection Using Deep Learning</h3>
         <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
@@ -243,10 +252,9 @@
       </div>
     </section>
 
-    <!-- ===== Earth & Environmental ===== -->
+    <!-- Earth & Environmental -->
     <section class="research-section">
       <h2 class="section-title"><i class="fa-solid fa-globe"></i> Earth & Environmental Analytics</h2>
-
       <div class="research-card">
         <h3>Urban Accessibility Mapping with AI</h3>
         <div class="research-meta">Computer Vision · 2024</div>
@@ -272,10 +280,9 @@
       </div>
     </section>
 
-    <!-- ===== Geospatial Modeling ===== -->
+    <!-- Geospatial Modeling -->
     <section class="research-section">
       <h2 class="section-title"><i class="fa-solid fa-map"></i> Geospatial Modeling & Land Dynamics</h2>
-
       <div class="research-card">
         <h3>Land-Cover Change Detection in Bangladesh</h3>
         <div class="research-meta">Geospatial ML · 2022</div>
@@ -332,6 +339,7 @@
   </script>
 </body>
 </html>
+
 
 
 
