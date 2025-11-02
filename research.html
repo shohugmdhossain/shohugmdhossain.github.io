@@ -13,7 +13,6 @@
   <link rel="canonical" href="https://shohugmdhossain.github.io/research.html">
   <meta name="theme-color" content="#b1040e">
   <meta name="color-scheme" content="light">
-
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research & Projects — M S Hossain">
   <meta property="og:description" content="GeoAI, remote sensing, and planetary data analytics to understand surface evolution across Earth and Mars.">
@@ -49,8 +48,9 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
     a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
     a:hover{border-bottom-color:var(--accent);}
+    img{max-width:100%;height:auto;display:block}
 
-    /* ===== NAVBAR ===== */
+    /* ===== NAVBAR (same as other pages) ===== */
     .site-header{
       position:fixed;top:0;left:0;right:0;z-index:1000;
       background:var(--accent);color:#fff;
@@ -92,7 +92,7 @@
     .dropdown-close:hover{transform:rotate(90deg);}
 
     /* ===== PAGE INTRO (white under nav) ===== */
-    main{padding-top:100px;} /* clean white space below fixed navbar */
+    main{padding-top:90px;} /* matches About/Home */
     .intro{margin:0 0 26px;}
     .intro h1{
       font-family:"Libre Baskerville",serif;
@@ -100,30 +100,22 @@
       font-size:28px;
       margin:0 0 8px;
       text-align:left;
-      white-space:nowrap; /* keep on one line if possible */
+      white-space:nowrap; /* keep on one line where possible */
     }
     .intro p{
-      font-size:15.5px;
-      color:var(--text);
-      max-width:900px;
-      text-align:justify;
-      margin:0;
+      font-size:15.5px;color:var(--text);
+      max-width:900px;text-align:justify;margin:0;
     }
 
-    /* ===== SECTION HEADINGS WITH DIVIDERS ===== */
+    /* ===== SECTION HEADINGS + divider ===== */
     .section-head{
       margin:34px 0 14px;
       font-family:"Libre Baskerville",serif;
       font-size:22px;font-weight:700;color:var(--accent);
       display:flex;align-items:center;gap:10px;
-      position:relative;
     }
     .section-head::after{
-      content:"";
-      flex:1;
-      height:1px;
-      background:var(--line);
-      margin-left:10px;
+      content:"";height:1px;background:var(--line);flex:1;
     }
     .section-head i{font-size:18px;}
 
@@ -137,7 +129,12 @@
       background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px;
       box-shadow:0 2px 8px rgba(0,0,0,0.08);
       transition:transform .25s ease,box-shadow .25s ease;
+      opacity:0;transform:translateY(12px);
+      animation:fadeUp .6s ease forwards;
     }
+    .theme:nth-child(1){animation-delay:.05s;}
+    .theme:nth-child(2){animation-delay:.15s;}
+    .theme:nth-child(3){animation-delay:.25s;}
     .theme:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(0,0,0,0.12);}
     .theme h3{margin:0 0 6px;font-size:16px;color:var(--accent);font-family:"Libre Baskerville",serif;}
     .theme p{margin:0;font-size:14.5px;text-align:justify;}
@@ -148,6 +145,8 @@
       box-shadow:0 2px 8px rgba(0,0,0,0.08);
       transition:transform .25s ease,box-shadow .25s ease;
       margin-bottom:18px;
+      opacity:0;transform:translateY(12px);
+      animation:fadeUp .6s ease forwards;
     }
     .proj:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(177,4,14,0.18);}
     .proj h4{margin:0;color:var(--accent);font-size:18px;}
@@ -159,6 +158,9 @@
       border:1px solid var(--accent);padding:4px 10px;border-radius:999px;font-size:13px;transition:.2s ease;
     }
     .chip:hover{background:var(--accent);color:#fff;}
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
     /* ===== FOOTER & BACK TO TOP ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:60px;}
@@ -295,37 +297,34 @@
       </article>
     </section>
 
-    <!-- Past Projects -->
+    <!-- Past Projects (tight summaries) -->
     <section>
       <div class="section-head"><i class="fa-regular fa-clock"></i> Past Projects</div>
 
       <article class="proj">
         <h4>Wetland Hydrodynamics & Vegetation Mapping</h4>
         <div class="meta">Remote Sensing · 2023</div>
-        <p>Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level fluctuations and vegetation stress in coastal wetlands. Demonstrated radar–optical synergy for dynamic hydrologic mapping in monsoon-influenced ecosystems.</p>
+        <p>Fused <b>Sentinel-1 SAR</b> with <b>MODIS NDVI</b> time series to relate hydrologic fluctuation and vegetation stress in coastal wetlands.</p>
         <div class="chips">
-          <span class="chip">Sentinel-1</span><span class="chip">MODIS</span>
-          <span class="chip">NDVI</span><span class="chip">Earth Engine</span>
+          <span class="chip">Sentinel-1</span><span class="chip">MODIS</span><span class="chip">NDVI</span><span class="chip">Earth Engine</span>
         </div>
       </article>
 
       <article class="proj">
         <h4>Land-Cover Change Detection in Bangladesh</h4>
         <div class="meta">Geospatial ML · 2022</div>
-        <p>Built a <b>Random Forest + XGBoost</b> ensemble to classify and quantify land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b>. Produced spatial insights on urban growth and vegetation loss over a decade.</p>
+        <p>Ensembled <b>Random Forest + XGBoost</b> on <b>Landsat 8</b>/<b>Sentinel-2</b> to quantify decadal urban expansion and vegetation loss.</p>
         <div class="chips">
-          <span class="chip">Landsat 8</span><span class="chip">Sentinel-2</span>
-          <span class="chip">XGBoost</span><span class="chip">Random Forest</span>
+          <span class="chip">Landsat 8</span><span class="chip">Sentinel-2</span><span class="chip">XGBoost</span><span class="chip">Random Forest</span>
         </div>
       </article>
 
       <article class="proj">
         <h4>Urban Heat Island Modeling</h4>
         <div class="meta">Urban Climate · 2021</div>
-        <p>Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b> and <b>MODIS emissivity</b>. Developed improved models for urban heat island analysis and emissivity-based correction.</p>
+        <p>Used <b>Landsat TIR</b> and <b>MODIS emissivity</b> to model intra-urban surface temperature variability and emissivity-based correction.</p>
         <div class="chips">
-          <span class="chip">Landsat TIR</span><span class="chip">MODIS</span>
-          <span class="chip">Python</span>
+          <span class="chip">Landsat TIR</span><span class="chip">MODIS</span><span class="chip">Python</span>
         </div>
       </article>
     </section>
