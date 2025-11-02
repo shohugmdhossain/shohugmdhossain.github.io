@@ -4,7 +4,7 @@
   <title>Research — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research by Md Shohug Hossain — GeoAI · Remote Sensing · Planetary Science">
+  <meta name="description" content="Research by Md Shohug Hossain — GeoAI, remote sensing, and planetary surface analysis.">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
       transition:all .25s ease;
     }
     .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;transition:font-size .25s ease;}
+    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
     .nav-links{display:flex;gap:20px;align-items:center;}
     .nav-links a{color:#fff;border:0;font-size:15px;}
     .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
@@ -56,7 +56,7 @@
       color:#222;padding:7px 10px;width:170px;transition:width .25s;
     }
     .search-box input:focus{outline:none;width:220px;}
-    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;transition:transform .2s ease;}
+    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
     .menu-toggle:hover{transform:scale(1.1);}
 
     /* Overlay Menu */
@@ -70,77 +70,94 @@
     .dropdown-nav.active{opacity:1;visibility:visible;}
     .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;border:0;}
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
-    .dropdown-close:hover{transform:rotate(90deg);}
 
-    /* ===== RESEARCH INTRO ===== */
-    .hero-intro{
-      margin-top:calc(var(--headerH) + 30px);
-      text-align:left;
-    }
-    .hero-intro h1{
+    /* ===== PAGE CONTENT ===== */
+    main{margin-top:calc(var(--headerH)+30px);}
+    .research-header h1{
       color:var(--accent);
       font-family:"Libre Baskerville",serif;
       font-size:30px;
       margin-bottom:10px;
     }
-    .hero-intro p{
-      max-width:calc(100% - 10px); /* extended width for right alignment */
+    .research-header p{
       color:var(--text);
       font-size:15.5px;
       line-height:1.8;
-      margin:0;
-      padding-right:10px; /* aligns edge with hamburger */
       text-align:justify;
+      margin-bottom:40px;
     }
 
-    /* ===== GRID SECTIONS ===== */
-    .section-title{
-      font-size:22px;color:var(--accent);
-      font-weight:700;margin:60px 0 25px;
+    /* ===== CURRENT PROJECTS ===== */
+    .current-projects{
+      background:var(--bg2);
+      padding:20px 24px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom:50px;
+    }
+    .current-projects h2{
+      color:var(--accent);
+      font-size:20px;
       font-family:"Libre Baskerville",serif;
-      display:flex;align-items:center;gap:10px;
+      margin-bottom:10px;
+      display:flex;align-items:center;gap:8px;
     }
-    .research-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-      gap:25px;
+    .current-projects p{margin:0;color:var(--text);font-size:15px;text-align:justify;}
+
+    /* ===== SECTIONS ===== */
+    .research-section{margin-bottom:50px;}
+    .section-title{
+      color:var(--accent);
+      font-size:22px;
+      font-family:"Libre Baskerville",serif;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:25px;
+      font-weight:700;
     }
+
+    /* ===== CARDS ===== */
     .research-card{
       background:var(--bg2);
       border:1px solid var(--line);
       border-radius:14px;
-      padding:22px 24px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      padding:24px 26px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom:22px;
       transition:all .3s ease;
-      opacity:0;
-      transform:translateY(30px);
-    }
-    .research-card.visible{
-      opacity:1;
-      transform:translateY(0);
-      transition:opacity .7s ease,transform .7s ease;
     }
     .research-card:hover{
-      transform:translateY(-5px);
+      transform:translateY(-4px);
       box-shadow:0 4px 12px rgba(177,4,14,0.25);
     }
-    .research-meta{color:var(--muted);font-size:13.5px;margin-bottom:6px;}
-    .research-card h3{margin:0 0 8px;color:var(--accent);font-size:18px;font-weight:700;}
-    .research-card p{color:var(--text);font-size:15px;line-height:1.6;margin:0 0 10px;text-align:justify;}
-    .tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
-    .tool-link{background:#fff;color:#333;padding:4px 10px;border-radius:999px;font-size:13px;border:1px solid #e5e5e5;transition:all .3s;}
-    .tool-link:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+    .research-card h3{
+      margin:0;
+      color:var(--accent);
+      font-size:18px;
+      font-weight:700;
+    }
+    .research-meta{color:var(--muted);font-size:14px;margin:5px 0 10px;}
+    .research-card p{color:var(--text);font-size:15px;text-align:justify;margin:0 0 10px;}
+    .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+    .tool-chip{
+      background:#fff;
+      color:var(--accent);
+      border:1px solid var(--accent);
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:13px;
+      transition:.2s ease;
+    }
+    .tool-chip:hover{background:var(--accent);color:#fff;}
 
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px;}
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
 
-    .site-header.shrink{padding:4px 0!important;box-shadow:0 3px 10px rgba(0,0,0,0.25);}
-    .site-header.shrink .brand{font-size:18px;}
-
     @media(max-width:900px){
       .nav-links{display:none;}
-      .hero-intro{margin-top:calc(var(--headerH)+20px);padding:0 10px;}
     }
   </style>
 </head>
@@ -185,83 +202,110 @@
 
   <!-- ===== MAIN ===== -->
   <main class="wrap">
-    <section class="hero-intro">
+    <section class="research-header">
       <h1>Research Overview</h1>
       <p>
-        My research integrates <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary science</b> to analyze multisensor Earth and Mars datasets.
-        I focus on interpretable machine learning models, large-scale data processing, and physics-informed frameworks to enhance our understanding of environmental and planetary systems.
+        My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and <b>planetary science</b> to understand and model surface evolution on Earth and Mars. I focus on using interpretable machine learning frameworks, multispectral analysis, and large-scale data processing on high-performance GPU environments.
       </p>
     </section>
 
-    <!-- Current Projects -->
-    <h2 class="section-title"><i class="fa-solid fa-planet-ringed"></i> Current & Ongoing Projects</h2>
-    <div class="research-grid">
+    <div class="current-projects">
+      <h2><i class="fa-solid fa-flask"></i> Currently Working On</h2>
+      <p>Developing Faster R-CNN models for mapping Martian mound geomorphology in CTX imagery and deep unmixing networks for CRISM hyperspectral data. Integrating LONI A100 GPU pipelines for model optimization and validation.</p>
+    </div>
+
+    <!-- ===== Planetary Science ===== -->
+    <section class="research-section">
+      <h2 class="section-title"><i class="fa-solid fa-satellite"></i> Planetary Science & GeoAI</h2>
+
       <div class="research-card">
-        <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
         <h3>Mars Mound Detection Using Deep Learning</h3>
-        <p>Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> to detect mound-like geomorphologic features in <b>CTX imagery</b>, using <b>LONI A100 GPUs</b> for large-scale mapping.</p>
+        <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
+        <p>Applied Faster R-CNN and Mask R-CNN frameworks to detect mound-like geomorphologic features in CTX imagery from Mars. Leveraged LONI A100 GPU clusters for large-scale surface analysis and model tuning.</p>
         <div class="tools">
-          <a class="tool-link" href="#">Faster R-CNN</a><a class="tool-link" href="#">Detectron2</a><a class="tool-link" href="#">COCO JSON</a><a class="tool-link" href="#">LONI GPU</a>
+          <span class="tool-chip">Faster R-CNN</span>
+          <span class="tool-chip">Detectron2</span>
+          <span class="tool-chip">LONI GPU</span>
+          <span class="tool-chip">Planetary Mapping</span>
         </div>
       </div>
 
       <div class="research-card">
-        <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
         <h3>CRISM Spectral Mineral Mapping</h3>
-        <p>Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface minerals and identify hydrated features on Mars.</p>
+        <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
+        <p>Developed deep unmixing networks for CRISM hyperspectral imagery to analyze surface mineralogy and identify hydrated minerals in Martian terrains.</p>
         <div class="tools">
-          <a class="tool-link" href="#">CRISM</a><a class="tool-link" href="#">Autoencoders</a><a class="tool-link" href="#">Spectral Python</a><a class="tool-link" href="#">Deep Learning</a>
+          <span class="tool-chip">CRISM</span>
+          <span class="tool-chip">Autoencoders</span>
+          <span class="tool-chip">Spectral Analysis</span>
+          <span class="tool-chip">Deep Learning</span>
         </div>
       </div>
+    </section>
+
+    <!-- ===== Earth & Environmental ===== -->
+    <section class="research-section">
+      <h2 class="section-title"><i class="fa-solid fa-globe"></i> Earth & Environmental Analytics</h2>
 
       <div class="research-card">
-        <div class="research-meta">Computer Vision · 2024</div>
         <h3>Urban Accessibility Mapping with AI</h3>
-        <p>Detecting sidewalk elements such as curb ramps and crosswalks from urban imagery using <b>YOLOv8</b> and <b>Faster R-CNN</b>, enhanced through <b>LLM-assisted label review</b>.</p>
+        <div class="research-meta">Computer Vision · 2024</div>
+        <p>Constructed a vision-based workflow to detect sidewalk elements such as curb ramps and crosswalks from urban imagery using Faster R-CNN and YOLOv8. Improved dataset accuracy through LLM-assisted label validation.</p>
         <div class="tools">
-          <a class="tool-link" href="#">YOLOv8</a><a class="tool-link" href="#">Python</a><a class="tool-link" href="#">Faster R-CNN</a><a class="tool-link" href="#">LLM QA</a>
+          <span class="tool-chip">YOLOv8</span>
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">Faster R-CNN</span>
+          <span class="tool-chip">LLM QA</span>
         </div>
       </div>
-    </div>
 
-    <!-- Past Projects -->
-    <h2 class="section-title"><i class="fa-solid fa-globe"></i> Past Projects</h2>
-    <div class="research-grid">
       <div class="research-card">
-        <div class="research-meta">Remote Sensing · 2023</div>
         <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
-        <p>Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level fluctuations and vegetation stress in coastal wetlands.</p>
+        <div class="research-meta">Remote Sensing · 2023</div>
+        <p>Integrated Sentinel-1 SAR and MODIS NDVI datasets to assess water-level changes and vegetation stress in coastal wetlands, demonstrating radar-optical synergy for dynamic hydrologic mapping.</p>
         <div class="tools">
-          <a class="tool-link" href="#">Sentinel-1</a><a class="tool-link" href="#">MODIS</a><a class="tool-link" href="#">NDVI</a><a class="tool-link" href="#">GEE</a>
+          <span class="tool-chip">Sentinel-1</span>
+          <span class="tool-chip">MODIS</span>
+          <span class="tool-chip">NDVI</span>
+          <span class="tool-chip">Google Earth Engine</span>
         </div>
       </div>
+    </section>
+
+    <!-- ===== Geospatial Modeling ===== -->
+    <section class="research-section">
+      <h2 class="section-title"><i class="fa-solid fa-map"></i> Geospatial Modeling & Land Dynamics</h2>
 
       <div class="research-card">
-        <div class="research-meta">Geospatial ML · 2022</div>
         <h3>Land-Cover Change Detection in Bangladesh</h3>
-        <p>Built a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b> imagery.</p>
+        <div class="research-meta">Geospatial ML · 2022</div>
+        <p>Built Random Forest + XGBoost ensemble models to classify and quantify land-use transitions using Landsat 8 and Sentinel-2 data, revealing urban growth and vegetation loss trends over a decade.</p>
         <div class="tools">
-          <a class="tool-link" href="#">Landsat 8</a><a class="tool-link" href="#">Sentinel-2</a><a class="tool-link" href="#">XGBoost</a><a class="tool-link" href="#">Random Forest</a>
+          <span class="tool-chip">Landsat 8</span>
+          <span class="tool-chip">Sentinel-2</span>
+          <span class="tool-chip">XGBoost</span>
+          <span class="tool-chip">Random Forest</span>
         </div>
       </div>
 
       <div class="research-card">
-        <div class="research-meta">Urban Climate · 2021</div>
         <h3>Urban Heat Island Modeling</h3>
-        <p>Analyzed surface temperature patterns using <b>Landsat TIR</b> and <b>MODIS emissivity</b> to study urban heat islands in South Asia.</p>
+        <div class="research-meta">Urban Climate · 2021</div>
+        <p>Analyzed surface temperature variations in major South Asian cities using Landsat TIR and MODIS emissivity data, improving emissivity-corrected models for urban heat island studies.</p>
         <div class="tools">
-          <a class="tool-link" href="#">Landsat TIR</a><a class="tool-link" href="#">MODIS</a><a class="tool-link" href="#">ArcGIS Pro</a><a class="tool-link" href="#">Python</a>
+          <span class="tool-chip">Landsat TIR</span>
+          <span class="tool-chip">MODIS</span>
+          <span class="tool-chip">ArcGIS Pro</span>
+          <span class="tool-chip">Climate Modeling</span>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
 
-  <!-- ===== JS ===== -->
   <script>
     document.addEventListener("DOMContentLoaded",()=>{
       const y=document.getElementById("y");
@@ -284,22 +328,11 @@
         if(window.scrollY>50) header.classList.add("shrink");
         else header.classList.remove("shrink");
       });
-
-      // Fade-in observer for cards
-      const observer=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },{threshold:0.1});
-
-      document.querySelectorAll(".research-card").forEach(card=>observer.observe(card));
     });
   </script>
 </body>
 </html>
+
 
 
 
