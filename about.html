@@ -4,237 +4,262 @@
   <title>About — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Md Shohug Hossain — Ph.D. researcher in GeoAI, Remote Sensing, and Planetary Science.">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    .rightcol p { margin-bottom: 24px; }
+    :root {
+      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9; --text:#222; --muted:#555; --line:#ddd; --max:1100px;
+    }
+    body {margin:0; background:var(--bg); color:var(--text);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.7;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+    a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s;}
+    a:hover{border-bottom-color:var(--accent);}
 
-    .rightcol h2 {
-      color: var(--accent);
-      margin-top: 36px;
-      margin-bottom: 14px;
+    /* ===== NAVBAR ===== */
+    .site-header{
+      position:sticky; top:0; z-index:1000;
+      background:var(--accent); color:#fff;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);
+      transition:all .25s ease;
     }
+    .nav-bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    .brand{font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; color:#fff; transition:font-size .25s ease;}
+    .nav-links{display:flex; gap:20px; align-items:center;}
+    .nav-links a{color:#fff; border:0; font-size:15px;}
+    .nav-links a:hover,.nav-links a.active{text-decoration:underline; opacity:.9;}
+    .right-cluster{display:flex; align-items:center; gap:14px;}
+    .menu-toggle{background:none; border:none; color:#fff; font-size:24px; cursor:pointer; transition:transform .2s ease;}
+    .menu-toggle:hover{transform:scale(1.1);}
 
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 24px;
-      background: #f7f7f7;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 14px;
+    /* ===== OVERLAY MENU ===== */
+    .dropdown-nav {
+      position: fixed;
+      top: -100%;
+      left: 0; right: 0; bottom: 0;
+      background: rgba(177,4,14,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 24px;
+      z-index: 9999;
+      opacity: 0; visibility: hidden;
+      transform: translateY(-20px);
+      transition: top 0.4s ease, opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
     }
-    .edu-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+    .dropdown-nav.active{top:0; opacity:1; visibility:visible; transform:translateY(0);}
+    .dropdown-nav a{color:#fff; font-size:22px; font-weight:500;}
+    .dropdown-nav a:hover{opacity:0.9; transform:scale(1.05);}
+    .dropdown-close{
+      position:absolute; top:20px; right:28px;
+      color:#fff; font-size:26px; border:none; background:none; cursor:pointer; transition:transform .2s ease;
     }
-    .edu-item img {
-      height: 28px;
-      width: auto;
-      max-width: 90px;
-      object-fit: contain;
-      margin-top: 2px;
-    }
-    .edu-item span {
-      font-size: 14.5px;
-      color: #333;
-      line-height: 1.5;
-    }
+    .dropdown-close:hover{transform:rotate(90deg);}
 
-    .tech-summary {
-      margin-top: 30px;
-      background: #fff8f8;
-      border: 1px solid #e8d7d7;
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
-    .tech-summary h2 {
-      margin-top: 0;
-      font-size: 22px;
-    }
+    /* ===== HERO ===== */
+    .hero-banner{background:linear-gradient(90deg,#b1040e,#d82128); color:#fff; padding:80px 0 70px; text-align:center;}
+    .hero-banner h1{font-size:38px; margin:0;}
+    .hero-banner p{font-size:17px; margin-top:8px; opacity:.9;}
 
-    .btn.download {
-      margin-top: 24px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: none;
-      display: inline-block;
-      transition: 0.3s;
+    /* ===== ABOUT CONTENT ===== */
+    .about-section{display:flex; gap:50px; align-items:flex-start; margin:60px 0;}
+    .about-photo img{
+      width:320px; height:320px; border-radius:20px; object-fit:cover;
+      box-shadow:0 4px 15px rgba(0,0,0,.25);
     }
-    .btn.download:hover {
-      background: #7a0309;
-      transform: translateY(-2px);
-    }
+    .about-text{flex:1;}
+    .about-text h2{color:var(--accent); font-size:24px; margin-top:0;}
+    .about-text p{text-align:justify; margin-bottom:20px; font-size:15.5px;}
 
-    @media (max-width: 900px) {
-      .edu-list { background: transparent; border: none; padding: 0; }
-      .edu-item span { font-size: 15px; }
+    /* ===== SECTIONS ===== */
+    section{padding:60px 0;}
+    section:nth-child(even){background:var(--bg2);}
+    section h2{text-align:center; color:var(--accent);}
+    section p{text-align:center; max-width:850px; margin:15px auto; font-size:15.5px; color:var(--text);}
+    .icon-list{max-width:900px; margin:30px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
+    .icon-item{background:#fff; border-radius:14px; padding:25px; box-shadow:0 2px 8px rgba(0,0,0,.08); transition:transform .2s ease;}
+    .icon-item:hover{transform:translateY(-4px);}
+    .icon-item i{font-size:26px; color:var(--accent);}
+    .icon-item h3{margin:10px 0; font-size:17px;}
+    .icon-item p{font-size:14.5px; color:var(--muted); text-align:justify;}
+
+    /* ===== TIMELINE ===== */
+    .timeline-line{position:relative; margin:40px auto; padding-left:30px; border-left:3px solid var(--accent); max-width:700px;}
+    .timeline-item{margin-bottom:30px; position:relative;}
+    .timeline-item:before{
+      content:""; position:absolute; left:-11px; top:5px; width:18px; height:18px;
+      background:var(--accent); border-radius:50%;
+    }
+    .timeline-item h4{margin:0; font-size:17px;}
+    .timeline-item p{margin:5px 0 0; color:var(--muted); font-size:14.5px;}
+
+    footer.site{background:var(--accent); color:#fff; text-align:center; margin-top:40px;}
+    footer.site .wrap{padding:20px;}
+    footer.site p{margin:0; font-size:15px;}
+
+    .fade-in{opacity:0; transform:translateY(15px); animation:fadeIn .8s ease forwards;}
+    @keyframes fadeIn{to{opacity:1; transform:translateY(0);}}
+
+    @media (max-width:900px){
+      .nav-links{display:none;}
+      .about-section{flex-direction:column; align-items:center; text-align:center;}
+      .about-photo img{width:260px; height:260px;}
+      .dropdown-nav a{font-size:20px;}
     }
   </style>
 </head>
 
 <body>
-
-  <!-- ==================== Header / Navigation ==================== -->
-  <header class="site">
-    <div class="wrap nav">
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <div class="wrap nav-bar">
       <div class="brand">M S Hossain</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="awards.html">Awards</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="search-box">
-          <input type="text" placeholder="Search..." id="searchInput">
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="research.html">Research</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="contact.html">Contact</a>
       </nav>
+      <div class="right-cluster">
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
-
-    <!-- Dropdown menu for mobile -->
-    <ul class="dropdown-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
   </header>
 
-  <!-- ==================== About Content ==================== -->
-  <main class="wrap hero two">
-    <div class="leftcol">
-      <div class="photo-wrapper">
-        <div class="photo fixed">
-          <img src="profile.jpg" alt="Md Shohug Hossain portrait">
-        </div>
-      </div>
+  <!-- Overlay Menu -->
+  <div class="dropdown-nav" id="overlayMenu">
+    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Experience</a>
+    <a href="skills.html">Skills</a>
+    <a href="publications.html">Publications</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-      <div class="socials">
-        <a class="icon" href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-        <a class="icon" href="mailto:shohugmdhossain@gmail.com" aria-label="Gmail" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
-        <a class="icon" href="https://github.com/shohugmdhossain" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a class="icon" href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a class="icon" href="https://x.com/Hmdshohug10" aria-label="Twitter/X" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero-banner fade-in">
+    <div class="wrap">
+      <h1>About Md Shohug Hossain</h1>
+      <p>Ph.D. Researcher · GeoAI · Remote Sensing · Planetary Science</p>
+    </div>
+  </section>
 
-      <div class="edu-list">
-        <div class="edu-item">
-          <img src="ul.png" alt="UL Lafayette">
-          <span><b>Ph.D.</b> in Earth & Energy Sciences<br><i>University of Louisiana at Lafayette, USA</i></span>
+  <!-- ===== ABOUT SECTION ===== -->
+  <div class="wrap about-section fade-in">
+    <div class="about-photo">
+      <img src="profile.jpg" alt="Md Shohug Hossain portrait">
+    </div>
+    <div class="about-text">
+      <h2>Professional Overview</h2>
+      <p>
+        Md Shohug Hossain is a doctoral fellow in Earth & Energy Sciences at the University of Louisiana at Lafayette.
+        His research bridges machine learning, planetary geology, and satellite remote sensing, with a focus on developing
+        GeoAI tools for planetary surface analysis. His interdisciplinary expertise spans computer vision, deep learning,
+        and geospatial analytics.
+      </p>
+      <p>
+        His research philosophy emphasizes “science through computation” — merging physics-based understanding with
+        intelligent data modeling to decode natural processes on Earth and Mars.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== RESEARCH PHILOSOPHY ===== -->
+  <section>
+    <div class="wrap fade-in">
+      <h2>Research Philosophy</h2>
+      <p>
+        Shohug’s work integrates AI and geoscience to uncover complex environmental and planetary patterns, emphasizing
+        reproducibility, interdisciplinary collaboration, and data ethics.
+      </p>
+      <div class="icon-list">
+        <div class="icon-item"><i class="fa-solid fa-mountain"></i>
+          <h3>Planetary Geomorphology</h3>
+          <p>Exploring Mars’ surface evolution using geomorphic feature extraction and CTX/HiRISE imagery.</p>
         </div>
-        <div class="edu-item">
-          <img src="ucalgary.png" alt="University of Calgary">
-          <span><b>M.Sc.</b> in Electrical & Computer Engineering<br><i>University of Calgary, Canada</i></span>
+        <div class="icon-item"><i class="fa-solid fa-brain"></i>
+          <h3>Deep Learning Models</h3>
+          <p>Building AI pipelines for crater, mound, and landform detection across planetary environments.</p>
         </div>
-        <div class="edu-item">
-          <img src="nsu.png" alt="North South University">
-          <span><b>B.Sc.</b> in Computer Science & Engineering<br><i>North South University, Bangladesh</i></span>
+        <div class="icon-item"><i class="fa-solid fa-globe"></i>
+          <h3>Earth Observation</h3>
+          <p>Applying satellite imagery and GeoAI to monitor climate-driven terrestrial transformations.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="rightcol">
-      <div class="kicker red" style="font-size:24px; letter-spacing:0.18em;">ABOUT ME</div>
-      <h1 class="subtitle">Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science</h1>
-
-      <p>
-        I am <b>Md Shohug Hossain</b>, a Ph.D. researcher at the <b>University of Louisiana at Lafayette</b> in the
-        <b>Earth & Energy Sciences</b> program. My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>,
-        <b>remote sensing</b>, and <b>planetary surface analysis</b> to investigate both terrestrial and Martian landscapes.
-        I use deep learning models such as <b>Faster R-CNN</b> and <b>YOLO</b> for feature detection and landscape interpretation
-        from satellite imagery on <b>HPC GPU systems</b>.
-      </p>
-
-      <p>
-        My goal is to build scalable GeoAI pipelines that improve the accuracy and interpretability of surface mapping,
-        enabling scientists to better understand Earth’s environmental changes and planetary evolution.
-        I have experience in <b>multispectral/hyperspectral data analysis</b>, <b>image segmentation</b>,
-        <b>object detection</b>, and <b>geospatial data processing</b> using Python, TensorFlow, and PyTorch.
-      </p>
-
-      <h2>Research Interests</h2>
-      <ul class="project-list">
-        <li>Machine learning and deep learning for remote sensing</li>
-        <li>Planetary geomorphology and Mars surface mapping</li>
-        <li>Multispectral and hyperspectral image analysis</li>
-        <li>Urban analytics and infrastructure mapping using GeoAI</li>
-        <li>Physics-informed neural networks and model interpretability</li>
-      </ul>
-
-      <div class="tech-summary">
-        <h2>Technical Summary</h2>
-        <p>
-          Python • TensorFlow • PyTorch • ArcGIS/QGIS • EO data pipelines (multispectral/hyperspectral) •
-          Object detection/segmentation • HPC training on LONI QB-3/QB-4 (A100 GPUs)
-        </p>
+  <!-- ===== TIMELINE ===== -->
+  <section class="fade-in">
+    <div class="wrap">
+      <h2>Academic & Research Journey</h2>
+      <div class="timeline-line">
+        <div class="timeline-item"><h4>2025 — Ph.D. Fellowship, UL Lafayette</h4><p>Doctoral research in GeoAI and planetary geomorphology.</p></div>
+        <div class="timeline-item"><h4>2023 — M.Sc., University of Calgary</h4><p>Focus on AI-based satellite analysis and computer vision.</p></div>
+        <div class="timeline-item"><h4>2019 — B.Sc., North South University</h4><p>Major in Computer Science & Engineering; merit scholarship recipient.</p></div>
       </div>
+    </div>
+  </section>
 
+  <!-- ===== BEYOND ===== -->
+  <section class="fade-in" style="background:var(--bg2);">
+    <div class="wrap">
       <h2>Beyond Research</h2>
       <p>
-        Outside of research, I enjoy contributing to open-source projects, mentoring students, and collaborating on
-        interdisciplinary problems that link computer vision, environmental science, and space exploration.
-        My long-term vision is to advance explainable and transferable GeoAI systems that connect planetary and
-        Earth observation for sustainable exploration and decision-making.
+        Outside academia, Shohug enjoys photography, astronomy, and exploring geological formations.
+        He has led student organizations, mentored research interns, and continues promoting scientific outreach in GeoAI and remote sensing.
       </p>
-
-      <a class="btn download" href="Shohug_CV.pdf" target="_blank">Download CV →</a>
+      <div class="icon-list">
+        <div class="icon-item"><i class="fa-solid fa-camera"></i><h3>Photography</h3><p>Capturing geological and environmental perspectives through visual storytelling.</p></div>
+        <div class="icon-item"><i class="fa-solid fa-star"></i><h3>Astronomy</h3><p>Fascinated by planetary exploration and imaging technologies.</p></div>
+        <div class="icon-item"><i class="fa-solid fa-mountain"></i><h3>Exploration</h3><p>Exploring landscapes to connect real-world geomorphology with satellite observations.</p></div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <!-- ==================== Footer ==================== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap">
       <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
     </div>
   </footer>
 
-  <!-- ==================== JS ==================== -->
+  <!-- ===== JS ===== -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const year = document.getElementById('y');
-    if (year) year.textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const dropdownNav = document.querySelector('.dropdown-nav');
+      const toggle = document.querySelector('.menu-toggle');
+      const overlay = document.getElementById('overlayMenu');
+      const closeBtn = document.querySelector('.dropdown-close');
 
-    if (menuToggle && dropdownNav) {
-      menuToggle.addEventListener('click', () => {
-        dropdownNav.classList.toggle('active');
-      });
-    }
-  });
-</script>
+      const toggleMenu = () => overlay.classList.toggle('active');
+      const closeMenu = () => overlay.classList.remove('active');
 
-
+      if (toggle) toggle.addEventListener('click', toggleMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeMenu(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    });
+  </script>
 </body>
 </html>
+
 
 
 
