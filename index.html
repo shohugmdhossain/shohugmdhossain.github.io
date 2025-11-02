@@ -1,15 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>AI for Earth & Planetary Discovery — M S Hossain</title>
+  <title>AI for Earth & Planetary Discovery — Md Shohug Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GeoAI, remote sensing, and planetary science by Md Shohug Hossain — exploring Earth and Mars through intelligent data analytics.">
+
+  <!-- ===== SEO Essentials ===== -->
+  <meta name="description" content="Md Shohug Hossain — Ph.D. researcher in GeoAI, remote sensing, and planetary science. Exploring Earth and Mars through AI-driven geospatial analytics.">
+  <meta name="keywords" content="Md Shohug Hossain, M S Hossain, GeoAI, remote sensing, planetary science, University of Louisiana at Lafayette, AI for Earth, Mars mounds, geospatial AI, machine learning geology">
+  <meta name="author" content="Md Shohug Hossain">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shohugmdhossain.github.io/">
+
+  <!-- ===== Open Graph / Social ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI for Earth & Planetary Discovery — Md Shohug Hossain">
+  <meta property="og:description" content="Ph.D. researcher using GeoAI and remote sensing to study Earth and Mars.">
+  <meta property="og:image" content="https://shohugmdhossain.github.io/profile.jpg">
+  <meta property="og:url" content="https://shohugmdhossain.github.io/">
+  <meta property="og:site_name" content="M S Hossain — GeoAI & Remote Sensing">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Md Shohug Hossain — GeoAI & Planetary Science">
+  <meta name="twitter:description" content="AI-driven exploration of Earth and Mars — GeoAI & Remote Sensing.">
+  <meta name="twitter:image" content="https://shohugmdhossain.github.io/profile.jpg">
+
+  <!-- ===== Schema (Structured Data) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md Shohug Hossain",
+    "alternateName": "M S Hossain",
+    "jobTitle": "Ph.D. Researcher — GeoAI & Remote Sensing",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Louisiana at Lafayette"
+    },
+    "description": "Ph.D. researcher exploring Earth and Mars through AI-driven geospatial and planetary analytics.",
+    "url": "https://shohugmdhossain.github.io/",
+    "image": "https://shohugmdhossain.github.io/profile.jpg",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=XXXXX",
+      "https://www.linkedin.com/in/md-shohug-hossain/",
+      "https://github.com/shohugmdhossain",
+      "https://x.com/Hmdshohug10"
+    ]
+  }
+  </script>
+
+  <!-- ===== Fonts & Icons ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- ===== CSS ===== -->
   <style>
     :root {
       --accent:#b1040e;
@@ -18,18 +65,10 @@
       --muted:#555;
       --max:1100px;
     }
-
-    html,body{
-      margin:0;height:100%;
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);background:var(--bg);line-height:1.8;
-    }
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.8;}
 
     /* ===== NAVBAR ===== */
-    .site-header{
-      position:fixed;top:0;left:0;right:0;background:var(--accent);color:#fff;
-      z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1);
-    }
+    .site-header{position:fixed;top:0;left:0;right:0;background:var(--accent);color:#fff;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1);}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
     .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
     .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
@@ -38,47 +77,53 @@
     .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
     .right-cluster{display:flex;align-items:center;gap:14px;}
     .search-box form{display:flex;}
-    .search-box input{border:none;border-radius:8px;background:rgba(255,255,255,.95);
-      color:#222;padding:7px 10px;width:170px;transition:width .25s;}
+    .search-box input{border:none;border-radius:8px;background:rgba(255,255,255,.95);color:#222;padding:7px 10px;width:170px;transition:width .25s;}
     .search-box input:focus{outline:none;width:220px;}
     .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
 
-    /* ===== HERO SECTION ===== */
-    main{margin-top:78px;} /* Reduced space after navbar */
-    .hero{
-      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
-      gap:60px;min-height:80vh;max-width:var(--max);margin:auto;padding:20px 20px 50px;
-    }
-    .hero-left{flex:1;min-width:320px;text-align:center;animation:fadeUp .8s ease forwards;}
-    .hero-left img{
-      width:420px;height:420px;object-fit:cover;border-radius:14px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.15);
-    }
+    /* ===== HERO ===== */
+    main{margin-top:70px;}
+    .hero{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:60px;max-width:var(--max);margin:auto;padding:30px 20px 60px;}
+    .hero-left{flex:1;min-width:340px;text-align:center;animation:fadeIn 1s ease forwards;}
+    .hero-left img{width:440px;height:440px;object-fit:cover;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.15);}
     .socials{display:flex;justify-content:center;gap:18px;margin-top:18px;}
     .socials a{color:var(--accent);font-size:22px;transition:.2s;}
     .socials a:hover{transform:scale(1.1);opacity:.9;}
+    .hero-sub{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.6;}
 
-    .hero-right{flex:1.3;min-width:360px;animation:fadeUp .8s ease .25s forwards;
-      opacity:0;transform:translateY(15px);}
-    .hero-right h1{
-      font-family:"Libre Baskerville",serif;color:var(--accent);
-      font-size:34px;margin-bottom:14px;line-height:1.3;
-    }
-    .hero-right p{
-      font-size:16px;margin-bottom:16px;text-align:justify;color:var(--text);
-    }
-    .hero-right .btn{
-      display:inline-block;margin-top:12px;padding:10px 18px;background:var(--accent);
-      color:#fff;border-radius:6px;text-decoration:none;font-size:15px;
-    }
+    .hero-right{flex:1.4;min-width:360px;opacity:0;transform:translateY(20px);animation:fadeUp 1.1s ease .25s forwards;}
+    .hero-right h1{font-family:"Libre Baskerville",serif;color:var(--accent);font-size:30px;margin:0 0 16px;white-space:nowrap;}
+    .hero-right p{font-size:16px;margin-bottom:16px;text-align:justify;color:var(--text);}
+    .hero-right .btn{display:inline-block;margin-top:16px;padding:10px 18px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:15px;}
     .hero-right .btn:hover{opacity:.9;}
 
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
     @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-    /* ===== FOOTER ===== */
-    footer.site{
-      background:var(--accent);color:#fff;text-align:center;margin-top:40px;
+    /* ===== BACK TO TOP BUTTON ===== */
+    #backToTop{
+      position:fixed;
+      bottom:28px;
+      right:28px;
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      border-radius:50%;
+      width:44px;
+      height:44px;
+      font-size:18px;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+      transition:all .3s ease;
+      z-index:999;
     }
+    #backToTop:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,0.3);}
+
+    /* ===== FOOTER ===== */
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:40px;}
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
 
@@ -87,12 +132,13 @@
       .hero{flex-direction:column;align-items:center;text-align:center;gap:40px;padding:40px 20px;}
       .hero-left img{width:340px;height:340px;}
       .hero-right{text-align:center;}
+      .hero-right h1{white-space:normal;}
     }
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- ===== NAVBAR ===== -->
   <header class="site-header">
     <div class="wrap nav-bar">
       <div class="brand">M S Hossain</div>
@@ -108,58 +154,67 @@
       <div class="right-cluster">
         <div class="search-box">
           <form action="https://www.google.com/search" method="get" target="_blank">
-            <input type="text" name="q" placeholder="Search..." id="searchInput">
+            <input type="text" name="q" placeholder="Search..." id="searchInput" aria-label="Search this site">
             <input type="hidden" name="sitesearch" value="shohugmdhossain.github.io">
           </form>
         </div>
-        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ===== HERO ===== -->
   <main>
     <section class="hero">
       <div class="hero-left">
-        <img src="profile.jpg" alt="Portrait of Md Shohug Hossain">
+        <img src="profile.jpg" alt="Portrait of Md Shohug Hossain, Ph.D. Researcher in GeoAI and Planetary Science">
         <div class="socials">
-          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://scholar.google.com/citations?user=XXXXX" aria-label="Google Scholar" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="mailto:shohugmdhossain@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/shohugmdhossain" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" aria-label="Twitter/X" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <div class="hero-sub">
+          Ph.D. Researcher — Earth & Remote Sensing<br>
+          University of Louisiana at Lafayette, USA
         </div>
       </div>
 
       <div class="hero-right">
         <h1>AI for Earth & Planetary Discovery</h1>
-        <p>I explore how artificial intelligence and satellite observations can unlock new insights about the surfaces of Earth and Mars. My research bridges machine learning, geospatial analytics, and planetary geomorphology to model landscapes and environmental change.</p>
-        <p>At the University of Louisiana at Lafayette, I develop GeoAI frameworks for large-scale planetary image interpretation using high-performance GPUs. My goal is to build interpretable, scalable systems that connect Earth observation with planetary exploration — revealing shared patterns in surface processes across worlds.</p>
-        <p>My academic journey combines data science, engineering, and geoscience. I’m motivated by the belief that intelligent models can extend human perception — transforming how we see, measure, and understand our planet and its analogs beyond Earth.</p>
+        <p>My research explores how artificial intelligence and satellite observations can uncover new insights about planetary and terrestrial surfaces. Through GeoAI and remote sensing, I analyze how geomorphic and environmental processes evolve across Earth and Mars.</p>
+        <p>At the University of Louisiana at Lafayette, I develop scalable deep learning workflows for detecting landforms, spectral unmixing, and planetary image interpretation using HPC infrastructure. These efforts support the creation of reproducible datasets for cross-planet geomorphology.</p>
+        <p>My work bridges computer science, geoscience, and data engineering, with a goal of translating complex imagery into interpretable models of landscape evolution. From urban terrain mapping to Martian surface reconstruction, I seek to extend the boundaries of environmental and planetary understanding through machine intelligence.</p>
         <a class="btn" href="research.html">View Research →</a>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
     document.addEventListener("DOMContentLoaded",()=>{
       const y=document.getElementById("y");
       if(y) y.textContent=new Date().getFullYear();
-      const toggle=document.querySelector(".menu-toggle");
-      const overlay=document.getElementById("overlayMenu");
-      if(toggle&&overlay){
-        toggle.addEventListener("click",()=>overlay.classList.toggle("active"));
-        document.addEventListener("keydown",e=>{if(e.key==="Escape")overlay.classList.remove("active");});
-      }
+
+      const btn=document.getElementById("backToTop");
+      window.addEventListener("scroll",()=>{
+        if(window.scrollY>250){btn.style.display="flex";}
+        else{btn.style.display="none";}
+      });
+      btn.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
     });
   </script>
 </body>
 </html>
+
 
 
 
