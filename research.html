@@ -17,10 +17,9 @@
       --text:#222; --muted:#555; --line:#ddd;
       --max:1100px;
 
-      /* theme icon colors */
-      --mars:#b1040e;     /* red */
-      --earth:#2e7d32;    /* green */
-      --geo:#0f766e;      /* teal */
+      --mars:#b1040e;
+      --earth:#2e7d32;
+      --geo:#0f766e;
     }
 
     html,body{height:100%;}
@@ -73,31 +72,24 @@
     }
     .dropdown-close:hover{transform:rotate(90deg);}
 
-    /* ===== HERO (Crimson Academic Gradient) ===== */
+    /* ===== HERO ===== */
     .hero-gradient{
-      margin-top:0 !important; /* remove gap under navbar */
-      background:linear-gradient(115deg,
-        rgba(177,4,14,0.95) 0%,
-        rgba(177,4,14,0.85) 40%,
-        rgba(255,255,255,0.9) 100%);
-      color:#fff;position:relative;
+      margin-top:70px; /* add space under fixed navbar */
+      background:#fff; /* changed to white background */
+      color:var(--text);position:relative;
+      padding:50px 0 20px;
     }
-    .hero-gradient::after{
-      content:"";display:block;height:70px;
-      background:linear-gradient(to bottom,rgba(255,255,255,0.9) 0%,#ffffff 100%);
-    }
-    .hero-inner{padding:50px 0;display:flex;flex-direction:column;gap:10px;}
     .hero-title{
       font-family:"Libre Baskerville",serif;font-size:30px;font-weight:700;
-      margin:0;letter-spacing:.2px;text-align:left;
+      margin:0;letter-spacing:.2px;text-align:left;color:var(--accent);
     }
     .hero-sub{
       max-width:1000px;margin:0;font-size:15.5px;line-height:1.8;opacity:.95;text-align:justify;
     }
     .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
     .hero-badge{
-      border:1px solid rgba(255,255,255,.75);color:#fff;
-      background:rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;
+      border:1px solid var(--accent);color:var(--accent);
+      background:rgba(177,4,14,0.08);padding:6px 10px;border-radius:999px;
       font-size:13px;
     }
 
@@ -213,7 +205,7 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="hero-gradient">
     <div class="wrap hero-inner">
       <h1 class="hero-title fade-in fade-1">Exploring Earth and Beyond: GeoAI for Planetary & Environmental Discovery</h1>
@@ -230,7 +222,7 @@
     </div>
   </section>
 
-  <!-- ===== THEMES ===== -->
+  <!-- THEMES -->
   <section class="themes">
     <div class="wrap theme-grid">
       <div class="theme fade-in fade-1">
@@ -257,7 +249,7 @@
     </div>
   </section>
 
-  <!-- ===== CURRENT & ONGOING ===== -->
+  <!-- CURRENT PROJECTS -->
   <div class="wrap">
     <div class="section-head"><i class="fa-solid fa-flask"></i> Current & Ongoing Projects</div>
 
@@ -310,7 +302,7 @@
     </article>
   </div>
 
-  <!-- ===== PAST PROJECTS ===== -->
+  <!-- PAST PROJECTS -->
   <div class="wrap">
     <div class="section-head" style="margin-top:30px;"><i class="fa-regular fa-clock"></i> Past Projects</div>
 
