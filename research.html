@@ -35,7 +35,6 @@
       line-height:1.7;
     }
 
-    main{flex:1;}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
     a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
     a:hover{border-bottom-color:var(--accent);}
@@ -62,107 +61,128 @@
     }
     .search-box input:focus{outline:none;width:220px;}
 
-    /* Hamburger Icon */
-    .menu-toggle{
-      background:none;border:none;color:#fff;font-size:24px;
-      cursor:pointer;transition:transform .2s ease;
-    }
+    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;transition:transform .2s ease;}
     .menu-toggle:hover{transform:scale(1.1);}
 
-    /* Overlay Menu */
+    /* ===== Overlay Menu ===== */
     .dropdown-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      position: fixed;top: 0;left: 0;right: 0;bottom: 0;
       background: rgba(177, 4, 14, 0.75);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+      display: flex;flex-direction: column;align-items: center;justify-content: center;
+      gap: 24px;z-index: 9999;
+      opacity: 0;visibility: hidden;transition: opacity 0.3s ease, visibility 0.3s ease;
     }
-    .dropdown-nav.active {opacity:1;visibility:visible;}
-    .dropdown-nav a {
-      color:#fff;font-size:22px;font-weight:500;border:0;
-      transition:transform .2s ease,opacity .2s ease;
-    }
-    .dropdown-nav a:hover{transform:scale(1.05);opacity:.9;}
+    .dropdown-nav.active {opacity: 1;visibility: visible;}
+    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;border:0;}
     .dropdown-close{
-      position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
-      border:none;background:none;cursor:pointer;transition:transform .2s ease;
+      position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;
+      transition:transform .2s ease;
     }
     .dropdown-close:hover{transform:rotate(90deg);}
 
-    /* ===== RESEARCH SECTION ===== */
-    .research-section {
-      margin:calc(var(--headerH) + 30px) auto 60px;
-      display:flex;flex-direction:column;gap:30px;
+    /* ===== RESEARCH HERO ===== */
+    .hero-intro {
+      margin-top:calc(var(--headerH) + 60px);
+      text-align:center;
     }
-    .research-section h1 {
+    .hero-intro h1 {
       color:var(--accent);
-      font-size:30px;
-      font-weight:700;
-      margin:0;
-      text-align:left;
       font-family:"Libre Baskerville",serif;
+      font-size:32px;
+      margin-bottom:10px;
     }
-    .research-intro {
-      text-align:justify;
+    .hero-intro p {
+      max-width:800px;
+      margin:0 auto;
       color:var(--text);
-      font-size:15px;
-      line-height:1.7;
-      max-width:1000px;
-      margin-top:10px;
+      font-size:15.5px;
+      line-height:1.8;
     }
 
-    .research-block { margin-top:20px; }
-    .research-block h2 {
-      color:var(--accent);
-      font-size:22px;
-      font-weight:700;
-      margin-bottom:18px;
-      font-family:"Libre Baskerville",serif;
+    /* ===== TIMELINE ===== */
+    .timeline {
+      position:relative;
+      margin:60px auto;
+      padding-left:25px;
+      border-left:3px solid var(--accent);
+      max-width:900px;
     }
 
-    .research-card {
+    .timeline-item {
+      position:relative;
+      margin-bottom:45px;
+      padding-left:25px;
+    }
+
+    .timeline-item::before {
+      content:"";
+      position:absolute;
+      left:-10px;
+      top:6px;
+      width:14px;
+      height:14px;
+      background:var(--accent);
+      border-radius:50%;
+      box-shadow:0 0 0 3px #fff;
+    }
+
+    .timeline-year {
+      font-weight:600;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .timeline-box {
       background:var(--bg2);
       border:1px solid var(--line);
-      border-radius:16px;
-      padding:24px 30px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.15);
+      border-radius:12px;
+      padding:18px 22px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
       transition:transform .3s ease, box-shadow .3s ease;
-      margin-bottom:28px;
     }
-    .research-card:hover {
+
+    .timeline-box:hover {
       transform:translateY(-4px);
       box-shadow:0 4px 12px rgba(177,4,14,0.25);
     }
 
-    .research-card h3 { color:var(--accent); font-size:20px; margin:0 0 6px; }
-    .research-meta { color:var(--muted); font-size:14px; font-style:italic; margin-bottom:8px; }
-    .research-card p { color:var(--text); font-size:15.5px; line-height:1.7; text-align:justify; margin:0 0 10px; }
+    .timeline-box h3 {
+      margin:0;
+      color:var(--accent);
+      font-size:18px;
+      font-weight:700;
+    }
+
+    .timeline-box p {
+      color:var(--text);
+      font-size:15px;
+      margin:8px 0 10px;
+      line-height:1.6;
+      text-align:justify;
+    }
 
     .tools {
-      display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;
+      display:flex;flex-wrap:wrap;gap:6px;
     }
     .tool-link {
-      background:#fff;color:#333;padding:0.35em 0.8em;
-      border-radius:999px;font-size:0.85rem;border:1px solid #e5e5e5;
-      text-decoration:none;transition:all .3s ease;
+      background:#fff;
+      color:#333;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:13px;
+      border:1px solid #e5e5e5;
+      transition:all .3s ease;
+      text-decoration:none;
     }
     .tool-link:hover {
       background:var(--accent);
       color:#fff;
       border-color:var(--accent);
-      transform:scale(1.05);
     }
 
-    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:60px;}
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:80px;}
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
 
@@ -171,10 +191,9 @@
 
     @media(max-width:900px){
       .nav-links{display:none;}
-      .research-section{margin-top:calc(var(--headerH) + 60px);}
-      .research-card{padding:22px 20px;}
-      .research-section h1{font-size:26px;text-align:center;}
-      .research-intro{text-align:center;}
+      .hero-intro{margin-top:calc(var(--headerH) + 40px);}
+      .timeline{margin:40px 10px;padding-left:18px;}
+      .timeline-item{padding-left:20px;}
     }
   </style>
 </head>
@@ -218,25 +237,25 @@
   </div>
 
   <!-- ===== MAIN ===== -->
-  <main class="wrap">
-    <section class="research-section">
+  <main>
+    <section class="hero-intro wrap">
       <h1>Research Overview</h1>
-      <p class="research-intro">
+      <p>
         My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and 
-        <b>planetary science</b> to analyze multisensor Earth and planetary data. I focus on interpretable machine learning models, 
-        large-scale data processing, and physics-informed frameworks to enhance environmental and planetary understanding.
+        <b>planetary science</b> to analyze multisensor Earth and planetary data. 
+        I focus on interpretable machine learning models, large-scale data processing, 
+        and physics-informed frameworks to enhance environmental and planetary understanding.
       </p>
+    </section>
 
-      <!-- Current Projects -->
-      <div class="research-block">
-        <h2>Current & Ongoing Projects</h2>
-
-        <div class="research-card">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">2024–Present · Planetary Geomorphology</div>
+        <div class="timeline-box">
           <h3>Mars Mound Detection Using Deep Learning</h3>
-          <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
           <p>
-            Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic 
-            features in <b>CTX imagery</b> from Mars. Leveraging <b>LONI A100 GPU clusters</b> for large-scale geological surface mapping.
+            Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> to detect mound-like geomorphologic features 
+            in <b>CTX imagery</b> from Mars, leveraging <b>LONI A100 GPU clusters</b> for large-scale mapping.
           </p>
           <div class="tools">
             <a class="tool-link" href="#">Faster R-CNN</a>
@@ -245,13 +264,15 @@
             <a class="tool-link" href="#">LONI GPU</a>
           </div>
         </div>
+      </div>
 
-        <div class="research-card">
+      <div class="timeline-item">
+        <div class="timeline-year">2024–Present · Planetary Spectroscopy</div>
+        <div class="timeline-box">
           <h3>CRISM Spectral Mineral Mapping</h3>
-          <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
           <p>
-            Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface 
-            mineral diversity and identify hydrated minerals. The study aims to infer past aqueous environments in Martian terrains.
+            Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> 
+            to characterize surface mineral diversity and identify hydrated minerals.
           </p>
           <div class="tools">
             <a class="tool-link" href="#">CRISM</a>
@@ -260,14 +281,15 @@
             <a class="tool-link" href="#">Deep Learning</a>
           </div>
         </div>
+      </div>
 
-        <div class="research-card">
+      <div class="timeline-item">
+        <div class="timeline-year">2024 · Computer Vision</div>
+        <div class="timeline-box">
           <h3>Urban Accessibility Mapping with AI</h3>
-          <div class="research-meta">Computer Vision · 2024</div>
           <p>
-            Constructing a vision-based workflow to identify sidewalk elements—such as curb ramps and crosswalks— 
-            from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>. Enhanced validation accuracy through 
-            <b>LLM-assisted label review</b> and systematic dataset correction.
+            Vision-based workflow to identify sidewalk elements—curb ramps and crosswalks—using <b>YOLOv8</b> and <b>Faster R-CNN</b>. 
+            Improved accuracy through <b>LLM-assisted label review</b> and systematic dataset correction.
           </p>
           <div class="tools">
             <a class="tool-link" href="#">YOLOv8</a>
@@ -278,17 +300,13 @@
         </div>
       </div>
 
-      <!-- Past Projects -->
-      <div class="research-block">
-        <h2>Past Projects</h2>
-
-        <div class="research-card">
+      <div class="timeline-item">
+        <div class="timeline-year">2023 · Remote Sensing</div>
+        <div class="timeline-box">
           <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
-          <div class="research-meta">Remote Sensing · 2023</div>
           <p>
-            Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level 
-            fluctuations and vegetation stress in coastal wetlands. Demonstrated radar-optical synergy 
-            for dynamic hydrologic mapping in monsoon-influenced ecosystems.
+            Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data 
+            to assess water level fluctuations and vegetation stress in coastal wetlands.
           </p>
           <div class="tools">
             <a class="tool-link" href="#">Sentinel-1</a>
@@ -297,14 +315,15 @@
             <a class="tool-link" href="#">Google Earth Engine</a>
           </div>
         </div>
+      </div>
 
-        <div class="research-card">
+      <div class="timeline-item">
+        <div class="timeline-year">2022 · Geospatial ML</div>
+        <div class="timeline-box">
           <h3>Land-Cover Change Detection in Bangladesh</h3>
-          <div class="research-meta">Geospatial ML · 2022</div>
           <p>
-            Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions 
-            using <b>Landsat 8</b> and <b>Sentinel-2</b> data. Produced spatial insights on urban growth and 
-            vegetation loss over a decade.
+            Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify 
+            land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b> imagery.
           </p>
           <div class="tools">
             <a class="tool-link" href="#">Landsat 8</a>
@@ -313,14 +332,15 @@
             <a class="tool-link" href="#">Random Forest</a>
           </div>
         </div>
+      </div>
 
-        <div class="research-card">
+      <div class="timeline-item">
+        <div class="timeline-year">2021 · Urban Climate</div>
+        <div class="timeline-box">
           <h3>Urban Heat Island Modeling</h3>
-          <div class="research-meta">Urban Climate · 2021</div>
           <p>
-            Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b> 
-            and <b>MODIS emissivity</b> data. Developed improved models for urban heat island analysis 
-            and emissivity-based correction.
+            Analyzed surface temperature variations using <b>Landsat TIR</b> 
+            and <b>MODIS emissivity</b> data to study urban heat island effects in South Asia.
           </p>
           <div class="tools">
             <a class="tool-link" href="#">Landsat TIR</a>
@@ -330,7 +350,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -343,30 +363,27 @@
   <!-- ===== JS ===== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const y = document.getElementById('y');
-      if (y) y.textContent = new Date().getFullYear();
-
-      const header = document.querySelector('.site-header');
-      const toggle = document.querySelector('.menu-toggle');
-      const overlay = document.getElementById('overlayMenu');
-      const closeBtn = document.querySelector('.dropdown-close');
-
-      const openMenu = () => overlay.classList.add('active');
-      const closeMenu = () => overlay.classList.remove('active');
-
-      toggle.addEventListener('click', openMenu);
-      closeBtn.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', e => { if (e.target === overlay) closeMenu(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) header.classList.add('shrink');
+      const y=document.getElementById('y');
+      if(y) y.textContent=new Date().getFullYear();
+      const header=document.querySelector('.site-header');
+      const toggle=document.querySelector('.menu-toggle');
+      const overlay=document.getElementById('overlayMenu');
+      const closeBtn=document.querySelector('.dropdown-close');
+      const openMenu=()=>overlay.classList.add('active');
+      const closeMenu=()=>overlay.classList.remove('active');
+      toggle.addEventListener('click',openMenu);
+      closeBtn.addEventListener('click',closeMenu);
+      overlay.addEventListener('click',e=>{if(e.target===overlay)closeMenu();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+      window.addEventListener('scroll',()=>{
+        if(window.scrollY>50)header.classList.add('shrink');
         else header.classList.remove('shrink');
       });
     });
   </script>
 </body>
 </html>
+
 
 
 
