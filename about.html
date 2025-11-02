@@ -12,103 +12,249 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root{
-      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
-      --text:#222; --muted:#555; --line:#ddd; --max:1100px;
+    :root {
+      --accent: #b1040e;
+      --bg: #fff;
+      --text: #222;
+      --muted: #555;
+      --line: #ddd;
+      --max: 1100px;
     }
-    body{
-      margin:0; background:var(--bg);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text); line-height:1.7;
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
     }
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
-    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
-    a:hover{border-bottom-color:var(--accent);}
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+    a:hover {
+      border-bottom-color: var(--accent);
+    }
 
     /* ===== NAVBAR ===== */
-    header.site-header{
-      background:var(--accent);color:#fff;position:sticky;top:0;z-index:1000;
-      box-shadow:0 3px 10px rgba(0,0,0,.1);
+    header.site-header {
+      background: var(--accent);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
-    .nav-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;}
-    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;}
-    .nav-links{display:flex;gap:18px;align-items:center;}
-    .nav-links a{color:#fff;font-size:15px;}
-    .nav-links a.active{text-decoration:underline;}
-    .search-box input{
-      padding:6px 10px;border-radius:6px;border:none;outline:none;font-size:14px;
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
     }
-    .menu-toggle{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
+    .brand {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #fff;
+      font-size: 15px;
+    }
+    .nav-links a.active {
+      text-decoration: underline;
+    }
+    .search-box input {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
 
     /* ===== OVERLAY MENU ===== */
-    .dropdown-nav{
-      position:fixed;top:-100%;left:0;right:0;bottom:0;
-      background:rgba(177,4,14,0.9);backdrop-filter:blur(10px);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      gap:22px;z-index:9999;opacity:0;visibility:hidden;
-      transform:translateY(-20px);
-      transition:top .4s ease,opacity .4s ease,transform .4s ease,visibility .4s ease;
+    .dropdown-nav {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(177, 4, 14, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 0.4s ease;
     }
-    .dropdown-nav.active{top:0;opacity:1;visibility:visible;transform:translateY(0);}
-    .dropdown-nav a{color:#fff;font-size:20px;}
-    .dropdown-close{
-      position:absolute;top:18px;right:26px;color:#fff;
-      font-size:26px;border:none;background:none;cursor:pointer;
+    .dropdown-nav.active {
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-nav a {
+      color: #fff;
+      font-size: 20px;
+    }
+    .dropdown-close {
+      position: absolute;
+      top: 18px;
+      right: 26px;
+      color: #fff;
+      font-size: 26px;
+      border: none;
+      background: none;
+      cursor: pointer;
     }
 
-    /* ===== MAIN PROFILE ===== */
-    .profile-section{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin:60px 0 40px;}
-    .photo img{
-      width:220px;height:220px;object-fit:cover;border-radius:50%;
-      box-shadow:0 4px 12px rgba(0,0,0,.15);
+    /* ===== PROFILE SECTION ===== */
+    .profile-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 40px;
+      margin: 60px 0 30px;
     }
-    .socials{margin-top:14px;display:flex;gap:14px;}
-    .socials a{color:var(--accent);font-size:20px;}
-    .profile-text{flex:1;min-width:280px;}
-    .profile-text h2{margin-top:0;color:var(--accent);font-size:24px;}
-    .profile-text p{text-align:justify;margin-bottom:14px;font-size:15.5px;}
+    .photo img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .socials {
+      margin-top: 14px;
+      display: flex;
+      gap: 14px;
+    }
+    .socials a {
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .profile-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .profile-text h2 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .profile-text p {
+      text-align: justify;
+      margin-bottom: 12px;
+      font-size: 15.5px;
+    }
 
     /* ===== ACADEMIC JOURNEY ===== */
-    section{padding:30px 0;}
-    section h2{text-align:center;color:var(--accent);margin-bottom:14px;}
-    .journey{
-      max-width:850px;margin:0 auto;
-      display:flex;flex-direction:column;gap:12px;
+    .education {
+      margin: 40px 0 30px;
     }
-    .journey-item{
-      display:flex;align-items:flex-start;gap:12px;
-      background:#fff;border:1px solid var(--line);
-      padding:14px 18px;border-radius:10px;
-      box-shadow:0 2px 6px rgba(0,0,0,.06);
+    .education h2 {
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 20px;
     }
-    .journey-item i{color:var(--accent);font-size:18px;margin-top:4px;}
-    .journey-item div h4{margin:0;font-size:16px;color:var(--accent);}
-    .journey-item div p{margin:4px 0 0;font-size:14.5px;color:var(--muted);text-align:justify;}
-
-    /* ===== EXPERTISE ===== */
-    .cards{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;margin-top:16px;
+    .degree {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
     }
-    .card{
-      background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;
-      box-shadow:0 2px 6px rgba(0,0,0,.08);transition:.2s;
+    .degree img {
+      width: 42px;
+      height: auto;
     }
-    .card:hover{transform:translateY(-3px);}
-    .card i{color:var(--accent);font-size:26px;margin-bottom:10px;}
-    .card h3{margin:6px 0;font-size:17px;}
-    .card p{font-size:14.5px;color:var(--muted);text-align:justify;}
+    .degree div h4 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 16px;
+    }
+    .degree div p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      text-align: justify;
+    }
 
     /* ===== BEYOND RESEARCH ===== */
-    .beyond p{text-align:justify;max-width:850px;margin:0 auto 25px;font-size:15.5px;color:var(--text);}
-    footer{background:var(--accent);color:#fff;text-align:center;padding:18px 0;margin-top:40px;}
-    footer p{margin:0;font-size:15px;}
+    .beyond {
+      background: #fafafa;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      margin: 40px 0;
+    }
+    .beyond h2 {
+      color: var(--accent);
+      margin-top: 0;
+      text-align: center;
+    }
+    .beyond p {
+      text-align: justify;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 15.5px;
+      color: var(--text);
+    }
 
-    @media(max-width:900px){
-      .nav-links{display:none;}
-      .search-box{display:none;}
-      .profile-section{flex-direction:column;text-align:center;}
-      .socials{justify-content:center;}
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .search-box {
+        display: none;
+      }
+      .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .socials {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -160,61 +306,55 @@
         <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
+
     <div class="profile-text">
       <h2>About Md Shohug Hossain</h2>
       <p>
-        Md Shohug Hossain is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI, remote sensing, and planetary science. His research explores the intersection of machine learning and geoscience to analyze geomorphological evolution on Earth and Mars.
+        Md Shohug Hossain is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI, remote sensing, and planetary science. His research explores how machine learning and geospatial analytics can decode geomorphological evolution on Earth and Mars.
       </p>
       <p>
-        He is passionate about developing deep learning systems that transform planetary imagery into scientific knowledge—bridging computation, observation, and environmental understanding.
+        He is passionate about developing AI-driven methods that transform planetary imagery into scientific understanding — bridging computation, geology, and environmental insight.
       </p>
     </div>
   </div>
 
   <!-- ===== ACADEMIC JOURNEY ===== -->
-  <section>
+  <section class="wrap education">
     <h2>Academic & Research Journey</h2>
-    <div class="journey">
-      <div class="journey-item">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <div>
-          <h4>Ph.D. — University of Louisiana at Lafayette (2025–Present)</h4>
-          <p>Doctoral research in GeoAI and planetary geomorphology using deep learning and high-resolution satellite data.</p>
-        </div>
-      </div>
-      <div class="journey-item">
-        <i class="fa-solid fa-university"></i>
-        <div>
-          <h4>M.Sc. — University of Calgary (2023)</h4>
-          <p>Master’s research focused on machine learning and satellite image analysis for Earth observation and computer vision.</p>
-        </div>
-      </div>
-      <div class="journey-item">
-        <i class="fa-solid fa-laptop-code"></i>
-        <div>
-          <h4>B.Sc. — North South University (2019)</h4>
-          <p>Computer Science & Engineering major with specialization in data analysis and image processing; merit scholarship recipient.</p>
-        </div>
+
+    <div class="degree">
+      <img src="ul.png" alt="University of Louisiana at Lafayette Logo">
+      <div>
+        <h4>Ph.D. — University of Louisiana at Lafayette (2025–Present)</h4>
+        <p>Doctoral research in GeoAI and planetary geomorphology using deep learning and high-resolution satellite data.</p>
       </div>
     </div>
-  </section>
 
-  <!-- ===== EXPERTISE ===== -->
-  <section>
-    <h2>Areas of Expertise</h2>
-    <div class="wrap cards">
-      <div class="card"><i class="fa-solid fa-brain"></i><h3>GeoAI & Deep Learning</h3><p>Developing convolutional and transformer-based neural networks for planetary surface mapping and geoscientific pattern detection.</p></div>
-      <div class="card"><i class="fa-solid fa-globe"></i><h3>Remote Sensing & GIS</h3><p>Processing and interpreting multispectral satellite data to study terrain features, morphology, and temporal change detection.</p></div>
-      <div class="card"><i class="fa-solid fa-server"></i><h3>HPC & Cloud Computing</h3><p>Leveraging GPU clusters and cloud pipelines for scalable Earth and planetary image analytics.</p></div>
+    <div class="degree">
+      <img src="ucalgary.png" alt="University of Calgary Logo">
+      <div>
+        <h4>M.Sc. — University of Calgary (2023)</h4>
+        <p>Master’s research on AI-based satellite image analysis and computer vision for geoscientific applications.</p>
+      </div>
+    </div>
+
+    <div class="degree">
+      <img src="nsu.png" alt="North South University Logo">
+      <div>
+        <h4>B.Sc. — North South University (2019)</h4>
+        <p>Computer Science & Engineering major with focus on data analysis and image processing; awarded merit scholarship.</p>
+      </div>
     </div>
   </section>
 
   <!-- ===== BEYOND RESEARCH ===== -->
-  <section class="beyond">
+  <section class="wrap beyond">
     <h2>Beyond Research</h2>
     <p>
-      Outside academia, Shohug enjoys combining art, science, and exploration. His interests include astrophotography, stargazing, and discovering geological landscapes that mirror planetary forms. 
-      He also mentors junior researchers and promotes scientific outreach to inspire curiosity about space, Earth systems, and AI for sustainability.
+      Outside his academic journey, Shohug enjoys photography, astronomy, and exploring geological formations that connect
+      terrestrial and planetary landscapes. He mentors student researchers and promotes interdisciplinary education that
+      unites science, art, and technology. His curiosity for both space and Earth continues to inspire innovative projects
+      bridging AI and environmental discovery.
     </p>
   </section>
 
@@ -226,9 +366,13 @@
   <!-- ===== JS ===== -->
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
-      const y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
-      const t=document.querySelector('.menu-toggle'),o=document.getElementById('overlayMenu'),c=document.querySelector('.dropdown-close');
-      const toggle=()=>o.classList.toggle('active');const close=()=>o.classList.remove('active');
+      const y=document.getElementById('y');
+      if(y) y.textContent=new Date().getFullYear();
+      const t=document.querySelector('.menu-toggle'),
+            o=document.getElementById('overlayMenu'),
+            c=document.querySelector('.dropdown-close');
+      const toggle=()=>o.classList.toggle('active');
+      const close=()=>o.classList.remove('active');
       if(t)t.addEventListener('click',toggle);
       if(c)c.addEventListener('click',close);
       if(o)o.addEventListener('click',e=>{if(e.target===o)close();});
@@ -237,6 +381,7 @@
   </script>
 </body>
 </html>
+
 
 
 
