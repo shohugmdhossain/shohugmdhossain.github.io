@@ -4,184 +4,283 @@
   <title>Publications — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publications and research outputs by Md Shohug Hossain — GeoAI, Remote Sensing, Planetary Science.">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    /* ---------- Publications Section ---------- */
-    .pubs-section {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    :root {
+      --accent:#b1040e;
+      --bg:#fff;
+      --bg2:#f9f9f9;
+      --text:#222;
+      --muted:#555;
+      --line:#ddd;
+      --max:1100px;
+      --headerH:64px;
     }
 
-    .pubs-header {
-      color: var(--accent);
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.7;
     }
 
-    .pubs-intro {
-      font-size: 15.5px;
-      color: var(--text);
-      line-height: 1.7;
-      text-align: justify;
-      max-width: 900px;
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
+    a:hover{border-bottom-color:var(--accent);}
+
+    /* ===== NAVBAR ===== */
+    .site-header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:var(--accent);color:#fff;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);
+      transition:all .25s ease;
+    }
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;transition:font-size .25s ease;}
+    .nav-links{display:flex;gap:20px;align-items:center;}
+    .nav-links a{color:#fff;border:0;font-size:15px;}
+    .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
+    .right-cluster{display:flex;align-items:center;gap:14px;}
+    .search-box form{display:flex;}
+    .search-box input{
+      border:none;border-radius:8px;background:rgba(255,255,255,.95);
+      color:#222;padding:7px 10px;width:170px;transition:width .25s;
+    }
+    .search-box input:focus{outline:none;width:220px;}
+    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;transition:transform .2s ease;}
+    .menu-toggle:hover{transform:scale(1.1);}
+
+    /* Overlay Menu */
+    .dropdown-nav{
+      position:fixed;top:0;left:0;right:0;bottom:0;
+      background:rgba(177,4,14,.75);backdrop-filter:blur(10px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:24px;z-index:9999;opacity:0;visibility:hidden;
+      transition:opacity .3s ease,visibility .3s ease;
+    }
+    .dropdown-nav.active{opacity:1;visibility:visible;}
+    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;border:0;}
+    .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
+    .dropdown-close:hover{transform:rotate(90deg);}
+
+    /* ===== INTRO ===== */
+    .hero-intro{
+      margin-top:calc(var(--headerH) + 30px);
+      text-align:left;
+    }
+    .hero-intro h1{
+      color:var(--accent);
+      font-family:"Libre Baskerville",serif;
+      font-size:30px;
+      margin-bottom:10px;
+    }
+    .hero-intro p{
+      max-width:calc(100% - 10px);
+      color:var(--text);
+      font-size:15.5px;
+      line-height:1.8;
+      margin:0;
+      padding-right:10px;
+      text-align:justify;
     }
 
-    .pub-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px 26px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* ===== PUBLICATION CARDS ===== */
+    .pub-section{
+      margin-top:50px;
     }
-
-    .pub-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 10px rgba(177,4,14,0.35);
+    .pub-title{
+      font-size:22px;
+      font-family:"Libre Baskerville",serif;
+      color:var(--accent);
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:25px;
     }
-
-    .pub-card h3 {
-      color: var(--accent);
-      font-size: 18px;
-      margin-bottom: 6px;
-      font-weight: 600;
+    .pub-card{
+      background:var(--bg2);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:22px 26px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom:22px;
+      transition:all .3s ease;
     }
-
-    .pub-card p {
-      margin: 0;
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.6;
+    .pub-card:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(177,4,14,0.25);}
+    .pub-card h3{margin:0;color:var(--accent);font-size:18px;font-weight:700;}
+    .pub-meta{color:var(--muted);font-size:14px;margin:5px 0 10px;}
+    .pub-card p{color:var(--text);font-size:15px;text-align:justify;margin:0 0 10px;}
+    .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+    .tool-chip{
+      background:#fff;
+      color:var(--accent);
+      border:1px solid var(--accent);
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:13px;
+      transition:.2s ease;
     }
+    .tool-chip:hover{background:var(--accent);color:#fff;}
 
-    .pub-meta {
-      color: var(--muted);
-      font-size: 13.5px;
-      margin-bottom: 6px;
-      font-style: italic;
-    }
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px;}
+    footer.site .wrap{padding:20px;}
+    footer.site p{margin:0;font-size:15px;}
 
-    @media (max-width: 900px) {
-      .pubs-section { gap: 25px; }
-      .pub-card { padding: 18px 20px; }
+    .site-header.shrink{padding:4px 0!important;box-shadow:0 3px 10px rgba(0,0,0,0.25);}
+    .site-header.shrink .brand{font-size:18px;}
+
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .hero-intro{margin-top:calc(var(--headerH)+20px);padding:0 10px;}
     }
   </style>
 </head>
 
-<body class="publications-page">
-
-  <!-- ==================== Header / Navigation ==================== -->
-  <header class="site">
-    <div class="wrap nav">
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <div class="wrap nav-bar">
       <div class="brand">M S Hossain</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="publications.html" class="active">Publications</a></li>
-          <li><a href="awards.html">Awards</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="search-box">
-          <input type="text" placeholder="Search..." id="searchInput">
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="experience.html">Experience</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="contact.html">Contact</a>
       </nav>
+      <div class="right-cluster">
+        <div class="search-box">
+          <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" name="q" placeholder="Search..." id="searchInput">
+            <input type="hidden" name="sitesearch" value="shohugmdhossain.github.io">
+          </form>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
-
-    <!-- Dropdown menu for mobile -->
-    <ul class="dropdown-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="publications.html" class="active">Publications</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
   </header>
 
-  <!-- ==================== Main Content ==================== -->
+  <!-- Overlay Menu -->
+  <div class="dropdown-nav" id="overlayMenu">
+    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Experience</a>
+    <a href="publications.html" class="active">Publications</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ===== MAIN ===== -->
   <main class="wrap">
-    <section class="pubs-section">
-      <h1 class="pubs-header">Publications</h1>
-      <p class="pubs-intro">
-        A collection of research papers and technical works in <b>GeoAI</b>, <b>remote sensing</b>, and 
-        <b>planetary science</b>. This section highlights published and in-review contributions focused 
-        on machine learning, geospatial analytics, and Earth observation.
-      </p>
+    <section class="hero-intro">
+      <h1>Publications & Research Outputs</h1>
+      <p>My research bridges GeoAI, remote sensing, and planetary science. While several projects are ongoing, forthcoming manuscripts will highlight advances in automated planetary mapping, hyperspectral mineral analysis, and urban geospatial analytics. Below is a preview of representative and forthcoming works aligned with my current research focus.</p>
+    </section>
 
-      <!-- Example Publication Cards (replace or duplicate later) -->
+    <!-- Journal Articles -->
+    <section class="pub-section">
+      <h2 class="pub-title"><i class="fa-solid fa-book-open"></i> Peer-Reviewed Journal Articles</h2>
+
       <div class="pub-card">
-        <h3>Efficient Object Detection on Martian Surfaces Using Deep Learning</h3>
-        <div class="pub-meta">2025 · Under Review, Planetary & Space Science</div>
-        <p>Developed a Faster R-CNN-based approach to detect mound-like geomorphic structures across Mars CTX imagery, integrating HPC training on LONI clusters.</p>
+        <h3><a href="#">Automated Mound Detection on Mars Using Deep Learning</a></h3>
+        <div class="pub-meta"><b>Md Shohug Hossain</b>, ABC · Planetary Science Journal (Under Review, 2025)</div>
+        <p>Introduces a GeoAI framework leveraging Faster R-CNN for large-scale detection of mound-like geomorphologies across Martian CTX imagery. Evaluated across multi-resolution datasets with precision-recall benchmarking.</p>
+        <div class="tools">
+          <span class="tool-chip">Deep Learning</span><span class="tool-chip">Planetary Geomorphology</span><span class="tool-chip">Detectron2</span>
+        </div>
       </div>
 
       <div class="pub-card">
-        <h3>AI-Driven Wetland Classification from Multispectral Imagery</h3>
-        <div class="pub-meta">2023 · Remote Sensing Applications: Society & Environment</div>
-        <p>Presented a hybrid ensemble integrating Sentinel-1 SAR and MODIS data for wetland dynamics analysis in deltaic ecosystems under monsoon influence.</p>
+        <h3><a href="#">Spectral Unmixing of CRISM Imagery Using Autoencoder Networks</a></h3>
+        <div class="pub-meta"><b>Md Shohug Hossain</b>, ABC · Remote Sensing of Environment (In Preparation, 2025)</div>
+        <p>Proposes a nonlinear deep unmixing model for CRISM hyperspectral imagery to identify surface mineralogy and infer aqueous alteration histories across Martian terrains.</p>
+        <div class="tools">
+          <span class="tool-chip">Hyperspectral</span><span class="tool-chip">CRISM</span><span class="tool-chip">Autoencoder</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference -->
+    <section class="pub-section">
+      <h2 class="pub-title"><i class="fa-solid fa-microphone"></i> Conference Presentations</h2>
+
+      <div class="pub-card">
+        <h3><a href="#">Mars Surface Feature Detection Using Faster R-CNN</a></h3>
+        <div class="pub-meta">Presented at AGU Fall Meeting · San Francisco, USA · 2025</div>
+        <p>Presented a machine-learning pipeline for planetary geomorphological feature detection. Discussed transfer learning approaches for planetary datasets and validation challenges with limited annotated imagery.</p>
+        <div class="tools">
+          <span class="tool-chip">AGU</span><span class="tool-chip">Planetary Science</span><span class="tool-chip">GeoAI</span>
+        </div>
       </div>
 
       <div class="pub-card">
-        <h3>Behavioral Recommendation Modeling Using Implicit Interaction Data</h3>
-        <div class="pub-meta">2021 · Proceedings of IEEE ICICT</div>
-        <p>Designed a recommender system based on mouse-movement analytics to predict learner preferences, enhancing adaptive digital learning systems.</p>
+        <h3><a href="#">Urban Accessibility Mapping with Vision Models</a></h3>
+        <div class="pub-meta">IEEE IGARSS · Kuala Lumpur, Malaysia · 2024</div>
+        <p>Introduced an object detection workflow to classify and map urban sidewalk features using YOLOv8 and Faster R-CNN. Demonstrated its potential for inclusive urban design assessment.</p>
+        <div class="tools">
+          <span class="tool-chip">YOLOv8</span><span class="tool-chip">Computer Vision</span><span class="tool-chip">Urban Analytics</span>
+        </div>
       </div>
+    </section>
+
+    <!-- Manuscripts -->
+    <section class="pub-section">
+      <h2 class="pub-title"><i class="fa-solid fa-file-pen"></i> Manuscripts in Preparation</h2>
 
       <div class="pub-card">
-        <h3>Land-Cover Change Detection Using Machine Learning Ensembles</h3>
-        <div class="pub-meta">2020 · Journal of Environmental Monitoring & Assessment</div>
-        <p>Applied Random Forest and XGBoost ensemble classifiers on Landsat and Sentinel datasets to quantify land-use transitions and urbanization trends.</p>
+        <h3>Benchmark Dataset for Martian Mound Morphology</h3>
+        <div class="pub-meta">Planned Submission: Planetary and Space Science · 2026</div>
+        <p>Developing an open-source benchmark dataset with COCO-formatted annotations of mound-like structures in Martian CTX images to support reproducible planetary GeoAI research.</p>
+        <div class="tools">
+          <span class="tool-chip">Dataset</span><span class="tool-chip">COCO</span><span class="tool-chip">Planetary AI</span>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- ==================== Footer ==================== -->
   <footer class="site">
-    <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
-    </div>
+    <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
 
-  <!-- ==================== JS ==================== -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const year = document.getElementById('y');
-    if (year) year.textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded",()=>{
+      const y=document.getElementById("y");
+      if(y) y.textContent=new Date().getFullYear();
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const dropdownNav = document.querySelector('.dropdown-nav');
+      const header=document.querySelector(".site-header");
+      const toggle=document.querySelector(".menu-toggle");
+      const overlay=document.getElementById("overlayMenu");
+      const closeBtn=document.querySelector(".dropdown-close");
 
-    if (menuToggle && dropdownNav) {
-      menuToggle.addEventListener('click', () => {
-        dropdownNav.classList.toggle('active');
+      const openMenu=()=>overlay.classList.add("active");
+      const closeMenu=()=>overlay.classList.remove("active");
+
+      toggle.addEventListener("click",openMenu);
+      closeBtn.addEventListener("click",closeMenu);
+      overlay.addEventListener("click",e=>{if(e.target===overlay)closeMenu();});
+      document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();});
+
+      window.addEventListener("scroll",()=>{
+        if(window.scrollY>50) header.classList.add("shrink");
+        else header.classList.remove("shrink");
       });
-    }
-  });
-</script>
-
+    });
+  </script>
 </body>
 </html>
+
 
