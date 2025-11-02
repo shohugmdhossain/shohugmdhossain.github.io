@@ -4,9 +4,7 @@
   <title>Research — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- SEO -->
-  <meta name="description" content="Research — Md Shohug Hossain · GeoAI, Remote Sensing, and Planetary Science">
+  <meta name="description" content="Research by Md Shohug Hossain — GeoAI · Remote Sensing · Planetary Science">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,9 +39,8 @@
 
     /* ===== NAVBAR ===== */
     .site-header{
-      position:fixed; top:0; left:0; right:0;
-      z-index:1000;
-      background:var(--accent); color:#fff;
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:var(--accent);color:#fff;
       box-shadow:0 3px 10px rgba(0,0,0,.1);
       transition:all .25s ease;
     }
@@ -53,147 +50,67 @@
     .nav-links a{color:#fff;border:0;font-size:15px;}
     .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
     .right-cluster{display:flex;align-items:center;gap:14px;}
-
     .search-box form{display:flex;}
     .search-box input{
       border:none;border-radius:8px;background:rgba(255,255,255,.95);
       color:#222;padding:7px 10px;width:170px;transition:width .25s;
     }
     .search-box input:focus{outline:none;width:220px;}
-
     .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;transition:transform .2s ease;}
     .menu-toggle:hover{transform:scale(1.1);}
 
-    /* ===== Overlay Menu ===== */
-    .dropdown-nav {
-      position: fixed;top: 0;left: 0;right: 0;bottom: 0;
-      background: rgba(177, 4, 14, 0.75);
-      backdrop-filter: blur(10px);
-      display: flex;flex-direction: column;align-items: center;justify-content: center;
-      gap: 24px;z-index: 9999;
-      opacity: 0;visibility: hidden;transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Overlay Menu */
+    .dropdown-nav{
+      position:fixed;top:0;left:0;right:0;bottom:0;
+      background:rgba(177,4,14,.75);backdrop-filter:blur(10px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:24px;z-index:9999;opacity:0;visibility:hidden;
+      transition:opacity .3s ease,visibility .3s ease;
     }
-    .dropdown-nav.active {opacity: 1;visibility: visible;}
+    .dropdown-nav.active{opacity:1;visibility:visible;}
     .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;border:0;}
-    .dropdown-close{
-      position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;
-      transition:transform .2s ease;
-    }
+    .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
     .dropdown-close:hover{transform:rotate(90deg);}
 
-    /* ===== RESEARCH HERO ===== */
-    .hero-intro {
-      margin-top:calc(var(--headerH) + 60px);
-      text-align:center;
-    }
-    .hero-intro h1 {
-      color:var(--accent);
-      font-family:"Libre Baskerville",serif;
-      font-size:32px;
-      margin-bottom:10px;
-    }
-    .hero-intro p {
-      max-width:800px;
-      margin:0 auto;
-      color:var(--text);
-      font-size:15.5px;
-      line-height:1.8;
-    }
+    /* ===== HERO ===== */
+    .hero-intro{margin-top:calc(var(--headerH)+60px);text-align:center;}
+    .hero-intro h1{color:var(--accent);font-family:"Libre Baskerville",serif;font-size:32px;margin-bottom:10px;}
+    .hero-intro p{max-width:800px;margin:0 auto;color:var(--text);font-size:15.5px;line-height:1.8;}
 
-    /* ===== TIMELINE ===== */
-    .timeline {
-      position:relative;
-      margin:60px auto;
-      padding-left:25px;
-      border-left:3px solid var(--accent);
-      max-width:900px;
-    }
+    /* ===== GRID LAYOUT ===== */
+    .section-title{font-size:22px;color:var(--accent);font-weight:700;margin:60px 0 25px;font-family:"Libre Baskerville",serif;}
+    .research-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:25px;}
 
-    .timeline-item {
-      position:relative;
-      margin-bottom:45px;
-      padding-left:25px;
-    }
-
-    .timeline-item::before {
-      content:"";
-      position:absolute;
-      left:-10px;
-      top:6px;
-      width:14px;
-      height:14px;
-      background:var(--accent);
-      border-radius:50%;
-      box-shadow:0 0 0 3px #fff;
-    }
-
-    .timeline-year {
-      font-weight:600;
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:4px;
-    }
-
-    .timeline-box {
+    .research-card{
       background:var(--bg2);
       border:1px solid var(--line);
-      border-radius:12px;
-      padding:18px 22px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-      transition:transform .3s ease, box-shadow .3s ease;
+      border-radius:14px;
+      padding:22px 24px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      transition:all .3s ease;
     }
-
-    .timeline-box:hover {
-      transform:translateY(-4px);
+    .research-card:hover{
+      transform:translateY(-5px);
       box-shadow:0 4px 12px rgba(177,4,14,0.25);
     }
 
-    .timeline-box h3 {
-      margin:0;
-      color:var(--accent);
-      font-size:18px;
-      font-weight:700;
-    }
+    .research-meta{color:var(--muted);font-size:13.5px;margin-bottom:6px;}
+    .research-card h3{margin:0 0 8px;color:var(--accent);font-size:18px;font-weight:700;}
+    .research-card p{color:var(--text);font-size:15px;line-height:1.6;margin:0 0 10px;text-align:justify;}
 
-    .timeline-box p {
-      color:var(--text);
-      font-size:15px;
-      margin:8px 0 10px;
-      line-height:1.6;
-      text-align:justify;
-    }
+    .tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+    .tool-link{background:#fff;color:#333;padding:4px 10px;border-radius:999px;font-size:13px;border:1px solid #e5e5e5;transition:all .3s;}
+    .tool-link:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-    .tools {
-      display:flex;flex-wrap:wrap;gap:6px;
-    }
-    .tool-link {
-      background:#fff;
-      color:#333;
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:13px;
-      border:1px solid #e5e5e5;
-      transition:all .3s ease;
-      text-decoration:none;
-    }
-    .tool-link:hover {
-      background:var(--accent);
-      color:#fff;
-      border-color:var(--accent);
-    }
-
-    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:80px;}
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px;}
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
-
-    .site-header.shrink {padding:4px 0 !important; box-shadow:0 3px 10px rgba(0,0,0,0.25);}
-    .site-header.shrink .brand {font-size:18px;}
+    .site-header.shrink{padding:4px 0!important;box-shadow:0 3px 10px rgba(0,0,0,0.25);}
+    .site-header.shrink .brand{font-size:18px;}
 
     @media(max-width:900px){
       .nav-links{display:none;}
-      .hero-intro{margin-top:calc(var(--headerH) + 40px);}
-      .timeline{margin:40px 10px;padding-left:18px;}
-      .timeline-item{padding-left:20px;}
+      .hero-intro{margin-top:calc(var(--headerH)+40px);}
     }
   </style>
 </head>
@@ -237,117 +154,73 @@
   </div>
 
   <!-- ===== MAIN ===== -->
-  <main>
-    <section class="hero-intro wrap">
+  <main class="wrap">
+    <section class="hero-intro">
       <h1>Research Overview</h1>
       <p>
-        My research integrates <b>Geospatial Artificial Intelligence (GeoAI)</b>, <b>remote sensing</b>, and 
-        <b>planetary science</b> to analyze multisensor Earth and planetary data. 
-        I focus on interpretable machine learning models, large-scale data processing, 
-        and physics-informed frameworks to enhance environmental and planetary understanding.
+        My research integrates <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary science</b> to analyze multisensor Earth and Mars data.  
+        I focus on interpretable machine learning models, large-scale data processing, and physics-informed frameworks to enhance our understanding of environmental and planetary systems.
       </p>
     </section>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-year">2024–Present · Planetary Geomorphology</div>
-        <div class="timeline-box">
-          <h3>Mars Mound Detection Using Deep Learning</h3>
-          <p>
-            Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> to detect mound-like geomorphologic features 
-            in <b>CTX imagery</b> from Mars, leveraging <b>LONI A100 GPU clusters</b> for large-scale mapping.
-          </p>
-          <div class="tools">
-            <a class="tool-link" href="#">Faster R-CNN</a>
-            <a class="tool-link" href="#">Detectron2</a>
-            <a class="tool-link" href="#">COCO JSON</a>
-            <a class="tool-link" href="#">LONI GPU</a>
-          </div>
+    <!-- Current Projects -->
+    <h2 class="section-title">Current & Ongoing Projects</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
+        <h3>Mars Mound Detection Using Deep Learning</h3>
+        <p>Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> to detect mound-like geomorphologic features in <b>CTX imagery</b>, using <b>LONI A100 GPUs</b> for large-scale mapping.</p>
+        <div class="tools">
+          <a class="tool-link" href="#">Faster R-CNN</a><a class="tool-link" href="#">Detectron2</a><a class="tool-link" href="#">COCO JSON</a><a class="tool-link" href="#">LONI GPU</a>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-year">2024–Present · Planetary Spectroscopy</div>
-        <div class="timeline-box">
-          <h3>CRISM Spectral Mineral Mapping</h3>
-          <p>
-            Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> 
-            to characterize surface mineral diversity and identify hydrated minerals.
-          </p>
-          <div class="tools">
-            <a class="tool-link" href="#">CRISM</a>
-            <a class="tool-link" href="#">Autoencoders</a>
-            <a class="tool-link" href="#">Spectral Python</a>
-            <a class="tool-link" href="#">Deep Learning</a>
-          </div>
+      <div class="research-card">
+        <div class="research-meta">Planetary Spectroscopy · 2024–Present</div>
+        <h3>CRISM Spectral Mineral Mapping</h3>
+        <p>Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface minerals and identify hydrated features on Mars.</p>
+        <div class="tools">
+          <a class="tool-link" href="#">CRISM</a><a class="tool-link" href="#">Autoencoders</a><a class="tool-link" href="#">Spectral Python</a><a class="tool-link" href="#">Deep Learning</a>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-year">2024 · Computer Vision</div>
-        <div class="timeline-box">
-          <h3>Urban Accessibility Mapping with AI</h3>
-          <p>
-            Vision-based workflow to identify sidewalk elements—curb ramps and crosswalks—using <b>YOLOv8</b> and <b>Faster R-CNN</b>. 
-            Improved accuracy through <b>LLM-assisted label review</b> and systematic dataset correction.
-          </p>
-          <div class="tools">
-            <a class="tool-link" href="#">YOLOv8</a>
-            <a class="tool-link" href="#">Python</a>
-            <a class="tool-link" href="#">Faster R-CNN</a>
-            <a class="tool-link" href="#">LLM QA</a>
-          </div>
+      <div class="research-card">
+        <div class="research-meta">Computer Vision · 2024</div>
+        <h3>Urban Accessibility Mapping with AI</h3>
+        <p>Detecting sidewalk elements such as curb ramps and crosswalks from urban imagery using <b>YOLOv8</b> and <b>Faster R-CNN</b>, enhanced through <b>LLM-assisted label review</b>.</p>
+        <div class="tools">
+          <a class="tool-link" href="#">YOLOv8</a><a class="tool-link" href="#">Python</a><a class="tool-link" href="#">Faster R-CNN</a><a class="tool-link" href="#">LLM QA</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Past Projects -->
+    <h2 class="section-title">Past Projects</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="research-meta">Remote Sensing · 2023</div>
+        <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
+        <p>Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level fluctuations and vegetation stress in coastal wetlands.</p>
+        <div class="tools">
+          <a class="tool-link" href="#">Sentinel-1</a><a class="tool-link" href="#">MODIS</a><a class="tool-link" href="#">NDVI</a><a class="tool-link" href="#">GEE</a>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-year">2023 · Remote Sensing</div>
-        <div class="timeline-box">
-          <h3>Wetland Hydrodynamics & Vegetation Mapping</h3>
-          <p>
-            Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data 
-            to assess water level fluctuations and vegetation stress in coastal wetlands.
-          </p>
-          <div class="tools">
-            <a class="tool-link" href="#">Sentinel-1</a>
-            <a class="tool-link" href="#">MODIS</a>
-            <a class="tool-link" href="#">NDVI</a>
-            <a class="tool-link" href="#">Google Earth Engine</a>
-          </div>
+      <div class="research-card">
+        <div class="research-meta">Geospatial ML · 2022</div>
+        <h3>Land-Cover Change Detection in Bangladesh</h3>
+        <p>Built a <b>Random Forest + XGBoost ensemble</b> to classify and quantify land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b> imagery.</p>
+        <div class="tools">
+          <a class="tool-link" href="#">Landsat 8</a><a class="tool-link" href="#">Sentinel-2</a><a class="tool-link" href="#">XGBoost</a><a class="tool-link" href="#">Random Forest</a>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-year">2022 · Geospatial ML</div>
-        <div class="timeline-box">
-          <h3>Land-Cover Change Detection in Bangladesh</h3>
-          <p>
-            Created a <b>Random Forest + XGBoost ensemble</b> to classify and quantify 
-            land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b> imagery.
-          </p>
-          <div class="tools">
-            <a class="tool-link" href="#">Landsat 8</a>
-            <a class="tool-link" href="#">Sentinel-2</a>
-            <a class="tool-link" href="#">XGBoost</a>
-            <a class="tool-link" href="#">Random Forest</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-year">2021 · Urban Climate</div>
-        <div class="timeline-box">
-          <h3>Urban Heat Island Modeling</h3>
-          <p>
-            Analyzed surface temperature variations using <b>Landsat TIR</b> 
-            and <b>MODIS emissivity</b> data to study urban heat island effects in South Asia.
-          </p>
-          <div class="tools">
-            <a class="tool-link" href="#">Landsat TIR</a>
-            <a class="tool-link" href="#">MODIS</a>
-            <a class="tool-link" href="#">ArcGIS Pro</a>
-            <a class="tool-link" href="#">Python</a>
-          </div>
+      <div class="research-card">
+        <div class="research-meta">Urban Climate · 2021</div>
+        <h3>Urban Heat Island Modeling</h3>
+        <p>Analyzed surface temperature patterns using <b>Landsat TIR</b> and <b>MODIS emissivity</b> to study urban heat islands in South Asia.</p>
+        <div class="tools">
+          <a class="tool-link" href="#">Landsat TIR</a><a class="tool-link" href="#">MODIS</a><a class="tool-link" href="#">ArcGIS Pro</a><a class="tool-link" href="#">Python</a>
         </div>
       </div>
     </div>
@@ -355,34 +228,29 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site">
-    <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p>
-    </div>
+    <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
 
   <!-- ===== JS ===== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const y=document.getElementById('y');
-      if(y) y.textContent=new Date().getFullYear();
-      const header=document.querySelector('.site-header');
-      const toggle=document.querySelector('.menu-toggle');
-      const overlay=document.getElementById('overlayMenu');
-      const closeBtn=document.querySelector('.dropdown-close');
-      const openMenu=()=>overlay.classList.add('active');
-      const closeMenu=()=>overlay.classList.remove('active');
-      toggle.addEventListener('click',openMenu);
-      closeBtn.addEventListener('click',closeMenu);
-      overlay.addEventListener('click',e=>{if(e.target===overlay)closeMenu();});
-      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
-      window.addEventListener('scroll',()=>{
-        if(window.scrollY>50)header.classList.add('shrink');
-        else header.classList.remove('shrink');
-      });
+    document.addEventListener("DOMContentLoaded",()=>{
+      const y=document.getElementById("y");if(y)y.textContent=new Date().getFullYear();
+      const header=document.querySelector(".site-header");
+      const toggle=document.querySelector(".menu-toggle");
+      const overlay=document.getElementById("overlayMenu");
+      const closeBtn=document.querySelector(".dropdown-close");
+      const openMenu=()=>overlay.classList.add("active");
+      const closeMenu=()=>overlay.classList.remove("active");
+      toggle.addEventListener("click",openMenu);
+      closeBtn.addEventListener("click",closeMenu);
+      overlay.addEventListener("click",e=>{if(e.target===overlay)closeMenu();});
+      document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();});
+      window.addEventListener("scroll",()=>{if(window.scrollY>50)header.classList.add("shrink");else header.classList.remove("shrink");});
     });
   </script>
 </body>
 </html>
+
 
 
 
