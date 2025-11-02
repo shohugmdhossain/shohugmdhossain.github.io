@@ -4,114 +4,112 @@
   <title>About — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="About Md Shohug Hossain — Ph.D. researcher in GeoAI, Remote Sensing, and Planetary Science.">
+  <meta name="description" content="About Md Shohug Hossain — Ph.D. Researcher in GeoAI, Remote Sensing & Planetary Science.">
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root {
-      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9; --text:#222; --muted:#555; --line:#ddd; --max:1100px;
+    :root{
+      --accent:#b1040e; --bg:#fff; --bg2:#fdf9f9;
+      --text:#222; --muted:#555; --line:#ddd; --max:1100px;
     }
-    body {margin:0; background:var(--bg); color:var(--text);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.7;}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
-    a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg2),#fff);
+      color:var(--text); line-height:1.7;
+    }
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
     a:hover{border-bottom-color:var(--accent);}
 
     /* ===== NAVBAR ===== */
-    .site-header{
-      position:sticky; top:0; z-index:1000;
-      background:var(--accent); color:#fff;
+    header.site-header{
+      background:var(--accent);color:#fff;position:sticky;top:0;z-index:1000;
       box-shadow:0 3px 10px rgba(0,0,0,.1);
-      transition:all .25s ease;
     }
-    .nav-bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; color:#fff; transition:font-size .25s ease;}
-    .nav-links{display:flex; gap:20px; align-items:center;}
-    .nav-links a{color:#fff; border:0; font-size:15px;}
-    .nav-links a:hover,.nav-links a.active{text-decoration:underline; opacity:.9;}
-    .right-cluster{display:flex; align-items:center; gap:14px;}
-    .menu-toggle{background:none; border:none; color:#fff; font-size:24px; cursor:pointer; transition:transform .2s ease;}
-    .menu-toggle:hover{transform:scale(1.1);}
+    .nav-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;}
+    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;}
+    .nav-links{display:flex;gap:18px;align-items:center;}
+    .nav-links a{color:#fff;font-size:15px;}
+    .nav-links a.active{text-decoration:underline;}
+    .search-box input{
+      padding:6px 10px;border-radius:6px;border:none;outline:none;font-size:14px;
+    }
+    .menu-toggle{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
 
     /* ===== OVERLAY MENU ===== */
-    .dropdown-nav {
-      position: fixed;
-      top: -100%;
-      left: 0; right: 0; bottom: 0;
-      background: rgba(177,4,14,0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 24px;
-      z-index: 9999;
-      opacity: 0; visibility: hidden;
-      transform: translateY(-20px);
-      transition: top 0.4s ease, opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+    .dropdown-nav{
+      position:fixed;top:-100%;left:0;right:0;bottom:0;
+      background:rgba(177,4,14,0.9);backdrop-filter:blur(10px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:22px;z-index:9999;opacity:0;visibility:hidden;
+      transform:translateY(-20px);
+      transition:top .4s ease,opacity .4s ease,transform .4s ease,visibility .4s ease;
     }
-    .dropdown-nav.active{top:0; opacity:1; visibility:visible; transform:translateY(0);}
-    .dropdown-nav a{color:#fff; font-size:22px; font-weight:500;}
-    .dropdown-nav a:hover{opacity:0.9; transform:scale(1.05);}
+    .dropdown-nav.active{top:0;opacity:1;visibility:visible;transform:translateY(0);}
+    .dropdown-nav a{color:#fff;font-size:20px;}
     .dropdown-close{
-      position:absolute; top:20px; right:28px;
-      color:#fff; font-size:26px; border:none; background:none; cursor:pointer; transition:transform .2s ease;
+      position:absolute;top:18px;right:26px;color:#fff;
+      font-size:26px;border:none;background:none;cursor:pointer;
     }
-    .dropdown-close:hover{transform:rotate(90deg);}
 
     /* ===== HERO ===== */
-    .hero-banner{background:linear-gradient(90deg,#b1040e,#d82128); color:#fff; padding:80px 0 70px; text-align:center;}
-    .hero-banner h1{font-size:38px; margin:0;}
-    .hero-banner p{font-size:17px; margin-top:8px; opacity:.9;}
+    .hero{
+      text-align:center;padding:60px 0 40px;
+    }
+    .hero h1{font-size:34px;margin:0;color:var(--accent);}
+    .hero p{margin-top:6px;font-size:16px;color:var(--muted);}
 
-    /* ===== ABOUT CONTENT ===== */
-    .about-section{display:flex; gap:50px; align-items:flex-start; margin:60px 0;}
+    /* ===== ABOUT SECTION ===== */
+    .about-section{
+      display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;margin-bottom:40px;
+    }
     .about-photo img{
-      width:320px; height:320px; border-radius:20px; object-fit:cover;
-      box-shadow:0 4px 15px rgba(0,0,0,.25);
+      width:300px;height:300px;object-fit:cover;border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.15);
     }
-    .about-text{flex:1;}
-    .about-text h2{color:var(--accent); font-size:24px; margin-top:0;}
-    .about-text p{text-align:justify; margin-bottom:20px; font-size:15.5px;}
-
-    /* ===== SECTIONS ===== */
-    section{padding:60px 0;}
-    section:nth-child(even){background:var(--bg2);}
-    section h2{text-align:center; color:var(--accent);}
-    section p{text-align:center; max-width:850px; margin:15px auto; font-size:15.5px; color:var(--text);}
-    .icon-list{max-width:900px; margin:30px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
-    .icon-item{background:#fff; border-radius:14px; padding:25px; box-shadow:0 2px 8px rgba(0,0,0,.08); transition:transform .2s ease;}
-    .icon-item:hover{transform:translateY(-4px);}
-    .icon-item i{font-size:26px; color:var(--accent);}
-    .icon-item h3{margin:10px 0; font-size:17px;}
-    .icon-item p{font-size:14.5px; color:var(--muted); text-align:justify;}
-
-    /* ===== TIMELINE ===== */
-    .timeline-line{position:relative; margin:40px auto; padding-left:30px; border-left:3px solid var(--accent); max-width:700px;}
-    .timeline-item{margin-bottom:30px; position:relative;}
-    .timeline-item:before{
-      content:""; position:absolute; left:-11px; top:5px; width:18px; height:18px;
-      background:var(--accent); border-radius:50%;
+    .socials{
+      margin-top:14px;display:flex;gap:16px;justify-content:center;
     }
-    .timeline-item h4{margin:0; font-size:17px;}
-    .timeline-item p{margin:5px 0 0; color:var(--muted); font-size:14.5px;}
+    .socials a{color:var(--accent);font-size:20px;}
+    .about-text{flex:1;min-width:280px;}
+    .about-text h2{color:var(--accent);margin-top:0;font-size:22px;}
+    .about-text p{text-align:justify;margin-bottom:12px;font-size:15.5px;}
 
-    footer.site{background:var(--accent); color:#fff; text-align:center; margin-top:40px;}
-    footer.site .wrap{padding:20px;}
-    footer.site p{margin:0; font-size:15px;}
+    /* ===== EXPERTISE ===== */
+    section{padding:40px 0;}
+    section h2{text-align:center;color:var(--accent);margin-bottom:16px;}
+    section p{text-align:center;max-width:800px;margin:0 auto 20px;font-size:15.5px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;
+      box-shadow:0 2px 6px rgba(0,0,0,.08);transition:.2s;
+    }
+    .card:hover{transform:translateY(-3px);}
+    .card i{color:var(--accent);font-size:26px;margin-bottom:10px;}
+    .card h3{margin:6px 0;font-size:17px;}
+    .card p{font-size:14.5px;color:var(--muted);text-align:justify;}
 
-    .fade-in{opacity:0; transform:translateY(15px); animation:fadeIn .8s ease forwards;}
-    @keyframes fadeIn{to{opacity:1; transform:translateY(0);}}
+    /* ===== TIMELINE (HORIZONTAL) ===== */
+    .timeline{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+    .tcard{
+      background:#fff;border:1px solid var(--line);border-radius:10px;
+      padding:18px;width:300px;text-align:left;box-shadow:0 2px 6px rgba(0,0,0,.08);
+    }
+    .tcard h4{color:var(--accent);margin:0 0 6px;font-size:16px;}
+    .tcard p{font-size:14.5px;color:var(--muted);margin:0;}
 
-    @media (max-width:900px){
+    /* ===== FOOTER ===== */
+    footer{background:var(--accent);color:#fff;text-align:center;padding:18px 0;margin-top:40px;}
+    footer p{margin:0;font-size:15px;}
+
+    @media(max-width:900px){
       .nav-links{display:none;}
-      .about-section{flex-direction:column; align-items:center; text-align:center;}
-      .about-photo img{width:260px; height:260px;}
-      .dropdown-nav a{font-size:20px;}
+      .search-box{display:none;}
     }
   </style>
 </head>
@@ -131,15 +129,16 @@
         <a href="awards.html">Awards</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <div class="right-cluster">
-        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      <div class="right">
+        <div class="search-box"><input type="text" placeholder="Search..."></div>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </header>
 
-  <!-- Overlay Menu -->
+  <!-- Overlay -->
   <div class="dropdown-nav" id="overlayMenu">
-    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <button class="dropdown-close"><i class="fas fa-times"></i></button>
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
     <a href="research.html">Research</a>
@@ -151,114 +150,87 @@
   </div>
 
   <!-- ===== HERO ===== -->
-  <section class="hero-banner fade-in">
-    <div class="wrap">
-      <h1>About Md Shohug Hossain</h1>
-      <p>Ph.D. Researcher · GeoAI · Remote Sensing · Planetary Science</p>
-    </div>
+  <section class="hero wrap">
+    <h1>About Md Shohug Hossain</h1>
+    <p>Ph.D. Researcher · GeoAI · Remote Sensing · Planetary Science</p>
   </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <div class="wrap about-section fade-in">
+  <!-- ===== ABOUT ===== -->
+  <div class="wrap about-section">
     <div class="about-photo">
       <img src="profile.jpg" alt="Md Shohug Hossain portrait">
+      <div class="socials">
+        <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/md-shohug-hossain" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
     </div>
     <div class="about-text">
       <h2>Professional Overview</h2>
       <p>
-        Md Shohug Hossain is a doctoral fellow in Earth & Energy Sciences at the University of Louisiana at Lafayette.
-        His research bridges machine learning, planetary geology, and satellite remote sensing, with a focus on developing
-        GeoAI tools for planetary surface analysis. His interdisciplinary expertise spans computer vision, deep learning,
-        and geospatial analytics.
+        Md Shohug Hossain is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI and planetary remote sensing. He bridges machine learning, geology, and satellite data science to analyze Earth and Martian landscapes. His research focuses on deep learning models for geomorphological mapping and planetary surface evolution.
       </p>
       <p>
-        His research philosophy emphasizes “science through computation” — merging physics-based understanding with
-        intelligent data modeling to decode natural processes on Earth and Mars.
+        He is motivated by the idea that artificial intelligence can extend human observation beyond Earth, transforming planetary data into scientific insight for climate change and space exploration. 
       </p>
     </div>
   </div>
 
-  <!-- ===== RESEARCH PHILOSOPHY ===== -->
-  <section>
-    <div class="wrap fade-in">
-      <h2>Research Philosophy</h2>
-      <p>
-        Shohug’s work integrates AI and geoscience to uncover complex environmental and planetary patterns, emphasizing
-        reproducibility, interdisciplinary collaboration, and data ethics.
-      </p>
-      <div class="icon-list">
-        <div class="icon-item"><i class="fa-solid fa-mountain"></i>
-          <h3>Planetary Geomorphology</h3>
-          <p>Exploring Mars’ surface evolution using geomorphic feature extraction and CTX/HiRISE imagery.</p>
-        </div>
-        <div class="icon-item"><i class="fa-solid fa-brain"></i>
-          <h3>Deep Learning Models</h3>
-          <p>Building AI pipelines for crater, mound, and landform detection across planetary environments.</p>
-        </div>
-        <div class="icon-item"><i class="fa-solid fa-globe"></i>
-          <h3>Earth Observation</h3>
-          <p>Applying satellite imagery and GeoAI to monitor climate-driven terrestrial transformations.</p>
-        </div>
-      </div>
+  <!-- ===== EXPERTISE ===== -->
+  <section class="wrap">
+    <h2>Areas of Expertise</h2>
+    <div class="cards">
+      <div class="card"><i class="fa-solid fa-brain"></i><h3>GeoAI & Deep Learning</h3><p>Designing neural networks for geospatial feature recognition and spatiotemporal analysis across planetary datasets.</p></div>
+      <div class="card"><i class="fa-solid fa-globe"></i><h3>Remote Sensing & GIS</h3><p>Processing multispectral satellite imagery to analyze landform changes and surface composition patterns.</p></div>
+      <div class="card"><i class="fa-solid fa-server"></i><h3>HPC & Cloud Computing</h3><p>Deploying AI pipelines on GPU clusters and cloud environments for large-scale planetary data processing.</p></div>
     </div>
   </section>
 
   <!-- ===== TIMELINE ===== -->
-  <section class="fade-in">
-    <div class="wrap">
-      <h2>Academic & Research Journey</h2>
-      <div class="timeline-line">
-        <div class="timeline-item"><h4>2025 — Ph.D. Fellowship, UL Lafayette</h4><p>Doctoral research in GeoAI and planetary geomorphology.</p></div>
-        <div class="timeline-item"><h4>2023 — M.Sc., University of Calgary</h4><p>Focus on AI-based satellite analysis and computer vision.</p></div>
-        <div class="timeline-item"><h4>2019 — B.Sc., North South University</h4><p>Major in Computer Science & Engineering; merit scholarship recipient.</p></div>
-      </div>
+  <section class="wrap">
+    <h2>Academic & Research Journey</h2>
+    <div class="timeline">
+      <div class="tcard"><h4>2025 — Ph.D., University of Louisiana at Lafayette</h4><p>Doctoral research on deep learning applications in planetary geomorphology and GeoAI.</p></div>
+      <div class="tcard"><h4>2023 — M.Sc., University of Calgary</h4><p>Master’s research focused on AI for satellite imagery and computer vision applications in geoscience.</p></div>
+      <div class="tcard"><h4>2019 — B.Sc., North South University</h4><p>Computer Science & Engineering; merit scholarship recipient and research assistant in image processing.</p></div>
     </div>
   </section>
 
   <!-- ===== BEYOND ===== -->
-  <section class="fade-in" style="background:var(--bg2);">
-    <div class="wrap">
-      <h2>Beyond Research</h2>
-      <p>
-        Outside academia, Shohug enjoys photography, astronomy, and exploring geological formations.
-        He has led student organizations, mentored research interns, and continues promoting scientific outreach in GeoAI and remote sensing.
-      </p>
-      <div class="icon-list">
-        <div class="icon-item"><i class="fa-solid fa-camera"></i><h3>Photography</h3><p>Capturing geological and environmental perspectives through visual storytelling.</p></div>
-        <div class="icon-item"><i class="fa-solid fa-star"></i><h3>Astronomy</h3><p>Fascinated by planetary exploration and imaging technologies.</p></div>
-        <div class="icon-item"><i class="fa-solid fa-mountain"></i><h3>Exploration</h3><p>Exploring landscapes to connect real-world geomorphology with satellite observations.</p></div>
-      </div>
+  <section class="wrap">
+    <h2>Beyond Research</h2>
+    <p>
+      Outside academia, Shohug enjoys photography, astronomy, and geological field exploration. He mentors young researchers and advocates for accessible AI education in Earth and space science.
+    </p>
+    <div class="cards">
+      <div class="card"><i class="fa-solid fa-camera"></i><h3>Photography</h3><p>Documenting natural textures and landscapes through visual storytelling and scientific imaging.</p></div>
+      <div class="card"><i class="fa-solid fa-star"></i><h3>Astronomy</h3><p>Exploring planetary dynamics and telescope imaging of celestial surfaces and craters.</p></div>
+      <div class="card"><i class="fa-solid fa-mountain"></i><h3>Exploration</h3><p>Connecting field observations with satellite data to study Earth’s and Mars’ geomorphology.</p></div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="site">
-    <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
-    </div>
+  <footer>
+    <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
   </footer>
 
   <!-- ===== JS ===== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const y = document.getElementById('y');
-      if (y) y.textContent = new Date().getFullYear();
-
-      const toggle = document.querySelector('.menu-toggle');
-      const overlay = document.getElementById('overlayMenu');
-      const closeBtn = document.querySelector('.dropdown-close');
-
-      const toggleMenu = () => overlay.classList.toggle('active');
-      const closeMenu = () => overlay.classList.remove('active');
-
-      if (toggle) toggle.addEventListener('click', toggleMenu);
-      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-      if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeMenu(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    document.addEventListener('DOMContentLoaded',()=>{
+      const y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+      const t=document.querySelector('.menu-toggle'),o=document.getElementById('overlayMenu'),c=document.querySelector('.dropdown-close');
+      const toggle=()=>o.classList.toggle('active');const close=()=>o.classList.remove('active');
+      if(t)t.addEventListener('click',toggle);
+      if(c)c.addEventListener('click',close);
+      if(o)o.addEventListener('click',e=>{if(e.target===o)close();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
     });
   </script>
 </body>
 </html>
+
 
 
 
