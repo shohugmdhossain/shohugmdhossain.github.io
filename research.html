@@ -74,10 +74,16 @@
 
     /* ===== HERO ===== */
     .hero-gradient{
-      margin-top:70px; /* add space under fixed navbar */
-      background:#fff; /* changed to white background */
-      color:var(--text);position:relative;
+      margin-top:70px;
+      background:#fff;
+      color:var(--text);
+      position:relative;
       padding:50px 0 20px;
+    }
+    .hero-inner{
+      max-width:1000px;
+      margin-left:60px;
+      margin-right:60px;
     }
     .hero-title{
       font-family:"Libre Baskerville",serif;font-size:30px;font-weight:700;
@@ -91,6 +97,12 @@
       border:1px solid var(--accent);color:var(--accent);
       background:rgba(177,4,14,0.08);padding:6px 10px;border-radius:999px;
       font-size:13px;
+    }
+
+    .aligned-wrap{
+      max-width:1000px;
+      margin-left:60px;
+      margin-right:60px;
     }
 
     /* ===== THEMES ===== */
@@ -146,23 +158,17 @@
     }
     .chip:hover{background:var(--accent);color:#fff;}
 
-    /* ===== FOOTER ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:60px;}
     footer.site .wrap{padding:20px;} footer.site p{margin:0;font-size:15px;}
 
-    /* ===== ANIMATIONS ===== */
     .fade-in{opacity:0;transform:translateY(12px);animation:fadeUp .6s ease forwards;}
     .fade-1{animation-delay:.05s;} .fade-2{animation-delay:.15s;} .fade-3{animation-delay:.25s;}
     @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:1000px){.theme-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:900px){
       .nav-links{display:none;}
       .wrap{padding:0 24px;}
-      .theme-grid{grid-template-columns:1fr;}
-      .proj{grid-template-columns:56px 1fr;}
-      .proj .thumb{width:56px;height:56px;font-size:20px;}
+      .hero-inner,.aligned-wrap{margin-right:24px;margin-left:24px;}
     }
   </style>
 </head>
@@ -207,7 +213,7 @@
 
   <!-- HERO -->
   <section class="hero-gradient">
-    <div class="wrap hero-inner">
+    <div class="hero-inner">
       <h1 class="hero-title fade-in fade-1">Exploring Earth and Beyond: GeoAI for Planetary & Environmental Discovery</h1>
       <p class="hero-sub fade-in fade-2">
         Integrating <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary data analytics</b> to understand surface evolution across Earth and Mars.
@@ -223,8 +229,8 @@
   </section>
 
   <!-- THEMES -->
-  <section class="themes">
-    <div class="wrap theme-grid">
+  <section class="themes aligned-wrap">
+    <div class="theme-grid">
       <div class="theme fade-in fade-1">
         <div class="icon planet"><i class="fa-solid fa-satellite"></i></div>
         <div>
@@ -250,7 +256,7 @@
   </section>
 
   <!-- CURRENT PROJECTS -->
-  <div class="wrap">
+  <div class="aligned-wrap">
     <div class="section-head"><i class="fa-solid fa-flask"></i> Current & Ongoing Projects</div>
 
     <article class="proj fade-in fade-1">
@@ -258,10 +264,8 @@
       <div>
         <h4>Mars Mound Detection Using Deep Learning</h4>
         <div class="meta">Planetary Geomorphology · 2024–Present</div>
-        <p>
-          Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic features in <b>CTX imagery</b> from Mars.
-          Leveraging <b>LONI A100 GPU clusters</b> for large-scale geological surface mapping and rigorous validation workflows.
-        </p>
+        <p>Applying <b>Faster R-CNN</b> and <b>Mask R-CNN</b> frameworks to detect mound-like geomorphologic features in <b>CTX imagery</b> from Mars.
+          Leveraging <b>LONI A100 GPU clusters</b> for large-scale geological surface mapping and rigorous validation workflows.</p>
         <div class="chips">
           <span class="chip">Faster R-CNN</span><span class="chip">Detectron2</span>
           <span class="chip">COCO JSON</span><span class="chip">LONI GPU</span>
@@ -274,10 +278,8 @@
       <div>
         <h4>CRISM Spectral Mineral Mapping</h4>
         <div class="meta">Planetary Spectroscopy · 2024–Present</div>
-        <p>
-          Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface mineral diversity and identify hydrated minerals,
-          informing reconstructions of past aqueous environments in Martian terrains.
-        </p>
+        <p>Developing <b>deep unmixing networks</b> for <b>CRISM hyperspectral imagery</b> to characterize surface mineral diversity and identify hydrated minerals,
+          informing reconstructions of past aqueous environments in Martian terrains.</p>
         <div class="chips">
           <span class="chip">CRISM</span><span class="chip">Autoencoders</span>
           <span class="chip">Spectral Python</span><span class="chip">Deep Learning</span>
@@ -290,10 +292,8 @@
       <div>
         <h4>Urban Accessibility Mapping with AI</h4>
         <div class="meta">Computer Vision · 2024</div>
-        <p>
-          Vision-based workflow to identify sidewalk elements—curb ramps, crosswalks—from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>.
-          Improved validation through <b>LLM-assisted label review</b> and systematic dataset correction.
-        </p>
+        <p>Vision-based workflow to identify sidewalk elements—curb ramps, crosswalks—from urban imagery using <b>Faster R-CNN</b> and <b>YOLOv8</b>.
+          Improved validation through <b>LLM-assisted label review</b> and systematic dataset correction.</p>
         <div class="chips">
           <span class="chip">YOLOv8</span><span class="chip">Python</span>
           <span class="chip">Faster R-CNN</span><span class="chip">LLM QA</span>
@@ -303,7 +303,7 @@
   </div>
 
   <!-- PAST PROJECTS -->
-  <div class="wrap">
+  <div class="aligned-wrap">
     <div class="section-head" style="margin-top:30px;"><i class="fa-regular fa-clock"></i> Past Projects</div>
 
     <article class="proj fade-in fade-1">
@@ -311,10 +311,8 @@
       <div>
         <h4>Wetland Hydrodynamics & Vegetation Mapping</h4>
         <div class="meta">Remote Sensing · 2023</div>
-        <p>
-          Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level fluctuations and vegetation stress in coastal wetlands.
-          Demonstrated radar–optical synergy for dynamic hydrologic mapping in monsoon-influenced ecosystems.
-        </p>
+        <p>Integrated <b>Sentinel-1 SAR</b> and <b>MODIS NDVI</b> time-series data to assess water level fluctuations and vegetation stress in coastal wetlands.
+          Demonstrated radar–optical synergy for dynamic hydrologic mapping in monsoon-influenced ecosystems.</p>
         <div class="chips">
           <span class="chip">Sentinel-1</span><span class="chip">MODIS</span>
           <span class="chip">NDVI</span><span class="chip">Earth Engine</span>
@@ -327,10 +325,8 @@
       <div>
         <h4>Land-Cover Change Detection in Bangladesh</h4>
         <div class="meta">Geospatial ML · 2022</div>
-        <p>
-          Built a <b>Random Forest + XGBoost</b> ensemble to classify and quantify land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b>.
-          Produced spatial insights on urban growth and vegetation loss over a decade.
-        </p>
+        <p>Built a <b>Random Forest + XGBoost</b> ensemble to classify and quantify land-use transitions using <b>Landsat 8</b> and <b>Sentinel-2</b>.
+          Produced spatial insights on urban growth and vegetation loss over a decade.</p>
         <div class="chips">
           <span class="chip">Landsat 8</span><span class="chip">Sentinel-2</span>
           <span class="chip">XGBoost</span><span class="chip">Random Forest</span>
@@ -343,10 +339,8 @@
       <div>
         <h4>Urban Heat Island Modeling</h4>
         <div class="meta">Urban Climate · 2021</div>
-        <p>
-          Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b> and <b>MODIS emissivity</b>.
-          Developed improved models for urban heat island analysis and emissivity-based correction.
-        </p>
+        <p>Examined surface temperature variations in major South Asian cities using <b>Landsat TIR</b> and <b>MODIS emissivity</b>.
+          Developed improved models for urban heat island analysis and emissivity-based correction.</p>
         <div class="chips">
           <span class="chip">Landsat TIR</span><span class="chip">MODIS</span>
           <span class="chip">ArcGIS Pro</span><span class="chip">Python</span>
@@ -355,7 +349,6 @@
     </article>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
@@ -377,6 +370,7 @@
   </script>
 </body>
 </html>
+
 
 
 
