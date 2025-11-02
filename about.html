@@ -77,7 +77,10 @@
     /* ===== ABOUT SECTION ===== */
     .about-section{margin:calc(90px) auto 80px;display:flex;flex-wrap:wrap;gap:60px;}
     .about-left{flex:1;min-width:280px;text-align:center;}
-    .about-photo img{width:320px;height:320px;border-radius:50%;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.25);}
+    .about-photo img{
+      width:320px;height:320px;border-radius:12px;object-fit:cover;
+      box-shadow:0 0 12px rgba(0,0,0,.25);
+    }
     .socials{display:flex;justify-content:center;gap:18px;margin-top:18px;}
     .socials a{color:var(--accent);font-size:22px;border:0;}
     .socials a:hover{opacity:.85;}
@@ -131,9 +134,32 @@
     @media(max-width:900px){
       .nav-links{display:none;}
       .about-section{flex-direction:column;align-items:center;text-align:center;}
-      .about-photo img{width:260px;height:260px;}
+      .about-photo img{width:260px;height:260px;border-radius:10px;}
     }
   </style>
+
+  <!-- ===== SCHEMA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Md Shohug Hossain",
+    "url":"https://shohugmdhossain.github.io/about.html",
+    "image":"https://shohugmdhossain.github.io/profile.jpg",
+    "jobTitle":"Ph.D. Researcher",
+    "affiliation":{"@type":"CollegeOrUniversity","name":"University of Louisiana at Lafayette"},
+    "alumniOf":[
+      {"@type":"CollegeOrUniversity","name":"University of Calgary"},
+      {"@type":"CollegeOrUniversity","name":"North South University"}
+    ],
+    "sameAs":[
+      "https://scholar.google.com/citations?user=XXXXX",
+      "https://github.com/shohugmdhossain",
+      "https://www.linkedin.com/in/md-shohug-hossain/",
+      "https://x.com/Hmdshohug10"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -173,9 +199,68 @@
   </div>
 
   <!-- ===== MAIN ===== -->
-  <!-- (Your main about-section content remains exactly as it was) -->
   <main>
-    <!-- existing about-section content -->
+    <div class="wrap about-section">
+      <div class="about-left">
+        <div class="about-photo"><img src="profile.jpg" alt="Md Shohug Hossain" width="320" height="320" loading="lazy"></div>
+        <div class="socials">
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+
+        <div class="skills-section">
+          <h2><i class="fa-solid fa-gear"></i> Technical Skills</h2>
+          <ul class="skills-list">
+            <li><i class="fab fa-python"></i> Python, NumPy, Pandas, Matplotlib</li>
+            <li><i class="fa-solid fa-brain"></i> Deep Learning (PyTorch, Detectron2, YOLOv8)</li>
+            <li><i class="fa-solid fa-satellite"></i> Remote Sensing, Google Earth Engine</li>
+            <li><i class="fa-solid fa-layer-group"></i> GIS: ArcGIS, QGIS, PostGIS</li>
+            <li><i class="fa-solid fa-server"></i> HPC, Linux, Slurm</li>
+            <li><i class="fa-solid fa-database"></i> SQL, Data Engineering</li>
+            <li><i class="fa-solid fa-chart-line"></i> Data Visualization & Analysis</li>
+            <li><i class="fa-solid fa-code"></i> Web Development (HTML, CSS, JS)</li>
+          </ul>
+        </div>
+
+        <div class="personal-interests">
+          <h2><i class="fa-solid fa-heart"></i> Interests</h2>
+          <p>Web design, astrophotography, academic outreach, creative visualization.</p>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <h1>About Me</h1>
+        <p>I’m <b>Md Shohug Hossain</b>, a <b>Ph.D. researcher</b> at the <b>University of Louisiana at Lafayette</b> specializing in <b>GeoAI, Remote Sensing, and Planetary Science</b>. My research explores how AI can decode geomorphic and environmental processes on Earth and Mars through high-resolution imagery and data analytics.</p>
+        <p>I build deep-learning frameworks for automatic landform detection, geomorphic classification, and planetary terrain mapping using satellite imagery from missions such as <i>CTX</i>, <i>HiRISE</i>, and <i>Sentinel</i>. My goal is to advance our understanding of landscape evolution while contributing to climate, hazard, and planetary exploration research.</p>
+        <p>Before joining UL Lafayette, I completed my <b>M.Sc. in Electrical & Computer Engineering</b> at the <b>University of Calgary</b> and a <b>B.Sc. in Computer Science & Engineering</b> at <b>North South University</b>. My academic path bridges software systems, computer vision, and data-driven geoscience.</p>
+
+        <div class="cv-download">
+          <a class="btn red" href="files/Md_Shohug_Hossain_CV.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Download Full CV</a>
+        </div>
+
+        <div class="academic-journey">
+          <h2><i class="fa-solid fa-user-graduate"></i> Academic Journey</h2>
+          <div class="academic-details">
+            <p><img src="ul.png" alt="UL Lafayette logo"> <b>Ph.D. in Earth & Energy Sciences</b> — University of Louisiana at Lafayette<br>
+            Focus: Planetary geomorphology, machine learning for Mars mounds detection, and remote-sensing-based GeoAI.</p>
+            <p><img src="ucalgary.png" alt="University of Calgary logo"> <b>M.Sc. in Electrical & Computer Engineering</b> — University of Calgary<br>
+            Focus: Intelligent automation, geospatial analytics, and data-driven systems.</p>
+            <p><img src="nsu.png" alt="North South University logo"> <b>B.Sc. in Computer Science & Engineering</b> — North South University<br>
+            Focus: Software engineering, computer vision, and data science foundations.</p>
+          </div>
+        </div>
+
+        <div class="beyond-research">
+          <h2><i class="fa-solid fa-seedling"></i> Beyond Research</h2>
+          <p>Outside academia, I’m passionate about science outreach, creative design, and student mentorship. I served as <b>President of the ECE Graduate Group</b> and <b>Vice-President of the Schulich Graduate Engineering Consortium</b> at the University of Calgary, fostering collaboration and research networking among graduate students.</p>
+          <p>I also enjoy building academic websites, creating visual data stories, and exploring ways technology and art can intersect to make science more accessible.</p>
+          <p>Explore my current <a href="projects.html">projects</a> and full list of <a href="publications.html">publications</a> to learn more about my ongoing research.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -186,7 +271,6 @@
   <!-- ===== BACK TO TOP ===== -->
   <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
-  <!-- ===== SCRIPT ===== -->
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
       const y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
@@ -215,6 +299,7 @@
   </script>
 </body>
 </html>
+
 
 
 
