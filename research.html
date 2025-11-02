@@ -11,6 +11,7 @@
   <meta name="theme-color" content="#b1040e">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -58,16 +59,23 @@
     .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;}
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
 
+    /* ===== FIX: SPACER BELOW NAVBAR ===== */
+    .nav-spacer{height:110px;} /* ensures heading never hides */
+
     /* ===== CONTENT ===== */
-    main{padding-top:140px;margin-bottom:80px;} /* ensures heading visible below navbar */
-    p{text-align:justify;}
+    main{margin-bottom:80px;}
+    p{text-align:justify;text-justify:inter-word;} /* full left-right alignment */
 
     .intro{text-align:justify;margin-bottom:50px;}
     .intro h1{
       font-size:30px;color:var(--accent);margin-bottom:25px;
       text-align:left;font-family:"Libre Baskerville",serif;
     }
-    .intro p{font-size:16px;color:var(--text);max-width:950px;margin:0 auto;line-height:1.9;}
+    .intro p{
+      font-size:16px;color:var(--text);
+      max-width:950px;margin:0 auto;line-height:1.9;text-align:justify;
+      text-justify:inter-word;
+    }
 
     .research-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
     .card{
@@ -79,7 +87,7 @@
       font-family:"Libre Baskerville",serif;font-size:20px;color:var(--accent);
       margin-top:0;margin-bottom:25px;display:flex;align-items:center;gap:10px;
     }
-    .card p{font-size:15.5px;color:var(--text);margin:10px 0 0;text-align:justify;}
+    .card p{font-size:15.5px;color:var(--text);margin:10px 0 0;text-align:justify;text-justify:inter-word;}
 
     /* ===== HIGHLIGHTS ===== */
     .highlights{margin-top:60px;}
@@ -92,7 +100,7 @@
       padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 6px rgba(0,0,0,0.06);
     }
     .highlight-item h3{margin:0;font-size:16px;color:var(--accent);}
-    .highlight-item p{margin:6px 0 0;font-size:15px;text-align:justify;color:var(--text);}
+    .highlight-item p{margin:6px 0 0;font-size:15px;text-align:justify;text-justify:inter-word;color:var(--text);}
 
     /* ===== FOOTER ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:80px;}
@@ -104,6 +112,7 @@
 
     @media(max-width:768px){
       .nav-links{display:none;}
+      .nav-spacer{height:100px;}
     }
   </style>
 </head>
@@ -132,6 +141,9 @@
       </div>
     </div>
   </header>
+
+  <!-- Spacer below navbar -->
+  <div class="nav-spacer"></div>
 
   <!-- ===== OVERLAY MENU ===== -->
   <div class="dropdown-nav" id="overlayMenu">
@@ -241,7 +253,6 @@
   </script>
 </body>
 </html>
-
 
 
 
