@@ -29,7 +29,7 @@
     .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 25px;
     }
 
     a {
@@ -67,13 +67,11 @@
     }
     .nav-links a { color: #fff; font-size: 15px; }
     .nav-links a.active { text-decoration: underline; }
-
     .right {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-
     .search-box input {
       padding: 6px 10px;
       border-radius: 6px;
@@ -81,7 +79,6 @@
       outline: none;
       font-size: 14px;
     }
-
     .menu-toggle {
       background: none;
       border: none;
@@ -167,29 +164,46 @@
       font-size: 15.5px;
     }
 
-    /* ---------- ACADEMIC JOURNEY ---------- */
-    .education { margin: 40px 0 30px; }
+    /* ---------- ACADEMIC JOURNEY (CARDS) ---------- */
+    .education {
+      margin: 40px 0;
+      text-align: center;
+    }
     .education h2 {
       color: var(--accent);
-      text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
-    .degree {
+    .edu-cards {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
     }
-    .degree img { width: 42px; height: auto; }
-    .degree div h4 {
+    .edu-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      text-align: left;
+      transition: 0.3s;
+    }
+    .edu-card:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.12); }
+    .edu-card img {
+      width: 55px;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .edu-card h4 {
       margin: 0;
       color: var(--accent);
       font-size: 16px;
+      margin-bottom: 5px;
     }
-    .degree div p {
-      margin: 3px 0 0;
+    .edu-card p {
+      margin: 0;
       color: var(--muted);
       font-size: 14.5px;
       text-align: justify;
@@ -232,23 +246,23 @@
     /* ---------- BEYOND RESEARCH ---------- */
     .beyond {
       background: #fafafa;
-      border: 1px solid var(--line);
+      padding: 40px 25px;
+      border-top: 1px solid var(--line);
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      padding: 25px;
-      margin: 40px 0;
+      text-align: justify;
     }
     .beyond h2 {
       color: var(--accent);
       text-align: center;
       margin-top: 0;
+      margin-bottom: 16px;
     }
     .beyond p {
-      text-align: justify;
       max-width: 900px;
       margin: 0 auto;
       font-size: 15.5px;
       color: var(--text);
+      line-height: 1.8;
     }
 
     /* ---------- FOOTER ---------- */
@@ -265,7 +279,7 @@
       .nav-links, .search-box { display: none; }
       .profile-section { flex-direction: column; align-items: center; text-align: center; }
       .socials { justify-content: center; }
-      .interest-box { width: 90%; }
+      .edu-card, .interest-box { width: 90%; }
     }
   </style>
 </head>
@@ -332,23 +346,19 @@
   <!-- ===== ACADEMIC JOURNEY ===== -->
   <section class="wrap education">
     <h2>Academic & Research Journey</h2>
-    <div class="degree">
-      <img src="ul.png" alt="University of Louisiana at Lafayette Logo">
-      <div>
+    <div class="edu-cards">
+      <div class="edu-card">
+        <img src="ul.png" alt="UL Lafayette Logo">
         <h4>Ph.D. — University of Louisiana at Lafayette (2025–Present)</h4>
         <p>Doctoral research in GeoAI and planetary geomorphology using deep learning and high-resolution satellite data.</p>
       </div>
-    </div>
-    <div class="degree">
-      <img src="ucalgary.png" alt="University of Calgary Logo">
-      <div>
+      <div class="edu-card">
+        <img src="ucalgary.png" alt="University of Calgary Logo">
         <h4>M.Sc. — University of Calgary (2023)</h4>
         <p>Master’s research on AI-based satellite image analysis and computer vision for geoscientific applications.</p>
       </div>
-    </div>
-    <div class="degree">
-      <img src="nsu.png" alt="North South University Logo">
-      <div>
+      <div class="edu-card">
+        <img src="nsu.png" alt="North South University Logo">
         <h4>B.Sc. — North South University (2019)</h4>
         <p>Computer Science & Engineering major with focus on data analysis and image processing; awarded merit scholarship.</p>
       </div>
@@ -378,10 +388,7 @@
   <section class="wrap beyond">
     <h2>Beyond Research</h2>
     <p>
-      Outside his academic journey, Shohug enjoys photography, astronomy, and exploring geological formations that connect
-      terrestrial and planetary landscapes. He mentors student researchers and promotes interdisciplinary education that
-      unites science, art, and technology. His curiosity for both space and Earth continues to inspire innovative projects
-      bridging AI and environmental discovery.
+      Outside academia, Shohug enjoys <i class="fa-solid fa-camera"></i> photography, <i class="fa-solid fa-mountain"></i> geological exploration, and <i class="fa-solid fa-satellite"></i> astronomy. He mentors student researchers and promotes interdisciplinary education that unites science, art, and technology. His curiosity for both space and Earth continues to inspire innovative projects bridging AI and environmental discovery.
     </p>
   </section>
 
@@ -406,6 +413,7 @@
   </script>
 </body>
 </html>
+
 
 
 
