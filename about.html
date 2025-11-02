@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
     :root {
       --accent: #b1040e;
@@ -16,6 +17,7 @@
       --muted: #555;
       --line: #ddd;
       --max: 1100px;
+      --gutter: 32px;
     }
 
     body {
@@ -29,7 +31,7 @@
     .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 25px;
+      padding: 0 var(--gutter);
     }
 
     a {
@@ -40,7 +42,7 @@
     }
     a:hover { border-bottom-color: var(--accent); }
 
-    /* ---------- NAVBAR ---------- */
+    /* ===== NAVBAR ===== */
     header.site-header {
       background: var(--accent);
       color: #fff;
@@ -67,6 +69,7 @@
     }
     .nav-links a { color: #fff; font-size: 15px; }
     .nav-links a.active { text-decoration: underline; }
+
     .right {
       display: flex;
       align-items: center;
@@ -87,13 +90,10 @@
       cursor: pointer;
     }
 
-    /* ---------- OVERLAY MENU ---------- */
+    /* ===== OVERLAY MENU ===== */
     .dropdown-nav {
       position: fixed;
-      top: -100%;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       background: rgba(177, 4, 14, 0.95);
       backdrop-filter: blur(10px);
       display: flex;
@@ -104,10 +104,9 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(-20px);
-      transition: all 0.4s ease;
+      transition: all 0.35s ease;
     }
     .dropdown-nav.active {
-      top: 0;
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -124,12 +123,12 @@
       cursor: pointer;
     }
 
-    /* ---------- PROFILE SECTION ---------- */
-    .profile-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
+    /* ===== PROFILE SECTION ===== */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
       gap: 40px;
+      align-items: start;
       margin: 60px 0 30px;
     }
     .photo img {
@@ -143,20 +142,13 @@
       margin-top: 14px;
       display: flex;
       gap: 14px;
+      flex-wrap: wrap;
     }
-    .socials a {
-      color: var(--accent);
-      font-size: 20px;
-    }
-    .profile-text {
-      flex: 1;
-      min-width: 280px;
-    }
+    .socials a { color: var(--accent); font-size: 20px; }
     .profile-text h2 {
-      margin-top: 0;
       color: var(--accent);
       font-size: 26px;
-      margin-bottom: 10px;
+      margin-top: 0;
     }
     .profile-text p {
       text-align: justify;
@@ -164,52 +156,44 @@
       font-size: 15.5px;
     }
 
-    /* ---------- ACADEMIC JOURNEY (CARDS) ---------- */
-    .education {
-      margin: 40px 0;
-      text-align: center;
-    }
-    .education h2 {
-      color: var(--accent);
-      margin-bottom: 25px;
-    }
-    .edu-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
-    .edu-card {
+    /* ===== EDUCATION BOX ===== */
+    .education-box {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 20px;
-      width: 300px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      text-align: left;
-      transition: 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      padding: 25px 30px;
+      margin: 40px 0;
     }
-    .edu-card:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.12); }
-    .edu-card img {
-      width: 55px;
+    .education-box h2 {
+      color: var(--accent);
+      margin-top: 0;
+      text-align: center;
+    }
+    .degree {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .degree img {
+      width: 48px;
       height: auto;
-      display: block;
-      margin-bottom: 10px;
+      flex-shrink: 0;
     }
-    .edu-card h4 {
+    .degree div h4 {
       margin: 0;
       color: var(--accent);
       font-size: 16px;
-      margin-bottom: 5px;
     }
-    .edu-card p {
-      margin: 0;
+    .degree div p {
+      margin: 3px 0 0;
       color: var(--muted);
       font-size: 14.5px;
       text-align: justify;
     }
 
-    /* ---------- RESEARCH INTERESTS ---------- */
+    /* ===== RESEARCH INTERESTS ===== */
     .interests {
       margin: 40px 0;
       text-align: center;
@@ -218,7 +202,7 @@
       color: var(--accent);
       margin-bottom: 25px;
     }
-    .interest-boxes {
+    .interest-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -242,30 +226,33 @@
       margin-bottom: 8px;
       font-size: 16px;
     }
+    .interest-box i {
+      color: var(--accent);
+      margin-right: 8px;
+    }
 
-    /* ---------- BEYOND RESEARCH ---------- */
+    /* ===== BEYOND RESEARCH ===== */
     .beyond {
-      background: #fafafa;
-      padding: 40px 25px;
-      border-top: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      background: #fff;
       border-radius: 12px;
-      text-align: justify;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 30px;
+      margin: 50px 0;
     }
     .beyond h2 {
       color: var(--accent);
-      text-align: center;
       margin-top: 0;
-      margin-bottom: 16px;
+      font-size: 22px;
     }
     .beyond p {
-      max-width: 900px;
-      margin: 0 auto;
+      text-align: justify;
       font-size: 15.5px;
       color: var(--text);
       line-height: 1.8;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* ===== FOOTER ===== */
     footer {
       background: var(--accent);
       color: #fff;
@@ -277,14 +264,18 @@
 
     @media (max-width: 900px) {
       .nav-links, .search-box { display: none; }
-      .profile-section { flex-direction: column; align-items: center; text-align: center; }
+      .profile-grid { grid-template-columns: 1fr; text-align: center; }
       .socials { justify-content: center; }
-      .edu-card, .interest-box { width: 90%; }
+      .interest-box { width: 90%; }
+      .degree { flex-direction: column; align-items: center; text-align: center; }
+      .degree img { margin-bottom: 8px; }
+      .beyond { border-left: none; border-top: 4px solid var(--accent); }
     }
   </style>
 </head>
 
 <body>
+
   <!-- ===== NAVBAR ===== -->
   <header class="site-header">
     <div class="wrap nav-bar">
@@ -319,8 +310,8 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ===== PROFILE SECTION ===== -->
-  <div class="wrap profile-section">
+  <!-- ===== PROFILE ===== -->
+  <section class="wrap profile-grid">
     <div class="photo">
       <img src="profile.jpg" alt="Md Shohug Hossain portrait">
       <div class="socials">
@@ -341,24 +332,28 @@
         He is passionate about developing AI-driven methods that transform planetary imagery into scientific understanding — bridging computation, geology, and environmental insight.
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- ===== ACADEMIC JOURNEY ===== -->
-  <section class="wrap education">
+  <!-- ===== EDUCATION BOX ===== -->
+  <section class="wrap education-box">
     <h2>Academic & Research Journey</h2>
-    <div class="edu-cards">
-      <div class="edu-card">
-        <img src="ul.png" alt="UL Lafayette Logo">
+    <div class="degree">
+      <img src="ul.png" alt="UL Lafayette Logo">
+      <div>
         <h4>Ph.D. — University of Louisiana at Lafayette (2025–Present)</h4>
         <p>Doctoral research in GeoAI and planetary geomorphology using deep learning and high-resolution satellite data.</p>
       </div>
-      <div class="edu-card">
-        <img src="ucalgary.png" alt="University of Calgary Logo">
+    </div>
+    <div class="degree">
+      <img src="ucalgary.png" alt="University of Calgary Logo">
+      <div>
         <h4>M.Sc. — University of Calgary (2023)</h4>
         <p>Master’s research on AI-based satellite image analysis and computer vision for geoscientific applications.</p>
       </div>
-      <div class="edu-card">
-        <img src="nsu.png" alt="North South University Logo">
+    </div>
+    <div class="degree">
+      <img src="nsu.png" alt="North South University Logo">
+      <div>
         <h4>B.Sc. — North South University (2019)</h4>
         <p>Computer Science & Engineering major with focus on data analysis and image processing; awarded merit scholarship.</p>
       </div>
@@ -368,17 +363,17 @@
   <!-- ===== RESEARCH INTERESTS ===== -->
   <section class="wrap interests">
     <h2>Research Interests</h2>
-    <div class="interest-boxes">
+    <div class="interest-grid">
       <div class="interest-box">
-        <h4>Planetary Geomorphology</h4>
+        <h4><i class="fa-solid fa-globe"></i> Planetary Geomorphology</h4>
         <p>Investigating surface processes and landform evolution on Mars and Earth using satellite imagery and deep learning.</p>
       </div>
       <div class="interest-box">
-        <h4>Earth Observation</h4>
+        <h4><i class="fa-solid fa-satellite"></i> Earth Observation</h4>
         <p>Developing geospatial AI models to monitor environmental dynamics and surface changes through remote sensing data.</p>
       </div>
       <div class="interest-box">
-        <h4>Deep Learning & Climate Applications</h4>
+        <h4><i class="fa-solid fa-brain"></i> Deep Learning & Climate Applications</h4>
         <p>Exploring intelligent systems for analyzing climate-driven transformations across terrestrial and planetary environments.</p>
       </div>
     </div>
@@ -388,7 +383,7 @@
   <section class="wrap beyond">
     <h2>Beyond Research</h2>
     <p>
-      Outside academia, Shohug enjoys <i class="fa-solid fa-camera"></i> photography, <i class="fa-solid fa-mountain"></i> geological exploration, and <i class="fa-solid fa-satellite"></i> astronomy. He mentors student researchers and promotes interdisciplinary education that unites science, art, and technology. His curiosity for both space and Earth continues to inspire innovative projects bridging AI and environmental discovery.
+      Beyond academia, Shohug finds creativity through photography, astronomy, and exploring unique geological formations. He values curiosity-driven research and enjoys mentoring others in the intersection of science, computation, and design. His enthusiasm for both planetary exploration and Earth sustainability continues to shape his scientific journey.
     </p>
   </section>
 
@@ -413,6 +408,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
