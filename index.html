@@ -41,10 +41,10 @@
       position:sticky; top:0; z-index:1000;
       background:var(--accent); color:#fff;
       box-shadow:0 3px 10px rgba(0,0,0,.1);
+      transition:all .25s ease;
     }
-
     .nav-bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; color:#fff;}
+    .brand{font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; color:#fff; transition:font-size .25s ease;}
     .nav-links{display:flex; gap:20px; align-items:center;}
     .nav-links a{color:#fff; border:0; font-size:15px;}
     .nav-links a:hover,.nav-links a.active{text-decoration:underline; opacity:.9;}
@@ -59,7 +59,7 @@
 
     /* Hamburger Icon */
     .menu-toggle{
-      background:none; border:none; color:#fff; font-size:22px;
+      background:none; border:none; color:#fff; font-size:24px;
       cursor:pointer; transition:transform .2s ease;
     }
     .menu-toggle:hover{transform:scale(1.1);}
@@ -111,10 +111,7 @@
       cursor: pointer;
       transition: transform 0.2s ease;
     }
-
-    .dropdown-close:hover {
-      transform: rotate(90deg);
-    }
+    .dropdown-close:hover { transform: rotate(90deg); }
 
     /* ===== HERO ===== */
     .hero{display:flex; flex-wrap:wrap; align-items:flex-start; gap:50px; margin:50px auto;}
@@ -123,7 +120,6 @@
       width:320px; height:320px; border-radius:50%; object-fit:cover;
       box-shadow:0 0 12px rgba(0,0,0,.25);
     }
-    @media(max-width:700px){.photo img{width:260px; height:260px;}}
     .socials{display:flex; justify-content:center; gap:18px; margin-top:16px;}
     .socials a{color:var(--accent); font-size:22px; border:0;}
     .socials a:hover{opacity:.85;}
@@ -161,6 +157,22 @@
     .fade-in{opacity:0; transform:translateY(14px); animation:fadeInUp .9s ease forwards;}
     .fade-1{animation-delay:.05s;} .fade-2{animation-delay:.18s;} .fade-3{animation-delay:.32s;}
     @keyframes fadeInUp{to{opacity:1; transform:translateY(0);}}
+
+    /* ===== SCROLL SHRINK ===== */
+    .site-header.shrink {padding:4px 0 !important; box-shadow:0 3px 10px rgba(0,0,0,0.25);}
+    .site-header.shrink .brand {font-size:18px;}
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width:900px){
+      .nav-links{display:none;}
+      .search-box input{width:130px;}
+      .hero{flex-direction:column; align-items:center; text-align:center; gap:30px; margin-top:30px;}
+      .photo img{width:250px; height:250px;}
+      .left-info{text-align:center;}
+      .left-info section{border:none;}
+      .subtitle{font-size:22px;}
+      .dropdown-nav a{font-size:20px;}
+    }
   </style>
 </head>
 
@@ -230,24 +242,18 @@
         <div class="left-info">
           <section>
             <h3>Education</h3>
-            <div class="content">
-              <p><b>Ph.D.</b> Earth & Energy Sciences, UL Lafayette</p>
-              <p><b>M.Sc.</b> Electrical & Computer Engineering, University of Calgary</p>
-              <p><b>B.Sc.</b> Computer Science & Engineering, North South University</p>
-            </div>
+            <p><b>Ph.D.</b> Earth & Energy Sciences, UL Lafayette</p>
+            <p><b>M.Sc.</b> Electrical & Computer Engineering, University of Calgary</p>
+            <p><b>B.Sc.</b> Computer Science & Engineering, North South University</p>
           </section>
           <section>
             <h3>Affiliation</h3>
-            <div class="content">
-              <p>University of Louisiana at Lafayette</p>
-              <p>GeoAI & Planetary Imaging Research Group</p>
-            </div>
+            <p>University of Louisiana at Lafayette</p>
+            <p>GeoAI & Planetary Imaging Research Group</p>
           </section>
           <section>
             <h3>Contact</h3>
-            <div class="content">
-              <p><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
-            </div>
+            <p><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
           </section>
         </div>
       </div>
@@ -316,25 +322,28 @@
 
   <!-- ===== JS ===== -->
   <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      const y=document.getElementById('y');
-      if(y) y.textContent=new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
 
-      const toggle=document.querySelector('.menu-toggle');
-      const overlay=document.getElementById('overlayMenu');
-      const closeBtn=document.querySelector('.dropdown-close');
+      const toggle = document.querySelector('.menu-toggle');
+      const overlay = document.getElementById('overlayMenu');
+      const closeBtn = document.querySelector('.dropdown-close');
 
-      function toggleMenu(){overlay.classList.toggle('active');}
-      function closeMenu(){overlay.classList.remove('active');}
+      function toggleMenu() {
+        overlay.classList.toggle('active');
+      }
 
-      if(toggle) toggle.addEventListener('click',toggleMenu);
-      if(closeBtn) closeBtn.addEventListener('click',closeMenu);
-      document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
-      overlay.addEventListener('click',e=>{if(e.target===overlay) closeMenu();});
-    });
-  </script>
-</body>
-</html>
+      function closeMenu() {
+        overlay.classList.remove('active');
+      }
+
+      if (toggle) toggle.addEventListener('click', toggleMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+      // Close with ESC or outside click
+      document.addEventListener('keydown', e => {
+        if (e.key
 
 
 
