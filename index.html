@@ -4,12 +4,8 @@
   <title>AI for Earth & Planetary Discovery — Md Shohug Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- SEO -->
   <meta name="description" content="Md Shohug Hossain — Ph.D. researcher in GeoAI, remote sensing, and planetary science. Exploring Earth and Mars through AI-driven geospatial analytics.">
   <link rel="canonical" href="https://shohugmdhossain.github.io/">
-  <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
   <meta property="og:title" content="AI for Earth & Planetary Discovery — Md Shohug Hossain">
   <meta property="og:description" content="Ph.D. researcher using GeoAI and remote sensing to study Earth and Mars.">
   <meta property="og:image" content="https://shohugmdhossain.github.io/profile.jpg">
@@ -17,7 +13,6 @@
   <meta property="og:site_name" content="M S Hossain — GeoAI & Remote Sensing">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -26,8 +21,7 @@
   <style>
     :root{
       --accent:#b1040e; --bg:#fff; --text:#222; --muted:#555; --max:1100px;
-      /* tweak this if the tops don't perfectly match on your device */
-      --imgTopNudge: 8px; /* increase/decrease by 2px to fine tune */
+      --imgTopNudge:8px;
     }
     html,body{margin:0;height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.8;}
 
@@ -35,7 +29,7 @@
     .site-header{position:fixed;top:0;left:0;right:0;background:var(--accent);color:#fff;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1);}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
     .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
+    .brand a{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;text-decoration:none;}
     .nav-links{display:flex;gap:20px;}
     .nav-links a{color:#fff;text-decoration:none;font-size:15px;}
     .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
@@ -45,34 +39,29 @@
     .search-box input:focus{outline:none;width:220px;}
     .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
 
+    /* Dropdown Overlay */
+    .dropdown-nav{
+      position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(177,4,14,.8);
+      backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:24px;z-index:9999;opacity:0;visibility:hidden;
+      transition:opacity .3s ease,visibility .3s ease;
+    }
+    .dropdown-nav.active{opacity:1;visibility:visible;}
+    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;text-decoration:none;}
+    .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
+
     /* HERO */
     main{margin-top:70px;}
-    .hero{
-      display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
-      gap:60px;max-width:var(--max);margin:auto;padding:30px 20px 60px;
-    }
-    .hero-left{
-      flex:1;min-width:340px;text-align:center;animation:fadeIn 1s ease forwards;
-      padding-top: var(--imgTopNudge); /* nudge image down to align with heading */
-    }
-    .hero-left img{
-      width:440px;height:440px;object-fit:cover;border-radius:16px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.15);
-    }
+    .hero{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:60px;max-width:var(--max);margin:auto;padding:30px 20px 60px;}
+    .hero-left{flex:1;min-width:340px;text-align:center;animation:fadeIn 1s ease forwards;padding-top:var(--imgTopNudge);}
+    .hero-left img{width:440px;height:440px;object-fit:cover;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.15);}
     .socials{display:flex;justify-content:center;gap:18px;margin-top:18px;}
     .socials a{color:var(--accent);font-size:22px;transition:.2s;}
     .socials a:hover{transform:scale(1.1);opacity:.9;}
-    .hero-sub{
-      font-size:14px;color:var(--muted);margin-top:10px;line-height:1.6;text-align:center;
-    }
+    .hero-sub{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.6;text-align:center;}
 
-    .hero-right{
-      flex:1.4;min-width:360px;opacity:0;transform:translateY(20px);animation:fadeUp 1.1s ease .25s forwards;
-    }
-    .hero-right h1{
-      font-family:"Libre Baskerville",serif;color:var(--accent);
-      font-size:29px;margin:0 0 16px;white-space:nowrap; /* keep on one line */
-    }
+    .hero-right{flex:1.4;min-width:360px;opacity:0;transform:translateY(20px);animation:fadeUp 1.1s ease .25s forwards;}
+    .hero-right h1{font-family:"Libre Baskerville",serif;color:var(--accent);font-size:29px;margin:0 0 16px;white-space:nowrap;}
     .hero-right p{font-size:16px;margin-bottom:16px;text-align:justify;color:var(--text);}
     .hero-right .btn{display:inline-block;margin-top:16px;padding:10px 18px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:15px;}
     .hero-right .btn:hover{opacity:.9;}
@@ -80,14 +69,9 @@
     @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
     @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-    /* BACK TO TOP (always visible for now so you see it) */
-    #backToTop{
-      position:fixed;bottom:28px;right:28px;background:var(--accent);color:#fff;
-      border:none;border-radius:50%;width:46px;height:46px;font-size:18px;
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.25);
-      transition:all .3s ease;z-index:1200;
-    }
+    /* Back to top */
+    #backToTop{position:fixed;bottom:28px;right:28px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:46px;height:46px;font-size:18px;
+      display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.25);transition:all .3s ease;z-index:1200;}
     #backToTop:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,0.3);}
 
     /* FOOTER */
@@ -104,13 +88,13 @@
     }
   </style>
 </head>
+
 <body>
   <!-- NAV -->
   <header class="site-header">
     <div class="wrap nav-bar">
-      <div class="brand">M S Hossain</div>
+      <div class="brand"><a href="index.html">M S Hossain</a></div>
       <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="research.html">Research</a>
         <a href="experience.html">Experience</a>
@@ -121,7 +105,7 @@
       <div class="right-cluster">
         <div class="search-box">
           <form action="https://www.google.com/search" method="get" target="_blank">
-            <input type="text" name="q" placeholder="Search..." id="searchInput" aria-label="Search this site">
+            <input type="text" name="q" placeholder="Search..." id="searchInput">
             <input type="hidden" name="sitesearch" value="shohugmdhossain.github.io">
           </form>
         </div>
@@ -130,17 +114,28 @@
     </div>
   </header>
 
+  <!-- Dropdown menu -->
+  <div class="dropdown-nav" id="overlayMenu">
+    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Experience</a>
+    <a href="publications.html">Publications</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
   <!-- HERO -->
   <main>
     <section class="hero">
       <div class="hero-left">
-        <img src="profile.jpg" alt="Portrait of Md Shohug Hossain, Ph.D. Researcher in GeoAI and Planetary Science">
+        <img src="profile.jpg" alt="Portrait of Md Shohug Hossain">
         <div class="socials">
-          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a href="mailto:shohugmdhossain@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://github.com/shohugmdhossain" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com/Hmdshohug10" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
         </div>
         <div class="hero-sub">
           <b>Ph.D. Researcher — Earth & Planetary Science</b><br>
@@ -164,7 +159,7 @@
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
 
-  <!-- BACK TO TOP (always visible so you can verify) -->
+  <!-- Back to top -->
   <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
@@ -172,7 +167,20 @@
       const y=document.getElementById("y");
       if(y) y.textContent=new Date().getFullYear();
 
-      // Smooth scroll to top
+      // mobile menu toggle
+      const toggle=document.querySelector(".menu-toggle");
+      const overlay=document.getElementById("overlayMenu");
+      const closeBtn=document.querySelector(".dropdown-close");
+
+      const openMenu=()=>overlay.classList.add("active");
+      const closeMenu=()=>overlay.classList.remove("active");
+
+      toggle.addEventListener("click",openMenu);
+      closeBtn.addEventListener("click",closeMenu);
+      overlay.addEventListener("click",e=>{if(e.target===overlay)closeMenu();});
+      document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();});
+
+      // back to top
       document.getElementById("backToTop").addEventListener("click",()=>{
         window.scrollTo({top:0,behavior:"smooth"});
       });
@@ -180,6 +188,7 @@
   </script>
 </body>
 </html>
+
 
 
 
