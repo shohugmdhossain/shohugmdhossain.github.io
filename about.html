@@ -4,13 +4,10 @@
   <title>About — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="About Md Shohug Hossain — Ph.D. Researcher in GeoAI, Remote Sensing, and Planetary Science.">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
   <style>
     :root {
       --accent: #b1040e;
@@ -24,8 +21,8 @@
     body {
       margin: 0;
       background: var(--bg);
-      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.7;
     }
 
@@ -41,11 +38,9 @@
       border-bottom: 1px solid transparent;
       transition: 0.2s;
     }
-    a:hover {
-      border-bottom-color: var(--accent);
-    }
+    a:hover { border-bottom-color: var(--accent); }
 
-    /* ===== NAVBAR ===== */
+    /* ---------- NAVBAR ---------- */
     header.site-header {
       background: var(--accent);
       color: #fff;
@@ -70,13 +65,15 @@
       gap: 18px;
       align-items: center;
     }
-    .nav-links a {
-      color: #fff;
-      font-size: 15px;
+    .nav-links a { color: #fff; font-size: 15px; }
+    .nav-links a.active { text-decoration: underline; }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .nav-links a.active {
-      text-decoration: underline;
-    }
+
     .search-box input {
       padding: 6px 10px;
       border-radius: 6px;
@@ -84,6 +81,7 @@
       outline: none;
       font-size: 14px;
     }
+
     .menu-toggle {
       background: none;
       border: none;
@@ -92,7 +90,7 @@
       cursor: pointer;
     }
 
-    /* ===== OVERLAY MENU ===== */
+    /* ---------- OVERLAY MENU ---------- */
     .dropdown-nav {
       position: fixed;
       top: -100%;
@@ -117,10 +115,7 @@
       visibility: visible;
       transform: translateY(0);
     }
-    .dropdown-nav a {
-      color: #fff;
-      font-size: 20px;
-    }
+    .dropdown-nav a { color: #fff; font-size: 20px; }
     .dropdown-close {
       position: absolute;
       top: 18px;
@@ -132,7 +127,7 @@
       cursor: pointer;
     }
 
-    /* ===== PROFILE SECTION ===== */
+    /* ---------- PROFILE SECTION ---------- */
     .profile-section {
       display: flex;
       flex-wrap: wrap;
@@ -172,10 +167,8 @@
       font-size: 15.5px;
     }
 
-    /* ===== ACADEMIC JOURNEY ===== */
-    .education {
-      margin: 40px 0 30px;
-    }
+    /* ---------- ACADEMIC JOURNEY ---------- */
+    .education { margin: 40px 0 30px; }
     .education h2 {
       color: var(--accent);
       text-align: center;
@@ -189,10 +182,7 @@
       border-bottom: 1px solid var(--line);
       padding-bottom: 12px;
     }
-    .degree img {
-      width: 42px;
-      height: auto;
-    }
+    .degree img { width: 42px; height: auto; }
     .degree div h4 {
       margin: 0;
       color: var(--accent);
@@ -205,7 +195,41 @@
       text-align: justify;
     }
 
-    /* ===== BEYOND RESEARCH ===== */
+    /* ---------- RESEARCH INTERESTS ---------- */
+    .interests {
+      margin: 40px 0;
+      text-align: center;
+    }
+    .interests h2 {
+      color: var(--accent);
+      margin-bottom: 25px;
+    }
+    .interest-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .interest-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: justify;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: 0.3s;
+    }
+    .interest-box:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+    .interest-box h4 {
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    /* ---------- BEYOND RESEARCH ---------- */
     .beyond {
       background: #fafafa;
       border: 1px solid var(--line);
@@ -216,8 +240,8 @@
     }
     .beyond h2 {
       color: var(--accent);
-      margin-top: 0;
       text-align: center;
+      margin-top: 0;
     }
     .beyond p {
       text-align: justify;
@@ -227,7 +251,7 @@
       color: var(--text);
     }
 
-    /* ===== FOOTER ===== */
+    /* ---------- FOOTER ---------- */
     footer {
       background: var(--accent);
       color: #fff;
@@ -235,26 +259,13 @@
       padding: 18px 0;
       margin-top: 40px;
     }
-    footer p {
-      margin: 0;
-      font-size: 15px;
-    }
+    footer p { margin: 0; font-size: 15px; }
 
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-      .search-box {
-        display: none;
-      }
-      .profile-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .socials {
-        justify-content: center;
-      }
+      .nav-links, .search-box { display: none; }
+      .profile-section { flex-direction: column; align-items: center; text-align: center; }
+      .socials { justify-content: center; }
+      .interest-box { width: 90%; }
     }
   </style>
 </head>
@@ -321,7 +332,6 @@
   <!-- ===== ACADEMIC JOURNEY ===== -->
   <section class="wrap education">
     <h2>Academic & Research Journey</h2>
-
     <div class="degree">
       <img src="ul.png" alt="University of Louisiana at Lafayette Logo">
       <div>
@@ -329,7 +339,6 @@
         <p>Doctoral research in GeoAI and planetary geomorphology using deep learning and high-resolution satellite data.</p>
       </div>
     </div>
-
     <div class="degree">
       <img src="ucalgary.png" alt="University of Calgary Logo">
       <div>
@@ -337,12 +346,30 @@
         <p>Master’s research on AI-based satellite image analysis and computer vision for geoscientific applications.</p>
       </div>
     </div>
-
     <div class="degree">
       <img src="nsu.png" alt="North South University Logo">
       <div>
         <h4>B.Sc. — North South University (2019)</h4>
         <p>Computer Science & Engineering major with focus on data analysis and image processing; awarded merit scholarship.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH INTERESTS ===== -->
+  <section class="wrap interests">
+    <h2>Research Interests</h2>
+    <div class="interest-boxes">
+      <div class="interest-box">
+        <h4>Planetary Geomorphology</h4>
+        <p>Investigating surface processes and landform evolution on Mars and Earth using satellite imagery and deep learning.</p>
+      </div>
+      <div class="interest-box">
+        <h4>Earth Observation</h4>
+        <p>Developing geospatial AI models to monitor environmental dynamics and surface changes through remote sensing data.</p>
+      </div>
+      <div class="interest-box">
+        <h4>Deep Learning & Climate Applications</h4>
+        <p>Exploring intelligent systems for analyzing climate-driven transformations across terrestrial and planetary environments.</p>
       </div>
     </div>
   </section>
@@ -363,11 +390,9 @@
     <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
   </footer>
 
-  <!-- ===== JS ===== -->
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
-      const y=document.getElementById('y');
-      if(y) y.textContent=new Date().getFullYear();
+      document.getElementById('y').textContent=new Date().getFullYear();
       const t=document.querySelector('.menu-toggle'),
             o=document.getElementById('overlayMenu'),
             c=document.querySelector('.dropdown-close');
@@ -381,6 +406,7 @@
   </script>
 </body>
 </html>
+
 
 
 
