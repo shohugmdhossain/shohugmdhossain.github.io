@@ -4,251 +4,276 @@
   <title>Contact — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Md Shohug Hossain — Ph.D. Researcher in GeoAI & Remote Sensing.">
+  
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=4.0">
 
   <style>
-    /* ---------- Contact Page Styling ---------- */
-    .contact-section {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
+    :root {
+      --accent:#b1040e;
+      --bg:#fff;
+      --bg2:#f9f9f9;
+      --text:#222;
+      --muted:#555;
+      --line:#ddd;
+      --max:1100px;
+      --headerH:64px;
     }
 
-    .contact-info,
-    .contact-form {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.7;
     }
 
-    .contact-info:hover,
-    .contact-form:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 10px rgba(177,4,14,0.4);
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
+    a:hover{border-bottom-color:var(--accent);}
+
+    /* ===== NAVBAR ===== */
+    .site-header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:var(--accent);color:#fff;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);
+      transition:all .25s ease;
+    }
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
+    .nav-links{display:flex;gap:20px;align-items:center;}
+    .nav-links a{color:#fff;border:0;font-size:15px;}
+    .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
+    .right-cluster{display:flex;align-items:center;gap:14px;}
+    .search-box form{display:flex;}
+    .search-box input{
+      border:none;border-radius:8px;background:rgba(255,255,255,.95);
+      color:#222;padding:7px 10px;width:170px;transition:width .25s;
+    }
+    .search-box input:focus{outline:none;width:220px;}
+    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
+    .menu-toggle:hover{transform:scale(1.1);}
+
+    /* Overlay Menu */
+    .dropdown-nav{
+      position:fixed;top:0;left:0;right:0;bottom:0;
+      background:rgba(177,4,14,.75);backdrop-filter:blur(10px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:24px;z-index:9999;opacity:0;visibility:hidden;
+      transition:opacity .3s ease,visibility .3s ease;
+    }
+    .dropdown-nav.active{opacity:1;visibility:visible;}
+    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;border:0;}
+    .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
+
+    /* ===== CONTACT ===== */
+    main{margin-top:calc(var(--headerH)+40px);}
+    .contact-header h1{
+      color:var(--accent);
+      font-family:"Libre Baskerville",serif;
+      font-size:30px;
+      margin-bottom:10px;
+    }
+    .contact-header p{
+      color:var(--text);
+      font-size:15.5px;
+      line-height:1.8;
+      text-align:justify;
+      margin-bottom:40px;
     }
 
-    .contact-info h2,
-    .contact-form h2 {
-      color: var(--accent);
-      font-size: 22px;
-      margin-bottom: 16px;
+    .contact-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:40px;
+      align-items:flex-start;
     }
 
-    .contact-info p {
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 12px;
-      font-size: 15px;
-      text-align: justify;
+    .contact-info{
+      flex:1;
+      min-width:280px;
     }
-
-    .contact-info .info-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
+    .contact-info h2{
+      color:var(--accent);
+      font-size:22px;
+      font-family:"Libre Baskerville",serif;
+      margin-bottom:15px;
     }
-
-    .info-item i {
-      color: var(--accent);
-      margin-right: 10px;
-      font-size: 18px;
-      width: 22px;
+    .contact-info p{margin:0 0 15px;color:var(--text);font-size:15px;}
+    .contact-list{list-style:none;padding:0;margin:0;}
+    .contact-list li{
+      margin-bottom:10px;
+      font-size:15px;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
+    .contact-list a{color:var(--accent);border:0;}
+    .socials{display:flex;gap:18px;margin-top:18px;}
+    .socials a{font-size:22px;color:var(--accent);border:0;}
+    .socials a:hover{opacity:.85;}
 
-    .info-item a {
-      color: var(--text);
-      border-bottom: 1px solid transparent;
-      transition: 0.2s ease;
+    /* ===== FORM ===== */
+    .contact-form{
+      flex:1.2;
+      min-width:300px;
+      background:var(--bg2);
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
     }
-
-    .info-item a:hover {
-      color: var(--accent);
-      border-bottom: 1px solid var(--accent);
+    .contact-form h2{
+      color:var(--accent);
+      font-size:22px;
+      font-family:"Libre Baskerville",serif;
+      margin-bottom:20px;
     }
-
-    /* Form styling */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .contact-form form{display:flex;flex-direction:column;gap:14px;}
+    .contact-form input,.contact-form textarea{
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:10px 14px;
+      font-family:inherit;
+      font-size:15px;
+      resize:none;
     }
-
-    input, textarea {
-      background: var(--bg2);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 12px;
-      color: var(--text);
-      font-family: Inter, sans-serif;
-      font-size: 15px;
-      outline: none;
-      transition: border-color 0.2s ease;
+    .contact-form textarea{height:120px;}
+    .contact-form button{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      padding:10px 16px;
+      font-size:15px;
+      cursor:pointer;
+      transition:opacity .25s ease;
     }
+    .contact-form button:hover{opacity:.9;}
 
-    input:focus, textarea:focus {
-      border-color: var(--accent);
-    }
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px;}
+    footer.site .wrap{padding:20px;}
+    footer.site p{margin:0;font-size:15px;}
 
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    button {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: opacity 0.2s ease;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    /* Social icons */
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      gap: 16px;
-    }
-
-    .social-links a {
-      color: var(--muted);
-      font-size: 20px;
-      transition: color 0.2s ease;
-    }
-
-    .social-links a:hover {
-      color: var(--accent);
-    }
-
-    @media (max-width: 900px) {
-      .contact-section {
-        grid-template-columns: 1fr;
-      }
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .contact-grid{flex-direction:column;}
     }
   </style>
 </head>
 
-<body class="contact-page">
-
-  <!-- ==================== Header / Navigation ==================== -->
-  <header class="site">
-    <div class="wrap nav">
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <div class="wrap nav-bar">
       <div class="brand">M S Hossain</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="awards.html">Awards</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-        <div class="search-box">
-          <input type="text" placeholder="Search..." id="searchInput">
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="experience.html">Experience</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
+      <div class="right-cluster">
+        <div class="search-box">
+          <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" name="q" placeholder="Search..." id="searchInput">
+            <input type="hidden" name="sitesearch" value="shohugmdhossain.github.io">
+          </form>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
-
-    <!-- Dropdown for mobile -->
-    <ul class="dropdown-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
   </header>
 
-  <!-- ==================== Main Content ==================== -->
-  <main class="wrap">
-    <section class="contact-section">
+  <!-- Overlay Menu -->
+  <div class="dropdown-nav" id="overlayMenu">
+    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Experience</a>
+    <a href="publications.html">Publications</a>
+    <a href="awards.html">Awards</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
 
-      <!-- Contact Info -->
+  <!-- ===== MAIN ===== -->
+  <main class="wrap">
+    <section class="contact-header">
+      <h1>Contact</h1>
+      <p>Let’s connect for research collaborations, academic discussions, or professional opportunities. You can reach me via email or through my social platforms below.</p>
+    </section>
+
+    <div class="contact-grid">
+      <!-- Left: Info -->
       <div class="contact-info">
         <h2>Get in Touch</h2>
-        <p>
-          If you’d like to discuss research collaboration, professional opportunities, or project ideas, 
-          feel free to reach out through this form or my contact channels below.
-        </p>
+        <p><i class="fa-solid fa-location-dot"></i> Lafayette, Louisiana · Calgary, Alberta</p>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></li>
+          <li><i class="fa-solid fa-globe"></i> <a href="https://shohugmdhossain.github.io" target="_blank">shohugmdhossain.github.io</a></li>
+        </ul>
 
-        <div class="info-item"><i class="fa-solid fa-envelope"></i><a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></div>
-        <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Lafayette, LA · Calgary, AB</span></div>
-        <div class="info-item"><i class="fa-solid fa-phone"></i><a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></div>
-
-        <div class="social-links">
+        <div class="socials">
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
           <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
         </div>
       </div>
 
-      <!-- Contact Form -->
+      <!-- Right: Form -->
       <div class="contact-form">
         <h2>Send a Message</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="_replyto" placeholder="Your Email" required>
-          <input type="text" name="subject" placeholder="Subject">
-          <textarea name="message" placeholder="Your Message..." required></textarea>
-          <button type="submit">Send Message</button>
+        <form>
+          <input type="text" name="name" placeholder="Your Name">
+          <input type="email" name="email" placeholder="Your Email">
+          <textarea name="message" placeholder="Your Message"></textarea>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
         </form>
-        <p style="font-size:13px; color:var(--muted); margin-top:10px;">
-          This form uses <a href="https://formspree.io" style="color:var(--accent);">Formspree</a> for secure message delivery.
-        </p>
       </div>
-
-    </section>
+    </div>
   </main>
 
-  <!-- ==================== Footer ==================== -->
   <footer class="site">
     <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · Ph.D. Researcher · GeoAI & Remote Sensing</p>
+      <p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p>
     </div>
   </footer>
 
-  <!-- ==================== JS ==================== -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const year = document.getElementById('y');
-    if (year) year.textContent = new Date().getFullYear();
+  <!-- ===== JS ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const y=document.getElementById("y");
+      if(y) y.textContent=new Date().getFullYear();
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const dropdownNav = document.querySelector('.dropdown-nav');
+      const header=document.querySelector(".site-header");
+      const toggle=document.querySelector(".menu-toggle");
+      const overlay=document.getElementById("overlayMenu");
+      const closeBtn=document.querySelector(".dropdown-close");
 
-    if (menuToggle && dropdownNav) {
-      menuToggle.addEventListener('click', () => {
-        dropdownNav.classList.toggle('active');
+      const openMenu=()=>overlay.classList.add("active");
+      const closeMenu=()=>overlay.classList.remove("active");
+
+      toggle.addEventListener("click",openMenu);
+      closeBtn.addEventListener("click",closeMenu);
+      overlay.addEventListener("click",e=>{if(e.target===overlay)closeMenu();});
+      document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();});
+
+      window.addEventListener("scroll",()=>{
+        if(window.scrollY>50) header.classList.add("shrink");
+        else header.classList.remove("shrink");
       });
-    }
-  });
-</script>
-
-
+    });
+  </script>
 </body>
 </html>
+
 
