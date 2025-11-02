@@ -73,12 +73,15 @@
     .dropdown-close:hover{transform:rotate(90deg);}
 
     /* ===== HERO ===== */
-    .hero-intro{margin-top:calc(var(--headerH)+60px);text-align:center;}
-    .hero-intro h1{color:var(--accent);font-family:"Libre Baskerville",serif;font-size:32px;margin-bottom:10px;}
-    .hero-intro p{max-width:800px;margin:0 auto;color:var(--text);font-size:15.5px;line-height:1.8;}
+    .hero-intro{margin-top:calc(var(--headerH)+40px);text-align:center;}
+    .hero-intro h1{color:var(--accent);font-family:"Libre Baskerville",serif;font-size:32px;margin-bottom:10px;position:relative;display:inline-block;}
+    .hero-intro h1::after{
+      content:"";display:block;width:80px;height:3px;background:var(--accent);margin:10px auto 0;border-radius:2px;
+    }
+    .hero-intro p{max-width:800px;margin:15px auto 0;color:var(--text);font-size:15.5px;line-height:1.8;text-align:justify;}
 
     /* ===== GRID LAYOUT ===== */
-    .section-title{font-size:22px;color:var(--accent);font-weight:700;margin:60px 0 25px;font-family:"Libre Baskerville",serif;}
+    .section-title{font-size:22px;color:var(--accent);font-weight:700;margin:60px 0 25px;font-family:"Libre Baskerville",serif;display:flex;align-items:center;gap:10px;}
     .research-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:25px;}
 
     .research-card{
@@ -88,6 +91,13 @@
       padding:22px 24px;
       box-shadow:0 2px 8px rgba(0,0,0,0.08);
       transition:all .3s ease;
+      opacity:0;
+      transform:translateY(30px);
+    }
+    .research-card.visible{
+      opacity:1;
+      transform:translateY(0);
+      transition:opacity .7s ease, transform .7s ease;
     }
     .research-card:hover{
       transform:translateY(-5px);
@@ -110,7 +120,7 @@
 
     @media(max-width:900px){
       .nav-links{display:none;}
-      .hero-intro{margin-top:calc(var(--headerH)+40px);}
+      .hero-intro{margin-top:calc(var(--headerH)+30px);}
     }
   </style>
 </head>
@@ -158,13 +168,13 @@
     <section class="hero-intro">
       <h1>Research Overview</h1>
       <p>
-        My research integrates <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary science</b> to analyze multisensor Earth and Mars data.  
+        My research integrates <b>GeoAI</b>, <b>remote sensing</b>, and <b>planetary science</b> to analyze multisensor Earth and Mars datasets.  
         I focus on interpretable machine learning models, large-scale data processing, and physics-informed frameworks to enhance our understanding of environmental and planetary systems.
       </p>
     </section>
 
     <!-- Current Projects -->
-    <h2 class="section-title">Current & Ongoing Projects</h2>
+    <h2 class="section-title"><i class="fa-solid fa-planet-ringed"></i> Current & Ongoing Projects</h2>
     <div class="research-grid">
       <div class="research-card">
         <div class="research-meta">Planetary Geomorphology · 2024–Present</div>
@@ -195,7 +205,7 @@
     </div>
 
     <!-- Past Projects -->
-    <h2 class="section-title">Past Projects</h2>
+    <h2 class="section-title"><i class="fa-solid fa-globe"></i> Past Projects</h2>
     <div class="research-grid">
       <div class="research-card">
         <div class="research-meta">Remote Sensing · 2023</div>
@@ -234,22 +244,43 @@
   <!-- ===== JS ===== -->
   <script>
     document.addEventListener("DOMContentLoaded",()=>{
-      const y=document.getElementById("y");if(y)y.textContent=new Date().getFullYear();
+      const y=document.getElementById("y");
+      if(y) y.textContent=new Date().getFullYear();
+
       const header=document.querySelector(".site-header");
       const toggle=document.querySelector(".menu-toggle");
       const overlay=document.getElementById("overlayMenu");
       const closeBtn=document.querySelector(".dropdown-close");
+
       const openMenu=()=>overlay.classList.add("active");
       const closeMenu=()=>overlay.classList.remove("active");
+
       toggle.addEventListener("click",openMenu);
       closeBtn.addEventListener("click",closeMenu);
       overlay.addEventListener("click",e=>{if(e.target===overlay)closeMenu();});
       document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();});
-      window.addEventListener("scroll",()=>{if(window.scrollY>50)header.classList.add("shrink");else header.classList.remove("shrink");});
+
+      window.addEventListener("scroll",()=>{
+        if(window.scrollY>50) header.classList.add("shrink");
+        else header.classList.remove("shrink");
+      });
+
+      // Fade-in observer for cards
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },{threshold:0.1});
+
+      document.querySelectorAll(".research-card").forEach(card=>observer.observe(card));
     });
   </script>
 </body>
 </html>
+
 
 
 
