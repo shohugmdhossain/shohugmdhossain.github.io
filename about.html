@@ -33,14 +33,19 @@
     a:hover{border-bottom-color:var(--accent);}
 
     /* ===== NAVBAR ===== */
-    .site-header{position:sticky;top:0;z-index:1000;background:var(--accent);color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+    .site-header{
+      position:sticky; top:0; z-index:1000;
+      background:var(--accent); color:#fff;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);
+      transition:all .25s ease;
+    }
     .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
+    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;transition:font-size .25s ease;}
     .nav-links{display:flex;gap:20px;align-items:center;}
     .nav-links a{color:#fff;border:0;font-size:15px;}
     .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
     .right-cluster{display:flex;align-items:center;gap:14px;}
-    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
+    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;transition:transform .2s ease;}
     .menu-toggle:hover{transform:scale(1.1);}
     .search-box form{display:flex;}
     .search-box input{
@@ -60,7 +65,7 @@
     .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;}
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
 
-    /* ===== ABOUT BODY ===== */
+    /* ===== ABOUT SECTION ===== */
     .about-section{margin:60px auto;display:flex;flex-wrap:wrap;gap:60px;}
     .about-left{flex:1;min-width:280px;text-align:center;}
     .about-photo img{width:320px;height:320px;border-radius:50%;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.25);}
@@ -68,39 +73,31 @@
     .socials a{color:var(--accent);font-size:22px;border:0;}
     .socials a:hover{opacity:.85;}
 
-    /* SINGLE BOX TECHNICAL SKILLS */
+    /* SKILLS BOX */
     .skills-section{
       margin-top:25px;background:var(--bg2);padding:18px;border-radius:14px;
       border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.08);
       text-align:left;
     }
-    .skills-section h2{
-      color:var(--accent);font-size:18px;margin:0 0 10px;
-      display:flex;align-items:center;justify-content:center;gap:8px;
-    }
-    .skills-list{
-      list-style:none;padding:0;margin:0;font-size:14px;line-height:1.8;
-    }
+    .skills-section h2{color:var(--accent);font-size:18px;margin:0 0 10px;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .skills-list{list-style:none;padding:0;margin:0;font-size:14px;line-height:1.8;}
     .skills-list li{margin-bottom:6px;color:var(--text);}
     .skills-list i{color:var(--accent);margin-right:8px;}
 
-    /* ===== INTERESTS ===== */
+    /* INTERESTS BOX */
     .personal-interests{
       margin-top:20px;background:var(--bg2);padding:15px;border-radius:14px;
       border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.05);
       text-align:left;font-size:14px;
     }
-    .personal-interests h2{
-      color:var(--accent);font-size:17px;margin-top:0;margin-bottom:8px;
-      display:flex;align-items:center;justify-content:center;gap:8px;
-    }
+    .personal-interests h2{color:var(--accent);font-size:17px;margin-top:0;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px;}
     .personal-interests p{margin:0;color:var(--text);text-align:center;}
 
     .about-right{flex:2;min-width:320px;text-align:justify;}
     .about-right h1{font-size:32px;color:var(--accent);margin-top:0;}
     .about-right p{margin-bottom:16px;}
 
-    /* ===== CV BUTTON ===== */
+    /* CV BUTTON */
     .cv-download{text-align:center;margin-top:25px;}
     .cv-download .btn.red{
       background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;
@@ -109,33 +106,31 @@
     }
     .cv-download .btn.red:hover{opacity:.9;transform:scale(1.04);}
 
-    /* ===== ACADEMIC JOURNEY ===== */
+    /* ACADEMIC JOURNEY */
     .academic-journey{
       background:var(--bg2);border-radius:14px;border:1px solid var(--line);
       padding:25px;margin-top:30px;box-shadow:0 2px 8px rgba(0,0,0,.08);
     }
-    .academic-journey h2{
-      color:var(--accent);font-size:22px;margin-top:0;margin-bottom:18px;
-      display:flex;align-items:center;gap:10px;
-    }
+    .academic-journey h2{color:var(--accent);font-size:22px;margin-top:0;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
     .academic-details img{width:32px;height:32px;object-fit:contain;vertical-align:middle;margin-right:8px;}
     .academic-details p{margin-bottom:14px;line-height:1.8;}
 
-    /* ===== BEYOND RESEARCH ===== */
+    /* BEYOND RESEARCH */
     .beyond-research{
       margin-top:40px;background:linear-gradient(135deg,#fff,var(--bg2));
       padding:25px;border-radius:14px;border:1px solid var(--line);
       box-shadow:0 2px 8px rgba(0,0,0,.08);
     }
-    .beyond-research h2{
-      color:var(--accent);font-size:22px;margin-top:0;margin-bottom:14px;
-      display:flex;align-items:center;gap:10px;
-    }
+    .beyond-research h2{color:var(--accent);font-size:22px;margin-top:0;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
     .beyond-research p{margin-bottom:16px;}
 
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:60px;}
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
+
+    /* Shrink Navbar on Scroll */
+    .site-header.shrink {padding:4px 0 !important; box-shadow:0 3px 10px rgba(0,0,0,0.25);}
+    .site-header.shrink .brand {font-size:18px;}
 
     @media(max-width:900px){
       .nav-links{display:none;}
@@ -186,7 +181,6 @@
   <!-- ===== MAIN ===== -->
   <main>
     <div class="wrap about-section">
-      <!-- LEFT -->
       <div class="about-left">
         <div class="about-photo"><img src="profile.jpg" alt="Md Shohug Hossain"></div>
         <div class="socials">
@@ -197,7 +191,6 @@
           <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
         </div>
 
-        <!-- SINGLE BOX SKILLS -->
         <div class="skills-section">
           <h2><i class="fa-solid fa-gear"></i> Technical Skills</h2>
           <ul class="skills-list">
@@ -212,21 +205,18 @@
           </ul>
         </div>
 
-        <!-- INTERESTS MINI-SECTION -->
         <div class="personal-interests">
           <h2><i class="fa-solid fa-heart"></i> Interests</h2>
           <p>Web design, astrophotography, academic outreach, creative visualization.</p>
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div class="about-right">
         <h1>About Me</h1>
         <p>I am <b>Md Shohug Hossain</b>, a <b>Ph.D. researcher</b> at the <b>University of Louisiana at Lafayette</b> specializing in <b>GeoAI, Remote Sensing, and Planetary Science</b>. My research explores how artificial intelligence can decode geomorphic and environmental processes on Earth and Mars through high-resolution imagery and data analytics.</p>
         <p>I focus on building deep-learning frameworks for automatic landform detection, geomorphic classification, and planetary terrain mapping using satellite imagery from missions such as <i>CTX</i>, <i>HiRISE</i>, and <i>Sentinel</i>. My goal is to advance our understanding of landscape evolution while contributing to climate, hazard, and planetary exploration research.</p>
         <p>Before joining UL Lafayette, I completed my <b>M.Sc. in Electrical & Computer Engineering</b> at the <b>University of Calgary</b> and a <b>B.Sc. in Computer Science & Engineering</b> at <b>North South University</b>. My academic path bridges software systems, computer vision, and data-driven geoscience, allowing me to translate large datasets into actionable insights.</p>
-        
-        <!-- Centered CV Button -->
+
         <div class="cv-download">
           <a href="files/Md_Shohug_Hossain_CV.pdf" target="_blank" class="btn red">
             <i class="fa-solid fa-file-pdf"></i> Download Full CV
@@ -270,9 +260,17 @@
     closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
     overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});
     document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('active');});
+
+    // Navbar shrink on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 50) header.classList.add('shrink');
+      else header.classList.remove('shrink');
+    });
   </script>
 </body>
 </html>
+
 
 
 
