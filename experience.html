@@ -4,14 +4,13 @@
   <title>Experience — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional and volunteering experience of Md Shohug Hossain — Ph.D. researcher in GeoAI, remote sensing, and planetary science.">
-  <meta name="keywords" content="Md Shohug Hossain, GeoAI, Remote Sensing, Planetary Science, Machine Learning, Data Engineer, Teaching Assistant, Leadership, Volunteering, University of Louisiana at Lafayette">
+  <meta name="description" content="Professional and leadership experiences of Md Shohug Hossain — spanning GeoAI research, data engineering, and academic mentorship.">
+  <meta name="keywords" content="Md Shohug Hossain, Experience, Research, GeoAI, Remote Sensing, Data Engineer, Teaching Assistant, Leadership, Mentorship">
   <meta name="author" content="Md Shohug Hossain">
   <link rel="canonical" href="https://shohugmdhossain.github.io/experience.html">
   <meta name="theme-color" content="#b1040e">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Professional Experience — M S Hossain">
-  <meta property="og:description" content="Explore the academic, research, and volunteering experiences of Md Shohug Hossain in GeoAI, remote sensing, and planetary science.">
+  <meta property="og:title" content="Experience — M S Hossain">
+  <meta property="og:description" content="Professional and leadership experiences of Md Shohug Hossain in GeoAI, Remote Sensing, and Academic Mentorship.">
   <meta property="og:image" content="https://shohugmdhossain.github.io/profile.jpg">
   <meta property="og:url" content="https://shohugmdhossain.github.io/experience.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,177 +23,60 @@
 
   <style>
     :root {
-      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
-      --text:#222; --muted:#555; --line:#ddd; --max:1000px;
+      --accent:#b1040e; --bg:#fff; --text:#222; --muted:#555;
+      --line:#ddd; --max:1000px;
     }
-
-    body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.75;
-    }
-
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.75; overflow-x:hidden; }
     a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
-
     .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
 
-    /* ===== NAVBAR (Perfectly Right-Aligned) ===== */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: var(--accent);
-      color: #fff;
-      z-index: 1000;
-      box-shadow: 0 3px 10px rgba(0,0,0,.1);
-      height: 72px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .nav-bar {
-      width: 100%;
-      max-width: var(--max);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-    }
-
-    .brand {
-      font-family: "Libre Baskerville", serif;
-      font-weight: 700;
-      font-size: 22px;
-    }
-    .brand a { color: #fff; text-decoration: none; }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      font-size: 16px;
-      padding: 6px 0 4px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      text-decoration: underline;
-      opacity: .9;
-    }
-
-    .menu-toggle {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 26px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-    }
-
-    .menu-toggle:hover { transform: scale(1.06); }
-
-    @media (max-width: 980px) {
-      .nav-links { display: none; }
-    }
+    /* ===== NAVBAR ===== */
+    .site-header { position:fixed; top:0; left:0; right:0; background:var(--accent); color:#fff; z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,.1); height:72px; display:flex; justify-content:center; align-items:center; }
+    .nav-bar { width:100%; max-width:var(--max); display:flex; align-items:center; justify-content:space-between; padding:0 20px; }
+    .brand { font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; }
+    .brand a { color:#fff; text-decoration:none; }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-links { display:flex; align-items:center; gap:26px; }
+    .nav-links a { color:#fff; font-size:16px; padding:6px 0 4px; }
+    .nav-links a:hover, .nav-links a.active { text-decoration:underline; opacity:.9; }
+    .menu-toggle { background:none; border:none; color:#fff; font-size:26px; cursor:pointer; display:flex; align-items:center; justify-content:center; width:36px; height:36px; }
+    .menu-toggle:hover { transform:scale(1.06); }
+    @media(max-width:980px){ .nav-links{display:none;} }
 
     /* ===== OVERLAY MENU ===== */
-    .dropdown-nav {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(177,4,14,.75);
-      backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
-      transition: .3s;
-    }
-
-    .dropdown-nav.active { opacity: 1; visibility: visible; }
-    .dropdown-nav a { color: #fff; font-size: 22px; font-weight: 500; }
-
-    .dropdown-close {
-      position: absolute;
-      top: 20px; right: 28px;
-      color: #fff;
-      font-size: 26px;
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
+    .dropdown-nav { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(177,4,14,.75); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s; }
+    .dropdown-nav.active { opacity:1; visibility:visible; }
+    .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
+    .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
 
     /* ===== EXPERIENCE SECTION ===== */
-    .experience-section { margin: 115px auto 80px; }
-    .experience-section h1 { color: var(--accent); font-size: 30px; margin-bottom: 10px; }
-    .intro { color: var(--muted); margin-bottom: 45px; font-size: 16px; text-align: justify; }
+    .experience-section { margin:115px auto 80px; }
+    .experience-section h1 { color:var(--accent); font-size:30px; text-align:left; margin-bottom:12px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .exp-intro { color:var(--muted); font-size:16px; margin-bottom:40px; text-align:justify; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
 
-    .exp-grid { display: flex; flex-direction: column; gap: 30px; }
-    .exp-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 25px 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      transition: .25s ease;
-    }
+    .exp-category { color:var(--accent); font-size:26px; margin-top:60px; margin-bottom:18px; font-weight:600; display:flex; align-items:center; gap:10px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .exp-category i { font-size:22px; color:var(--accent); }
 
-    .exp-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.09); }
-    .exp-title { font-weight: 600; font-size: 18px; color: var(--accent); }
-    .exp-org { font-weight: 500; color: var(--muted); }
-    .exp-time { font-size: 14px; color: #777; margin: 6px 0 12px; }
-    .exp-details ul { margin: 0; padding-left: 20px; }
-    .exp-details li { margin-bottom: 7px; }
+    .exp-grid { display:flex; flex-direction:column; gap:28px; }
+    .exp-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:25px 30px; box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:.4s ease; opacity:0; transform:translateY(30px); }
+    .exp-card:hover { box-shadow:0 4px 14px rgba(0,0,0,0.09); }
+    .exp-card.show, .exp-category.show, .experience-section h1.show, .exp-intro.show { opacity:1; transform:translateY(0); }
 
-    .section-heading {
-      color: var(--accent);
-      font-size: 26px;
-      margin-top: 70px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
+    .exp-title { font-weight:600; font-size:18px; color:var(--accent); }
+    .exp-meta { font-size:14px; color:#777; margin:6px 0 10px; }
+    .exp-details { font-size:15px; line-height:1.6; margin:0; text-align:justify; }
+
+    .exp-tags { margin-top:10px; }
+    .exp-tags span { display:inline-block; background:#f3f3f3; color:#000; font-size:13px; padding:4px 10px; border-radius:8px; margin-right:6px; margin-top:4px; transition:all .25s ease; }
+    .exp-tags span:hover { background:var(--accent); color:#fff; transform:translateY(-1px); }
 
     /* ===== FOOTER ===== */
-    footer.site {
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-      margin-top: 70px;
-    }
-
-    footer.site .wrap { padding: 20px; }
-    footer.site p { margin: 0; font-size: 15px; }
-
-    #toTop {
-      position: fixed;
-      bottom: 20px; right: 20px;
-      background: var(--accent); color: #fff;
-      border: none; border-radius: 50%;
-      width: 42px; height: 42px;
-      font-size: 18px;
-      cursor: pointer; display: none; z-index: 999;
-    }
-
-    #toTop.show { display: block; }
+    footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:70px; }
+    footer.site .wrap { padding:20px; }
+    footer.site p { margin:0; font-size:15px; }
+    #toTop { position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff; border:none; border-radius:50%; width:42px; height:42px; font-size:18px; cursor:pointer; display:none; z-index:999; }
+    #toTop.show { display:block; }
   </style>
 </head>
 
@@ -231,127 +113,71 @@
   <!-- ===== MAIN ===== -->
   <main>
     <div class="wrap experience-section">
-      <h1>Professional Experience</h1>
-      <p class="intro">My professional journey integrates academic research, geospatial data science, and AI-powered planetary analysis. I have worked across interdisciplinary domains combining machine learning, remote sensing, and high-performance computing to address scientific and real-world challenges.</p>
+      <h1>Experience</h1>
+      <p class="exp-intro">Professional and leadership experiences spanning research, data engineering, academic instruction, and student mentorship. Organized by category to highlight both technical and community engagement roles.</p>
 
+      <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+      <h2 class="exp-category"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
       <div class="exp-grid">
+
         <div class="exp-card">
-          <div class="exp-title">Ph.D. Researcher — GeoAI & Planetary Remote Sensing</div>
-          <div class="exp-org">University of Louisiana at Lafayette · Lafayette, USA</div>
-          <div class="exp-time">2025 – Present</div>
-          <div class="exp-details">
-            <ul>
-              <li>Lead AI-driven geomorphologic mapping of Martian surface features using <b>Detectron2</b>, <b>PyTorch</b>, and COCO datasets.</li>
-              <li>Operate large-scale training and validation on <b>LONI HPC (A100 GPUs)</b> for high-resolution terrain segmentation and object detection.</li>
-              <li>Develop automated dataset curation, inference visualization, and precision evaluation scripts integrated with <b>COCO evaluators</b>.</li>
-              <li>Collaborate on accessibility and infrastructure mapping through <b>YOLOv8-based sidewalk detection</b> using urban geospatial imagery.</li>
-            </ul>
-          </div>
+          <div class="exp-title">Ph.D. Researcher — GeoAI & Planetary Science</div>
+          <div class="exp-meta">University of Louisiana at Lafayette · 2025–Present</div>
+          <p class="exp-details">Conducting research on automated mound detection and planetary surface classification using deep learning and high-performance computing. Developing GeoAI pipelines on LONI HPC with PyTorch, Detectron2, and large-scale CTX/HiRISE datasets.</p>
+          <div class="exp-tags"><span>GeoAI</span><span>Planetary Science</span><span>Deep Learning</span><span>HPC</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Graduate Teaching Assistant</div>
-          <div class="exp-org">University of Calgary · Department of Electrical & Computer Engineering</div>
-          <div class="exp-time">2021 – 2023</div>
-          <div class="exp-details">
-            <ul>
-              <li>Assisted instruction for undergraduate and graduate courses in <b>Software Systems</b> and <b>Data Structures</b>.</li>
-              <li>Designed Python-based scripts to automate grading and assessment analytics for over 150 students.</li>
-              <li>Facilitated labs and tutoring sessions, improving student performance and project completion rates.</li>
-            </ul>
-          </div>
+          <div class="exp-title">Data Engineer</div>
+          <div class="exp-meta">TELUS · 2023–2024</div>
+          <p class="exp-details">Built and optimized ETL pipelines for large-scale geospatial and customer analytics using SQL, Python, and cloud data platforms. Designed data automation frameworks and visualization dashboards to enhance operational reporting and system reliability.</p>
+          <div class="exp-tags"><span>Data Engineering</span><span>SQL</span><span>Cloud</span><span>Automation</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Data Engineer (Internship)</div>
-          <div class="exp-org">TELUS Communications · Calgary, Canada</div>
-          <div class="exp-time">2023 – 2024</div>
-          <div class="exp-details">
-            <ul>
-              <li>Developed scalable ETL pipelines using <b>Python</b>, <b>SQL</b>, and <b>Airflow</b> to process telecom data assets.</li>
-              <li>Integrated dashboards in <b>Power BI</b> and <b>Databricks</b> to monitor real-time data quality and KPIs.</li>
-              <li>Collaborated with cross-functional teams to enhance data warehouse efficiency and reliability.</li>
-            </ul>
-          </div>
+          <div class="exp-title">Graduate Teaching Assistant — Electrical & Computer Engineering</div>
+          <div class="exp-meta">University of Calgary · 2021–2023</div>
+          <p class="exp-details">Taught and evaluated undergraduate labs and assignments in control systems, automation, and intelligent computing. Mentored student projects and contributed to course material design for advanced computing modules.</p>
+          <div class="exp-tags"><span>Teaching</span><span>Control Systems</span><span>Mentorship</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Research Assistant — Wetland & Climate Resilience</div>
-          <div class="exp-org">SPARRSO · Bangladesh Space Research & Remote Sensing Organization</div>
-          <div class="exp-time">2020 – 2021</div>
-          <div class="exp-details">
-            <ul>
-              <li>Analyzed environmental change using <b>Landsat</b> and <b>Sentinel-2</b> imagery for wetland ecosystems.</li>
-              <li>Performed NDVI-based vegetation monitoring and flood mapping in coastal Bangladesh.</li>
-              <li>Generated GIS layers supporting policy decisions in national land and water management.</li>
-            </ul>
-          </div>
+          <div class="exp-title">Research Assistant — Remote Sensing & Climate Analytics</div>
+          <div class="exp-meta">SPARRSO · 2020–2021</div>
+          <p class="exp-details">Developed wetland and flood resilience models using remote sensing and spatial analysis. Worked on satellite image preprocessing, environmental change detection, and habitat mapping across coastal Bangladesh.</p>
+          <div class="exp-tags"><span>Remote Sensing</span><span>Climate</span><span>GIS</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Research Assistant — Computer Vision & GeoAI</div>
-          <div class="exp-org">North South University · Dhaka, Bangladesh</div>
-          <div class="exp-time">2019 – 2020</div>
-          <div class="exp-details">
-            <ul>
-              <li>Developed image segmentation algorithms for vegetation and built-up area detection using Python and OpenCV.</li>
-              <li>Assisted in designing a <b>GeoAI model pipeline</b> integrating multi-band satellite data for spatial pattern analysis.</li>
-              <li>Prepared technical documentation and co-authored internal research reports.</li>
-            </ul>
-          </div>
+          <div class="exp-title">Research Assistant — Computer Vision & Software Development</div>
+          <div class="exp-meta">North South University · 2019–2020</div>
+          <p class="exp-details">Designed software for intelligent image processing and object detection tasks using Java and Python. Assisted in machine learning model training and academic manuscript preparation.</p>
+          <div class="exp-tags"><span>Computer Vision</span><span>Software Development</span><span>Research</span></div>
         </div>
       </div>
 
-      <h2 class="section-heading">Volunteering & Leadership</h2>
+      <!-- ===== LEADERSHIP & VOLUNTEERING ===== -->
+      <h2 class="exp-category"><i class="fa-solid fa-people-group"></i> Leadership & Volunteering</h2>
       <div class="exp-grid">
         <div class="exp-card">
           <div class="exp-title">President — ECE Graduate Group</div>
-          <div class="exp-org">University of Calgary · Calgary, Canada</div>
-          <div class="exp-time">2022 – 2023</div>
-          <div class="exp-details">
-            <ul>
-              <li>Led student representation and academic event planning for over 120 graduate students in the ECE department.</li>
-              <li>Organized professional development seminars and research networking sessions with faculty and industry speakers.</li>
-              <li>Oversaw coordination of annual technical symposium and departmental outreach initiatives.</li>
-            </ul>
-          </div>
+          <div class="exp-meta">University of Calgary · 2023</div>
+          <p class="exp-details">Led academic and social initiatives to strengthen graduate community collaboration. Organized seminars, peer mentorship, and career networking sessions for engineering students.</p>
+          <div class="exp-tags"><span>Leadership</span><span>Community</span><span>Mentorship</span></div>
         </div>
 
         <div class="exp-card">
           <div class="exp-title">Vice-President — Schulich Graduate Engineering Consortium</div>
-          <div class="exp-org">University of Calgary · Calgary, Canada</div>
-          <div class="exp-time">2021 – 2022</div>
-          <div class="exp-details">
-            <ul>
-              <li>Supported cross-departmental collaboration and communication among five graduate engineering programs.</li>
-              <li>Planned interdisciplinary workshops and mentorship sessions to promote collaborative research.</li>
-            </ul>
-          </div>
+          <div class="exp-meta">University of Calgary · 2023</div>
+          <p class="exp-details">Facilitated interdisciplinary collaboration among engineering departments. Coordinated research showcases and academic development workshops across graduate programs.</p>
+          <div class="exp-tags"><span>Coordination</span><span>Teamwork</span><span>Student Engagement</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Mentor & Workshop Facilitator — Python for Remote Sensing</div>
-          <div class="exp-org">University of Louisiana at Lafayette</div>
-          <div class="exp-time">2025 – Present</div>
-          <div class="exp-details">
-            <ul>
-              <li>Mentoring undergraduate researchers in machine learning and satellite data interpretation.</li>
-              <li>Organizing hands-on Python and GIS workshops for graduate and undergraduate students.</li>
-              <li>Promoting open-science culture and technical literacy in the academic community.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-title">Community Outreach Volunteer</div>
-          <div class="exp-org">IEEE Geoscience and Remote Sensing Society (GRSS)</div>
-          <div class="exp-time">2020 – Present</div>
-          <div class="exp-details">
-            <ul>
-              <li>Participating in GRSS educational programs and student competitions for geospatial innovation.</li>
-              <li>Supporting global knowledge dissemination in Earth observation and AI for environmental monitoring.</li>
-            </ul>
-          </div>
+          <div class="exp-title">Science Outreach & Academic Mentorship</div>
+          <div class="exp-meta">UL Lafayette & SPARRSO · 2020–Present</div>
+          <p class="exp-details">Actively engaged in academic mentorship, public science communication, and student advising. Promoted STEM education and open-source collaboration within the geoscience research community.</p>
+          <div class="exp-tags"><span>Outreach</span><span>STEM</span><span>Mentorship</span></div>
         </div>
       </div>
     </div>
@@ -365,28 +191,29 @@
 
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
-      const y=document.getElementById('y');
-      if(y)y.textContent=new Date().getFullYear();
-
+      const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
       const overlay=document.getElementById('overlayMenu');
       const toggle=document.querySelector('.menu-toggle');
       const closeBtn=document.querySelector('.dropdown-close');
       const toTop=document.getElementById('toTop');
 
-      const openMenu=()=>overlay.classList.add('active');
-      const closeMenu=()=>overlay.classList.remove('active');
-
-      toggle.addEventListener('click',openMenu);
-      closeBtn.addEventListener('click',closeMenu);
-      overlay.addEventListener('click',e=>{if(e.target===overlay)closeMenu();});
-      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
-
-      window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>200);});
+      toggle.addEventListener('click',()=>overlay.classList.add('active'));
+      closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
+      overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.classList.remove('active'); });
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape') overlay.classList.remove('active'); });
+      window.addEventListener('scroll',()=>{ toTop.classList.toggle('show',window.scrollY>200); });
       toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+      const fadeEls=document.querySelectorAll('.exp-card,.exp-category,.experience-section h1,.exp-intro');
+      const io=new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
+      },{threshold:0.1});
+      fadeEls.forEach(el=>io.observe(el));
     });
   </script>
 </body>
 </html>
+
 
 
 
