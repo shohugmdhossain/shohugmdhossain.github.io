@@ -26,6 +26,7 @@
       --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
       --text:#222; --muted:#555; --line:#ddd; --max:1000px;
     }
+
     body {margin:0;background:var(--bg);color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.75;}
 
@@ -34,13 +35,11 @@
     .wrap {max-width:var(--max);margin:0 auto;padding:0 20px;}
 
     /* ===== NAVBAR ===== */
-    .site-header {
-      position:fixed;top:0;left:0;right:0;background:var(--accent);
+    .site-header {position:fixed;top:0;left:0;right:0;background:var(--accent);
       color:#fff;z-index:1000;box-shadow:0 3px 10px rgba(0,0,0,.1);
-      height:72px;display:flex;justify-content:center;align-items:center;
-    }
-    .nav-bar {width:100%;max-width:var(--max);
-      display:flex;align-items:center;justify-content:space-between;padding:0 20px;}
+      height:72px;display:flex;justify-content:center;align-items:center;}
+    .nav-bar {width:100%;max-width:var(--max);display:flex;align-items:center;
+      justify-content:space-between;padding:0 20px;}
     .brand {font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;}
     .brand a{color:#fff;text-decoration:none;}
     .nav-right{display:flex;align-items:center;gap:24px;}
@@ -65,29 +64,36 @@
     .publications-section{margin:115px auto 80px;}
     .publications-section h1{color:var(--accent);font-size:30px;margin-bottom:10px;}
     .intro{color:var(--muted);margin-bottom:45px;font-size:16px;text-align:justify;}
+    .sub-intro{font-size:15px;color:var(--muted);margin-top:-25px;margin-bottom:40px;text-align:justify;}
 
-    .pub-category{color:var(--accent);font-size:26px;margin-top:60px;margin-bottom:20px;
-      font-weight:600;border-bottom:2px solid var(--line);padding-bottom:6px;}
-    .pub-grid{display:flex;flex-direction:column;gap:30px;}
-    .pub-card{
-      background:#fff;border:1px solid var(--line);border-radius:12px;padding:25px 30px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:.25s ease;
-    }
+    .pub-category{color:var(--accent);font-size:26px;margin-top:60px;margin-bottom:18px;font-weight:600;}
+    .pub-grid{display:flex;flex-direction:column;gap:28px;}
+    .pub-card{background:#fff;border:1px solid var(--line);border-radius:12px;
+      padding:25px 30px;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:.25s ease;}
     .pub-card:hover{box-shadow:0 4px 14px rgba(0,0,0,0.09);}
-    .pub-title{font-weight:600;font-size:18px;color:var(--accent);}
+    .pub-title a{font-weight:600;font-size:18px;color:var(--accent);}
     .pub-meta{font-size:14px;color:#777;margin:6px 0 10px;}
     .pub-details{font-size:15px;line-height:1.6;margin:0;text-align:justify;}
     .pub-tags{margin-top:10px;}
-    .pub-tags span{display:inline-block;background:var(--bg2);color:var(--accent);
-      font-size:13px;padding:4px 10px;border-radius:6px;margin-right:6px;margin-top:4px;}
-    
+    .pub-tags span{display:inline-block;background:#f3f3f3;color:var(--accent);
+      font-size:13px;padding:4px 10px;border-radius:8px;margin-right:6px;margin-top:4px;}
+
+    /* ===== PROFILE ICON CARDS ===== */
+    .profile-grid{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:25px;}
+    .profile-card{background:#fff;border:1px solid var(--line);border-radius:10px;
+      width:180px;text-align:center;padding:18px 10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      transition:.25s;}
+    .profile-card:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    .profile-card i{font-size:28px;color:var(--accent);margin-bottom:8px;}
+    .profile-card a{display:block;color:var(--text);font-size:15px;font-weight:500;}
+
     /* ===== FOOTER ===== */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px;}
     footer.site .wrap{padding:20px;}
     footer.site p{margin:0;font-size:15px;}
     #toTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;
-      border:none;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;
-      display:none;z-index:999;}
+      border:none;border-radius:50%;width:42px;height:42px;font-size:18px;
+      cursor:pointer;display:none;z-index:999;}
     #toTop.show{display:block;}
   </style>
 </head>
@@ -126,22 +132,23 @@
   <main>
     <div class="wrap publications-section">
       <h1>Publications & Research Outputs</h1>
-      <p class="intro">Selected publications and manuscripts exploring GeoAI, remote sensing, and planetary science.</p>
+      <p class="intro">My research contributions explore the intersection of geospatial intelligence, AI, and planetary surface processes. These works aim to advance the automation, interpretation, and reproducibility of geoscientific insights across Earth and Mars.</p>
+      <p class="sub-intro">This collection includes peer-reviewed journal articles, conference papers, and manuscripts under preparation that bridge GeoAI, remote sensing, and planetary geomorphology.</p>
 
       <!-- ===== JOURNAL ARTICLES ===== -->
       <h2 class="pub-category">Peer-Reviewed Journal Articles</h2>
       <div class="pub-grid">
         <div class="pub-card">
-          <div class="pub-title">Automated Mound Detection on Mars Using Deep Learning</div>
+          <div class="pub-title"><a href="#" target="_blank">Automated Mound Detection on Mars Using Deep Learning</a></div>
           <div class="pub-meta">Md Shohug Hossain, ABC · <em>Planetary Science Journal</em> (Under Review, 2025)</div>
-          <p class="pub-details">Introduces a GeoAI framework leveraging Faster R-CNN for large-scale detection of mound-like geomorphologies across Martian CTX imagery, evaluated through precision–recall benchmarking and multi-resolution validation.</p>
+          <p class="pub-details">Introduces a GeoAI framework leveraging Faster R-CNN for large-scale detection of mound-like geomorphologies across Martian CTX imagery, benchmarked using precision–recall evaluation and multi-resolution validation.</p>
           <div class="pub-tags"><span>Deep Learning</span><span>Planetary Geomorphology</span><span>Detectron2</span></div>
         </div>
 
         <div class="pub-card">
-          <div class="pub-title">Spectral Unmixing of CRISM Imagery Using Autoencoder Networks</div>
+          <div class="pub-title"><a href="#" target="_blank">Spectral Unmixing of CRISM Imagery Using Autoencoder Networks</a></div>
           <div class="pub-meta">Md Shohug Hossain, ABC · <em>Remote Sensing of Environment</em> (In Preparation, 2025)</div>
-          <p class="pub-details">Proposes a nonlinear deep unmixing model for CRISM hyperspectral imagery to identify mineralogical components and infer aqueous alteration histories across Martian terrains.</p>
+          <p class="pub-details">Proposes a nonlinear deep unmixing framework for CRISM hyperspectral imagery to identify mineralogical variations and infer aqueous alteration histories across Martian terrains.</p>
           <div class="pub-tags"><span>Hyperspectral</span><span>CRISM</span><span>Autoencoder</span></div>
         </div>
       </div>
@@ -150,16 +157,16 @@
       <h2 class="pub-category">Conference Presentations</h2>
       <div class="pub-grid">
         <div class="pub-card">
-          <div class="pub-title">Mars Surface Feature Detection Using Faster R-CNN</div>
+          <div class="pub-title"><a href="#" target="_blank">Mars Surface Feature Detection Using Faster R-CNN</a></div>
           <div class="pub-meta">Presented at AGU Fall Meeting · San Francisco, USA · 2025</div>
-          <p class="pub-details">Presented a machine-learning pipeline for planetary geomorphological feature detection and discussed transfer-learning challenges with limited annotated imagery.</p>
+          <p class="pub-details">Presented a machine-learning pipeline for planetary geomorphological feature detection, highlighting transfer-learning strategies and dataset-size constraints for planetary imagery.</p>
           <div class="pub-tags"><span>AGU</span><span>Planetary Science</span><span>GeoAI</span></div>
         </div>
 
         <div class="pub-card">
-          <div class="pub-title">Urban Accessibility Mapping with Vision Models</div>
+          <div class="pub-title"><a href="#" target="_blank">Urban Accessibility Mapping with Vision Models</a></div>
           <div class="pub-meta">IEEE IGARSS · Kuala Lumpur, Malaysia · 2024</div>
-          <p class="pub-details">Introduced an object-detection workflow to classify and map sidewalk features using YOLOv8 and Faster R-CNN, demonstrating potential applications in inclusive urban design analytics.</p>
+          <p class="pub-details">Introduced an object-detection workflow to classify and map sidewalk features using YOLOv8 and Faster R-CNN, demonstrating applications for inclusive urban design assessment.</p>
           <div class="pub-tags"><span>YOLOv8</span><span>Computer Vision</span><span>Urban Analytics</span></div>
         </div>
       </div>
@@ -168,22 +175,27 @@
       <h2 class="pub-category">Manuscripts in Preparation</h2>
       <div class="pub-grid">
         <div class="pub-card">
-          <div class="pub-title">Benchmark Dataset for Martian Mound Morphology</div>
+          <div class="pub-title"><a href="#" target="_blank">Benchmark Dataset for Martian Mound Morphology</a></div>
           <div class="pub-meta">Planned Submission: <em>Planetary and Space Science</em> · 2026</div>
-          <p class="pub-details">Developing an open-source COCO-formatted benchmark dataset of mound-like structures in Martian CTX images to support reproducible planetary GeoAI research and cross-validation efforts.</p>
+          <p class="pub-details">Developing an open-source COCO-formatted benchmark dataset of Martian mound-like structures for reproducible planetary GeoAI research and cross-validation experiments.</p>
           <div class="pub-tags"><span>Dataset</span><span>COCO</span><span>Planetary AI</span></div>
         </div>
       </div>
 
       <!-- ===== PROFILES ===== -->
       <h2 class="pub-category">Profiles & Citations</h2>
-      <div class="pub-grid">
-        <div class="pub-card">
-          <p class="pub-details">
-            <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a> &nbsp;·&nbsp;
-            <a href="https://orcid.org" target="_blank"><i class="fa-solid fa-id-card"></i> ORCID</a> &nbsp;·&nbsp;
-            <a href="https://www.researchgate.net" target="_blank"><i class="fa-solid fa-flask"></i> ResearchGate</a>
-          </p>
+      <div class="profile-grid">
+        <div class="profile-card">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+        </div>
+        <div class="profile-card">
+          <i class="fa-solid fa-id-card"></i>
+          <a href="https://orcid.org" target="_blank">ORCID</a>
+        </div>
+        <div class="profile-card">
+          <i class="fa-solid fa-flask"></i>
+          <a href="https://www.researchgate.net" target="_blank">ResearchGate</a>
         </div>
       </div>
     </div>
@@ -213,6 +225,7 @@
   </script>
 </body>
 </html>
+
 
 
 
