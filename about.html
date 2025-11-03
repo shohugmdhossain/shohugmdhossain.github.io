@@ -19,11 +19,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root{
+    :root {
       --accent:#b1040e;--bg:#fff;--bg2:#f9f9f9;
-      --text:#222;--muted:#555;--line:#ddd;--max:1000px;
+      --text:#222;--muted:#555;--line:#ddd;--max:1100px;
     }
-    body{margin:0;background:var(--bg);color:var(--text);
+    body {margin:0;background:var(--bg);color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.75;overflow-x:hidden}
     a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
@@ -57,29 +57,39 @@
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
       border:none;background:none;cursor:pointer}
 
-    /* ===== TWO-COLUMN LAYOUT ===== */
+    /* ===== TWO COLUMN LAYOUT ===== */
     .about-section{margin:115px auto 80px;
-      display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px}
+      display:grid;grid-template-columns:0.9fr 1.2fr;gap:40px}
     @media(max-width:900px){.about-section{grid-template-columns:1fr;gap:30px}}
 
-    /* LEFT COLUMN (content) */
-    .left-column .card{background:var(--bg2);border:1px solid var(--line);
-      border-radius:12px;padding:22px;margin-bottom:24px;
-      box-shadow:0 2px 6px rgba(0,0,0,.05)}
-    .left-column .card h2{color:var(--accent);font-size:18px;margin:0 0 10px}
-    .left-column .card ul{list-style:none;padding:0;margin:0}
-    .left-column .card ul li{color:var(--muted);font-size:15px;line-height:1.7;text-align:justify;margin-bottom:8px;border-top:1px solid var(--line);padding-top:8px}
-    .left-column .card ul li:first-child{border-top:none;padding-top:0}
-    .left-column .card p{color:var(--muted);font-size:15px;line-height:1.8;text-align:justify;margin:0}
+    /* LEFT COLUMN */
+    .left-column{text-align:center}
+    .left-column img{width:320px;height:320px;object-fit:cover;
+      border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.15);
+      transition:.4s;margin-bottom:18px}
+    .left-column img:hover{transform:scale(1.03)}
 
-    /* RIGHT COLUMN (photo + about + education) */
-    .profile-photo{width:100%;max-width:300px;border-radius:14px;object-fit:cover;
-      box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.4s;margin-bottom:24px}
-    .profile-photo:hover{transform:scale(1.03)}
-    .right-column h1{color:var(--accent);font-size:28px;margin-bottom:10px;text-align:left}
+    .socials{display:flex;justify-content:center;gap:16px;margin-bottom:22px}
+    .socials a{font-size:22px;transition:.3s}
+    .socials a:hover{transform:translateY(-2px);opacity:.9}
+    .fa-graduation-cap{color:#4285F4}.fa-github{color:#333}
+    .fa-linkedin{color:#0A66C2}.fa-x-twitter{color:#000}.fa-envelope{color:#b1040e}
+
+    .card{background:var(--bg2);border:1px solid var(--line);
+      border-radius:12px;padding:20px;text-align:left;margin-bottom:24px;
+      box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    .card h2{color:var(--accent);font-size:18px;margin:0 0 10px}
+    .card ul{list-style:none;padding:0;margin:0}
+    .card ul li{color:var(--muted);font-size:15px;line-height:1.7;text-align:left;margin-bottom:6px}
+    .card ul li i{color:var(--accent);margin-right:8px}
+    .card p{color:var(--muted);font-size:15px;line-height:1.8;text-align:justify;margin:0}
+
+    /* RIGHT COLUMN */
+    .right-column h1{color:var(--accent);font-size:28px;margin-bottom:14px;text-align:left}
     .subline{color:var(--muted);font-size:15px;margin-bottom:20px;font-style:italic}
     .right-column p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:18px}
-    .education .entry{margin-bottom:16px}
+
+    .education .entry{margin-bottom:18px}
     .education .entry img{vertical-align:middle;margin-right:8px;height:26px;width:auto}
     .education .entry strong{color:var(--accent)}
     .education .entry p{margin:4px 0 0 34px;font-size:15px;color:var(--muted);line-height:1.7}
@@ -127,63 +137,76 @@
   <div class="wrap about-section">
     <!-- LEFT COLUMN -->
     <div class="left-column">
+      <img src="profile.jpg" alt="Md Shohug Hossain">
+      <div class="socials">
+        <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
+
       <div class="card">
-        <h2>Research Interests</h2>
+        <h2><i class="fa-solid fa-gear"></i> Technical Skills</h2>
         <ul>
-          <li>Planetary geomorphology and surface-process modeling</li>
-          <li>Deep learning for planetary and terrestrial feature detection</li>
-          <li>Multisensor integration of radar, optical, and hyperspectral data</li>
-          <li>GeoAI for environmental monitoring and climate resilience</li>
+          <li><i class="fab fa-python"></i> Python, PyTorch, Detectron2, YOLOv8</li>
+          <li><i class="fa-solid fa-satellite"></i> ArcGIS, QGIS, Google Earth Engine</li>
+          <li><i class="fa-solid fa-database"></i> SQL, PostGIS, Data Engineering</li>
+          <li><i class="fa-solid fa-chart-line"></i> NumPy, Pandas, Matplotlib</li>
+          <li><i class="fa-solid fa-server"></i> HPC, Linux, Slurm</li>
+          <li><i class="fa-solid fa-code"></i> Web Dev: HTML, CSS, JS</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>Technical Skills</h2>
-        <ul>
-          <li>Programming & AI: Python, PyTorch, Detectron2, YOLOv8, Scikit-learn</li>
-          <li>Geospatial Tools: ArcGIS, QGIS, Google Earth Engine, PostGIS</li>
-          <li>Data & Visualization: NumPy, Pandas, Matplotlib, Seaborn</li>
-          <li>Remote Sensing: CRISM, Sentinel, Landsat, multispectral & hyperspectral analysis</li>
-          <li>Systems: Linux, Slurm, HPC environments</li>
-          <li>Web Development: HTML, CSS, JavaScript</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Beyond Research</h2>
+        <h2><i class="fa-solid fa-lightbulb"></i> Beyond Research</h2>
         <p>
-          Outside research, I am passionate about leadership and academic communication.
-          At the University of Calgary, I served as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, promoting collaboration and mentorship. I enjoy designing academic websites, scientific visualization, and projects that connect technology with storytelling.
+          I’m deeply involved in academic leadership, mentoring, and creative communication.
+          As President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium at the University of Calgary,
+          I fostered graduate collaboration and research community building.  
+          I also enjoy designing academic websites and creating visual data stories that merge technology and design.
         </p>
       </div>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right-column">
-      <img src="profile.jpg" alt="Md Shohug Hossain" class="profile-photo">
       <h1>About Me</h1>
       <p><strong>Md Shohug Hossain</strong> is a Ph.D. Researcher specializing in GeoAI, remote sensing, and planetary science.</p>
       <p class="subline">Ph.D. Researcher, Department of Earth and Energy Sciences · University of Louisiana at Lafayette, USA</p>
       <p>
-        My work bridges machine learning with Earth and planetary data analysis to understand geomorphic and environmental processes on Earth and Mars. I focus on developing reproducible and interpretable GeoAI frameworks for landform classification, surface mapping, and climate-related applications.
+        My work bridges artificial intelligence with Earth and planetary data analysis to decode geomorphic and environmental processes.
+        I build deep-learning frameworks for automatic terrain analysis and landform mapping using satellite imagery of Earth and Mars.
+        My aim is to develop reproducible GeoAI workflows that contribute to planetary exploration, climate studies, and sustainable Earth observation.
       </p>
 
       <div class="education">
+        <h2 style="color:var(--accent);font-size:18px;">Academic Journey</h2>
         <div class="entry">
-          <img src="ul.png" alt="University of Louisiana at Lafayette">
+          <img src="ul.png" alt="UL Lafayette">
           <strong>Ph.D. in Earth & Energy Sciences</strong><br>
-          <p>University of Louisiana at Lafayette · Focus: Planetary Geomorphology & GeoAI</p>
+          <p>University of Louisiana at Lafayette · Focus: Planetary GeoAI & Remote Sensing</p>
         </div>
         <div class="entry">
           <img src="ucalgary.png" alt="University of Calgary">
           <strong>M.Sc. in Electrical & Computer Engineering</strong><br>
-          <p>University of Calgary · Focus: Intelligent Automation and Geospatial Analytics</p>
+          <p>University of Calgary · Focus: Intelligent Automation & Geospatial Analytics</p>
         </div>
         <div class="entry">
           <img src="nsu.png" alt="North South University">
           <strong>B.Sc. in Computer Science & Engineering</strong><br>
-          <p>North South University · Focus: Software Systems and Data Science Foundations</p>
+          <p>North South University · Focus: Software Systems & Data Science</p>
         </div>
+      </div>
+
+      <div class="card" style="margin-top:28px;">
+        <h2><i class="fa-solid fa-microscope"></i> Research Interests</h2>
+        <ul>
+          <li>Planetary geomorphology and surface-process modeling</li>
+          <li>AI for planetary and terrestrial landform detection</li>
+          <li>Remote sensing data fusion across radar, optical, and hyperspectral sensors</li>
+          <li>Physics-informed and interpretable GeoAI for Earth and Mars</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -212,6 +235,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 </body>
 </html>
+
 
 
 
