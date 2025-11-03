@@ -4,11 +4,13 @@
   <title>Experience — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional and research experience of Md Shohug Hossain — GeoAI, Remote Sensing, Planetary Science, and Data Systems.">
+  <meta name="description" content="Professional experience of Md Shohug Hossain — GeoAI, Remote Sensing, Planetary Science, and Data Systems.">
   <meta name="author" content="Md Shohug Hossain">
   <link rel="canonical" href="https://shohugmdhossain.github.io/experience.html">
   <meta name="theme-color" content="#b1040e">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -28,9 +30,12 @@
     a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
     .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
+
+    /* ===== NAVBAR ===== */
     .site-header {
-      position:fixed; top:0; left:0; right:0; background:var(--accent);
-      color:#fff; box-shadow:0 3px 10px rgba(0,0,0,.1); z-index:1000;
+      position:fixed; top:0; left:0; right:0;
+      background:var(--accent); color:#fff;
+      box-shadow:0 3px 10px rgba(0,0,0,.1); z-index:1000;
     }
     .nav-bar { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
     .brand { font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; }
@@ -46,6 +51,7 @@
     .search-box input:focus { outline:none; width:220px; }
     .menu-toggle { background:none; border:none; color:#fff; font-size:24px; cursor:pointer; }
 
+    /* ===== OVERLAY MENU ===== */
     .dropdown-nav {
       position:fixed; top:0; left:0; right:0; bottom:0;
       background:rgba(177,4,14,.8); backdrop-filter:blur(10px);
@@ -56,14 +62,17 @@
     .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
     .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
 
-    main { margin-top:100px; }
+    /* ===== PAGE STRUCTURE ===== */
+    main { margin-top:120px; }
     h1,h2,h3 { font-family:"Libre Baskerville",serif; color:var(--accent); }
-    h1 { font-size:30px; margin-bottom:8px; }
-    h2 { font-size:22px; margin:50px 0 8px; }
-    h3 { font-size:18px; margin-bottom:6px; }
+    h1 { font-size:30px; margin-bottom:12px; }
+    h2 { font-size:22px; margin:45px 0 10px; }
+    h3 { font-size:18px; margin-bottom:8px; color:var(--text); font-weight:600; }
     p, li { font-size:16px; text-align:justify; color:var(--text); }
-    ul { margin:0 0 10px 20px; }
+    ul { margin:0 0 14px 0; padding-left:20px; }
+    li { margin-bottom:6px; }
     .section { margin-bottom:50px; }
+    hr { border:0; border-top:1px solid var(--line); margin:26px 0; }
 
     footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:60px; }
     footer.site .wrap { padding:20px; }
@@ -72,12 +81,12 @@
       border:none; border-radius:50%; width:42px; height:42px; font-size:18px;
       cursor:pointer; display:none; z-index:999; }
     #toTop.show { display:block; }
-    @media(max-width:900px){ .nav-links{display:none;} main{margin-top:110px;} }
+    @media(max-width:900px){ .nav-links{display:none;} main{margin-top:130px;} }
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- ===== NAVBAR ===== -->
   <header class="site-header">
     <div class="wrap nav-bar">
       <div class="brand"><a href="index.html">M S Hossain</a></div>
@@ -101,7 +110,7 @@
     </div>
   </header>
 
-  <!-- OVERLAY MENU -->
+  <!-- ===== OVERLAY MENU ===== -->
   <div class="dropdown-nav" id="overlayMenu">
     <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
     <a href="about.html">About</a>
@@ -112,36 +121,39 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- MAIN -->
+  <!-- ===== MAIN ===== -->
   <main class="wrap">
-    <h1>Professional Experience</h1>
-    <p>My professional trajectory integrates GeoAI, remote sensing, and computational geoscience with data engineering and academic leadership. I specialize in AI-driven planetary analysis, geospatial data systems, and automation for Earth and planetary observations.</p>
+    <div class="page-intro">
+      <h1>Professional Experience</h1>
+      <p>My professional trajectory bridges GeoAI, remote sensing, and computational geoscience with data systems and academic leadership. I focus on developing intelligent frameworks for planetary surface analysis, Earth observation, and data-driven environmental research.</p>
+    </div>
 
     <h2>Technical Expertise</h2>
-    <p>Proficient in Python, PyTorch, Detectron2, and machine learning for image analysis; GIS and remote sensing using Google Earth Engine and QGIS; high-performance computing (Slurm/A100); and advanced data engineering with SQL, ETL pipelines, and Snowflake. Skilled in designing reproducible workflows for large-scale spatial analytics and scientific computing.</p>
+    <p>Proficient in Python, PyTorch, and Detectron2 for machine learning applications; remote sensing and GIS (Google Earth Engine, QGIS, ArcGIS); high-performance computing (Slurm, A100 GPUs); and data engineering workflows (SQL, ETL, Snowflake). Experienced in designing reproducible pipelines for geospatial analytics and scientific computing.</p>
 
     <div class="section">
       <h2>Research Positions</h2>
       <h3>Research Assistant — University of Louisiana at Lafayette (2025–Present)</h3>
       <ul>
-        <li>Develops GeoAI models for planetary geomorphology and Mars mound detection using Faster/Mask R-CNN within the Detectron2 framework.</li>
-        <li>Implements automated COCO dataset registration and evaluation pipelines for high-resolution orbital imagery.</li>
-        <li>Runs large-scale training and validation on A100 GPUs (LONI HPC), achieving reproducible model benchmarking and improved detection accuracy.</li>
-        <li>Leads data curation and error analysis for performance optimization using confusion matrices and precision-recall diagnostics.</li>
+        <li>Developing GeoAI models for planetary geomorphology, automating Mars mound detection with Faster/Mask R-CNN frameworks in Detectron2.</li>
+        <li>Managing large-scale COCO datasets, implementing evaluation pipelines, and optimizing training across multi-GPU environments.</li>
+        <li>Performing validation analysis and statistical evaluation for model interpretability and scientific reporting.</li>
       </ul>
+      <hr>
 
       <h3>Research Assistant — SPARRSO (2020–2021)</h3>
       <ul>
-        <li>Conducted wetland and climate resilience mapping using multispectral Landsat and Sentinel datasets.</li>
-        <li>Built U-Net segmentation models for land-use change detection and hydro-ecological analysis.</li>
-        <li>Produced temporal change maps for regional planning and national climate reports.</li>
+        <li>Executed wetland mapping and climate-resilience assessment using multispectral Landsat and Sentinel imagery.</li>
+        <li>Applied U-Net architectures for land-cover segmentation and temporal change detection.</li>
+        <li>Contributed spatial analytics supporting environmental monitoring and national adaptation studies.</li>
       </ul>
+      <hr>
 
       <h3>Research Assistant — North South University (2019–2020)</h3>
       <ul>
-        <li>Designed behavioral analytics models for an implicit recommender system based on user-interaction data.</li>
-        <li>Applied collaborative filtering and matrix factorization to predict user preferences with adaptive learning methods.</li>
-        <li>Co-authored internal technical documentation and presented research findings to faculty panels.</li>
+        <li>Developed machine-learning recommender systems using implicit behavioral data and interaction patterns.</li>
+        <li>Implemented collaborative filtering and matrix-factorization techniques to improve prediction accuracy.</li>
+        <li>Presented results to faculty review boards and contributed to prototype deployment discussions.</li>
       </ul>
     </div>
 
@@ -149,9 +161,9 @@
       <h2>Industry Experience</h2>
       <h3>Data Engineer — TELUS (2023–2024)</h3>
       <ul>
-        <li>Automated ETL data pipelines and integrated Python APIs with Snowflake and Power BI for analytical reporting.</li>
-        <li>Implemented validation scripts and data quality assurance metrics, reducing manual checks by 30%.</li>
-        <li>Optimized database queries and pipeline scheduling to enhance reliability and performance.</li>
+        <li>Automated ETL pipelines integrating Python, SQL, and Snowflake, improving reliability of large-scale analytical workflows.</li>
+        <li>Built validation and monitoring systems that reduced manual data verification time by over 30%.</li>
+        <li>Developed data quality dashboards and reporting pipelines in Power BI for performance visualization.</li>
       </ul>
     </div>
 
@@ -159,9 +171,9 @@
       <h2>Teaching Experience</h2>
       <h3>Graduate Teaching Assistant — University of Calgary (2021–2023)</h3>
       <ul>
-        <li>Delivered lab instruction and grading automation for Python programming and Agent-Based Software Engineering courses.</li>
-        <li>Mentored 100+ graduate and undergraduate students in simulation design, coding best practices, and software documentation.</li>
-        <li>Assisted course redesign to improve code reproducibility and interactive learning environments.</li>
+        <li>Assisted in Python and Agent-Based Software Engineering courses, leading lab sessions and automating grading scripts.</li>
+        <li>Provided mentorship to over 100 students in scientific computing and research-based programming.</li>
+        <li>Supported course development with structured assignments, reproducible templates, and teaching documentation.</li>
       </ul>
     </div>
 
@@ -169,24 +181,27 @@
       <h2>Leadership & Service</h2>
       <h3>President — ECE Graduate Group, University of Calgary</h3>
       <ul>
-        <li>Led academic initiatives connecting interdisciplinary graduate researchers across engineering fields.</li>
-        <li>Organized technical seminars and mentorship programs fostering collaboration and leadership development.</li>
+        <li>Directed graduate engagement initiatives, fostering research collaboration and academic networking among interdisciplinary cohorts.</li>
+        <li>Organized technical workshops, panel discussions, and peer mentorship programs.</li>
       </ul>
+      <hr>
 
       <h3>Vice President — Schulich Graduate Engineering Consortium & BSA</h3>
       <ul>
-        <li>Directed multicultural engagement activities promoting inclusion and student networking.</li>
-        <li>Coordinated research showcases and outreach events strengthening academic community engagement.</li>
+        <li>Facilitated inclusive academic events promoting diversity and global collaboration within graduate engineering communities.</li>
+        <li>Coordinated seminars, outreach, and professional development activities.</li>
       </ul>
+      <hr>
 
       <h3>Executive Member — NSU Computer Engineering Club</h3>
       <ul>
-        <li>Coordinated hackathons, coding challenges, and research exhibitions for undergraduate innovation.</li>
-        <li>Established partnerships with local tech communities to enhance technical learning opportunities.</li>
+        <li>Organized hackathons, coding challenges, and research showcases for student innovation.</li>
+        <li>Strengthened collaborations between academia and technology partners to expand applied learning opportunities.</li>
       </ul>
     </div>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
@@ -213,6 +228,7 @@
   </script>
 </body>
 </html>
+
 
 
 
