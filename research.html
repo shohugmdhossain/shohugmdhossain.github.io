@@ -4,17 +4,16 @@
   <title>Research — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research by Md Shohug Hossain — GeoAI, remote sensing, and planetary surface analysis across Earth and Mars.">
+  <meta name="description" content="Research by Md Shohug Hossain — GeoAI, remote sensing, and planetary science across Earth and Mars.">
   <meta name="keywords" content="GeoAI, Remote Sensing, Planetary Science, Mars, Earth Observation, Machine Learning, Shohug Hossain">
   <meta name="author" content="Md Shohug Hossain">
   <link rel="canonical" href="https://shohugmdhossain.github.io/research.html">
   <meta name="theme-color" content="#b1040e">
   <meta property="og:title" content="Research — M S Hossain">
-  <meta property="og:description" content="Research in GeoAI, remote sensing, and planetary surface analysis across Earth and Mars.">
+  <meta property="og:description" content="GeoAI, planetary geomorphology, and Earth observation research by Md Shohug Hossain.">
   <meta property="og:image" content="https://shohugmdhossain.github.io/profile.jpg">
   <meta property="og:url" content="https://shohugmdhossain.github.io/research.html">
   <meta name="twitter:card" content="summary_large_image">
-
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,60 +21,134 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root { --accent:#b1040e; --bg:#fff; --text:#222; --muted:#555; --line:#ddd; --max:1000px; }
-    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.75; overflow-x:hidden; }
+    :root {
+      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
+      --text:#222; --muted:#555; --line:#ddd; --max:1000px;
+    }
+
+    body {
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.75; overflow-x:hidden;
+    }
+
     a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
     .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
 
     /* ===== NAVBAR ===== */
-    .site-header { position:fixed; top:0; left:0; right:0; background:var(--accent); color:#fff; z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,.1); height:72px; display:flex; justify-content:center; align-items:center; }
-    .nav-bar { width:100%; max-width:var(--max); display:flex; align-items:center; justify-content:space-between; padding:0 20px; }
+    .site-header {
+      position:fixed; top:0; left:0; right:0; background:var(--accent); color:#fff;
+      z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,.1);
+      height:72px; display:flex; justify-content:center; align-items:center;
+    }
+    .nav-bar {
+      width:100%; max-width:var(--max); display:flex;
+      align-items:center; justify-content:space-between; padding:0 20px;
+    }
     .brand { font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; }
     .brand a { color:#fff; text-decoration:none; }
     .nav-right { display:flex; align-items:center; gap:24px; }
     .nav-links { display:flex; align-items:center; gap:26px; }
     .nav-links a { color:#fff; font-size:16px; padding:6px 0 4px; }
     .nav-links a:hover, .nav-links a.active { text-decoration:underline; opacity:.9; }
-    .menu-toggle { background:none; border:none; color:#fff; font-size:26px; cursor:pointer; display:flex; align-items:center; justify-content:center; width:36px; height:36px; }
+    .menu-toggle {
+      background:none; border:none; color:#fff; font-size:26px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center; width:36px; height:36px;
+    }
     .menu-toggle:hover { transform:scale(1.06); }
     @media(max-width:980px){ .nav-links{display:none;} }
 
     /* ===== OVERLAY MENU ===== */
-    .dropdown-nav { position:fixed; inset:0; background:rgba(177,4,14,.75); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s; }
+    .dropdown-nav {
+      position:fixed; inset:0; background:rgba(177,4,14,.75);
+      backdrop-filter:blur(10px); display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:24px;
+      z-index:9999; opacity:0; visibility:hidden; transition:.3s;
+    }
     .dropdown-nav.active { opacity:1; visibility:visible; }
     .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
-    .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
+    .dropdown-close {
+      position:absolute; top:20px; right:28px; color:#fff; font-size:26px;
+      border:none; background:none; cursor:pointer;
+    }
 
-    /* ===== RESEARCH ===== */
+    /* ===== RESEARCH SECTION ===== */
     .research-section { margin:115px auto 80px; }
-    .research-section h1 { color:var(--accent); font-size:30px; text-align:left; margin-bottom:12px; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
-    .research-intro { color:var(--muted); font-size:16px; margin-bottom:40px; text-align:justify; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
+    .research-section h1 { color:var(--accent); font-size:30px; margin-bottom:8px; }
+    .research-tagline {
+      color:var(--muted); font-size:16px; margin-bottom:40px;
+      text-align:justify; max-width:850px;
+    }
 
-    .research-category { color:var(--accent); font-size:26px; margin-top:60px; margin-bottom:18px; font-weight:600; display:flex; align-items:center; gap:10px; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
-    .research-category i { font-size:22px; color:var(--accent); }
+    /* ===== HEADINGS ===== */
+    .section-title {
+      text-align:center; color:var(--accent); font-size:26px;
+      margin-top:60px; margin-bottom:24px; font-weight:600;
+      position:relative; display:inline-block;
+    }
+    .section-title::after {
+      content:''; display:block; width:60px; height:3px;
+      background:var(--accent); margin:10px auto 0; border-radius:2px;
+    }
 
-    .research-grid { display:flex; flex-direction:column; gap:28px; }
-    .research-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:25px 30px; box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:.4s; opacity:0; transform:translateY(30px); }
+    /* ===== GRID BOXES ===== */
+    .grid-boxes {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:22px; margin-top:20px;
+    }
+    .grid-card {
+      background:var(--bg2); border:1px solid var(--line);
+      border-radius:12px; padding:24px; text-align:center;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+      transition:.3s; opacity:0; transform:translateY(20px);
+    }
+    .grid-card:hover {
+      box-shadow:0 4px 12px rgba(177,4,14,0.25);
+      transform:translateY(-4px);
+    }
+    .grid-card i { font-size:26px; color:var(--accent); margin-bottom:12px; }
+    .grid-card h3 { color:var(--accent); font-size:17px; margin-bottom:10px; }
+    .grid-card p { color:var(--muted); font-size:14px; line-height:1.65; margin:0; }
+
+    /* ===== PROJECT CARDS ===== */
+    .research-grid { display:flex; flex-direction:column; gap:28px; margin-top:25px; }
+    .research-card {
+      background:#fff; border:1px solid var(--line); border-radius:12px;
+      padding:28px 30px; box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      transition:.4s; opacity:0; transform:translateY(30px);
+    }
     .research-card:hover { box-shadow:0 4px 14px rgba(0,0,0,0.09); }
-    .research-card.show, .research-category.show, .research-section h1.show, .research-intro.show { opacity:1; transform:translateY(0); }
-
-    .research-title { font-weight:600; font-size:18px; color:var(--accent); display:flex; align-items:center; gap:8px; }
+    .research-title {
+      font-weight:600; font-size:18px; color:var(--accent);
+      display:flex; align-items:center; gap:8px;
+    }
     .research-meta { font-size:14px; color:#777; margin:6px 0 12px; }
-    .research-details { font-size:15px; line-height:1.6; margin:0 0 8px; text-align:justify; }
+    .research-details { font-size:15px; line-height:1.65; text-align:justify; }
     .research-bullets { margin:10px 0 0 0; padding-left:18px; }
     .research-bullets li { margin:8px 0; text-align:justify; }
     .research-bullets li::marker { color:var(--accent); }
 
     .research-tags { margin-top:12px; }
-    .research-tags span { display:inline-block; background:#f3f3f3; color:#000; font-size:13px; padding:4px 10px; border-radius:8px; margin-right:6px; margin-top:4px; transition:all .25s; }
+    .research-tags span {
+      display:inline-block; background:#f3f3f3; color:#000;
+      font-size:13px; padding:4px 10px; border-radius:8px;
+      margin-right:6px; margin-top:4px; transition:all .25s;
+    }
     .research-tags span:hover { background:var(--accent); color:#fff; transform:translateY(-1px); }
 
     footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:70px; }
     footer.site .wrap { padding:20px; }
     footer.site p { margin:0; font-size:15px; }
-    #toTop { position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff; border:none; border-radius:50%; width:42px; height:42px; font-size:18px; cursor:pointer; display:none; z-index:999; }
+    #toTop {
+      position:fixed; bottom:20px; right:20px; background:var(--accent);
+      color:#fff; border:none; border-radius:50%; width:42px; height:42px;
+      font-size:18px; cursor:pointer; display:none; z-index:999;
+    }
     #toTop.show { display:block; }
+
+    /* ===== ANIMATION ===== */
+    .show { opacity:1 !important; transform:translateY(0) !important; transition:.6s; }
   </style>
 </head>
 
@@ -113,79 +186,80 @@
   <main>
     <div class="wrap research-section">
       <h1>Research</h1>
-      <p class="research-intro">
-        My research explores the intersection of artificial intelligence, remote sensing, and planetary science. 
-        I design deep-learning frameworks and geospatial analytics for understanding geomorphic and environmental processes across Earth and Mars.
-      </p>
+      <p class="research-tagline">Exploring planetary geomorphology and Earth observation through GeoAI, remote sensing, and high-performance data analytics.</p>
 
       <!-- ===== RESEARCH THEMES ===== -->
-      <h2 class="research-category"><i class="fa-solid fa-globe"></i> Research Themes</h2>
-      <div class="research-grid">
-        <div class="research-card">
-          <ul class="research-bullets">
-            <li>Planetary geomorphology and landscape evolution through high-resolution orbital data.</li>
-            <li>Deep learning for terrain classification, feature detection, and surface reconstruction.</li>
-            <li>Physics-aware and trustworthy AI for Earth observation and planetary analytics.</li>
-            <li>Integration of multi-sensor data (optical, radar, hyperspectral) for geospatial modeling.</li>
-          </ul>
-          <div class="research-tags"><span>GeoAI</span><span>Planetary Science</span><span>Remote Sensing</span><span>Machine Learning</span></div>
-        </div>
+      <h2 class="section-title"><i class="fa-solid fa-globe"></i> Research Themes</h2>
+      <div class="grid-boxes">
+        <div class="grid-card"><i class="fa-solid fa-mountain"></i><h3>Planetary Geomorphology</h3><p>Study of Martian surface evolution, crater degradation, and mound morphodynamics using orbital data and AI-based terrain analysis.</p></div>
+        <div class="grid-card"><i class="fa-solid fa-brain"></i><h3>GeoAI & Deep Learning</h3><p>Designing neural frameworks for automated landform detection, classification, and semantic segmentation across planetary imagery.</p></div>
+        <div class="grid-card"><i class="fa-solid fa-satellite"></i><h3>Remote Sensing Integration</h3><p>Combining radar, optical, and hyperspectral datasets to understand geological processes on Earth and other planetary bodies.</p></div>
+        <div class="grid-card"><i class="fa-solid fa-gear"></i><h3>Physics-Informed Modeling</h3><p>Developing interpretable AI models grounded in geophysical constraints to enhance scientific trust and reproducibility.</p></div>
       </div>
 
-      <!-- ===== SELECTED PROJECTS ===== -->
-      <h2 class="research-category"><i class="fa-solid fa-brain"></i> Selected Projects</h2>
+      <!-- ===== PRESENT PROJECTS ===== -->
+      <h2 class="section-title"><i class="fa-solid fa-brain"></i> Present Projects</h2>
       <div class="research-grid">
-
         <div class="research-card">
           <div class="research-title"><i class="fa-solid fa-mountain"></i> Automated Mound Detection on Mars</div>
           <div class="research-meta">University of Louisiana at Lafayette · 2025–Present</div>
-          <p class="research-details">Developing GeoAI models to automatically detect and classify mound-like geomorphologies on Mars using high-resolution CTX and HiRISE imagery.</p>
+          <p class="research-details">Developing deep-learning frameworks for detection and classification of mound-like geomorphologies using CTX and HiRISE imagery.</p>
           <ul class="research-bullets">
-            <li>Implemented Faster R-CNN models in Detectron2 with large-scale COCO datasets.</li>
-            <li>Optimized training pipelines using LONI A100 HPC systems for multi-epoch performance evaluation.</li>
-            <li>Enhanced interpretability through visualization, confidence heatmaps, and performance validation across Martian basins.</li>
+            <li>Implemented Faster R-CNN models in Detectron2 on LONI HPC systems for large-scale Mars surface analysis.</li>
+            <li>Generated precision–recall evaluations and interpretability maps for understanding geomorphic classification accuracy.</li>
+            <li>Optimized dataset curation and augmentation to improve detection consistency across regional basins.</li>
           </ul>
           <div class="research-tags"><span>Planetary GeoAI</span><span>Deep Learning</span><span>HPC</span></div>
         </div>
 
         <div class="research-card">
-          <div class="research-title"><i class="fa-solid fa-dna"></i> Spectral Unmixing of CRISM Imagery Using Autoencoder Networks</div>
+          <div class="research-title"><i class="fa-solid fa-dna"></i> Spectral Unmixing of CRISM Imagery Using Autoencoders</div>
           <div class="research-meta">Independent Project · 2025</div>
-          <p class="research-details">Designing nonlinear autoencoder frameworks to separate spectral mixtures in hyperspectral CRISM data for mineral identification and aqueous alteration mapping on Mars.</p>
+          <p class="research-details">Investigating nonlinear spectral unmixing of CRISM hyperspectral imagery for mineralogical mapping and alteration history of Martian terrains.</p>
           <ul class="research-bullets">
-            <li>Applied unsupervised deep learning to extract endmembers and abundance maps from CRISM hyperspectral cubes.</li>
-            <li>Demonstrated improved mineralogical separation compared to linear unmixing methods.</li>
-            <li>Explored integration with terrain context for interpreting alteration pathways and depositional history.</li>
+            <li>Developed autoencoder architectures for endmember identification and abundance mapping.</li>
+            <li>Compared deep-learning outputs with classical linear models for spectral interpretability.</li>
+            <li>Integrated terrain context with spectral outputs for mineralogical inference.</li>
           </ul>
-          <div class="research-tags"><span>Hyperspectral</span><span>CRISM</span><span>Autoencoder</span><span>Mineralogy</span></div>
+          <div class="research-tags"><span>Hyperspectral</span><span>CRISM</span><span>Autoencoder</span></div>
+        </div>
+      </div>
+
+      <!-- ===== PAST PROJECTS ===== -->
+      <h2 class="section-title"><i class="fa-solid fa-archive"></i> Past Projects</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-title"><i class="fa-solid fa-water"></i> Wetland Mapping & Climate Resilience</div>
+          <div class="research-meta">Bangladesh Space Research & Remote Sensing Organization (SPARRSO) · 2020–2021</div>
+          <p class="research-details">Applied remote sensing and GIS for wetland classification and climate resilience studies in coastal Bangladesh.</p>
+          <ul class="research-bullets">
+            <li>Analyzed multi-temporal Sentinel and Landsat imagery for land cover transitions and flood-prone area mapping.</li>
+            <li>Generated GIS datasets supporting climate adaptation and ecosystem management research.</li>
+            <li>Contributed to SPARRSO technical reports recognized for spatial modeling accuracy.</li>
+          </ul>
+          <div class="research-tags"><span>Wetlands</span><span>Climate</span><span>Remote Sensing</span></div>
         </div>
 
         <div class="research-card">
-          <div class="research-title"><i class="fa-solid fa-water"></i> Wetland Mapping & Climate Resilience Modeling</div>
-          <div class="research-meta">Bangladesh Space Research & Remote Sensing Organization (SPARRSO) · 2020–2021</div>
-          <p class="research-details">Applied remote sensing and GIS analytics for wetland classification and climate-resilience assessment in coastal Bangladesh.</p>
+          <div class="research-title"><i class="fa-solid fa-robot"></i> Computer Vision & Software Development</div>
+          <div class="research-meta">North South University · 2019–2020</div>
+          <p class="research-details">Conducted early-stage research on computer vision and intelligent automation in software systems.</p>
           <ul class="research-bullets">
-            <li>Processed multi-temporal satellite data to identify land cover transitions in wetland ecosystems.</li>
-            <li>Analyzed flood dynamics and shoreline vulnerability using geospatial indices and classification models.</li>
-            <li>Delivered data products supporting regional planning and environmental monitoring frameworks.</li>
+            <li>Implemented object detection models and visual analytics tools using Python and Java.</li>
+            <li>Assisted in dataset annotation and evaluation for supervised learning research.</li>
+            <li>Collaborated on student research publications and prototype development.</li>
           </ul>
-          <div class="research-tags"><span>Wetlands</span><span>Climate Resilience</span><span>GIS</span><span>Remote Sensing</span></div>
+          <div class="research-tags"><span>Computer Vision</span><span>Machine Learning</span><span>Software Engineering</span></div>
         </div>
       </div>
 
       <!-- ===== TECHNICAL FOCUS ===== -->
-      <h2 class="research-category"><i class="fa-solid fa-gear"></i> Technical Focus & Methods</h2>
-      <div class="research-grid">
-        <div class="research-card">
-          <ul class="research-bullets">
-            <li>Deep learning frameworks (PyTorch, Detectron2, YOLOv8) for spatial feature extraction and classification.</li>
-            <li>Data fusion and spectral analysis using CRISM, Sentinel, and Landsat imagery.</li>
-            <li>High-performance computing (LONI, Slurm) for large-scale model training and evaluation.</li>
-            <li>COCO dataset preparation, labeling automation, and precision–recall benchmarking for model assessment.</li>
-            <li>Python-based geospatial workflows integrating GDAL, Rasterio, and Google Earth Engine.</li>
-          </ul>
-          <div class="research-tags"><span>Deep Learning</span><span>Data Fusion</span><span>HPC</span><span>Earth Observation</span></div>
-        </div>
+      <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical Focus & Methods</h2>
+      <div class="grid-boxes">
+        <div class="grid-card"><i class="fa-solid fa-code"></i><h3>Deep Learning Frameworks</h3><p>Implementing neural architectures in PyTorch, Detectron2, and YOLOv8 for spatial feature extraction and landform segmentation.</p></div>
+        <div class="grid-card"><i class="fa-solid fa-layer-group"></i><h3>Hyperspectral & Multisensor Fusion</h3><p>Integrating CRISM, Sentinel, and Landsat data for spectral–spatial modeling and environmental monitoring.</p></div>
+        <div class="grid-card"><i class="fa-solid fa-cloud"></i><h3>HPC & Cloud Processing</h3><p>Leveraging GPU-based clusters and parallel pipelines for scalable planetary and Earth data analytics.</p></div>
+        <div class="grid-card"><i class="fa-solid fa-map"></i><h3>GIS & Earth Observation</h3><p>Utilizing Google Earth Engine, ArcGIS, and QGIS for geospatial mapping and decision-support modeling.</p></div>
       </div>
     </div>
   </main>
@@ -199,28 +273,26 @@
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
       const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-
       const overlay=document.getElementById('overlayMenu');
       const toggle=document.querySelector('.menu-toggle');
       const closeBtn=document.querySelector('.dropdown-close');
       toggle.addEventListener('click',()=>overlay.classList.add('active'));
       closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
-      overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.classList.remove('active'); });
-      document.addEventListener('keydown',e=>{ if(e.key==='Escape') overlay.classList.remove('active'); });
-
+      overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('active');});
       const toTop=document.getElementById('toTop');
-      window.addEventListener('scroll',()=>{ toTop.classList.toggle('show',window.scrollY>200); });
+      window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>200);});
       toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-      const fadeEls=document.querySelectorAll('.research-card,.research-category,.research-section h1,.research-intro');
-      const io=new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
+      const fadeEls=document.querySelectorAll('.research-card,.grid-card');
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show');});
       },{threshold:0.1});
       fadeEls.forEach(el=>io.observe(el));
     });
   </script>
 </body>
 </html>
+
 
 
 
