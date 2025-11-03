@@ -57,7 +57,7 @@
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
       border:none;background:none;cursor:pointer}
 
-    /* ===== LAYOUT ===== */
+    /* ===== MAIN CONTENT ===== */
     .research-section{margin:115px auto 80px}
     h1,h2,h3{margin:0}
     .research-overview-title{color:var(--accent);font-size:28px;margin-bottom:14px;text-align:left}
@@ -82,7 +82,33 @@
     .grid-card p{color:var(--muted);font-size:14px;line-height:1.7;
       margin:0;text-align:justify}
 
-    /* ===== PROJECTS & FOOTER styles continue in Part 2 ===== */
+    /* ===== PROJECT CARDS ===== */
+    .research-grid{display:flex;flex-direction:column;gap:28px;margin-top:25px}
+    .research-card{background:#fff;border:1px solid var(--line);border-radius:12px;
+      padding:28px 30px;box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      transition:.4s;opacity:0;transform:translateY(30px)}
+    .research-card:hover{box-shadow:0 4px 14px rgba(0,0,0,0.09)}
+    .research-title{font-weight:600;font-size:18px;color:var(--accent);display:flex;align-items:center;gap:8px}
+    .research-meta{font-size:14px;color:#777;margin:6px 0 12px}
+    .research-details{font-size:15px;line-height:1.7;text-align:justify}
+    .research-bullets{margin:10px 0 0;padding-left:18px}
+    .research-bullets li{margin:8px 0;text-align:justify}
+    .research-bullets li::marker{color:var(--accent)}
+    .research-tags{margin-top:12px}
+    .research-tags span{display:inline-block;background:#f3f3f3;color:#000;font-size:13px;
+      padding:4px 10px;border-radius:8px;margin-right:6px;margin-top:4px;transition:all .25s}
+    .research-tags span:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+
+    /* ===== FOOTER ===== */
+    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px}
+    footer.site .wrap{padding:22px 20px}
+    footer.site p{margin:0;font-size:15px}
+
+    #toTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;
+      border:none;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;
+      display:none;z-index:999}
+    #toTop.show{display:block}
+    .show{opacity:1!important;transform:translateY(0)!important;transition:.6s}
   </style>
 </head>
 
@@ -118,48 +144,33 @@
   <div class="wrap research-section">
     <h1 class="research-overview-title">Research Overview</h1>
     <p class="research-overview-text">
-      My research lies at the intersection of planetary geomorphology, remote sensing, and artificial intelligence. 
-      I develop data-driven frameworks that apply deep learning and physics-informed modeling to understand surface evolution on Earth and Mars. 
-      By integrating multisensor satellite data with high-performance computing, my work aims to advance reproducible GeoAI methods for terrain interpretation, environmental monitoring, and planetary exploration.
+      My research lies at the intersection of planetary geomorphology, remote sensing, and artificial intelligence.
+      I develop data-driven frameworks that apply deep learning and physics-informed modeling to understand surface
+      evolution on Earth and Mars. By integrating multisensor satellite data with high-performance computing,
+      my work aims to advance reproducible GeoAI methods for terrain interpretation, environmental monitoring,
+      and planetary exploration.
     </p>
 
     <!-- ===== RESEARCH THEMES ===== -->
     <h2 class="section-title"><i class="fa-solid fa-globe"></i> Research Themes</h2>
     <div class="grid-boxes">
-      <div class="grid-card">
-        <i class="fa-solid fa-mountain"></i>
-        <h3>Planetary Geomorphology</h3>
-        <p>Study of Martian and terrestrial surface processes through AI-based terrain analysis, quantifying landform evolution and morphodynamics from orbital imagery.</p>
-      </div>
-      <div class="grid-card">
-        <i class="fa-solid fa-brain"></i>
-        <h3>GeoAI & Deep Learning</h3>
-        <p>Designing neural frameworks for automatic landform detection, semantic segmentation, and geomorphic classification across planetary datasets.</p>
-      </div>
-      <div class="grid-card">
-        <i class="fa-solid fa-satellite"></i>
-        <h3>Remote Sensing Integration</h3>
-        <p>Fusing radar, optical, and hyperspectral observations to study surface composition, hydrological dynamics, and environmental change.</p>
-      </div>
-      <div class="grid-card">
-        <i class="fa-solid fa-gear"></i>
-        <h3>Physics-Informed Modeling</h3>
-        <p>Developing interpretable AI models anchored in geophysical principles to enhance scientific transparency and trust in GeoAI applications.</p>
-      </div>
+      <div class="grid-card"><i class="fa-solid fa-mountain"></i><h3>Planetary Geomorphology</h3><p>Study of Martian and terrestrial landforms through AI-based terrain analysis, quantifying landscape evolution and morphodynamics.</p></div>
+      <div class="grid-card"><i class="fa-solid fa-brain"></i><h3>GeoAI & Deep Learning</h3><p>Developing neural networks for automated landform detection, segmentation, and geomorphic classification across planetary datasets.</p></div>
+      <div class="grid-card"><i class="fa-solid fa-satellite"></i><h3>Remote Sensing Integration</h3><p>Fusing radar, optical, and hyperspectral imagery to analyze surface processes, hydrology, and geological change across scales.</p></div>
+      <div class="grid-card"><i class="fa-solid fa-gear"></i><h3>Physics-Informed Modeling</h3><p>Designing interpretable AI models grounded in geophysical constraints to promote trustworthy and reproducible GeoAI.</p></div>
     </div>
+
     <!-- ===== PRESENT PROJECTS ===== -->
     <h2 class="research-overview-title" style="margin-top:60px;">Present Projects</h2>
     <div class="research-grid">
       <div class="research-card">
         <div class="research-title"><i class="fa-solid fa-mountain"></i> Automated Mound Detection on Mars</div>
         <div class="research-meta">University of Louisiana at Lafayette · 2025–Present</div>
-        <p class="research-details">
-          Developing deep-learning frameworks for detection and classification of mound-like geomorphologies using CTX and HiRISE imagery.
-        </p>
+        <p class="research-details">Developing deep-learning frameworks for automatic detection and classification of mound-like geomorphologies using CTX and HiRISE imagery.</p>
         <ul class="research-bullets">
-          <li>Implemented Faster R-CNN models in Detectron2 on LONI HPC systems for large-scale planetary surface analysis.</li>
-          <li>Generated precision–recall evaluations and interpretability maps for geomorphic feature detection.</li>
-          <li>Optimized dataset alignment and augmentation to improve detection consistency across Martian basins.</li>
+          <li>Implemented Faster R-CNN and Detectron2 models on LONI HPC clusters for large-scale planetary mapping.</li>
+          <li>Generated precision–recall metrics and interpretive overlays for geomorphic accuracy assessment.</li>
+          <li>Optimized dataset registration and augmentation to improve regional consistency and recall.</li>
         </ul>
         <div class="research-tags"><span>Planetary GeoAI</span><span>Deep Learning</span><span>HPC</span></div>
       </div>
@@ -167,13 +178,11 @@
       <div class="research-card">
         <div class="research-title"><i class="fa-solid fa-dna"></i> Spectral Unmixing of CRISM Imagery Using Autoencoders</div>
         <div class="research-meta">Independent Project · 2025</div>
-        <p class="research-details">
-          Investigating nonlinear spectral unmixing of CRISM hyperspectral imagery for mineralogical mapping and alteration history of Martian terrains.
-        </p>
+        <p class="research-details">Exploring nonlinear unmixing of CRISM hyperspectral data to derive mineralogical distributions and surface alteration signatures.</p>
         <ul class="research-bullets">
-          <li>Developed deep autoencoder models for endmember extraction and abundance estimation.</li>
-          <li>Compared deep-learning results with linear models to evaluate spectral interpretability.</li>
-          <li>Linked mineralogical results with geomorphic context for surface-process inference.</li>
+          <li>Developed deep autoencoder architectures for endmember extraction and abundance estimation.</li>
+          <li>Benchmarked deep-learning outcomes against classical linear unmixing models.</li>
+          <li>Integrated results with terrain data for context-driven mineralogical interpretation.</li>
         </ul>
         <div class="research-tags"><span>Hyperspectral</span><span>CRISM</span><span>Autoencoder</span></div>
       </div>
@@ -185,13 +194,11 @@
       <div class="research-card">
         <div class="research-title"><i class="fa-solid fa-water"></i> Wetland Mapping & Climate Resilience</div>
         <div class="research-meta">Bangladesh Space Research & Remote Sensing Organization (SPARRSO) · 2020–2021</div>
-        <p class="research-details">
-          Applied remote sensing and GIS for wetland classification and climate-resilience studies in coastal Bangladesh.
-        </p>
+        <p class="research-details">Applied remote sensing and GIS to map wetlands and assess climate resilience across coastal Bangladesh.</p>
         <ul class="research-bullets">
-          <li>Analyzed multi-temporal Sentinel and Landsat imagery for flood-vulnerability assessment.</li>
-          <li>Created geospatial datasets supporting climate-adaptation and ecosystem-management research.</li>
-          <li>Contributed to SPARRSO technical reports recognized for high-accuracy land-cover modeling.</li>
+          <li>Analyzed multi-temporal Sentinel and Landsat data for flood vulnerability and land-cover change detection.</li>
+          <li>Generated GIS datasets supporting climate-adaptation and ecosystem-management studies.</li>
+          <li>Produced outputs recognized for accuracy in environmental monitoring frameworks.</li>
         </ul>
         <div class="research-tags"><span>Wetlands</span><span>Climate</span><span>Remote Sensing</span></div>
       </div>
@@ -199,13 +206,11 @@
       <div class="research-card">
         <div class="research-title"><i class="fa-solid fa-robot"></i> Computer Vision & Software Development</div>
         <div class="research-meta">North South University · 2019–2020</div>
-        <p class="research-details">
-          Conducted research on intelligent automation and computer-vision techniques for academic prototypes and applied data-science projects.
-        </p>
+        <p class="research-details">Contributed to computer vision and intelligent automation projects for academic and prototype-level research applications.</p>
         <ul class="research-bullets">
-          <li>Built object-detection and classification pipelines using Python and Java.</li>
-          <li>Developed visualization tools for model diagnostics and evaluation.</li>
-          <li>Collaborated on student research manuscripts and software demonstrations.</li>
+          <li>Developed detection and tracking systems using Python and Java.</li>
+          <li>Created visualization tools for dataset diagnostics and performance evaluation.</li>
+          <li>Collaborated on research publications and model evaluation scripts.</li>
         </ul>
         <div class="research-tags"><span>Computer Vision</span><span>Machine Learning</span><span>Software Engineering</span></div>
       </div>
@@ -214,34 +219,16 @@
     <!-- ===== TECHNICAL FOCUS ===== -->
     <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical Focus & Methods</h2>
     <div class="grid-boxes">
-      <div class="grid-card">
-        <i class="fa-solid fa-code"></i>
-        <h3>Deep Learning Frameworks</h3>
-        <p>Implementing neural architectures in PyTorch, Detectron2, and YOLOv8 for spatial feature extraction and geomorphic segmentation.</p>
-      </div>
-      <div class="grid-card">
-        <i class="fa-solid fa-layer-group"></i>
-        <h3>Hyperspectral & Multisensor Fusion</h3>
-        <p>Integrating CRISM, Sentinel, and Landsat imagery for joint spectral–spatial modeling and environmental analysis.</p>
-      </div>
-      <div class="grid-card">
-        <i class="fa-solid fa-cloud"></i>
-        <h3>HPC & Cloud Processing</h3>
-        <p>Leveraging GPU-based clusters and parallel pipelines for scalable planetary and Earth-observation data analytics.</p>
-      </div>
-      <div class="grid-card">
-        <i class="fa-solid fa-map"></i>
-        <h3>GIS & Earth Observation</h3>
-        <p>Applying Google Earth Engine, ArcGIS, and QGIS for geospatial visualization and terrain-evolution studies.</p>
-      </div>
+      <div class="grid-card"><i class="fa-solid fa-code"></i><h3>Deep Learning Frameworks</h3><p>Using PyTorch, Detectron2, and YOLOv8 for automated terrain segmentation, feature extraction, and model evaluation.</p></div>
+      <div class="grid-card"><i class="fa-solid fa-layer-group"></i><h3>Hyperspectral & Multisensor Fusion</h3><p>Integrating CRISM, Sentinel, and Landsat imagery for spectral–spatial modeling, mineral mapping, and environmental studies.</p></div>
+      <div class="grid-card"><i class="fa-solid fa-cloud"></i><h3>HPC & Cloud Processing</h3><p>Leveraging GPU-based clusters and parallel computing environments for high-resolution planetary data processing.</p></div>
+      <div class="grid-card"><i class="fa-solid fa-map"></i><h3>GIS & Earth Observation</h3><p>Employing Google Earth Engine, ArcGIS, and QGIS for geospatial analytics, terrain visualization, and change detection.</p></div>
     </div>
   </div>
 </main>
 
 <footer class="site">
-  <div class="wrap">
-    <p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p>
-  </div>
+  <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
 </footer>
 
 <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
@@ -249,8 +236,7 @@
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   const y=document.getElementById('y');
-  if(y) y.textContent=new Date().getFullYear();
-
+  if(y)y.textContent=new Date().getFullYear();
   const overlay=document.getElementById('overlayMenu');
   const toggle=document.querySelector('.menu-toggle');
   const closeBtn=document.querySelector('.dropdown-close');
@@ -258,11 +244,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
   overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('active');});
-
   const toTop=document.getElementById('toTop');
   window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>200);});
   toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
   const fadeEls=document.querySelectorAll('.grid-card,.research-card,.section-title');
   const io=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show');});
@@ -272,6 +256,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 </body>
 </html>
+
 
 
 
