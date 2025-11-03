@@ -4,13 +4,13 @@
   <title>Experience — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional and leadership experiences of Md Shohug Hossain — spanning GeoAI research, data engineering, and academic mentorship.">
-  <meta name="keywords" content="Md Shohug Hossain, Experience, Research, GeoAI, Remote Sensing, Data Engineer, Teaching Assistant, Leadership, Mentorship">
+  <meta name="description" content="Professional and leadership experiences of Md Shohug Hossain — spanning GeoAI research, data engineering, academic instruction, and scientific outreach.">
+  <meta name="keywords" content="Md Shohug Hossain, Experience, GeoAI, Remote Sensing, Planetary Science, Data Engineer, Teaching Assistant, Research Assistant, Leadership, Mentorship">
   <meta name="author" content="Md Shohug Hossain">
   <link rel="canonical" href="https://shohugmdhossain.github.io/experience.html">
   <meta name="theme-color" content="#b1040e">
   <meta property="og:title" content="Experience — M S Hossain">
-  <meta property="og:description" content="Professional and leadership experiences of Md Shohug Hossain in GeoAI, Remote Sensing, and Academic Mentorship.">
+  <meta property="og:description" content="Professional and leadership experiences across GeoAI, Remote Sensing, and academic community building.">
   <meta property="og:image" content="https://shohugmdhossain.github.io/profile.jpg">
   <meta property="og:url" content="https://shohugmdhossain.github.io/experience.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -22,10 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root {
-      --accent:#b1040e; --bg:#fff; --text:#222; --muted:#555;
-      --line:#ddd; --max:1000px;
-    }
+    :root { --accent:#b1040e; --bg:#fff; --text:#222; --muted:#555; --line:#ddd; --max:1000px; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.75; overflow-x:hidden; }
     a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
@@ -45,17 +42,17 @@
     @media(max-width:980px){ .nav-links{display:none;} }
 
     /* ===== OVERLAY MENU ===== */
-    .dropdown-nav { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(177,4,14,.75); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s; }
+    .dropdown-nav { position:fixed; inset:0; background:rgba(177,4,14,.75); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s; }
     .dropdown-nav.active { opacity:1; visibility:visible; }
     .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
     .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
 
-    /* ===== EXPERIENCE SECTION ===== */
+    /* ===== EXPERIENCE ===== */
     .experience-section { margin:115px auto 80px; }
-    .experience-section h1 { color:var(--accent); font-size:30px; text-align:left; margin-bottom:12px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
-    .exp-intro { color:var(--muted); font-size:16px; margin-bottom:40px; text-align:justify; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .experience-section h1 { color:var(--accent); font-size:30px; text-align:left; margin-bottom:12px; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
+    .exp-intro { color:var(--muted); font-size:16px; margin-bottom:40px; text-align:justify; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
 
-    .exp-category { color:var(--accent); font-size:26px; margin-top:60px; margin-bottom:18px; font-weight:600; display:flex; align-items:center; gap:10px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .exp-category { color:var(--accent); font-size:26px; margin-top:60px; margin-bottom:18px; font-weight:600; display:flex; align-items:center; gap:10px; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
     .exp-category i { font-size:22px; color:var(--accent); }
 
     .exp-grid { display:flex; flex-direction:column; gap:28px; }
@@ -63,12 +60,17 @@
     .exp-card:hover { box-shadow:0 4px 14px rgba(0,0,0,0.09); }
     .exp-card.show, .exp-category.show, .experience-section h1.show, .exp-intro.show { opacity:1; transform:translateY(0); }
 
-    .exp-title { font-weight:600; font-size:18px; color:var(--accent); }
-    .exp-meta { font-size:14px; color:#777; margin:6px 0 10px; }
-    .exp-details { font-size:15px; line-height:1.6; margin:0; text-align:justify; }
+    .exp-title { font-weight:600; font-size:18px; color:var(--accent); display:flex; align-items:center; gap:8px; }
+    .exp-title i { color:var(--accent); }
+    .exp-meta { font-size:14px; color:#777; margin:6px 0 12px; }
+    .exp-details { font-size:15px; line-height:1.6; margin:0 0 8px; text-align:justify; }
 
-    .exp-tags { margin-top:10px; }
-    .exp-tags span { display:inline-block; background:#f3f3f3; color:#000; font-size:13px; padding:4px 10px; border-radius:8px; margin-right:6px; margin-top:4px; transition:all .25s ease; }
+    .exp-bullets { margin:10px 0 0 0; padding-left:18px; }
+    .exp-bullets li { margin:8px 0; text-align:justify; }
+    .exp-bullets li::marker { color:var(--accent); }
+
+    .exp-tags { margin-top:12px; }
+    .exp-tags span { display:inline-block; background:#f3f3f3; color:#000; font-size:13px; padding:4px 10px; border-radius:8px; margin-right:6px; margin-top:4px; transition:all .25s; }
     .exp-tags span:hover { background:var(--accent); color:#fff; transform:translateY(-1px); }
 
     /* ===== FOOTER ===== */
@@ -114,71 +116,122 @@
   <main>
     <div class="wrap experience-section">
       <h1>Experience</h1>
-      <p class="exp-intro">Professional and leadership experiences spanning research, data engineering, academic instruction, and student mentorship. Organized by category to highlight both technical and community engagement roles.</p>
+      <p class="exp-intro">
+        A summary of academic, research, industry, and community roles bridging GeoAI, remote sensing, and planetary science.
+        Work spans deep-learning model development, high-performance computing, data engineering, and student mentorship across Earth and Mars applications.
+      </p>
 
       <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
       <h2 class="exp-category"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
       <div class="exp-grid">
 
+        <!-- PhD Researcher -->
         <div class="exp-card">
-          <div class="exp-title">Ph.D. Researcher — GeoAI & Planetary Science</div>
+          <div class="exp-title"><i class="fa-solid fa-brain"></i> Ph.D. Researcher — GeoAI & Planetary Science</div>
           <div class="exp-meta">University of Louisiana at Lafayette · 2025–Present</div>
-          <p class="exp-details">Conducting research on automated mound detection and planetary surface classification using deep learning and high-performance computing. Developing GeoAI pipelines on LONI HPC with PyTorch, Detectron2, and large-scale CTX/HiRISE datasets.</p>
-          <div class="exp-tags"><span>GeoAI</span><span>Planetary Science</span><span>Deep Learning</span><span>HPC</span></div>
+          <p class="exp-details">Researching automated detection and interpretation of mound-like geomorphologies on Mars using deep learning and high-resolution orbital imagery.</p>
+          <ul class="exp-bullets">
+            <li>Developed a Faster R-CNN/Detectron2 pipeline on LONI A100 GPUs for CTX/HiRISE imagery, reporting early validation at ~56% AP50 with iterative data curation and augmentation to improve recall.</li>
+            <li>Designed reproducible evaluation scripts (COCO metrics, precision–recall curves, confusion matrices) and automated visualization utilities for qualitative assessment across diverse terrains.</li>
+            <li>Curated a COCO-formatted dataset with rigorous label QA, addressing class misregistration and empty entries to stabilize training dynamics and evaluator consistency.</li>
+            <li>Explored physics-aware priors and multi-sensor fusion to enhance transferability across changing illumination, resolution, and surface texture regimes.</li>
+          </ul>
+          <div class="exp-tags"><span>Deep Learning</span><span>Detectron2</span><span>Planetary Geomorphology</span><span>HPC</span></div>
         </div>
 
+        <!-- Data Engineer -->
         <div class="exp-card">
-          <div class="exp-title">Data Engineer</div>
+          <div class="exp-title"><i class="fa-solid fa-laptop-code"></i> Data Engineer</div>
           <div class="exp-meta">TELUS · 2023–2024</div>
-          <p class="exp-details">Built and optimized ETL pipelines for large-scale geospatial and customer analytics using SQL, Python, and cloud data platforms. Designed data automation frameworks and visualization dashboards to enhance operational reporting and system reliability.</p>
-          <div class="exp-tags"><span>Data Engineering</span><span>SQL</span><span>Cloud</span><span>Automation</span></div>
+          <p class="exp-details">Built and maintained production data pipelines for large-scale analytics, emphasizing reliability, transparency, and measurable performance gains.</p>
+          <ul class="exp-bullets">
+            <li>Engineered SQL/Python ETL workflows and scheduling that streamlined ingestion and transformation, reducing recurring job runtimes and manual interventions.</li>
+            <li>Implemented data quality checks and schema validations, improving downstream dashboard accuracy and stakeholder trust.</li>
+            <li>Developed automation utilities and documentation to standardize pipeline onboarding and incident response across the team.</li>
+          </ul>
+          <div class="exp-tags"><span>ETL</span><span>SQL</span><span>Python</span><span>Automation</span></div>
         </div>
 
+        <!-- GTA -->
         <div class="exp-card">
-          <div class="exp-title">Graduate Teaching Assistant — Electrical & Computer Engineering</div>
+          <div class="exp-title"><i class="fa-solid fa-graduation-cap"></i> Graduate Teaching Assistant — Electrical & Computer Engineering</div>
           <div class="exp-meta">University of Calgary · 2021–2023</div>
-          <p class="exp-details">Taught and evaluated undergraduate labs and assignments in control systems, automation, and intelligent computing. Mentored student projects and contributed to course material design for advanced computing modules.</p>
+          <p class="exp-details">Supported laboratory instruction and evaluation in control systems and intelligent computing while mentoring undergraduate project teams.</p>
+          <ul class="exp-bullets">
+            <li>Led lab demonstrations and guided students through experimental design, emphasizing reproducibility and sound data interpretation.</li>
+            <li>Co-developed grading rubrics and feedback templates that improved clarity and consistency across course sections.</li>
+            <li>Mentored capstone groups on modeling, documentation, and presentation, strengthening technical communication skills.</li>
+          </ul>
           <div class="exp-tags"><span>Teaching</span><span>Control Systems</span><span>Mentorship</span></div>
         </div>
 
+        <!-- SPARRSO RA -->
         <div class="exp-card">
-          <div class="exp-title">Research Assistant — Remote Sensing & Climate Analytics</div>
-          <div class="exp-meta">SPARRSO · 2020–2021</div>
-          <p class="exp-details">Developed wetland and flood resilience models using remote sensing and spatial analysis. Worked on satellite image preprocessing, environmental change detection, and habitat mapping across coastal Bangladesh.</p>
-          <div class="exp-tags"><span>Remote Sensing</span><span>Climate</span><span>GIS</span></div>
+          <div class="exp-title"><i class="fa-solid fa-earth-asia"></i> Research Assistant — Remote Sensing & Climate Analytics</div>
+          <div class="exp-meta">Bangladesh Space Research & Remote Sensing Organization (SPARRSO) · 2020–2021</div>
+          <p class="exp-details">Applied satellite data and GIS to wetland mapping and environmental resilience studies across coastal landscapes.</p>
+          <ul class="exp-bullets">
+            <li>Preprocessed multi-temporal imagery and executed change-detection workflows to characterize flood exposure and habitat shifts.</li>
+            <li>Built GIS layers and map products for stakeholders, emphasizing interpretability and reproducibility.</li>
+            <li>Contributed to analyses recognized with a Best Paper commendation for research rigor and practical relevance.</li>
+          </ul>
+          <div class="exp-tags"><span>Remote Sensing</span><span>GIS</span><span>Change Detection</span></div>
         </div>
 
+        <!-- NSU RA -->
         <div class="exp-card">
-          <div class="exp-title">Research Assistant — Computer Vision & Software Development</div>
+          <div class="exp-title"><i class="fa-solid fa-robot"></i> Research Assistant — Computer Vision & Software Development</div>
           <div class="exp-meta">North South University · 2019–2020</div>
-          <p class="exp-details">Designed software for intelligent image processing and object detection tasks using Java and Python. Assisted in machine learning model training and academic manuscript preparation.</p>
-          <div class="exp-tags"><span>Computer Vision</span><span>Software Development</span><span>Research</span></div>
+          <p class="exp-details">Contributed to intelligent image processing systems and model training while supporting manuscript preparation.</p>
+          <ul class="exp-bullets">
+            <li>Implemented image preprocessing and feature extraction pipelines in Python/Java to support detection tasks.</li>
+            <li>Assisted with model experiments and ablations, reporting results with standardized plots and tables.</li>
+            <li>Collaborated on code reviews and documentation to improve maintainability and research handoff.</li>
+          </ul>
+          <div class="exp-tags"><span>Computer Vision</span><span>Software Engineering</span><span>Research</span></div>
         </div>
       </div>
 
       <!-- ===== LEADERSHIP & VOLUNTEERING ===== -->
       <h2 class="exp-category"><i class="fa-solid fa-people-group"></i> Leadership & Volunteering</h2>
       <div class="exp-grid">
+
         <div class="exp-card">
-          <div class="exp-title">President — ECE Graduate Group</div>
+          <div class="exp-title"><i class="fa-solid fa-chess-king"></i> President — ECE Graduate Group</div>
           <div class="exp-meta">University of Calgary · 2023</div>
-          <p class="exp-details">Led academic and social initiatives to strengthen graduate community collaboration. Organized seminars, peer mentorship, and career networking sessions for engineering students.</p>
+          <p class="exp-details">Led community-building initiatives to strengthen research culture, peer support, and professional development for graduate engineers.</p>
+          <ul class="exp-bullets">
+            <li>Organized seminars, technical talks, and networking sessions that connected students with industry and academia.</li>
+            <li>Launched mentorship pairings and feedback channels that improved first-year graduate onboarding.</li>
+            <li>Coordinated volunteers, logistics, and communications across multi-department events.</li>
+          </ul>
           <div class="exp-tags"><span>Leadership</span><span>Community</span><span>Mentorship</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Vice-President — Schulich Graduate Engineering Consortium</div>
+          <div class="exp-title"><i class="fa-solid fa-chess-queen"></i> Vice-President — Schulich Graduate Engineering Consortium</div>
           <div class="exp-meta">University of Calgary · 2023</div>
-          <p class="exp-details">Facilitated interdisciplinary collaboration among engineering departments. Coordinated research showcases and academic development workshops across graduate programs.</p>
-          <div class="exp-tags"><span>Coordination</span><span>Teamwork</span><span>Student Engagement</span></div>
+          <p class="exp-details">Facilitated interdisciplinary collaboration and academic development through events and shared resources.</p>
+          <ul class="exp-bullets">
+            <li>Planned cross-department research showcases, highlighting applied AI and engineering solutions.</li>
+            <li>Co-authored event guidelines and outreach templates adopted by subsequent committees.</li>
+            <li>Expanded mailing lists and social channels, growing participation and visibility.</li>
+          </ul>
+          <div class="exp-tags"><span>Coordination</span><span>Interdisciplinary</span><span>Outreach</span></div>
         </div>
 
         <div class="exp-card">
-          <div class="exp-title">Science Outreach & Academic Mentorship</div>
-          <div class="exp-meta">UL Lafayette & SPARRSO · 2020–Present</div>
-          <p class="exp-details">Actively engaged in academic mentorship, public science communication, and student advising. Promoted STEM education and open-source collaboration within the geoscience research community.</p>
-          <div class="exp-tags"><span>Outreach</span><span>STEM</span><span>Mentorship</span></div>
+          <div class="exp-title"><i class="fa-solid fa-hands-helping"></i> Science Outreach & Academic Mentorship</div>
+          <div class="exp-meta">University of Louisiana at Lafayette & SPARRSO · 2020–Present</div>
+          <p class="exp-details">Engaged in public science communication and student advising to broaden participation in geoscience and AI.</p>
+          <ul class="exp-bullets">
+            <li>Advised junior students on research scoping, coding practice, and peer-review preparation.</li>
+            <li>Delivered informal workshops on dataset curation, reproducible experiments, and visualization.</li>
+            <li>Supported open-source contributions and shared reproducible notebooks for community reuse.</li>
+          </ul>
+          <div class="exp-tags"><span>Outreach</span><span>STEM</span><span>Student Success</span></div>
         </div>
+
       </div>
     </div>
   </main>
@@ -192,16 +245,17 @@
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
       const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
       const overlay=document.getElementById('overlayMenu');
       const toggle=document.querySelector('.menu-toggle');
       const closeBtn=document.querySelector('.dropdown-close');
-      const toTop=document.getElementById('toTop');
-
       toggle.addEventListener('click',()=>overlay.classList.add('active'));
       closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
       overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.classList.remove('active'); });
       document.addEventListener('keydown',e=>{ if(e.key==='Escape') overlay.classList.remove('active'); });
-      window.addEventListener('scroll',()=>{ toTop.classList.toggle('show',window.scrollY>200); });
+
+      const toTop=document.getElementById('toTop');
+      window.addEventListener('scroll',()=>{ toTop.classList.toggle('show', window.scrollY>200); });
       toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
       const fadeEls=document.querySelectorAll('.exp-card,.exp-category,.experience-section h1,.exp-intro');
@@ -213,6 +267,7 @@
   </script>
 </body>
 </html>
+
 
 
 
