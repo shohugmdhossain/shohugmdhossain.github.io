@@ -4,97 +4,80 @@
   <title>Experience — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional Experience of Md Shohug Hossain — AI, GeoAI, Remote Sensing, Data Engineering, and Research Leadership.">
+  <meta name="description" content="Professional and research experience of Md Shohug Hossain — GeoAI, Remote Sensing, Planetary Science, and Data Systems.">
   <meta name="author" content="Md Shohug Hossain">
   <link rel="canonical" href="https://shohugmdhossain.github.io/experience.html">
   <meta name="theme-color" content="#b1040e">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root{
-      --accent:#b1040e; --accentDark:#93030b;
-      --bg:#ffffff; --bg2:#f9f9f9;
+    :root {
+      --accent:#b1040e; --bg:#ffffff; --bg2:#f9f9f9;
       --text:#222; --muted:#555; --line:#ddd;
       --max:1100px;
     }
-
-    html,body{height:100%;scroll-behavior:smooth;}
-    body{
-      margin:0;background:var(--bg);color:var(--text);
+    body {
+      margin:0; background:var(--bg); color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.75;
+      line-height:1.8;
     }
-    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
-    a:hover{border-bottom-color:var(--accent);}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+    a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
+    a:hover { border-bottom-color:var(--accent); }
+    .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
+    .site-header {
+      position:fixed; top:0; left:0; right:0; background:var(--accent);
+      color:#fff; box-shadow:0 3px 10px rgba(0,0,0,.1); z-index:1000;
+    }
+    .nav-bar { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand { font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; }
+    .brand a { color:#fff; text-decoration:none; }
+    .nav-links { display:flex; gap:20px; align-items:center; }
+    .nav-links a { color:#fff; font-size:15px; }
+    .nav-links a:hover,.nav-links a.active { text-decoration:underline; opacity:.9; }
+    .right-cluster { display:flex; align-items:center; gap:14px; }
+    .search-box input {
+      border:none; border-radius:8px; background:rgba(255,255,255,.95);
+      color:#222; padding:7px 10px; width:170px; transition:width .25s;
+    }
+    .search-box input:focus { outline:none; width:220px; }
+    .menu-toggle { background:none; border:none; color:#fff; font-size:24px; cursor:pointer; }
 
-    /* ===== NAVBAR ===== */
-    .site-header{position:fixed;top:0;left:0;right:0;background:var(--accent);color:#fff;
-      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:1000;}
-    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;}
-    .brand a{color:#fff;text-decoration:none;}
-    .nav-links{display:flex;gap:20px;align-items:center;}
-    .nav-links a{color:#fff;font-size:15px;}
-    .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
-    .right-cluster{display:flex;align-items:center;gap:14px;}
-    .search-box input{border:none;border-radius:8px;background:rgba(255,255,255,.95);
-      color:#222;padding:7px 10px;width:170px;transition:width .25s;}
-    .search-box input:focus{outline:none;width:220px;}
-    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
+    .dropdown-nav {
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:rgba(177,4,14,.8); backdrop-filter:blur(10px);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s;
+    }
+    .dropdown-nav.active { opacity:1; visibility:visible; }
+    .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
+    .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
 
-    /* ===== OVERLAY MENU ===== */
-    .dropdown-nav{position:fixed;top:0;left:0;right:0;bottom:0;
-      background:rgba(177,4,14,.8);backdrop-filter:blur(10px);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      gap:24px;z-index:9999;opacity:0;visibility:hidden;transition:.3s;}
-    .dropdown-nav.active{opacity:1;visibility:visible;}
-    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;}
-    .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
+    main { margin-top:100px; }
+    h1,h2,h3 { font-family:"Libre Baskerville",serif; color:var(--accent); }
+    h1 { font-size:30px; margin-bottom:8px; }
+    h2 { font-size:22px; margin:50px 0 8px; }
+    h3 { font-size:18px; margin-bottom:6px; }
+    p, li { font-size:16px; text-align:justify; color:var(--text); }
+    ul { margin:0 0 10px 20px; }
+    .section { margin-bottom:50px; }
 
-    /* ===== HERO ===== */
-    .hero-intro{margin-top:calc(85px);text-align:center;}
-    .hero-intro h1{color:var(--accent);font-family:"Libre Baskerville",serif;font-size:30px;margin:0 0 8px;}
-    .hero-intro p{margin:0 auto;max-width:900px;color:var(--text);font-size:15.5px;line-height:1.85;}
-
-    /* ===== EXPERIENCE ===== */
-    .exp-section{margin-top:36px;}
-    .exp-title{font-size:22px;font-family:"Libre Baskerville",serif;color:var(--accent);
-      font-weight:700;display:flex;align-items:center;gap:10px;margin:20px 0 16px;}
-    .exp-grid{display:flex;flex-direction:column;gap:22px;}
-    .exp-card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;
-      padding:22px 24px;box-shadow:0 2px 8px rgba(0,0,0,.08);
-      transition:transform .25s ease,box-shadow .25s ease;}
-    .exp-card:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,.12);}
-    .exp-card h3{margin:0;color:var(--accent);font-size:18px;font-weight:700;}
-    .exp-meta{color:var(--muted);font-size:14px;margin:4px 0 10px;}
-    .exp-card ul{margin:0;padding-left:20px;color:var(--text);font-size:15px;}
-    .exp-card li{margin-bottom:6px;text-align:justify;}
-    .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-    .tool-chip{background:#fff;color:var(--accent);border:1px solid var(--accent);
-      padding:4px 10px;border-radius:999px;font-size:13px;transition:.2s ease;}
-    .tool-chip:hover{background:var(--accent);color:#fff;}
-
-    /* ===== FOOTER ===== */
-    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:60px;}
-    footer.site .wrap{padding:20px;}
-    footer.site p{margin:0;font-size:15px;}
-    #toTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;
-      border:none;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;display:none;z-index:999;}
-    #toTop.show{display:block;}
-
-    @media(max-width:900px){.nav-links{display:none;}.hero-intro{margin-top:calc(95px);}}
+    footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:60px; }
+    footer.site .wrap { padding:20px; }
+    footer.site p { margin:0; font-size:15px; }
+    #toTop { position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff;
+      border:none; border-radius:50%; width:42px; height:42px; font-size:18px;
+      cursor:pointer; display:none; z-index:999; }
+    #toTop.show { display:block; }
+    @media(max-width:900px){ .nav-links{display:none;} main{margin-top:110px;} }
   </style>
 </head>
 
 <body>
-  <!-- ===== NAVBAR ===== -->
+  <!-- NAVBAR -->
   <header class="site-header">
     <div class="wrap nav-bar">
       <div class="brand"><a href="index.html">M S Hossain</a></div>
@@ -118,7 +101,7 @@
     </div>
   </header>
 
-  <!-- ===== OVERLAY MENU ===== -->
+  <!-- OVERLAY MENU -->
   <div class="dropdown-nav" id="overlayMenu">
     <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
     <a href="about.html">About</a>
@@ -129,107 +112,81 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ===== MAIN ===== -->
-  <main>
-    <section class="hero-intro wrap">
-      <h1>Professional Experience</h1>
-      <p>Academic and professional experience across GeoAI, data engineering, and research leadership.</p>
-    </section>
+  <!-- MAIN -->
+  <main class="wrap">
+    <h1>Professional Experience</h1>
+    <p>My professional trajectory integrates GeoAI, remote sensing, and computational geoscience with data engineering and academic leadership. I specialize in AI-driven planetary analysis, geospatial data systems, and automation for Earth and planetary observations.</p>
 
-    <section class="exp-section wrap" aria-label="Research and Industry Roles">
-      <h2 class="exp-title"><i class="fa-solid fa-flask"></i> Research & Industry Roles</h2>
-      <div class="exp-grid">
-        <div class="exp-card">
-          <h3>Research Assistant — University of Louisiana at Lafayette</h3>
-          <div class="exp-meta">Lafayette, LA, USA · 2025 – Present</div>
-          <ul>
-            <li>GeoAI & planetary surface analysis focusing on Martian mound detection using Faster/Mask R-CNN models in Detectron2.</li>
-            <li>Developed automated COCO dataset pipelines and trained large-scale models on A100 GPUs (LONI HPC cluster).</li>
-            <li>Generated evaluation metrics, confusion matrices, and precision–recall analyses for planetary feature classification.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Detectron2</span><span class="tool-chip">Python</span><span class="tool-chip">GeoAI</span><span class="tool-chip">HPC</span></div>
-        </div>
+    <h2>Technical Expertise</h2>
+    <p>Proficient in Python, PyTorch, Detectron2, and machine learning for image analysis; GIS and remote sensing using Google Earth Engine and QGIS; high-performance computing (Slurm/A100); and advanced data engineering with SQL, ETL pipelines, and Snowflake. Skilled in designing reproducible workflows for large-scale spatial analytics and scientific computing.</p>
 
-        <div class="exp-card">
-          <h3>Data Engineer — TELUS</h3>
-          <div class="exp-meta">Calgary, Canada · 2023 – 2024</div>
-          <ul>
-            <li>Automated ETL workflows and analytics pipelines integrating Python, SQL, and Snowflake.</li>
-            <li>Built monitoring systems for dataset validation and anomaly detection, improving reporting efficiency by 30%.</li>
-            <li>Delivered Power BI dashboards for performance visualization and KPIs tracking.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Python</span><span class="tool-chip">SQL</span><span class="tool-chip">ETL</span><span class="tool-chip">Snowflake</span></div>
-        </div>
+    <div class="section">
+      <h2>Research Positions</h2>
+      <h3>Research Assistant — University of Louisiana at Lafayette (2025–Present)</h3>
+      <ul>
+        <li>Develops GeoAI models for planetary geomorphology and Mars mound detection using Faster/Mask R-CNN within the Detectron2 framework.</li>
+        <li>Implements automated COCO dataset registration and evaluation pipelines for high-resolution orbital imagery.</li>
+        <li>Runs large-scale training and validation on A100 GPUs (LONI HPC), achieving reproducible model benchmarking and improved detection accuracy.</li>
+        <li>Leads data curation and error analysis for performance optimization using confusion matrices and precision-recall diagnostics.</li>
+      </ul>
 
-        <div class="exp-card">
-          <h3>Graduate Teaching Assistant — University of Calgary</h3>
-          <div class="exp-meta">Calgary, Canada · 2021 – 2023</div>
-          <ul>
-            <li>Assisted in Python and Agent-Based Software Engineering courses, supporting labs and assignments.</li>
-            <li>Mentored 100+ students on scientific programming, debugging, and project design.</li>
-            <li>Automated grading tools and maintained course documentation for teaching efficiency.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Python</span><span class="tool-chip">Teaching</span><span class="tool-chip">Mentorship</span></div>
-        </div>
+      <h3>Research Assistant — SPARRSO (2020–2021)</h3>
+      <ul>
+        <li>Conducted wetland and climate resilience mapping using multispectral Landsat and Sentinel datasets.</li>
+        <li>Built U-Net segmentation models for land-use change detection and hydro-ecological analysis.</li>
+        <li>Produced temporal change maps for regional planning and national climate reports.</li>
+      </ul>
 
-        <div class="exp-card">
-          <h3>Research Assistant — SPARRSO</h3>
-          <div class="exp-meta">Dhaka, Bangladesh · 2020 – 2021</div>
-          <ul>
-            <li>Executed remote sensing projects for wetland mapping and climate resilience studies.</li>
-            <li>Processed multi-temporal Sentinel and Landsat data in Google Earth Engine for change detection.</li>
-            <li>Applied U-Net deep learning for floodplain segmentation and ecosystem monitoring.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">GEE</span><span class="tool-chip">QGIS</span><span class="tool-chip">U-Net</span><span class="tool-chip">Remote Sensing</span></div>
-        </div>
+      <h3>Research Assistant — North South University (2019–2020)</h3>
+      <ul>
+        <li>Designed behavioral analytics models for an implicit recommender system based on user-interaction data.</li>
+        <li>Applied collaborative filtering and matrix factorization to predict user preferences with adaptive learning methods.</li>
+        <li>Co-authored internal technical documentation and presented research findings to faculty panels.</li>
+      </ul>
+    </div>
 
-        <div class="exp-card">
-          <h3>Research Assistant — North South University</h3>
-          <div class="exp-meta">Dhaka, Bangladesh · 2019 – 2020</div>
-          <ul>
-            <li>Developed a learner-interest recommender using mouse-movement analytics and implicit feedback.</li>
-            <li>Designed behavioral data models and tested collaborative filtering systems.</li>
-            <li>Presented adaptive recommender methods in academic symposiums.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Python</span><span class="tool-chip">Recommenders</span><span class="tool-chip">Machine Learning</span></div>
-        </div>
-      </div>
-    </section>
+    <div class="section">
+      <h2>Industry Experience</h2>
+      <h3>Data Engineer — TELUS (2023–2024)</h3>
+      <ul>
+        <li>Automated ETL data pipelines and integrated Python APIs with Snowflake and Power BI for analytical reporting.</li>
+        <li>Implemented validation scripts and data quality assurance metrics, reducing manual checks by 30%.</li>
+        <li>Optimized database queries and pipeline scheduling to enhance reliability and performance.</li>
+      </ul>
+    </div>
 
-    <section class="exp-section wrap" aria-label="Leadership and Volunteering">
-      <h2 class="exp-title"><i class="fa-solid fa-people-group"></i> Leadership & Volunteering</h2>
-      <div class="exp-grid">
-        <div class="exp-card">
-          <h3>President — ECE Graduate Group, University of Calgary</h3>
-          <div class="exp-meta">Leadership · Calgary</div>
-          <ul>
-            <li>Led graduate initiatives fostering collaboration via seminars and mentorship programs.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Leadership</span><span class="tool-chip">Mentorship</span></div>
-        </div>
+    <div class="section">
+      <h2>Teaching Experience</h2>
+      <h3>Graduate Teaching Assistant — University of Calgary (2021–2023)</h3>
+      <ul>
+        <li>Delivered lab instruction and grading automation for Python programming and Agent-Based Software Engineering courses.</li>
+        <li>Mentored 100+ graduate and undergraduate students in simulation design, coding best practices, and software documentation.</li>
+        <li>Assisted course redesign to improve code reproducibility and interactive learning environments.</li>
+      </ul>
+    </div>
 
-        <div class="exp-card">
-          <h3>Vice President — Schulich Graduate Engineering Consortium & BSA</h3>
-          <div class="exp-meta">Leadership · Calgary</div>
-          <ul>
-            <li>Organized multicultural engagement and academic networking events supporting inclusion.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Community</span><span class="tool-chip">Events</span></div>
-        </div>
+    <div class="section">
+      <h2>Leadership & Service</h2>
+      <h3>President — ECE Graduate Group, University of Calgary</h3>
+      <ul>
+        <li>Led academic initiatives connecting interdisciplinary graduate researchers across engineering fields.</li>
+        <li>Organized technical seminars and mentorship programs fostering collaboration and leadership development.</li>
+      </ul>
 
-        <div class="exp-card">
-          <h3>Executive Member — NSU Computer Engineering Club</h3>
-          <div class="exp-meta">Student Organization · Dhaka</div>
-          <ul>
-            <li>Coordinated hackathons, research expos, and coding workshops for student innovation.</li>
-          </ul>
-          <div class="tools"><span class="tool-chip">Hackathons</span><span class="tool-chip">Workshops</span></div>
-        </div>
-      </div>
-    </section>
+      <h3>Vice President — Schulich Graduate Engineering Consortium & BSA</h3>
+      <ul>
+        <li>Directed multicultural engagement activities promoting inclusion and student networking.</li>
+        <li>Coordinated research showcases and outreach events strengthening academic community engagement.</li>
+      </ul>
+
+      <h3>Executive Member — NSU Computer Engineering Club</h3>
+      <ul>
+        <li>Coordinated hackathons, coding challenges, and research exhibitions for undergraduate innovation.</li>
+        <li>Established partnerships with local tech communities to enhance technical learning opportunities.</li>
+      </ul>
+    </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
@@ -256,6 +213,7 @@
   </script>
 </body>
 </html>
+
 
 
 
