@@ -4,7 +4,7 @@
   <title>About — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="About Md Shohug Hossain — Ph.D. researcher specializing in GeoAI, remote sensing, and planetary science.">
+  <meta name="description" content="About Md Shohug Hossain — Ph.D. researcher in GeoAI, remote sensing, and planetary science.">
   <meta name="keywords" content="Md Shohug Hossain, GeoAI, Remote Sensing, Planetary Science, Machine Learning, Earth Observation">
   <meta name="author" content="Md Shohug Hossain">
   <link rel="canonical" href="https://shohugmdhossain.github.io/about.html">
@@ -58,16 +58,21 @@
       border:none;background:none;cursor:pointer}
 
     /* ===== ABOUT CONTENT ===== */
-    .about-section{margin:115px auto 80px;display:flex;flex-direction:column;gap:40px}
-    .about-section h1{color:var(--accent);font-size:28px;margin-bottom:10px;text-align:left}
-    .about-section p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin:0}
-    .subline{color:var(--muted);font-size:15px;margin-bottom:20px;font-style:italic}
+    .about-section{margin:115px auto 80px;display:grid;grid-template-columns:1.2fr 0.9fr;gap:40px}
+    @media(max-width:900px){.about-section{grid-template-columns:1fr;gap:30px}}
 
-    .profile-card-section{background:var(--bg2);border:1px solid var(--line);
-      border-radius:14px;padding:24px;text-align:left;box-shadow:0 2px 6px rgba(0,0,0,.05)}
-    .profile-card-section h2{color:var(--accent);font-size:20px;margin-bottom:12px;text-align:left}
-    .profile-card-section ul{list-style:none;padding:0;margin:0}
-    .profile-card-section ul li{margin-bottom:8px;color:var(--muted);font-size:15px;line-height:1.6;text-align:justify}
+    .left-column h1{color:var(--accent);font-size:28px;margin-bottom:14px;text-align:left}
+    .left-column p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:18px}
+    .subline{color:var(--muted);font-size:15px;margin-bottom:18px;font-style:italic}
+
+    .right-column .card{background:var(--bg2);border:1px solid var(--line);
+      border-radius:12px;padding:22px;margin-bottom:24px;text-align:left;
+      box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    .right-column .card h2{color:var(--accent);font-size:18px;margin:0 0 10px 0}
+    .right-column .card p,.right-column .card li{color:var(--muted);font-size:15px;line-height:1.7;text-align:justify;margin:0}
+    .right-column .card ul{list-style:none;padding:0;margin:0}
+    .right-column .card ul li{margin-bottom:8px;border-top:1px solid var(--line);padding-top:8px}
+    .right-column .card ul li:first-child{border-top:none;padding-top:0}
 
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px}
     footer.site .wrap{padding:22px 20px}
@@ -110,58 +115,61 @@
 
 <main>
   <div class="wrap about-section">
-    <!-- ===== ABOUT ME ===== -->
-    <div>
+    <!-- LEFT COLUMN -->
+    <div class="left-column">
       <h1>About Me</h1>
       <p><strong>Md Shohug Hossain</strong> is a Ph.D. researcher specializing in GeoAI, remote sensing, and planetary science.</p>
       <p class="subline">Ph.D. Researcher, Department of Earth and Energy Sciences · University of Louisiana at Lafayette, USA</p>
       <p>
-        My academic focus integrates artificial intelligence with Earth and planetary data analysis. I develop machine-learning frameworks that interpret satellite imagery to understand geomorphic and environmental processes on Earth and Mars.
-        My broader goal is to advance interpretable, physics-informed GeoAI methods that contribute to planetary exploration, hazard assessment, and sustainable Earth observation.
+        My research bridges artificial intelligence with Earth and planetary data analysis. I develop deep-learning and physics-informed frameworks to interpret satellite imagery, uncovering geomorphic and environmental processes on Earth and Mars.
+        I focus on creating transparent, reproducible GeoAI methods that advance planetary surface interpretation, hazard mapping, and data-driven environmental science.
       </p>
-    </div>
-
-    <!-- ===== RESEARCH INTERESTS ===== -->
-    <div class="profile-card-section">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Planetary geomorphology and surface-process modeling</li>
-        <li>Deep learning for planetary and terrestrial landform detection</li>
-        <li>Remote sensing and data fusion across radar, optical, and hyperspectral domains</li>
-        <li>GeoAI for environmental monitoring and climate resilience</li>
-      </ul>
-    </div>
-
-    <!-- ===== TECHNICAL SKILLS ===== -->
-    <div class="profile-card-section">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>Programming & AI: Python, PyTorch, Detectron2, YOLOv8, Scikit-learn</li>
-        <li>Geospatial Tools: ArcGIS, QGIS, Google Earth Engine, PostGIS</li>
-        <li>Data & Visualization: NumPy, Pandas, Matplotlib, Seaborn</li>
-        <li>Remote Sensing: Multispectral & Hyperspectral image processing, CRISM, Sentinel, Landsat</li>
-        <li>Systems: Linux, Slurm, HPC computing environments</li>
-        <li>Web Development: HTML, CSS, JavaScript</li>
-      </ul>
-    </div>
-
-    <!-- ===== ACADEMIC JOURNEY ===== -->
-    <div class="profile-card-section">
-      <h2>Academic Journey</h2>
-      <ul>
-        <li><strong>Ph.D. in Earth & Energy Sciences</strong> — University of Louisiana at Lafayette<br>Focus: Planetary geomorphology, AI-driven terrain analysis, and remote sensing.</li>
-        <li><strong>M.Sc. in Electrical & Computer Engineering</strong> — University of Calgary<br>Focus: Intelligent automation and geospatial analytics.</li>
-        <li><strong>B.Sc. in Computer Science & Engineering</strong> — North South University<br>Focus: Software systems, computer vision, and data science foundations.</li>
-      </ul>
-    </div>
-
-    <!-- ===== BEYOND RESEARCH ===== -->
-    <div class="profile-card-section">
-      <h2>Beyond Research</h2>
       <p>
-        Outside my research work, I enjoy contributing to academic leadership, creative visualization, and outreach. At the University of Calgary, I served as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, promoting collaboration and student mentorship.
-        I’m passionate about academic website design, science communication, and exploring how technology and art can make complex ideas more accessible.
+        My background combines computer science, data engineering, and geospatial analysis. I am motivated by interdisciplinary research that connects technology, geoscience, and scientific communication.
       </p>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+      <div class="card">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Planetary geomorphology and surface-process modeling</li>
+          <li>Deep learning for planetary and terrestrial feature detection</li>
+          <li>Multisensor data fusion: radar, optical, and hyperspectral integration</li>
+          <li>AI-driven Earth observation and climate resilience analysis</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li>Programming & AI: Python, PyTorch, Detectron2, YOLOv8, Scikit-learn</li>
+          <li>Geospatial Tools: ArcGIS, QGIS, Google Earth Engine, PostGIS</li>
+          <li>Data & Visualization: NumPy, Pandas, Matplotlib, Seaborn</li>
+          <li>Remote Sensing: CRISM, Sentinel, Landsat, multispectral & hyperspectral imagery</li>
+          <li>Systems: Linux, Slurm, HPC computing</li>
+          <li>Web Development: HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Academic Journey</h2>
+        <ul>
+          <li><strong>Ph.D. in Earth & Energy Sciences</strong> — University of Louisiana at Lafayette<br>Focus: Planetary geomorphology, GeoAI, and remote sensing.</li>
+          <li><strong>M.Sc. in Electrical & Computer Engineering</strong> — University of Calgary<br>Focus: Intelligent automation and geospatial analytics.</li>
+          <li><strong>B.Sc. in Computer Science & Engineering</strong> — North South University<br>Focus: Software engineering and data science foundations.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Beyond Research</h2>
+        <p>
+          Beyond academic research, I am passionate about leadership, outreach, and science communication.
+          At the University of Calgary, I served as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, fostering collaboration and mentorship.
+          I enjoy academic writing, visual storytelling, and web-based science communication that bridges technology and public understanding.
+        </p>
+      </div>
     </div>
   </div>
 </main>
