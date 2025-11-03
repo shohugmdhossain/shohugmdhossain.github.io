@@ -22,14 +22,19 @@
       --text:#222; --muted:#555; --line:#ddd;
       --max:1100px;
     }
+
     body {
-      margin:0; background:var(--bg); color:var(--text);
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.8;
     }
+
     a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
-    .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
+
+    .wrap { max-width:var(--max); margin:0 auto; padding:0 40px; }
 
     /* ===== NAVBAR ===== */
     .site-header {
@@ -66,29 +71,79 @@
     .nav-spacer { height:92px; }
     @media(max-width:900px){ .nav-spacer{height:110px;} }
 
-    /* ===== MAIN ===== */
-    main { margin-bottom:60px; }
-    h1,h2,h3 { font-family:"Libre Baskerville",serif; color:var(--accent); }
-    h1 { font-size:30px; margin:0 0 12px 0; }
-    h2 { font-size:22px; margin:45px 0 10px; }
-    h3 { font-size:18px; margin-bottom:8px; color:var(--text); font-weight:600; }
-    p, li { font-size:16px; text-align:justify; color:var(--text); }
-    ul { margin:0 0 14px 0; padding-left:20px; }
-    li { margin-bottom:6px; text-align:justify; }
-    .section { margin-bottom:50px; }
-    hr { border:0; border-top:1px solid var(--line); margin:26px 0; }
-
     /* ===== PAGE INTRO ===== */
     .page-intro { margin-bottom:40px; }
-    .page-intro h1 { color:var(--accent); font-size:30px; margin-bottom:12px; }
-    .page-intro p { font-size:16px; text-align:justify; max-width:950px; margin:0; }
+    .page-intro h1 {
+      color:var(--accent);
+      font-family:"Libre Baskerville",serif;
+      font-size:30px;
+      margin-bottom:12px;
+    }
+    .page-intro p {
+      font-size:16px;
+      text-align:justify;
+      max-width:1000px;
+      margin:0;
+    }
 
-    footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:60px; }
+    /* ===== SECTION (Soft Card Style) ===== */
+    .section {
+      background:var(--bg2);
+      border-radius:14px;
+      padding:30px;
+      margin:50px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      font-family:"Libre Baskerville",serif;
+      color:var(--accent);
+      font-size:22px;
+      margin-top:0;
+      border-bottom:1px solid var(--line);
+      padding-bottom:6px;
+    }
+
+    .section h3 {
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:8px;
+      color:var(--text);
+    }
+
+    ul {
+      margin:0 0 14px 0;
+      padding-left:20px;
+      max-width:1000px;
+    }
+
+    li {
+      margin-bottom:6px;
+      text-align:justify;
+    }
+
+    p, li {
+      color:var(--text);
+      text-align:justify;
+      font-size:16px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer.site {
+      background:var(--accent);
+      color:#fff;
+      text-align:center;
+      margin-top:60px;
+    }
     footer.site .wrap { padding:20px; }
     footer.site p { margin:0; font-size:15px; }
-    #toTop { position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff;
-      border:none; border-radius:50%; width:42px; height:42px; font-size:18px;
-      cursor:pointer; display:none; z-index:999; }
+
+    #toTop {
+      position:fixed; bottom:20px; right:20px;
+      background:var(--accent); color:#fff;
+      border:none; border-radius:50%; width:42px; height:42px;
+      font-size:18px; cursor:pointer; display:none; z-index:999;
+    }
     #toTop.show { display:block; }
   </style>
 </head>
@@ -129,42 +184,32 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ===== SPACER TO PREVENT HEADING OVERLAP ===== -->
   <div class="nav-spacer" aria-hidden="true"></div>
 
   <!-- ===== MAIN ===== -->
   <main class="wrap">
     <div class="page-intro">
       <h1>Professional Experience</h1>
-      <p>My professional trajectory bridges GeoAI, remote sensing, and computational geoscience with data systems and academic leadership. I focus on developing intelligent frameworks for planetary surface analysis, Earth observation, and data-driven environmental research.</p>
+      <p>My professional journey integrates GeoAI, planetary and Earth observation, and data-driven research. I focus on advancing remote sensing automation, machine learning workflows, and academic collaboration for multi-disciplinary geospatial studies.</p>
     </div>
-
-    <h2>Technical Expertise</h2>
-    <p>Proficient in Python, PyTorch, and Detectron2 for machine learning; remote sensing and GIS (Google Earth Engine, QGIS, ArcGIS); high-performance computing (Slurm, A100 GPUs); and data engineering (SQL, ETL, Snowflake). Experienced in building reproducible workflows for large-scale geospatial analytics.</p>
 
     <div class="section">
       <h2>Research Positions</h2>
       <h3>Research Assistant — University of Louisiana at Lafayette (2025–Present)</h3>
       <ul>
-        <li>Developing GeoAI models for planetary geomorphology, automating Mars mound detection with Faster/Mask R-CNN frameworks in Detectron2.</li>
-        <li>Managing large-scale COCO datasets, implementing evaluation pipelines, and optimizing training across multi-GPU environments.</li>
-        <li>Performing validation analysis and statistical evaluation for model interpretability and scientific reporting.</li>
+        <li>Develops deep learning models for Martian mound detection using Faster/Mask R-CNN within Detectron2, achieving robust spatial precision.</li>
+        <li>Automates COCO data registration, evaluation, and visualization for high-resolution orbital datasets on LONI A100 HPC clusters.</li>
+        <li>Analyzes detection metrics and constructs confusion matrices for precision–recall optimization.</li>
       </ul>
-      <hr>
-
       <h3>Research Assistant — SPARRSO (2020–2021)</h3>
       <ul>
-        <li>Executed wetland mapping and climate-resilience assessment using multispectral Landsat and Sentinel imagery.</li>
-        <li>Applied U-Net architectures for land-cover segmentation and temporal change detection.</li>
-        <li>Contributed spatial analytics supporting environmental monitoring and national adaptation studies.</li>
+        <li>Implemented wetland and climate resilience mapping through multispectral Landsat/Sentinel data using U-Net segmentation and GEE analytics.</li>
+        <li>Delivered geospatial reports for national climate adaptation projects and environmental planning initiatives.</li>
       </ul>
-      <hr>
-
       <h3>Research Assistant — North South University (2019–2020)</h3>
       <ul>
-        <li>Developed machine-learning recommender systems using implicit behavioral data and interaction patterns.</li>
-        <li>Implemented collaborative filtering and matrix-factorization techniques to improve prediction accuracy.</li>
-        <li>Presented results to faculty review boards and contributed to prototype deployment discussions.</li>
+        <li>Built implicit recommender systems utilizing behavioral analytics and collaborative filtering to predict user interest from interaction data.</li>
+        <li>Presented project findings to departmental review panels and assisted in algorithmic evaluation reports.</li>
       </ul>
     </div>
 
@@ -172,9 +217,9 @@
       <h2>Industry Experience</h2>
       <h3>Data Engineer — TELUS (2023–2024)</h3>
       <ul>
-        <li>Automated ETL pipelines integrating Python, SQL, and Snowflake, improving reliability of large-scale analytical workflows.</li>
-        <li>Built validation and monitoring systems that reduced manual data verification time by over 30%.</li>
-        <li>Developed data quality dashboards and reporting pipelines in Power BI for performance visualization.</li>
+        <li>Automated data ingestion and validation workflows using Python and SQL across Snowflake data warehouses.</li>
+        <li>Reduced manual QA time by 30% through ETL optimization and reliability testing of analytics pipelines.</li>
+        <li>Integrated Power BI dashboards with automated reporting pipelines to streamline enterprise data visualization.</li>
       </ul>
     </div>
 
@@ -182,9 +227,9 @@
       <h2>Teaching Experience</h2>
       <h3>Graduate Teaching Assistant — University of Calgary (2021–2023)</h3>
       <ul>
-        <li>Assisted in Python and Agent-Based Software Engineering courses, leading lab sessions and automating grading scripts.</li>
-        <li>Provided mentorship to over 100 students in scientific computing and research-based programming.</li>
-        <li>Supported course development with structured assignments, reproducible templates, and teaching documentation.</li>
+        <li>Delivered lab instruction and technical mentoring for Python and Agent-Based Software Engineering courses.</li>
+        <li>Automated grading and simulation testing, improving feedback turnaround time for 100+ students.</li>
+        <li>Supported course material redesign emphasizing reproducibility and clean coding principles.</li>
       </ul>
     </div>
 
@@ -192,27 +237,22 @@
       <h2>Leadership & Service</h2>
       <h3>President — ECE Graduate Group, University of Calgary</h3>
       <ul>
-        <li>Directed graduate engagement initiatives, fostering research collaboration and academic networking among interdisciplinary cohorts.</li>
-        <li>Organized technical workshops, panel discussions, and peer mentorship programs.</li>
+        <li>Led interdisciplinary research collaboration initiatives and organized academic skill-development workshops.</li>
+        <li>Coordinated faculty-student panels promoting research communication and networking.</li>
       </ul>
-      <hr>
-
       <h3>Vice President — Schulich Graduate Engineering Consortium & BSA</h3>
       <ul>
-        <li>Facilitated inclusive academic events promoting diversity and global collaboration within graduate engineering communities.</li>
-        <li>Coordinated seminars, outreach, and professional development activities.</li>
+        <li>Facilitated diversity and inclusion programs through cross-departmental academic engagement events.</li>
+        <li>Planned professional development sessions bridging research, industry, and leadership pathways.</li>
       </ul>
-      <hr>
-
       <h3>Executive Member — NSU Computer Engineering Club</h3>
       <ul>
-        <li>Organized hackathons, coding challenges, and research showcases for student innovation.</li>
-        <li>Strengthened collaborations between academia and technology partners to expand applied learning opportunities.</li>
+        <li>Directed hackathons, coding competitions, and undergraduate research showcases promoting innovation.</li>
+        <li>Established partnerships with local tech companies to expand experiential learning opportunities.</li>
       </ul>
     </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
@@ -223,6 +263,7 @@
     document.addEventListener("DOMContentLoaded",()=>{
       const y=document.getElementById("y");
       if(y) y.textContent=new Date().getFullYear();
+
       const toggle=document.querySelector(".menu-toggle");
       const overlay=document.getElementById("overlayMenu");
       const closeBtn=document.querySelector(".dropdown-close");
@@ -236,7 +277,6 @@
       window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>200);});
       toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-      // Spacer auto-adjusts to header height
       const header=document.querySelector('.site-header');
       const spacer=document.querySelector('.nav-spacer');
       const setH=()=>{if(header&&spacer)spacer.style.height=(header.offsetHeight+8)+'px';};
@@ -245,6 +285,7 @@
   </script>
 </body>
 </html>
+
 
 
 
