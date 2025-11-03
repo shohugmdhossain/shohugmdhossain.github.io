@@ -23,7 +23,7 @@
       --accent:#b1040e;--bg:#fff;--bg2:#f9f9f9;
       --text:#222;--muted:#555;--line:#ddd;--max:1100px;
     }
-    body {margin:0;background:var(--bg);color:var(--text);
+    body{margin:0;background:var(--bg);color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.75;overflow-x:hidden}
     a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
@@ -59,7 +59,7 @@
 
     /* ===== TWO COLUMN LAYOUT ===== */
     .about-section{margin:115px auto 80px;
-      display:grid;grid-template-columns:0.9fr 1.2fr;gap:40px}
+      display:grid;grid-template-columns:0.8fr 1.3fr;gap:40px}
     @media(max-width:900px){.about-section{grid-template-columns:1fr;gap:30px}}
 
     /* LEFT COLUMN */
@@ -89,10 +89,17 @@
     .subline{color:var(--muted);font-size:15px;margin-bottom:20px;font-style:italic}
     .right-column p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:18px}
 
+    .education{margin-top:25px}
     .education .entry{margin-bottom:18px}
     .education .entry img{vertical-align:middle;margin-right:8px;height:26px;width:auto}
     .education .entry strong{color:var(--accent)}
     .education .entry p{margin:4px 0 0 34px;font-size:15px;color:var(--muted);line-height:1.7}
+
+    .research-interests{margin-top:30px}
+    .research-interests h2{color:var(--accent);font-size:20px;margin-bottom:10px}
+    .research-interests ul{list-style:none;padding:0;margin:0}
+    .research-interests li{margin-bottom:10px;font-size:15px;color:var(--muted);line-height:1.8;text-align:justify}
+    .research-interests li::before{content:"• ";color:var(--accent);font-weight:bold}
 
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px}
     footer.site .wrap{padding:22px 20px}
@@ -161,10 +168,10 @@
       <div class="card">
         <h2><i class="fa-solid fa-lightbulb"></i> Beyond Research</h2>
         <p>
-          I’m deeply involved in academic leadership, mentoring, and creative communication.
-          As President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium at the University of Calgary,
-          I fostered graduate collaboration and research community building.  
-          I also enjoy designing academic websites and creating visual data stories that merge technology and design.
+          I actively engage in academic leadership and outreach.  
+          As President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium at the University of Calgary,  
+          I helped foster collaboration and mentorship among graduate students.  
+          I’m also passionate about science communication, academic design, and building tools that make research more accessible.
         </p>
       </div>
     </div>
@@ -172,16 +179,22 @@
     <!-- RIGHT COLUMN -->
     <div class="right-column">
       <h1>About Me</h1>
-      <p><strong>Md Shohug Hossain</strong> is a Ph.D. Researcher specializing in GeoAI, remote sensing, and planetary science.</p>
+      <p><strong>Md Shohug Hossain</strong> is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI, remote sensing, and planetary science.</p>
       <p class="subline">Ph.D. Researcher, Department of Earth and Energy Sciences · University of Louisiana at Lafayette, USA</p>
       <p>
-        My work bridges artificial intelligence with Earth and planetary data analysis to decode geomorphic and environmental processes.
-        I build deep-learning frameworks for automatic terrain analysis and landform mapping using satellite imagery of Earth and Mars.
-        My aim is to develop reproducible GeoAI workflows that contribute to planetary exploration, climate studies, and sustainable Earth observation.
+        My academic work focuses on developing intelligent systems that integrate artificial intelligence with geospatial data to interpret planetary and terrestrial environments.  
+        By combining deep learning with physical models, I explore how landforms evolve on Mars and how Earth’s surface processes can be understood through remote sensing and data analytics.
+      </p>
+      <p>
+        Previously, I studied intelligent automation and geospatial analytics during my M.Sc. at the University of Calgary and earned a B.Sc. in Computer Science & Engineering from North South University.  
+        My interdisciplinary background allows me to approach geoscientific questions through the lens of computation, data science, and systems engineering.
+      </p>
+      <p>
+        My long-term vision is to advance trustworthy, physics-informed GeoAI frameworks that can enhance planetary exploration, improve climate resilience studies, and foster open, reproducible science.
       </p>
 
       <div class="education">
-        <h2 style="color:var(--accent);font-size:18px;">Academic Journey</h2>
+        <h2 style="color:var(--accent);font-size:20px;">Academic Journey</h2>
         <div class="entry">
           <img src="ul.png" alt="UL Lafayette">
           <strong>Ph.D. in Earth & Energy Sciences</strong><br>
@@ -199,13 +212,17 @@
         </div>
       </div>
 
-      <div class="card" style="margin-top:28px;">
+      <div class="research-interests">
         <h2><i class="fa-solid fa-microscope"></i> Research Interests</h2>
+        <p>
+          My research explores the intersection of artificial intelligence, geospatial science, and planetary geomorphology — connecting Earth observation with planetary exploration to better understand how landscapes evolve across diverse environments.
+        </p>
         <ul>
-          <li>Planetary geomorphology and surface-process modeling</li>
-          <li>AI for planetary and terrestrial landform detection</li>
-          <li>Remote sensing data fusion across radar, optical, and hyperspectral sensors</li>
-          <li>Physics-informed and interpretable GeoAI for Earth and Mars</li>
+          <li>Planetary geomorphology and automated surface-process modeling</li>
+          <li>AI-driven landform detection and classification across Mars and Earth</li>
+          <li>Fusion of radar, optical, and hyperspectral datasets for terrain analysis</li>
+          <li>Physics-informed and interpretable GeoAI for planetary-scale understanding</li>
+          <li>Trustworthy and open-source frameworks for reproducible geospatial analytics</li>
         </ul>
       </div>
     </div>
