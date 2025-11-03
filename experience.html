@@ -16,27 +16,6 @@
   <meta property="og:url" content="https://shohugmdhossain.github.io/experience.html">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Md Shohug Hossain",
-    "jobTitle": "Ph.D. Researcher",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "University of Louisiana at Lafayette"
-    },
-    "url": "https://shohugmdhossain.github.io",
-    "sameAs": [
-      "https://scholar.google.com/",
-      "https://github.com/shohugmdhossain",
-      "https://www.linkedin.com/in/md-shohug-hossain/",
-      "https://x.com/Hmdshohug10"
-    ]
-  }
-  </script>
-
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +27,7 @@
       --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9;
       --text:#222; --muted:#555; --line:#ddd; --max:1000px;
     }
+
     body {
       margin:0;
       background:var(--bg);
@@ -56,19 +36,10 @@
       line-height:1.75;
     }
 
-    a {
-      color:var(--accent);
-      text-decoration:none;
-      border-bottom:1px solid transparent;
-      transition:.2s;
-    }
+    a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
 
-    .wrap {
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 20px;
-    }
+    .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
 
     /* ===== NAVBAR ===== */
     .site-header {
@@ -78,41 +49,43 @@
       color:#fff;
       z-index:1000;
       box-shadow:0 3px 10px rgba(0,0,0,.1);
+      height:72px;
+      display:flex;
+      align-items:center;
     }
 
     .nav-bar {
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:14px 0;
-      position:relative;
+      width:100%;
     }
 
     .brand {
       font-family:"Libre Baskerville",serif;
       font-weight:700;
       font-size:22px;
-      margin-left:5px;
+      margin-left:25px;
     }
     .brand a { color:#fff; text-decoration:none; }
 
     .nav-links {
       display:flex;
-      gap:24px;
+      gap:26px;
       align-items:center;
       position:absolute;
-      right:80px; /* keep near hamburger */
-      top:12px;
+      right:110px;
+      top:50%;
+      transform:translateY(-50%);
     }
 
     .nav-links a {
       color:#fff;
-      font-size:16px; /* increased */
-      padding-top:2px; /* moves text slightly down */
+      font-size:16px;
+      letter-spacing:0.3px;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a:hover, .nav-links a.active {
       text-decoration:underline;
       opacity:.9;
     }
@@ -120,71 +93,47 @@
     .right-cluster {
       display:flex;
       align-items:center;
-      gap:10px;
-      margin-right:20px;
+      justify-content:flex-end;
+      margin-right:40px;
+      height:100%;
     }
 
     .menu-toggle {
       background:none;
       border:none;
       color:#fff;
-      font-size:24px;
+      font-size:26px;
       cursor:pointer;
     }
     .menu-toggle:hover { transform:scale(1.1); }
 
     /* ===== OVERLAY MENU ===== */
     .dropdown-nav {
-      position:fixed;
-      top:0; left:0; right:0; bottom:0;
+      position:fixed; top:0; left:0; right:0; bottom:0;
       background:rgba(177,4,14,.75);
       backdrop-filter:blur(10px);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
       gap:24px;
       z-index:9999;
-      opacity:0;
-      visibility:hidden;
+      opacity:0; visibility:hidden;
       transition:.3s;
     }
     .dropdown-nav.active { opacity:1; visibility:visible; }
     .dropdown-nav a {
-      color:#fff;
-      font-size:22px;
-      font-weight:500;
+      color:#fff; font-size:22px; font-weight:500;
     }
     .dropdown-close {
-      position:absolute;
-      top:20px; right:28px;
-      color:#fff;
-      font-size:26px;
-      border:none;
-      background:none;
-      cursor:pointer;
+      position:absolute; top:20px; right:28px;
+      color:#fff; font-size:26px; border:none; background:none; cursor:pointer;
     }
 
     /* ===== EXPERIENCE SECTION ===== */
-    .experience-section { margin:100px auto 80px; }
-    .experience-section h1 {
-      color:var(--accent);
-      font-size:30px;
-      margin-bottom:10px;
-    }
-    .intro {
-      color:var(--muted);
-      margin-bottom:45px;
-      font-size:16px;
-      text-align:justify;
-    }
+    .experience-section { margin:115px auto 80px; }
+    .experience-section h1 { color:var(--accent); font-size:30px; margin-bottom:10px; }
+    .intro { color:var(--muted); margin-bottom:45px; font-size:16px; text-align:justify; }
 
-    .exp-grid {
-      display:flex;
-      flex-direction:column;
-      gap:30px;
-    }
-
+    .exp-grid { display:flex; flex-direction:column; gap:30px; }
     .exp-card {
       background:#fff;
       border:1px solid var(--line);
@@ -194,21 +143,13 @@
       transition:.25s ease;
     }
     .exp-card:hover { box-shadow:0 4px 14px rgba(0,0,0,0.09); }
-
     .exp-title { font-weight:600; font-size:18px; color:var(--accent); }
     .exp-org { font-weight:500; color:var(--muted); }
     .exp-time { font-size:14px; color:#777; margin:6px 0 12px; }
-
     .exp-details ul { margin:0; padding-left:20px; }
     .exp-details li { margin-bottom:7px; }
 
-    .section-heading {
-      color:var(--accent);
-      font-size:26px;
-      margin-top:70px;
-      margin-bottom:20px;
-      font-weight:600;
-    }
+    .section-heading { color:var(--accent); font-size:26px; margin-top:70px; margin-bottom:20px; font-weight:600; }
 
     /* ===== FOOTER ===== */
     footer.site {
@@ -221,17 +162,11 @@
     footer.site p { margin:0; font-size:15px; }
 
     #toTop {
-      position:fixed;
-      bottom:20px; right:20px;
-      background:var(--accent);
-      color:#fff;
-      border:none;
-      border-radius:50%;
-      width:42px; height:42px;
-      font-size:18px;
-      cursor:pointer;
-      display:none;
-      z-index:999;
+      position:fixed; bottom:20px; right:20px;
+      background:var(--accent); color:#fff;
+      border:none; border-radius:50%;
+      width:42px; height:42px; font-size:18px;
+      cursor:pointer; display:none; z-index:999;
     }
     #toTop.show { display:block; }
   </style>
@@ -251,18 +186,14 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="right-cluster">
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
-        </button>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </header>
 
   <!-- ===== OVERLAY MENU ===== -->
   <div class="dropdown-nav" id="overlayMenu">
-    <button class="dropdown-close" aria-label="Close menu">
-      <i class="fas fa-times"></i>
-    </button>
+    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
     <a href="about.html">About</a>
     <a href="research.html">Research</a>
     <a href="experience.html" class="active">Experience</a>
@@ -275,9 +206,7 @@
   <main>
     <div class="wrap experience-section">
       <h1>Professional Experience</h1>
-      <p class="intro">
-        My professional journey integrates academic research, geospatial data science, and AI-powered planetary analysis. I have worked across interdisciplinary domains combining machine learning, remote sensing, and high-performance computing to address scientific and real-world challenges.
-      </p>
+      <p class="intro">My professional journey integrates academic research, geospatial data science, and AI-powered planetary analysis. I have worked across interdisciplinary domains combining machine learning, remote sensing, and high-performance computing to address scientific and real-world challenges.</p>
 
       <div class="exp-grid">
         <div class="exp-card">
@@ -403,14 +332,10 @@
   </main>
 
   <footer class="site">
-    <div class="wrap">
-      <p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p>
-    </div>
+    <div class="wrap"><p>© <span id="y"></span> Md Shohug Hossain · GeoAI & Remote Sensing</p></div>
   </footer>
 
-  <button id="toTop" aria-label="Back to top">
-    <i class="fa-solid fa-chevron-up"></i>
-  </button>
+  <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
