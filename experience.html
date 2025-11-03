@@ -41,7 +41,7 @@
 
     .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
 
-    /* ===== NAVBAR (Centered + Flush Hamburger) ===== */
+    /* ===== NAVBAR (Perfectly Right-Aligned) ===== */
     .site-header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -51,36 +51,36 @@
       box-shadow: 0 3px 10px rgba(0,0,0,.1);
       height: 72px;
       display: flex;
+      justify-content: center;
       align-items: center;
     }
 
     .nav-bar {
+      width: 100%;
+      max-width: var(--max);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
+      padding: 0 20px;
     }
 
     .brand {
       font-family: "Libre Baskerville", serif;
       font-weight: 700;
       font-size: 22px;
-      margin-left: 25px;
     }
     .brand a { color: #fff; text-decoration: none; }
 
     .nav-right {
-      margin-left: auto;
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-right: max(calc((100vw - var(--max)) / 2), 20px);
+      gap: 24px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 26px;
     }
 
     .nav-links a {
@@ -201,9 +201,8 @@
 <body>
   <!-- ===== NAVBAR ===== -->
   <header class="site-header">
-    <div class="wrap nav-bar">
+    <div class="nav-bar">
       <div class="brand"><a href="index.html">M S Hossain</a></div>
-
       <div class="nav-right">
         <nav class="nav-links">
           <a href="about.html">About</a>
@@ -213,7 +212,6 @@
           <a href="awards.html">Awards</a>
           <a href="contact.html">Contact</a>
         </nav>
-
         <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
@@ -389,6 +387,7 @@
   </script>
 </body>
 </html>
+
 
 
 
