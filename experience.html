@@ -62,17 +62,26 @@
     .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
     .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
 
-    /* ===== PAGE STRUCTURE ===== */
-    main { margin-top:120px; }
+    /* ===== FIXED NAV SPACING ===== */
+    .nav-spacer { height:92px; }
+    @media(max-width:900px){ .nav-spacer{height:110px;} }
+
+    /* ===== MAIN ===== */
+    main { margin-bottom:60px; }
     h1,h2,h3 { font-family:"Libre Baskerville",serif; color:var(--accent); }
-    h1 { font-size:30px; margin-bottom:12px; }
+    h1 { font-size:30px; margin:0 0 12px 0; }
     h2 { font-size:22px; margin:45px 0 10px; }
     h3 { font-size:18px; margin-bottom:8px; color:var(--text); font-weight:600; }
     p, li { font-size:16px; text-align:justify; color:var(--text); }
     ul { margin:0 0 14px 0; padding-left:20px; }
-    li { margin-bottom:6px; }
+    li { margin-bottom:6px; text-align:justify; }
     .section { margin-bottom:50px; }
     hr { border:0; border-top:1px solid var(--line); margin:26px 0; }
+
+    /* ===== PAGE INTRO ===== */
+    .page-intro { margin-bottom:40px; }
+    .page-intro h1 { color:var(--accent); font-size:30px; margin-bottom:12px; }
+    .page-intro p { font-size:16px; text-align:justify; max-width:950px; margin:0; }
 
     footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:60px; }
     footer.site .wrap { padding:20px; }
@@ -81,7 +90,6 @@
       border:none; border-radius:50%; width:42px; height:42px; font-size:18px;
       cursor:pointer; display:none; z-index:999; }
     #toTop.show { display:block; }
-    @media(max-width:900px){ .nav-links{display:none;} main{margin-top:130px;} }
   </style>
 </head>
 
@@ -121,6 +129,9 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <!-- ===== SPACER TO PREVENT HEADING OVERLAP ===== -->
+  <div class="nav-spacer" aria-hidden="true"></div>
+
   <!-- ===== MAIN ===== -->
   <main class="wrap">
     <div class="page-intro">
@@ -129,7 +140,7 @@
     </div>
 
     <h2>Technical Expertise</h2>
-    <p>Proficient in Python, PyTorch, and Detectron2 for machine learning applications; remote sensing and GIS (Google Earth Engine, QGIS, ArcGIS); high-performance computing (Slurm, A100 GPUs); and data engineering workflows (SQL, ETL, Snowflake). Experienced in designing reproducible pipelines for geospatial analytics and scientific computing.</p>
+    <p>Proficient in Python, PyTorch, and Detectron2 for machine learning; remote sensing and GIS (Google Earth Engine, QGIS, ArcGIS); high-performance computing (Slurm, A100 GPUs); and data engineering (SQL, ETL, Snowflake). Experienced in building reproducible workflows for large-scale geospatial analytics.</p>
 
     <div class="section">
       <h2>Research Positions</h2>
@@ -224,6 +235,12 @@
       document.addEventListener("keydown",e=>{if(e.key==="Escape")close();});
       window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>200);});
       toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+      // Spacer auto-adjusts to header height
+      const header=document.querySelector('.site-header');
+      const spacer=document.querySelector('.nav-spacer');
+      const setH=()=>{if(header&&spacer)spacer.style.height=(header.offsetHeight+8)+'px';};
+      setH(); window.addEventListener('resize',setH);
     });
   </script>
 </body>
