@@ -27,22 +27,13 @@
       --text:#222; --muted:#555; --line:#ddd; --max:1000px;
     }
 
-    body {
-      margin:0; background:var(--bg); color:var(--text);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.75; overflow-x:hidden;
-    }
-
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.75; overflow-x:hidden; }
     a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
     a:hover { border-bottom-color:var(--accent); }
     .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
 
     /* ===== NAVBAR ===== */
-    .site-header {
-      position:fixed; top:0; left:0; right:0; background:var(--accent);
-      color:#fff; z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,.1);
-      height:72px; display:flex; justify-content:center; align-items:center;
-    }
+    .site-header { position:fixed; top:0; left:0; right:0; background:var(--accent); color:#fff; z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,.1); height:72px; display:flex; justify-content:center; align-items:center; }
     .nav-bar { width:100%; max-width:var(--max); display:flex; align-items:center; justify-content:space-between; padding:0 20px; }
     .brand { font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; }
     .brand a { color:#fff; text-decoration:none; }
@@ -62,8 +53,8 @@
 
     /* ===== AWARDS ===== */
     .awards-section { margin:115px auto 80px; }
-    .awards-section h1 { color:var(--accent); font-size:30px; text-align:center; margin-bottom:12px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
-    .awards-intro { text-align:center; color:var(--muted); font-size:16px; margin-bottom:40px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .awards-section h1 { color:var(--accent); font-size:30px; text-align:left; margin-bottom:12px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .awards-intro { color:var(--muted); font-size:16px; margin-bottom:40px; text-align:justify; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
 
     .award-category { color:var(--accent); font-size:26px; margin-top:60px; margin-bottom:18px; font-weight:600; display:flex; align-items:center; gap:10px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
     .award-category i { font-size:22px; color:var(--accent); }
@@ -137,13 +128,6 @@
         </div>
 
         <div class="award-card">
-          <div class="award-title">Graduate Leadership Recognition</div>
-          <div class="award-meta">University of Calgary · 2023</div>
-          <p class="award-details">Recognized for leadership as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, promoting collaboration and mentorship among graduate students.</p>
-          <div class="award-tags"><span>Leadership</span><span>Mentorship</span><span>Graduate Community</span></div>
-        </div>
-
-        <div class="award-card">
           <div class="award-title">Best Paper Recognition</div>
           <div class="award-meta">SPARRSO (Bangladesh Space Research & Remote Sensing Organization) · 2021</div>
           <p class="award-details">Awarded for research excellence in remote sensing and environmental analytics, highlighting contributions to Earth observation and data-driven environmental monitoring.</p>
@@ -155,6 +139,17 @@
           <div class="award-meta">North South University · 2015–2019</div>
           <p class="award-details">Multi-year academic merit scholarship recognizing sustained performance and excellence throughout the Computer Science & Engineering program.</p>
           <div class="award-tags"><span>Merit Scholarship</span><span>NSU</span><span>Academic Excellence</span></div>
+        </div>
+      </div>
+
+      <!-- ===== LEADERSHIP & SERVICE ===== -->
+      <h2 class="award-category"><i class="fa-solid fa-people-group"></i> Leadership & Service Awards</h2>
+      <div class="award-grid">
+        <div class="award-card">
+          <div class="award-title">Graduate Leadership Recognition</div>
+          <div class="award-meta">University of Calgary · 2023</div>
+          <p class="award-details">Recognized for outstanding leadership as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, fostering research collaboration, mentorship, and graduate community engagement.</p>
+          <div class="award-tags"><span>Leadership</span><span>Mentorship</span><span>Community</span></div>
         </div>
       </div>
     </div>
@@ -181,7 +176,6 @@
       window.addEventListener('scroll',()=>{ toTop.classList.toggle('show',window.scrollY>200); });
       toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-      // Fade-in animation
       const fadeEls=document.querySelectorAll('.award-card,.award-category,.awards-section h1,.awards-intro');
       const io=new IntersectionObserver((entries)=>{
         entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
@@ -191,6 +185,7 @@
   </script>
 </body>
 </html>
+
 
 
 
