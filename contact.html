@@ -4,11 +4,18 @@
   <title>Contact — M S Hossain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Md Shohug Hossain — Ph.D. researcher in GeoAI, remote sensing, and planetary science.">
+  <meta name="description" content="Contact Md Shohug Hossain — inquiries, collaborations, and research communication in GeoAI, Remote Sensing, and Planetary Science.">
+  <meta name="keywords" content="Md Shohug Hossain, Contact, Email, Research Collaboration, GeoAI, Remote Sensing, Planetary Science">
   <meta name="author" content="Md Shohug Hossain">
+  <link rel="canonical" href="https://shohugmdhossain.github.io/contact.html">
   <meta name="theme-color" content="#b1040e">
+  <meta property="og:title" content="Contact — M S Hossain">
+  <meta property="og:description" content="Get in touch with Md Shohug Hossain for academic collaborations or inquiries related to GeoAI and Planetary Science.">
+  <meta property="og:image" content="https://shohugmdhossain.github.io/profile.jpg">
+  <meta property="og:url" content="https://shohugmdhossain.github.io/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Fonts & Icons -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -16,126 +23,90 @@
 
   <style>
     :root {
-      --accent:#b1040e; --bg:#fff; --bg2:#f9f9f9; --text:#222;
-      --muted:#555; --line:#ddd; --max:1100px;
+      --accent:#b1040e; --bg:#fff; --text:#222; --muted:#555;
+      --line:#ddd; --max:1000px;
     }
     body {
       margin:0; background:var(--bg); color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.7;
+      line-height:1.75; overflow-x:hidden;
     }
-    .wrap {max-width:var(--max); margin:0 auto; padding:0 20px;}
-    a {color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s;}
-    a:hover {border-bottom-color:var(--accent);}
-    html,body{scroll-behavior:smooth;}
+    a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:.2s; }
+    a:hover { border-bottom-color:var(--accent); }
+    .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
 
     /* ===== NAVBAR ===== */
-    .site-header{
-      position:fixed; top:0; left:0; right:0; z-index:1000;
-      background:var(--accent); color:#fff; box-shadow:0 3px 10px rgba(0,0,0,.1);
-    }
-    .nav-bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
-    .brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:22px;color:#fff;}
-    .nav-links{display:flex;gap:20px;align-items:center;}
-    .nav-links a{color:#fff;border:0;font-size:15px;}
-    .nav-links a:hover,.nav-links a.active{text-decoration:underline;opacity:.9;}
-    .right-cluster{display:flex;align-items:center;gap:14px;}
-    .menu-toggle{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
-    .menu-toggle:hover{transform:scale(1.1);}
+    .site-header { position:fixed; top:0; left:0; right:0; background:var(--accent); color:#fff; z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,.1); height:72px; display:flex; justify-content:center; align-items:center; }
+    .nav-bar { width:100%; max-width:var(--max); display:flex; align-items:center; justify-content:space-between; padding:0 20px; }
+    .brand { font-family:"Libre Baskerville",serif; font-weight:700; font-size:22px; }
+    .brand a { color:#fff; text-decoration:none; }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-links { display:flex; align-items:center; gap:26px; }
+    .nav-links a { color:#fff; font-size:16px; padding:6px 0 4px; }
+    .nav-links a:hover, .nav-links a.active { text-decoration:underline; opacity:.9; }
+    .menu-toggle { background:none; border:none; color:#fff; font-size:26px; cursor:pointer; display:flex; align-items:center; justify-content:center; width:36px; height:36px; }
+    .menu-toggle:hover { transform:scale(1.06); }
+    @media(max-width:980px){ .nav-links{display:none;} }
 
-    /* Overlay Menu */
-    .dropdown-nav{position:fixed;top:0;left:0;right:0;bottom:0;
-      background:rgba(177,4,14,.75);backdrop-filter:blur(10px);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      gap:24px;z-index:9999;opacity:0;visibility:hidden;transition:.3s;}
-    .dropdown-nav.active{opacity:1;visibility:visible;}
-    .dropdown-nav a{color:#fff;font-size:22px;font-weight:500;}
-    .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;border:none;background:none;cursor:pointer;}
-    .dropdown-close:hover{transform:rotate(90deg);}
+    /* ===== OVERLAY MENU ===== */
+    .dropdown-nav { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(177,4,14,.75); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; z-index:9999; opacity:0; visibility:hidden; transition:.3s; }
+    .dropdown-nav.active { opacity:1; visibility:visible; }
+    .dropdown-nav a { color:#fff; font-size:22px; font-weight:500; }
+    .dropdown-close { position:absolute; top:20px; right:28px; color:#fff; font-size:26px; border:none; background:none; cursor:pointer; }
 
     /* ===== CONTACT SECTION ===== */
-    main {margin-top:100px;}
-    .contact-grid {
-      display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start;
-      margin-top:30px;
-    }
-    .contact-left {
-      background:var(--bg2); border:1px solid var(--line); border-radius:14px;
-      padding:26px; box-shadow:0 2px 8px rgba(0,0,0,0.08);
-    }
-    .contact-left h2 {color:var(--accent);font-family:"Libre Baskerville",serif;margin-top:0;font-size:22px;}
-    .contact-left form {display:flex;flex-direction:column;gap:14px;}
-    input,textarea {
-      font-family:inherit; font-size:15px; padding:10px 12px;
-      border:1px solid var(--line); border-radius:8px; width:100%;
-      background:#fff; transition:border-color .2s;
-    }
-    input:focus,textarea:focus{outline:none;border-color:var(--accent);}
-    textarea{resize:vertical;min-height:120px;}
-    button {
-      align-self:flex-start; background:var(--accent); color:#fff;
-      border:none; border-radius:8px; padding:10px 18px;
-      font-size:15px; cursor:pointer; transition:.2s;
-    }
-    button:hover{background:#8a030d;}
-    .success-msg {
-      display:none; margin-top:10px; background:#e8f5e9;
-      color:#2e7d32; border:1px solid #a5d6a7; border-radius:8px;
-      padding:8px 12px; font-size:14px;
-    }
+    .contact-section { margin:115px auto 80px; display:flex; flex-wrap:wrap; gap:60px; }
+    .contact-section h1 { color:var(--accent); font-size:30px; text-align:left; margin-bottom:14px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .contact-intro { color:var(--muted); font-size:16px; margin-bottom:35px; text-align:justify; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
 
-    .contact-right {
-      display:flex;flex-direction:column;gap:18px;
-    }
-    .contact-right h2{color:var(--accent);font-family:"Libre Baskerville",serif;margin:0;font-size:22px;}
-    .contact-item{display:flex;align-items:center;gap:10px;color:var(--text);font-size:15px;}
-    .contact-item i{color:var(--accent);}
-    .socials{display:flex;gap:18px;margin-top:8px;}
-    .socials a{color:var(--accent);font-size:22px;border:0;}
-    .socials a:hover{opacity:.85;}
+    .contact-left { flex:1; min-width:280px; }
+    .contact-info { line-height:1.9; }
+    .contact-info i { color:var(--accent); margin-right:10px; }
+    .social-links { margin-top:15px; display:flex; gap:18px; }
+    .social-links a { font-size:22px; color:var(--accent); }
+    .social-links a:hover { transform:translateY(-2px); opacity:.9; }
 
-    footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:60px;}
-    footer.site .wrap{padding:20px;}
-    footer.site p{margin:0;font-size:15px;}
+    .contact-right { flex:1; min-width:320px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:25px 30px; box-shadow:0 2px 8px rgba(0,0,0,0.05); opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .contact-right.show, .contact-left.show, .contact-section h1.show, .contact-intro.show { opacity:1; transform:translateY(0); }
 
-    #toTop{
-      position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;
-      border:none;border-radius:50%;width:42px;height:42px;font-size:18px;
-      cursor:pointer;display:none;z-index:999;
-    }
-    #toTop.show{display:block;}
+    form label { font-weight:600; color:var(--text); display:block; margin-top:12px; margin-bottom:4px; }
+    input, textarea { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:15px; font-family:inherit; transition:border .25s ease; }
+    input:focus, textarea:focus { outline:none; border-color:var(--accent); }
+    textarea { min-height:120px; resize:vertical; }
+    button.send-btn { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:12px 20px; margin-top:16px; font-size:15px; font-weight:600; cursor:pointer; transition:.2s; }
+    button.send-btn:hover { opacity:.9; transform:translateY(-2px); }
 
-    @media(max-width:900px){
-      .nav-links{display:none;}
-      .contact-grid{grid-template-columns:1fr;}
-    }
+    /* ===== FOOTER ===== */
+    footer.site { background:var(--accent); color:#fff; text-align:center; margin-top:70px; }
+    footer.site .wrap { padding:20px; }
+    footer.site p { margin:0; font-size:15px; }
+    #toTop { position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff; border:none; border-radius:50%; width:42px; height:42px; font-size:18px; cursor:pointer; display:none; z-index:999; }
+    #toTop.show { display:block; }
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- ===== NAVBAR ===== -->
   <header class="site-header">
-    <div class="wrap nav-bar">
-      <div class="brand">M S Hossain</div>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="experience.html">Experience</a>
-        <a href="publications.html">Publications</a>
-        <a href="awards.html">Awards</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-      <div class="right-cluster">
+    <div class="nav-bar">
+      <div class="brand"><a href="index.html">M S Hossain</a></div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="experience.html">Experience</a>
+          <a href="publications.html">Publications</a>
+          <a href="awards.html">Awards</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
         <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </header>
 
-  <!-- OVERLAY MENU -->
+  <!-- ===== OVERLAY MENU ===== -->
   <div class="dropdown-nav" id="overlayMenu">
-    <button class="dropdown-close"><i class="fas fa-times"></i></button>
-    <a href="index.html">Home</a>
+    <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
     <a href="about.html">About</a>
     <a href="research.html">Research</a>
     <a href="experience.html">Experience</a>
@@ -144,35 +115,39 @@
     <a href="contact.html" class="active">Contact</a>
   </div>
 
-  <!-- MAIN -->
-  <main class="wrap">
-    <h1 style="color:var(--accent);font-family:'Libre Baskerville',serif;font-size:30px;margin-top:80px;">Get in Touch</h1>
-    <p style="max-width:800px;text-align:justify;">Whether it’s collaboration, research discussion, or academic networking — feel free to reach out. I usually respond within 1–2 business days.</p>
-
-    <div class="contact-grid">
-      <!-- Left: Form -->
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="wrap contact-section">
       <div class="contact-left">
-        <h2>Contact Form</h2>
-        <form id="contactForm" action="https://formspree.io/f/mnqezlqe" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send →</button>
-          <div class="success-msg" id="successMsg">✅ Message sent successfully! I’ll get back to you soon.</div>
-        </form>
+        <h1>Contact</h1>
+        <p class="contact-intro">For academic collaborations, professional inquiries, or research discussions in GeoAI, remote sensing, and planetary science, feel free to reach out through the following channels or the contact form.</p>
+
+        <div class="contact-info">
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> University of Louisiana at Lafayette, LA, USA</p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
       </div>
 
-      <!-- Right: Details -->
       <div class="contact-right">
-        <h2>Contact Details</h2>
-        <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:shohugmdhossain@gmail.com">shohugmdhossain@gmail.com</a></div>
-        <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Lafayette, Louisiana · Calgary, Alberta</div>
-        <div class="socials">
-          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/shohugmdhossain" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://x.com/Hmdshohug10" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-        </div>
+        <form action="https://formspree.io/f/mnqkldlw" method="POST">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+          <button type="submit" class="send-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
       </div>
     </div>
   </main>
@@ -184,60 +159,27 @@
   <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
   <script>
-    document.addEventListener("DOMContentLoaded",()=>{
-      const y=document.getElementById("y"); if(y) y.textContent=new Date().getFullYear();
-      const overlay=document.getElementById("overlayMenu");
-      const toggle=document.querySelector(".menu-toggle");
-      const closeBtn=document.querySelector(".dropdown-close");
-      toggle.addEventListener("click",()=>overlay.classList.add("active"));
-      closeBtn.addEventListener("click",()=>overlay.classList.remove("active"));
-      overlay.addEventListener("click",e=>{if(e.target===overlay)overlay.classList.remove("active");});
-      document.addEventListener("keydown",e=>{if(e.key==="Escape")overlay.classList.remove("active");});
+    document.addEventListener('DOMContentLoaded',()=>{
+      const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+      const overlay=document.getElementById('overlayMenu');
+      const toggle=document.querySelector('.menu-toggle');
+      const closeBtn=document.querySelector('.dropdown-close');
+      const toTop=document.getElementById('toTop');
 
-      const toTop=document.getElementById("toTop");
-      window.addEventListener("scroll",()=>{window.scrollY>200?toTop.classList.add("show"):toTop.classList.remove("show");});
-      toTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+      toggle.addEventListener('click',()=>overlay.classList.add('active'));
+      closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
+      overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.classList.remove('active'); });
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape') overlay.classList.remove('active'); });
+      window.addEventListener('scroll',()=>{ toTop.classList.toggle('show',window.scrollY>200); });
+      toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-      const form=document.getElementById("contactForm");
-      const msg=document.getElementById("successMsg");
-      form.addEventListener("submit",async(e)=>{
-        e.preventDefault();
-        const data=new FormData(form);
-        const res=await fetch(form.action,{method:"POST",body:data,headers:{'Accept':'application/json'}});
-        if(res.ok){
-          msg.style.display="block"; form.reset();
-        }
-      });
+      const fadeEls=document.querySelectorAll('.contact-left,.contact-right,.contact-section h1,.contact-intro');
+      const io=new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
+      },{threshold:0.1});
+      fadeEls.forEach(el=>io.observe(el));
     });
-  </script>
-
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Md Shohug Hossain",
-    "email": "mailto:shohugmdhossain@gmail.com",
-    "jobTitle": "Ph.D. Researcher",
-    "affiliation": "University of Louisiana at Lafayette",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lafayette",
-      "addressRegion": "Louisiana",
-      "addressCountry": "USA"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Academic inquiries",
-      "email": "mailto:shohugmdhossain@gmail.com"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/md-shohug-hossain/",
-      "https://github.com/shohugmdhossain",
-      "https://x.com/Hmdshohug10",
-      "https://scholar.google.com/citations?user=XXXXX"
-    ]
-  }
   </script>
 </body>
 </html>
+
