@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    :root {
+    :root{
       --accent:#b1040e;--bg:#fff;--bg2:#f9f9f9;
       --text:#222;--muted:#555;--line:#ddd;--max:1100px;
     }
@@ -57,58 +57,73 @@
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
       border:none;background:none;cursor:pointer}
 
-    /* ===== TWO COLUMN LAYOUT ===== */
+    /* ===== LAYOUT ===== */
     .about-section{margin:115px auto 80px;
-      display:grid;grid-template-columns:0.8fr 1.3fr;gap:40px}
+      display:grid;grid-template-columns:0.75fr 1.35fr;gap:40px}
     @media(max-width:900px){.about-section{grid-template-columns:1fr;gap:30px}}
 
-    /* LEFT COLUMN */
-    .left-column{text-align:center}
-    .left-column img{width:320px;height:320px;object-fit:cover;
-      border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.15);
-      transition:.4s;margin-bottom:18px}
-    .left-column img:hover{transform:scale(1.03)}
-
+    /* ===== LEFT COLUMN ===== */
+    .left-column{display:flex;flex-direction:column;align-items:center}
+    .left-stack{width:100%;max-width:320px}
+    .profile-photo{width:100%;height:320px;object-fit:cover;border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.4s;margin:14px 0 18px}
+    .profile-photo:hover{transform:scale(1.02)}
     .socials{display:flex;justify-content:center;gap:16px;margin-bottom:22px}
     .socials a{font-size:22px;transition:.3s}
     .socials a:hover{transform:translateY(-2px);opacity:.9}
     .fa-graduation-cap{color:#4285F4}.fa-github{color:#333}
     .fa-linkedin{color:#0A66C2}.fa-x-twitter{color:#000}.fa-envelope{color:#b1040e}
 
-    .card{background:var(--bg2);border:1px solid var(--line);
-      border-radius:12px;padding:20px;text-align:left;margin-bottom:24px;
-      box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    .card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;
+      padding:20px;text-align:left;margin-bottom:24px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
     .card h2{color:var(--accent);font-size:18px;margin:0 0 10px}
     .card ul{list-style:none;padding:0;margin:0}
-    .card ul li{color:var(--muted);font-size:15px;line-height:1.7;text-align:left;margin-bottom:6px}
+    .card ul li{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:6px}
     .card ul li i{color:var(--accent);margin-right:8px}
     .card p{color:var(--muted);font-size:15px;line-height:1.8;text-align:justify;margin:0}
 
-    /* RIGHT COLUMN */
-    .right-column h1{color:var(--accent);font-size:28px;margin-bottom:14px;text-align:left}
-    .subline{color:var(--muted);font-size:15px;margin-bottom:20px;font-style:italic}
+    /* ===== RIGHT COLUMN ===== */
+    .right-column h1{color:var(--accent);font-size:28px;margin:14px 0 14px;text-align:left}
     .right-column p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:18px}
 
-    .education{margin-top:25px}
+    /* CV Button (outlined red) */
+    .btn-outline{display:inline-block;padding:11px 18px;border:1.5px solid var(--accent);
+      border-radius:10px;color:var(--accent);font-weight:600;transition:.2s}
+    .btn-outline:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+
+    /* Academic Journey */
+    .education{margin-top:26px}
     .education .entry{margin-bottom:18px}
     .education .entry img{vertical-align:middle;margin-right:8px;height:26px;width:auto}
     .education .entry strong{color:var(--accent)}
     .education .entry p{margin:4px 0 0 34px;font-size:15px;color:var(--muted);line-height:1.7}
 
+    /* Research Interests (no box) */
     .research-interests{margin-top:30px}
-    .research-interests h2{color:var(--accent);font-size:20px;margin-bottom:10px}
+    .research-interests h2{color:var(--accent);font-size:20px;margin:0 0 10px}
+    .research-interests p{color:var(--text);margin-bottom:12px}
     .research-interests ul{list-style:none;padding:0;margin:0}
     .research-interests li{margin-bottom:10px;font-size:15px;color:var(--muted);line-height:1.8;text-align:justify}
-    .research-interests li::before{content:"• ";color:var(--accent);font-weight:bold}
+    .research-interests li::before{content:"• ";color:var(--accent);font-weight:700}
 
+    /* Footer */
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px}
     footer.site .wrap{padding:22px 20px}
     footer.site p{margin:0;font-size:15px}
 
+    /* Back-to-top */
     #toTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;
       border:none;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;
       display:none;z-index:999}
     #toTop.show{display:block}
+
+    /* Subtle reveals */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    /* Logo hover */
+    .education .entry img{transition:transform .2s ease, filter .2s ease}
+    .education .entry img:hover{transform:translateY(-1px)}
   </style>
 </head>
 
@@ -130,6 +145,7 @@
   </div>
 </header>
 
+<!-- Overlay menu -->
 <div class="dropdown-nav" id="overlayMenu">
   <button class="dropdown-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
   <a href="about.html" class="active">About</a>
@@ -144,85 +160,102 @@
   <div class="wrap about-section">
     <!-- LEFT COLUMN -->
     <div class="left-column">
-      <img src="profile.jpg" alt="Md Shohug Hossain">
-      <div class="socials">
-        <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-        <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      </div>
+      <div class="left-stack reveal">
+        <!-- Image lowered slightly to align with About heading -->
+        <img src="profile.jpg" alt="Md Shohug Hossain" class="profile-photo">
+        <div class="socials">
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="mailto:shohugmdhossain@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/shohugmdhossain" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-shohug-hossain/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Hmdshohug10" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
 
-      <div class="card">
-        <h2><i class="fa-solid fa-gear"></i> Technical Skills</h2>
-        <ul>
-          <li><i class="fab fa-python"></i> Python, PyTorch, Detectron2, YOLOv8</li>
-          <li><i class="fa-solid fa-satellite"></i> ArcGIS, QGIS, Google Earth Engine</li>
-          <li><i class="fa-solid fa-database"></i> SQL, PostGIS, Data Engineering</li>
-          <li><i class="fa-solid fa-chart-line"></i> NumPy, Pandas, Matplotlib</li>
-          <li><i class="fa-solid fa-server"></i> HPC, Linux, Slurm</li>
-          <li><i class="fa-solid fa-code"></i> Web Dev: HTML, CSS, JS</li>
-        </ul>
-      </div>
+        <div class="card">
+          <h2><i class="fa-solid fa-gear"></i> Technical Skills</h2>
+          <ul>
+            <li><i class="fab fa-python"></i> Python, PyTorch, Detectron2, TensorFlow, YOLOv8</li>
+            <li><i class="fa-solid fa-satellite"></i> ArcGIS, QGIS, Google Earth Engine, PostGIS</li>
+            <li><i class="fa-solid fa-database"></i> SQL, GDAL, Raster/Vector pipelines, Data Engineering</li>
+            <li><i class="fa-solid fa-chart-line"></i> NumPy, Pandas, Matplotlib, OpenCV, SciPy</li>
+            <li><i class="fa-solid fa-server"></i> HPC (A100), Linux, Slurm, Docker</li>
+            <li><i class="fa-solid fa-code"></i> Web: HTML, CSS, JavaScript; Tools: Git, LaTeX</li>
+          </ul>
+        </div>
 
-      <div class="card">
-        <h2><i class="fa-solid fa-lightbulb"></i> Beyond Research</h2>
-        <p>
-          I actively engage in academic leadership and outreach.  
-          As President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium at the University of Calgary,  
-          I helped foster collaboration and mentorship among graduate students.  
-          I’m also passionate about science communication, academic design, and building tools that make research more accessible.
-        </p>
+        <div class="card">
+          <h2><i class="fa-solid fa-lightbulb"></i> Beyond Research</h2>
+          <p>
+            I contribute to leadership, mentorship, and science communication. As President of the ECE Graduate Group
+            and Vice-President of the Schulich Graduate Engineering Consortium (University of Calgary), I supported
+            graduate community building and research collaboration. I enjoy visual storytelling, academic design,
+            and building simple tools that make research more accessible.
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right-column">
-      <h1>About Me</h1>
-      <p><strong>Md Shohug Hossain</strong> is a Ph.D. researcher at the University of Louisiana at Lafayette specializing in GeoAI, remote sensing, and planetary science.</p>
-      <p class="subline">Ph.D. Researcher, Department of Earth and Energy Sciences · University of Louisiana at Lafayette, USA</p>
-      <p>
-        My academic work focuses on developing intelligent systems that integrate artificial intelligence with geospatial data to interpret planetary and terrestrial environments.  
-        By combining deep learning with physical models, I explore how landforms evolve on Mars and how Earth’s surface processes can be understood through remote sensing and data analytics.
-      </p>
-      <p>
-        Previously, I studied intelligent automation and geospatial analytics during my M.Sc. at the University of Calgary and earned a B.Sc. in Computer Science & Engineering from North South University.  
-        My interdisciplinary background allows me to approach geoscientific questions through the lens of computation, data science, and systems engineering.
-      </p>
-      <p>
-        My long-term vision is to advance trustworthy, physics-informed GeoAI frameworks that can enhance planetary exploration, improve climate resilience studies, and foster open, reproducible science.
-      </p>
+      <div class="reveal">
+        <h1>About Me</h1>
+        <p>
+          <strong>Md Shohug Hossain</strong> is a Ph.D. researcher specializing in GeoAI, remote sensing, and planetary science.
+          His work bridges artificial intelligence with geospatial data analysis to understand geomorphic and environmental
+          processes across Earth and Mars.
+        </p>
+        <p>
+          He develops deep-learning and physics-informed frameworks for automated terrain interpretation, landform mapping,
+          and spectral analysis, integrating multi-sensor satellite data (optical, radar, hyperspectral) with high-performance
+          computing. His approach emphasizes interpretability, reproducibility, and scientific rigor.
+        </p>
+        <p>
+          Shohug’s background spans computer science, data engineering, and geospatial analytics — including an M.Sc. at the
+          University of Calgary and a B.Sc. at North South University — enabling him to address planetary and Earth-system
+          questions through modern AI and open geospatial tooling.
+        </p>
 
-      <div class="education">
-        <h2 style="color:var(--accent);font-size:20px;">Academic Journey</h2>
+        <!-- CV button (outlined, placeholder) -->
+        <p style="margin-top:6px;">
+          <a class="btn-outline" href="#" download>Download CV (PDF)</a>
+        </p>
+      </div>
+
+      <div class="education reveal">
+        <h2 style="color:var(--accent);font-size:20px;margin-top:24px;">Academic Journey</h2>
+
         <div class="entry">
           <img src="ul.png" alt="UL Lafayette">
-          <strong>Ph.D. in Earth & Energy Sciences</strong><br>
-          <p>University of Louisiana at Lafayette · Focus: Planetary GeoAI & Remote Sensing</p>
+          <strong>Ph.D. in Earth & Energy Sciences — University of Louisiana at Lafayette</strong>
+          <p>Focus: Planetary GeoAI, Remote Sensing, and geomorphic interpretation at scale.</p>
         </div>
+
         <div class="entry">
           <img src="ucalgary.png" alt="University of Calgary">
-          <strong>M.Sc. in Electrical & Computer Engineering</strong><br>
-          <p>University of Calgary · Focus: Intelligent Automation & Geospatial Analytics</p>
+          <strong>M.Sc. in Electrical & Computer Engineering — University of Calgary</strong>
+          <p>Focus: Intelligent automation, geospatial analytics, and data-driven systems.</p>
         </div>
+
         <div class="entry">
           <img src="nsu.png" alt="North South University">
-          <strong>B.Sc. in Computer Science & Engineering</strong><br>
-          <p>North South University · Focus: Software Systems & Data Science</p>
+          <strong>B.Sc. in Computer Science & Engineering — North South University</strong>
+          <p>Focus: Software engineering, computer vision, and data science foundations.</p>
         </div>
       </div>
 
-      <div class="research-interests">
+      <div class="research-interests reveal">
         <h2><i class="fa-solid fa-microscope"></i> Research Interests</h2>
         <p>
-          My research explores the intersection of artificial intelligence, geospatial science, and planetary geomorphology — connecting Earth observation with planetary exploration to better understand how landscapes evolve across diverse environments.
+          I explore how artificial intelligence can interpret planetary surfaces, extract geomorphic patterns,
+          and reveal the hidden narratives of landscapes on Mars and Earth — by fusing physics, imagery,
+          and data at scale.
         </p>
         <ul>
-          <li>Planetary geomorphology and automated surface-process modeling</li>
-          <li>AI-driven landform detection and classification across Mars and Earth</li>
-          <li>Fusion of radar, optical, and hyperspectral datasets for terrain analysis</li>
-          <li>Physics-informed and interpretable GeoAI for planetary-scale understanding</li>
-          <li>Trustworthy and open-source frameworks for reproducible geospatial analytics</li>
+          <li>Planetary geomorphology and automated surface-process modeling for landscape evolution</li>
+          <li>AI-driven landform detection and segmentation across CTX, HiRISE, Sentinel, and Landsat</li>
+          <li>Fusion of radar, optical, and hyperspectral datasets for terrain and mineralogical analysis</li>
+          <li>Physics-informed, interpretable GeoAI designed for trust, rigor, and reproducibility</li>
+          <li>Open, scalable workflows for planetary mapping and environmental monitoring</li>
         </ul>
       </div>
     </div>
@@ -237,7 +270,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  const y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+  // Mobile menu
   const overlay=document.getElementById('overlayMenu');
   const toggle=document.querySelector('.menu-toggle');
   const closeBtn=document.querySelector('.dropdown-close');
@@ -245,14 +280,23 @@ document.addEventListener('DOMContentLoaded',()=>{
   closeBtn.addEventListener('click',()=>overlay.classList.remove('active'));
   overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active');});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('active');});
+
+  // Back to top
   const toTop=document.getElementById('toTop');
   window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>200);});
   toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Subtle reveal on scroll
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('show'); io.unobserve(entry.target); }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 });
 </script>
 </body>
 </html>
-
 
 
 
