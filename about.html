@@ -57,22 +57,32 @@
     .dropdown-close{position:absolute;top:20px;right:28px;color:#fff;font-size:26px;
       border:none;background:none;cursor:pointer}
 
-    /* ===== ABOUT CONTENT ===== */
-    .about-section{margin:115px auto 80px;display:grid;grid-template-columns:1.2fr 0.9fr;gap:40px}
+    /* ===== TWO-COLUMN LAYOUT ===== */
+    .about-section{margin:115px auto 80px;
+      display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px}
     @media(max-width:900px){.about-section{grid-template-columns:1fr;gap:30px}}
 
-    .left-column h1{color:var(--accent);font-size:28px;margin-bottom:14px;text-align:left}
-    .left-column p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:18px}
-    .subline{color:var(--muted);font-size:15px;margin-bottom:18px;font-style:italic}
-
-    .right-column .card{background:var(--bg2);border:1px solid var(--line);
-      border-radius:12px;padding:22px;margin-bottom:24px;text-align:left;
+    /* LEFT COLUMN (content) */
+    .left-column .card{background:var(--bg2);border:1px solid var(--line);
+      border-radius:12px;padding:22px;margin-bottom:24px;
       box-shadow:0 2px 6px rgba(0,0,0,.05)}
-    .right-column .card h2{color:var(--accent);font-size:18px;margin:0 0 10px 0}
-    .right-column .card p,.right-column .card li{color:var(--muted);font-size:15px;line-height:1.7;text-align:justify;margin:0}
-    .right-column .card ul{list-style:none;padding:0;margin:0}
-    .right-column .card ul li{margin-bottom:8px;border-top:1px solid var(--line);padding-top:8px}
-    .right-column .card ul li:first-child{border-top:none;padding-top:0}
+    .left-column .card h2{color:var(--accent);font-size:18px;margin:0 0 10px}
+    .left-column .card ul{list-style:none;padding:0;margin:0}
+    .left-column .card ul li{color:var(--muted);font-size:15px;line-height:1.7;text-align:justify;margin-bottom:8px;border-top:1px solid var(--line);padding-top:8px}
+    .left-column .card ul li:first-child{border-top:none;padding-top:0}
+    .left-column .card p{color:var(--muted);font-size:15px;line-height:1.8;text-align:justify;margin:0}
+
+    /* RIGHT COLUMN (photo + about + education) */
+    .profile-photo{width:100%;max-width:300px;border-radius:14px;object-fit:cover;
+      box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.4s;margin-bottom:24px}
+    .profile-photo:hover{transform:scale(1.03)}
+    .right-column h1{color:var(--accent);font-size:28px;margin-bottom:10px;text-align:left}
+    .subline{color:var(--muted);font-size:15px;margin-bottom:20px;font-style:italic}
+    .right-column p{font-size:16px;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:18px}
+    .education .entry{margin-bottom:16px}
+    .education .entry img{vertical-align:middle;margin-right:8px;height:26px;width:auto}
+    .education .entry strong{color:var(--accent)}
+    .education .entry p{margin:4px 0 0 34px;font-size:15px;color:var(--muted);line-height:1.7}
 
     footer.site{background:var(--accent);color:#fff;text-align:center;margin-top:70px}
     footer.site .wrap{padding:22px 20px}
@@ -117,27 +127,13 @@
   <div class="wrap about-section">
     <!-- LEFT COLUMN -->
     <div class="left-column">
-      <h1>About Me</h1>
-      <p><strong>Md Shohug Hossain</strong> is a Ph.D. researcher specializing in GeoAI, remote sensing, and planetary science.</p>
-      <p class="subline">Ph.D. Researcher, Department of Earth and Energy Sciences · University of Louisiana at Lafayette, USA</p>
-      <p>
-        My research bridges artificial intelligence with Earth and planetary data analysis. I develop deep-learning and physics-informed frameworks to interpret satellite imagery, uncovering geomorphic and environmental processes on Earth and Mars.
-        I focus on creating transparent, reproducible GeoAI methods that advance planetary surface interpretation, hazard mapping, and data-driven environmental science.
-      </p>
-      <p>
-        My background combines computer science, data engineering, and geospatial analysis. I am motivated by interdisciplinary research that connects technology, geoscience, and scientific communication.
-      </p>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="right-column">
       <div class="card">
         <h2>Research Interests</h2>
         <ul>
           <li>Planetary geomorphology and surface-process modeling</li>
           <li>Deep learning for planetary and terrestrial feature detection</li>
-          <li>Multisensor data fusion: radar, optical, and hyperspectral integration</li>
-          <li>AI-driven Earth observation and climate resilience analysis</li>
+          <li>Multisensor integration of radar, optical, and hyperspectral data</li>
+          <li>GeoAI for environmental monitoring and climate resilience</li>
         </ul>
       </div>
 
@@ -147,28 +143,47 @@
           <li>Programming & AI: Python, PyTorch, Detectron2, YOLOv8, Scikit-learn</li>
           <li>Geospatial Tools: ArcGIS, QGIS, Google Earth Engine, PostGIS</li>
           <li>Data & Visualization: NumPy, Pandas, Matplotlib, Seaborn</li>
-          <li>Remote Sensing: CRISM, Sentinel, Landsat, multispectral & hyperspectral imagery</li>
-          <li>Systems: Linux, Slurm, HPC computing</li>
+          <li>Remote Sensing: CRISM, Sentinel, Landsat, multispectral & hyperspectral analysis</li>
+          <li>Systems: Linux, Slurm, HPC environments</li>
           <li>Web Development: HTML, CSS, JavaScript</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Academic Journey</h2>
-        <ul>
-          <li><strong>Ph.D. in Earth & Energy Sciences</strong> — University of Louisiana at Lafayette<br>Focus: Planetary geomorphology, GeoAI, and remote sensing.</li>
-          <li><strong>M.Sc. in Electrical & Computer Engineering</strong> — University of Calgary<br>Focus: Intelligent automation and geospatial analytics.</li>
-          <li><strong>B.Sc. in Computer Science & Engineering</strong> — North South University<br>Focus: Software engineering and data science foundations.</li>
         </ul>
       </div>
 
       <div class="card">
         <h2>Beyond Research</h2>
         <p>
-          Beyond academic research, I am passionate about leadership, outreach, and science communication.
-          At the University of Calgary, I served as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, fostering collaboration and mentorship.
-          I enjoy academic writing, visual storytelling, and web-based science communication that bridges technology and public understanding.
+          Outside research, I am passionate about leadership and academic communication.
+          At the University of Calgary, I served as President of the ECE Graduate Group and Vice-President of the Schulich Graduate Engineering Consortium, promoting collaboration and mentorship. I enjoy designing academic websites, scientific visualization, and projects that connect technology with storytelling.
         </p>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+      <img src="profile.jpg" alt="Md Shohug Hossain" class="profile-photo">
+      <h1>About Me</h1>
+      <p><strong>Md Shohug Hossain</strong> is a Ph.D. Researcher specializing in GeoAI, remote sensing, and planetary science.</p>
+      <p class="subline">Ph.D. Researcher, Department of Earth and Energy Sciences · University of Louisiana at Lafayette, USA</p>
+      <p>
+        My work bridges machine learning with Earth and planetary data analysis to understand geomorphic and environmental processes on Earth and Mars. I focus on developing reproducible and interpretable GeoAI frameworks for landform classification, surface mapping, and climate-related applications.
+      </p>
+
+      <div class="education">
+        <div class="entry">
+          <img src="ul.png" alt="University of Louisiana at Lafayette">
+          <strong>Ph.D. in Earth & Energy Sciences</strong><br>
+          <p>University of Louisiana at Lafayette · Focus: Planetary Geomorphology & GeoAI</p>
+        </div>
+        <div class="entry">
+          <img src="ucalgary.png" alt="University of Calgary">
+          <strong>M.Sc. in Electrical & Computer Engineering</strong><br>
+          <p>University of Calgary · Focus: Intelligent Automation and Geospatial Analytics</p>
+        </div>
+        <div class="entry">
+          <img src="nsu.png" alt="North South University">
+          <strong>B.Sc. in Computer Science & Engineering</strong><br>
+          <p>North South University · Focus: Software Systems and Data Science Foundations</p>
+        </div>
       </div>
     </div>
   </div>
@@ -197,7 +212,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 </body>
 </html>
-
 
 
 
