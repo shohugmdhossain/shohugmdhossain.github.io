@@ -30,17 +30,15 @@
   <style>
     :root{
       --accent:#1f3a5f;
-      --accent-dark:#13243d;
-      --deep:#081220;
+      --accent-dark:#14263f;
       --teal:#006d77;
-      --teal2:#0f8b8d;
-      --rust:#b15b24;
-      --gold:#d49a3a;
-      --ice:#eef6fb;
-      --white:#ffffff;
+      --soft-blue:#eef5f9;
+      --soft-blue-2:#f6fafc;
+      --soft-warm:#fbf6f0;
       --text:#222222;
-      --muted:#536170;
-      --line:rgba(255,255,255,.20);
+      --muted:#586574;
+      --line:#dbe6ee;
+      --white:#ffffff;
       --max:1120px;
     }
 
@@ -58,13 +56,13 @@
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.75;
       overflow-x:hidden;
-      background:#081220;
+      background:#f6fafc;
     }
 
     a{
       color:inherit;
       text-decoration:none;
-      transition:.25s ease;
+      transition:.22s ease;
     }
 
     a:hover{
@@ -87,14 +85,14 @@
       left:0;
       right:0;
       height:72px;
-      background:rgba(31,58,95,.96);
+      background:rgba(31,58,95,.97);
       color:#fff;
       z-index:1000;
       display:flex;
       justify-content:center;
       align-items:center;
-      box-shadow:0 3px 16px rgba(0,0,0,.20);
-      backdrop-filter:blur(10px);
+      box-shadow:0 3px 14px rgba(0,0,0,.16);
+      backdrop-filter:blur(8px);
     }
 
     .nav-bar{
@@ -116,6 +114,7 @@
 
     .brand a{
       color:#fff;
+      text-decoration:none;
     }
 
     .nav-right{
@@ -174,10 +173,8 @@
     .dropdown-nav{
       position:fixed;
       inset:0;
-      background:
-        radial-gradient(circle at top left, rgba(0,109,119,.45), transparent 32%),
-        linear-gradient(135deg, rgba(19,36,61,.97), rgba(31,58,95,.95));
-      backdrop-filter:blur(14px);
+      background:rgba(31,58,95,.93);
+      backdrop-filter:blur(12px);
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -221,10 +218,10 @@
     ========================= */
     .hero{
       width:100%;
-      min-height:670px;
+      min-height:660px;
       margin-top:72px;
       background:
-        linear-gradient(90deg, rgba(8,18,32,.88) 0%, rgba(31,58,95,.62) 42%, rgba(31,58,95,.16) 100%),
+        linear-gradient(90deg, rgba(8,18,32,.84) 0%, rgba(31,58,95,.60) 42%, rgba(31,58,95,.14) 100%),
         url("homepage_banner.png");
       background-size:cover;
       background-position:center;
@@ -235,24 +232,14 @@
       overflow:hidden;
     }
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 20% 45%, rgba(0,109,119,.22), transparent 23%),
-        radial-gradient(circle at 78% 42%, rgba(177,91,36,.20), transparent 24%);
-      pointer-events:none;
-    }
-
     .hero::after{
       content:"";
       position:absolute;
       left:0;
       right:0;
       bottom:0;
-      height:120px;
-      background:linear-gradient(to bottom, rgba(8,18,32,0), #081220);
+      height:110px;
+      background:linear-gradient(to bottom, rgba(246,250,252,0), #f6fafc);
       pointer-events:none;
     }
 
@@ -285,7 +272,7 @@
       max-width:820px;
       margin:0 0 18px;
       color:#fff;
-      text-shadow:0 4px 18px rgba(0,0,0,.44);
+      text-shadow:0 4px 18px rgba(0,0,0,.42);
     }
 
     .hero-subtitle{
@@ -321,7 +308,7 @@
     .btn-primary:hover{
       transform:translateY(-2px);
       opacity:1;
-      box-shadow:0 8px 22px rgba(0,0,0,.24);
+      box-shadow:0 8px 22px rgba(0,0,0,.22);
     }
 
     .btn-light{
@@ -337,430 +324,209 @@
     }
 
     /* =========================
-       MISSION — FULL WIDTH
+       MAIN LIGHT DASHBOARD
     ========================= */
-    .mission-section{
+    .dashboard-section{
       width:100%;
-      padding:78px 0;
+      padding:76px 0 72px;
       background:
-        radial-gradient(circle at 12% 20%, rgba(0,109,119,.35), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(177,91,36,.26), transparent 30%),
-        linear-gradient(135deg, #081220 0%, #13243d 48%, #0a3342 100%);
-      color:#fff;
+        radial-gradient(circle at 12% 10%, rgba(0,109,119,.08), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(177,91,36,.08), transparent 26%),
+        linear-gradient(180deg, #f6fafc 0%, #edf5f8 100%);
       position:relative;
-      overflow:hidden;
     }
 
-    .mission-section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-      background-size:46px 46px;
-      opacity:.42;
-      pointer-events:none;
-    }
-
-    .mission-grid{
-      position:relative;
-      z-index:1;
+    .dashboard-grid{
       display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:46px;
-      align-items:center;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+      align-items:start;
     }
 
     .section-label{
-      color:#9de1e3;
+      color:var(--teal);
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:.9px;
       font-size:13px;
-      margin-bottom:9px;
+      margin-bottom:8px;
     }
 
-    .mission-title{
-      font-family:"Libre Baskerville",serif;
-      font-size:38px;
-      line-height:1.3;
-      margin:0;
-      color:#fff;
-    }
-
-    .mission-text{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.20);
-      backdrop-filter:blur(12px);
+    .left-panel,
+    .news-panel{
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(255,255,255,.85);
       border-radius:24px;
-      padding:30px;
-      box-shadow:0 18px 42px rgba(0,0,0,.18);
+      box-shadow:0 14px 34px rgba(31,58,95,.10);
+      backdrop-filter:blur(12px);
     }
 
-    .mission-text p{
-      margin:0;
-      color:#eaf3f4;
-      font-size:17px;
-      line-height:1.85;
-      text-align:justify;
+    .left-panel{
+      padding:34px;
     }
 
-    /* =========================
-       CURRENT FOCUS — FULL WIDTH
-    ========================= */
-    .focus-section{
-      width:100%;
-      padding:78px 0;
-      background:
-        linear-gradient(135deg, rgba(31,58,95,.98), rgba(0,109,119,.92)),
-        radial-gradient(circle at bottom right, rgba(177,91,36,.44), transparent 34%);
-      color:#fff;
-      position:relative;
-      overflow:hidden;
+    .mission-block{
+      padding-bottom:28px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:28px;
     }
 
-    .focus-section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
-      background-size:42px 42px;
-      opacity:.35;
-      pointer-events:none;
-    }
-
-    .focus-grid{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:42px;
-      align-items:center;
-    }
-
-    .focus-left h2{
+    .mission-block h2,
+    .focus-block h2,
+    .news-panel h2,
+    .lens-header h2{
       font-family:"Libre Baskerville",serif;
-      font-size:36px;
+      color:var(--accent);
+      font-size:31px;
       line-height:1.3;
-      margin:0 0 16px;
-      color:#fff;
+      margin:0 0 14px;
     }
 
-    .focus-left p{
+    .mission-block p,
+    .focus-block p{
       margin:0;
-      color:#eaf3f4;
+      color:#425061;
       font-size:16.5px;
-      line-height:1.8;
+      line-height:1.85;
       text-align:justify;
     }
 
     .focus-list{
       display:grid;
-      gap:16px;
+      grid-template-columns:1fr;
+      gap:13px;
+      margin-top:20px;
     }
 
     .focus-item{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.22);
-      backdrop-filter:blur(10px);
-      border-radius:18px;
-      padding:20px;
       display:grid;
-      grid-template-columns:44px 1fr;
-      gap:15px;
+      grid-template-columns:42px 1fr;
+      gap:14px;
       align-items:start;
+      background:#f7fbfd;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:17px;
     }
 
     .focus-item i{
-      font-size:23px;
-      color:#fff;
+      color:var(--teal);
+      font-size:21px;
       margin-top:4px;
     }
 
     .focus-item h3{
-      margin:0 0 5px;
-      color:#fff;
-      font-size:18px;
+      color:var(--accent);
+      margin:0 0 4px;
+      font-size:17px;
     }
 
     .focus-item p{
       margin:0;
-      color:#eaf3f4;
-      font-size:15px;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.65;
+      text-align:left;
+    }
+
+    .news-panel{
+      padding:30px;
+      position:sticky;
+      top:96px;
+    }
+
+    .news-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .news-item{
+      border-left:3px solid var(--teal);
+      padding:0 0 0 15px;
+    }
+
+    .news-date{
+      color:var(--teal);
+      font-weight:800;
+      font-size:13.5px;
+      margin-bottom:4px;
+    }
+
+    .news-text{
+      color:#425061;
+      font-size:15.2px;
       line-height:1.65;
     }
 
-    /* =========================
-       RESEARCH GATEWAY — FULL WIDTH, NEW DESIGN
-    ========================= */
-    .gateway-section{
-      width:100%;
-      padding:82px 0;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(177,91,36,.20), transparent 26%),
-        radial-gradient(circle at 85% 72%, rgba(0,109,119,.30), transparent 30%),
-        linear-gradient(135deg, #eef6fb 0%, #dcebf1 42%, #f6efe8 100%);
-      color:var(--text);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .gateway-section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(120deg, rgba(255,255,255,.55), rgba(255,255,255,.10)),
-        repeating-linear-gradient(90deg, rgba(31,58,95,.045) 0, rgba(31,58,95,.045) 1px, transparent 1px, transparent 48px);
-      pointer-events:none;
-    }
-
-    .gateway-content{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:42px;
-      align-items:center;
-    }
-
-    .gateway-title h2{
-      font-family:"Libre Baskerville",serif;
+    .news-text strong{
       color:var(--accent);
-      font-size:38px;
-      line-height:1.3;
-      margin:0 0 16px;
     }
 
-    .gateway-title p{
+    .news-link{
+      display:inline-block;
+      margin-top:20px;
+      color:var(--accent);
+      font-weight:700;
+      border-bottom:1px solid var(--accent);
+    }
+
+    /* =========================
+       LIGHT RESEARCH LENS
+    ========================= */
+    .lens-section{
+      width:100%;
+      padding:70px 0 78px;
+      background:
+        linear-gradient(135deg, #ffffff 0%, #f4f8fb 48%, #f8f3ed 100%);
+      border-top:1px solid var(--line);
+    }
+
+    .lens-header{
+      max-width:780px;
+      margin-bottom:28px;
+    }
+
+    .lens-header p{
       margin:0;
-      color:#3f4d5b;
-      font-size:17px;
-      line-height:1.85;
+      color:#526071;
+      font-size:16.5px;
+      line-height:1.8;
       text-align:justify;
     }
 
-    .gateway-map{
+    .lens-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
     }
 
-    .gateway-tile{
-      min-height:165px;
-      padding:22px;
-      border-radius:22px;
-      background:rgba(255,255,255,.68);
-      border:1px solid rgba(255,255,255,.78);
-      backdrop-filter:blur(12px);
-      box-shadow:0 16px 34px rgba(31,58,95,.12);
-      position:relative;
-      overflow:hidden;
+    .lens-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 10px 26px rgba(31,58,95,.08);
+      min-height:185px;
     }
 
-    .gateway-tile::after{
-      content:"";
-      position:absolute;
-      width:130px;
-      height:130px;
-      right:-55px;
-      bottom:-60px;
-      border-radius:50%;
-      background:rgba(0,109,119,.13);
-    }
-
-    .gateway-tile i{
+    .lens-card i{
       color:var(--teal);
       font-size:25px;
       margin-bottom:12px;
-      position:relative;
-      z-index:1;
     }
 
-    .gateway-tile h3{
+    .lens-card h3{
       color:var(--accent);
-      margin:0 0 7px;
+      margin:0 0 8px;
       font-size:18px;
-      position:relative;
-      z-index:1;
     }
 
-    .gateway-tile p{
+    .lens-card p{
       margin:0;
-      color:#536170;
+      color:var(--muted);
       font-size:14.5px;
-      line-height:1.6;
-      position:relative;
-      z-index:1;
-    }
-
-    /* =========================
-       UPDATES — FULL WIDTH, NEW DESIGN
-    ========================= */
-    .updates-section{
-      width:100%;
-      padding:82px 0;
-      background:
-        radial-gradient(circle at 15% 30%, rgba(0,109,119,.26), transparent 28%),
-        radial-gradient(circle at 85% 12%, rgba(212,154,58,.22), transparent 30%),
-        linear-gradient(135deg, #0a1729 0%, #13243d 55%, #0c3a45 100%);
-      color:#fff;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .updates-section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
-      background-size:26px 26px;
-      opacity:.28;
-      pointer-events:none;
-    }
-
-    .updates-header{
-      position:relative;
-      z-index:1;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:30px;
-      margin-bottom:34px;
-    }
-
-    .updates-header h2{
-      font-family:"Libre Baskerville",serif;
-      font-size:36px;
-      line-height:1.3;
-      margin:0;
-      color:#fff;
-    }
-
-    .updates-header p{
-      max-width:500px;
-      margin:0;
-      color:#dcecef;
-      line-height:1.75;
-      text-align:right;
-    }
-
-    .timeline{
-      position:relative;
-      z-index:1;
-      display:grid;
-      gap:16px;
-    }
-
-    .timeline-item{
-      display:grid;
-      grid-template-columns:130px 1fr;
-      gap:24px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.20);
-      backdrop-filter:blur(12px);
-      border-radius:18px;
-      padding:21px 24px;
-      box-shadow:0 14px 32px rgba(0,0,0,.16);
-    }
-
-    .timeline-date{
-      color:#9de1e3;
-      font-weight:800;
-      font-size:14px;
-    }
-
-    .timeline-text{
-      color:#eef7f8;
-      font-size:16px;
-      line-height:1.7;
-    }
-
-    .timeline-text strong{
-      color:#fff;
-    }
-
-    /* =========================
-       BEFORE FOOTER — FULL WIDTH, NEW DESIGN
-    ========================= */
-    .closing-section{
-      width:100%;
-      padding:82px 0;
-      background:
-        linear-gradient(135deg, rgba(246,239,232,.96), rgba(238,246,251,.96)),
-        radial-gradient(circle at left, rgba(0,109,119,.25), transparent 30%),
-        radial-gradient(circle at right, rgba(177,91,36,.24), transparent 32%);
-      color:var(--text);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .closing-section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(120deg, rgba(255,255,255,.34), transparent),
-        repeating-linear-gradient(0deg, rgba(31,58,95,.035) 0, rgba(31,58,95,.035) 1px, transparent 1px, transparent 44px);
-      pointer-events:none;
-    }
-
-    .closing-grid{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:42px;
-      align-items:center;
-    }
-
-    .closing-text h2{
-      font-family:"Libre Baskerville",serif;
-      color:var(--accent);
-      font-size:38px;
-      line-height:1.3;
-      margin:0 0 16px;
-    }
-
-    .closing-text p{
-      color:#3f4d5b;
-      font-size:17px;
-      line-height:1.8;
-      margin:0;
-      text-align:justify;
-    }
-
-    .closing-actions{
-      display:grid;
-      gap:14px;
-    }
-
-    .closing-link{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      padding:19px 22px;
-      border-radius:17px;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(255,255,255,.82);
-      box-shadow:0 13px 30px rgba(31,58,95,.10);
-      color:var(--accent);
-      font-weight:800;
-    }
-
-    .closing-link:hover{
-      transform:translateX(5px);
-      opacity:1;
-      background:#fff;
-    }
-
-    .closing-link i{
-      color:var(--teal);
+      line-height:1.65;
     }
 
     /* =========================
@@ -768,7 +534,7 @@
     ========================= */
     footer.site{
       width:100%;
-      background:#081220;
+      background:var(--accent-dark);
       color:#fff;
       text-align:center;
     }
@@ -832,29 +598,16 @@
         font-size:18px;
       }
 
-      .mission-grid,
-      .focus-grid,
-      .gateway-content,
-      .closing-grid{
+      .dashboard-grid{
         grid-template-columns:1fr;
       }
 
-      .gateway-map{
-        grid-template-columns:1fr;
+      .news-panel{
+        position:static;
       }
 
-      .updates-header{
-        display:block;
-      }
-
-      .updates-header p{
-        text-align:left;
-        margin-top:10px;
-      }
-
-      .timeline-item{
-        grid-template-columns:1fr;
-        gap:6px;
+      .lens-grid{
+        grid-template-columns:repeat(2,1fr);
       }
     }
 
@@ -895,24 +648,24 @@
         text-align:center;
       }
 
-      .mission-title,
-      .focus-left h2,
-      .gateway-title h2,
-      .updates-header h2,
-      .closing-text h2{
-        font-size:28px;
+      .left-panel,
+      .news-panel{
+        padding:24px;
       }
 
-      .mission-text{
-        padding:24px;
+      .mission-block h2,
+      .focus-block h2,
+      .news-panel h2,
+      .lens-header h2{
+        font-size:26px;
       }
 
       .focus-item{
         grid-template-columns:1fr;
       }
 
-      .closing-link{
-        align-items:flex-start;
+      .lens-grid{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -981,223 +734,147 @@
 
   <main>
 
-    <!-- MISSION -->
-    <section class="mission-section">
+    <!-- MAIN LIGHT DASHBOARD -->
+    <section class="dashboard-section">
       <div class="wrap">
-        <div class="mission-grid">
-          <div>
-            <div class="section-label">Mission</div>
-            <h2 class="mission-title">
-              Transforming remote-sensing data into scientific insight.
-            </h2>
-          </div>
+        <div class="dashboard-grid">
 
-          <div class="mission-text">
-            <p>
-              This homepage is designed as a visual gateway to research connecting GeoAI,
-              remote sensing, and planetary science. Instead of repeating biography or project details,
-              it introduces the central idea: using intelligent geospatial methods to study landscapes,
-              surface processes, and planetary environments across Earth and Mars.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <!-- LEFT SIDE -->
+          <div class="left-panel">
 
-    <!-- CURRENT FOCUS -->
-    <section class="focus-section">
-      <div class="wrap">
-        <div class="focus-grid">
+            <div class="mission-block">
+              <div class="section-label">Mission</div>
 
-          <div class="focus-left">
-            <div class="section-label" style="color:#d7f4f5;">Current Focus</div>
+              <h2>Transforming remote-sensing data into scientific insight.</h2>
 
-            <h2>Building AI workflows for planetary and geospatial discovery.</h2>
-
-            <p>
-              Current research connects high-resolution orbital imagery, deep learning,
-              geospatial post-processing, and scalable computing to detect landforms,
-              characterize terrain, and support data-driven interpretation of complex surfaces.
-            </p>
-          </div>
-
-          <div class="focus-list">
-
-            <div class="focus-item">
-              <i class="fa-solid fa-globe"></i>
-              <div>
-                <h3>Planetary surface mapping</h3>
-                <p>
-                  Automated mapping of Martian landforms and surface features from orbital remote-sensing datasets.
-                </p>
-              </div>
+              <p>
+                This website presents research connecting GeoAI, remote sensing, and planetary science.
+                The central goal is to use intelligent geospatial methods to study landscapes, surface
+                processes, and planetary environments across Earth and Mars.
+              </p>
             </div>
 
-            <div class="focus-item">
-              <i class="fa-solid fa-satellite"></i>
-              <div>
-                <h3>Earth observation</h3>
-                <p>
-                  Satellite-based analysis of terrain, environment, and surface processes using geospatial data.
-                </p>
-              </div>
-            </div>
+            <div class="focus-block">
+              <div class="section-label">Current Focus</div>
 
-            <div class="focus-item">
-              <i class="fa-solid fa-brain"></i>
-              <div>
-                <h3>Interpretable GeoAI</h3>
-                <p>
-                  Reproducible AI methods that connect model outputs with scientific reasoning and spatial context.
-                </p>
+              <h2>Building AI workflows for geospatial and planetary discovery.</h2>
+
+              <p>
+                Current work integrates high-resolution imagery, deep learning, geospatial post-processing,
+                and scalable computing to support landform detection, terrain interpretation, and scientific mapping.
+              </p>
+
+              <div class="focus-list">
+
+                <div class="focus-item">
+                  <i class="fa-solid fa-globe"></i>
+                  <div>
+                    <h3>Planetary surface mapping</h3>
+                    <p>Automated mapping of Martian landforms from orbital remote-sensing datasets.</p>
+                  </div>
+                </div>
+
+                <div class="focus-item">
+                  <i class="fa-solid fa-satellite"></i>
+                  <div>
+                    <h3>Earth observation</h3>
+                    <p>Satellite-based analysis of terrain, environment, and surface processes.</p>
+                  </div>
+                </div>
+
+                <div class="focus-item">
+                  <i class="fa-solid fa-brain"></i>
+                  <div>
+                    <h3>Interpretable GeoAI</h3>
+                    <p>Reproducible AI methods linked with spatial reasoning and scientific context.</p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
           </div>
+
+          <!-- RIGHT SIDE -->
+          <aside class="news-panel">
+            <div class="section-label">Recent News</div>
+
+            <h2>Research Updates</h2>
+
+            <div class="news-list">
+
+              <div class="news-item">
+                <div class="news-date">May 2026</div>
+                <div class="news-text">
+                  Submitted a research article to <strong>PNAS Nexus</strong> on deep learning-based detection
+                  and spatial analysis of Martian mound landforms.
+                </div>
+              </div>
+
+              <div class="news-item">
+                <div class="news-date">2026</div>
+                <div class="news-text">
+                  Continuing large-scale Mars landform mapping using CTX imagery, Mask R-CNN,
+                  and geospatial post-processing workflows.
+                </div>
+              </div>
+
+              <div class="news-item">
+                <div class="news-date">2026</div>
+                <div class="news-text">
+                  Developing unsupervised geospatial analysis workflows for seafloor pockmark
+                  and backscatter characterization.
+                </div>
+              </div>
+
+            </div>
+
+            <a href="publications.html" class="news-link">See publications →</a>
+          </aside>
+
         </div>
       </div>
     </section>
 
-    <!-- RESEARCH GATEWAY -->
-    <section class="gateway-section">
-      <div class="wrap">
-        <div class="gateway-content">
-
-          <div class="gateway-title">
-            <div class="section-label" style="color:#006d77;">Research Gateway</div>
-
-            <h2>A visual entry point to Earth, Mars, and geospatial AI.</h2>
-
-            <p>
-              The homepage works as a concise entry point rather than a full portfolio.
-              It highlights the research identity and guides visitors toward the deeper pages
-              where projects, publications, experience, and personal background are described in detail.
-            </p>
-          </div>
-
-          <div class="gateway-map">
-
-            <div class="gateway-tile">
-              <i class="fa-solid fa-map-location-dot"></i>
-              <h3>Mapping</h3>
-              <p>
-                Large-scale spatial mapping and terrain interpretation.
-              </p>
-            </div>
-
-            <div class="gateway-tile">
-              <i class="fa-solid fa-layer-group"></i>
-              <h3>Data Fusion</h3>
-              <p>
-                Integrating imagery, topography, and geospatial layers.
-              </p>
-            </div>
-
-            <div class="gateway-tile">
-              <i class="fa-solid fa-robot"></i>
-              <h3>AI Models</h3>
-              <p>
-                Computer vision and machine learning for scientific discovery.
-              </p>
-            </div>
-
-            <div class="gateway-tile">
-              <i class="fa-solid fa-mountain-sun"></i>
-              <h3>Landscapes</h3>
-              <p>
-                Surface processes across terrestrial and planetary settings.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- UPDATES -->
-    <section class="updates-section">
+    <!-- RESEARCH LENS -->
+    <section class="lens-section">
       <div class="wrap">
 
-        <div class="updates-header">
-          <div>
-            <div class="section-label">Updates</div>
-            <h2>Recent Research Activity</h2>
-          </div>
+        <div class="lens-header">
+          <div class="section-label">Research Lens</div>
+
+          <h2>Earth, Mars, imagery, and intelligence.</h2>
 
           <p>
-            Short research updates only. Full publication details, project descriptions,
-            and academic background are kept on dedicated pages.
+            The homepage stays concise while giving visitors a clear sense of the research direction:
+            using spatial data and AI to interpret complex landscapes at scale.
           </p>
         </div>
 
-        <div class="timeline">
+        <div class="lens-grid">
 
-          <div class="timeline-item">
-            <div class="timeline-date">May 2026</div>
-            <div class="timeline-text">
-              Submitted a research article to <strong>PNAS Nexus</strong> on deep learning-based detection
-              and spatial analysis of Martian mound landforms.
-            </div>
+          <div class="lens-card">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <h3>Mapping</h3>
+            <p>Large-scale spatial mapping and terrain interpretation.</p>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2026</div>
-            <div class="timeline-text">
-              Continuing large-scale Mars landform mapping using CTX imagery, Mask R-CNN,
-              and geospatial post-processing workflows.
-            </div>
+          <div class="lens-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Data Fusion</h3>
+            <p>Combining imagery, topography, and geospatial layers.</p>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2026</div>
-            <div class="timeline-text">
-              Developing unsupervised geospatial analysis workflows for seafloor pockmark
-              and backscatter characterization.
-            </div>
+          <div class="lens-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>AI Models</h3>
+            <p>Computer vision and machine learning for scientific discovery.</p>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- CLOSING SECTION -->
-    <section class="closing-section">
-      <div class="wrap">
-        <div class="closing-grid">
-
-          <div class="closing-text">
-            <div class="section-label" style="color:#006d77;">Explore More</div>
-
-            <h2>Continue through the dedicated pages.</h2>
-
-            <p>
-              To keep the homepage clean and non-repetitive, detailed information is organized
-              across the About, Research, Publications, Experience, and Contact pages. This structure
-              keeps the landing page visually strong while allowing each section of the website
-              to serve a clear purpose.
-            </p>
-          </div>
-
-          <div class="closing-actions">
-            <a href="research.html" class="closing-link">
-              <span>Research Projects</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <a href="publications.html" class="closing-link">
-              <span>Publications</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <a href="about.html" class="closing-link">
-              <span>Academic Profile</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <a href="contact.html" class="closing-link">
-              <span>Contact</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div class="lens-card">
+            <i class="fa-solid fa-mountain-sun"></i>
+            <h3>Landscapes</h3>
+            <p>Surface processes across terrestrial and planetary settings.</p>
           </div>
 
         </div>
