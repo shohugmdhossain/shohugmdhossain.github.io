@@ -32,13 +32,11 @@
       --accent:#1f3a5f;
       --accent-dark:#14263f;
       --teal:#006d77;
-      --soft-blue:#eef5f9;
-      --soft-blue-2:#f6fafc;
-      --soft-warm:#fbf6f0;
+      --bg:#ffffff;
+      --bg-soft:#f7fafc;
       --text:#222222;
       --muted:#586574;
       --line:#dbe6ee;
-      --white:#ffffff;
       --max:1120px;
     }
 
@@ -52,11 +50,11 @@
 
     body{
       margin:0;
+      background:#ffffff;
       color:var(--text);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.75;
       overflow-x:hidden;
-      background:#f6fafc;
     }
 
     a{
@@ -221,7 +219,7 @@
       min-height:660px;
       margin-top:72px;
       background:
-        linear-gradient(90deg, rgba(8,18,32,.84) 0%, rgba(31,58,95,.60) 42%, rgba(31,58,95,.14) 100%),
+        linear-gradient(90deg, rgba(8,18,32,.78) 0%, rgba(31,58,95,.48) 42%, rgba(31,58,95,.08) 100%),
         url("homepage_banner.png");
       background-size:cover;
       background-position:center;
@@ -232,24 +230,13 @@
       overflow:hidden;
     }
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      height:110px;
-      background:linear-gradient(to bottom, rgba(246,250,252,0), #f6fafc);
-      pointer-events:none;
-    }
-
     .hero-inner{
       position:relative;
       z-index:2;
       width:100%;
       max-width:var(--max);
       margin:0 auto;
-      padding:95px 22px 125px;
+      padding:95px 22px 115px;
     }
 
     .hero-kicker{
@@ -278,68 +265,25 @@
     .hero-subtitle{
       font-size:21px;
       max-width:790px;
-      margin:0 0 30px;
+      margin:0;
       color:#edf4fb;
       line-height:1.65;
       text-shadow:0 2px 10px rgba(0,0,0,.35);
     }
 
-    .hero-actions{
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .btn-primary,
-    .btn-light{
-      display:inline-block;
-      padding:12px 22px;
-      border-radius:9px;
-      font-weight:700;
-      transition:.24s ease;
-    }
-
-    .btn-primary{
-      background:#fff;
-      color:var(--accent);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-2px);
-      opacity:1;
-      box-shadow:0 8px 22px rgba(0,0,0,.22);
-    }
-
-    .btn-light{
-      color:#fff;
-      border:1.4px solid rgba(255,255,255,.75);
-      background:rgba(255,255,255,.08);
-    }
-
-    .btn-light:hover{
-      background:rgba(255,255,255,.18);
-      transform:translateY(-2px);
-      opacity:1;
-    }
-
     /* =========================
-       MAIN LIGHT DASHBOARD
+       MAIN FULL-WIDTH CONTENT
     ========================= */
-    .dashboard-section{
+    .main-section{
       width:100%;
-      padding:76px 0 72px;
-      background:
-        radial-gradient(circle at 12% 10%, rgba(0,109,119,.08), transparent 28%),
-        radial-gradient(circle at 88% 8%, rgba(177,91,36,.08), transparent 26%),
-        linear-gradient(180deg, #f6fafc 0%, #edf5f8 100%);
-      position:relative;
+      background:#ffffff;
+      padding:78px 0 82px;
     }
 
-    .dashboard-grid{
+    .main-grid{
       display:grid;
       grid-template-columns:1.15fr .85fr;
-      gap:28px;
+      gap:34px;
       align-items:start;
     }
 
@@ -352,29 +296,27 @@
       margin-bottom:8px;
     }
 
-    .left-panel,
+    .content-panel,
     .news-panel{
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(255,255,255,.85);
-      border-radius:24px;
-      box-shadow:0 14px 34px rgba(31,58,95,.10);
-      backdrop-filter:blur(12px);
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 10px 28px rgba(31,58,95,.07);
     }
 
-    .left-panel{
+    .content-panel{
       padding:34px;
     }
 
     .mission-block{
       padding-bottom:28px;
-      border-bottom:1px solid var(--line);
       margin-bottom:28px;
+      border-bottom:1px solid var(--line);
     }
 
     .mission-block h2,
     .focus-block h2,
-    .news-panel h2,
-    .lens-header h2{
+    .news-panel h2{
       font-family:"Libre Baskerville",serif;
       color:var(--accent);
       font-size:31px;
@@ -403,9 +345,9 @@
       grid-template-columns:42px 1fr;
       gap:14px;
       align-items:start;
-      background:#f7fbfd;
+      background:var(--bg-soft);
       border:1px solid var(--line);
-      border-radius:16px;
+      border-radius:15px;
       padding:17px;
     }
 
@@ -437,7 +379,7 @@
 
     .news-list{
       display:grid;
-      gap:14px;
+      gap:15px;
       margin-top:18px;
     }
 
@@ -461,72 +403,6 @@
 
     .news-text strong{
       color:var(--accent);
-    }
-
-    .news-link{
-      display:inline-block;
-      margin-top:20px;
-      color:var(--accent);
-      font-weight:700;
-      border-bottom:1px solid var(--accent);
-    }
-
-    /* =========================
-       LIGHT RESEARCH LENS
-    ========================= */
-    .lens-section{
-      width:100%;
-      padding:70px 0 78px;
-      background:
-        linear-gradient(135deg, #ffffff 0%, #f4f8fb 48%, #f8f3ed 100%);
-      border-top:1px solid var(--line);
-    }
-
-    .lens-header{
-      max-width:780px;
-      margin-bottom:28px;
-    }
-
-    .lens-header p{
-      margin:0;
-      color:#526071;
-      font-size:16.5px;
-      line-height:1.8;
-      text-align:justify;
-    }
-
-    .lens-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .lens-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:24px;
-      box-shadow:0 10px 26px rgba(31,58,95,.08);
-      min-height:185px;
-    }
-
-    .lens-card i{
-      color:var(--teal);
-      font-size:25px;
-      margin-bottom:12px;
-    }
-
-    .lens-card h3{
-      color:var(--accent);
-      margin:0 0 8px;
-      font-size:18px;
-    }
-
-    .lens-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14.5px;
-      line-height:1.65;
     }
 
     /* =========================
@@ -598,16 +474,12 @@
         font-size:18px;
       }
 
-      .dashboard-grid{
+      .main-grid{
         grid-template-columns:1fr;
       }
 
       .news-panel{
         position:static;
-      }
-
-      .lens-grid{
-        grid-template-columns:repeat(2,1fr);
       }
     }
 
@@ -637,34 +509,18 @@
         font-size:16.5px;
       }
 
-      .hero-actions{
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .btn-primary,
-      .btn-light{
-        width:100%;
-        text-align:center;
-      }
-
-      .left-panel,
+      .content-panel,
       .news-panel{
         padding:24px;
       }
 
       .mission-block h2,
       .focus-block h2,
-      .news-panel h2,
-      .lens-header h2{
+      .news-panel h2{
         font-size:26px;
       }
 
       .focus-item{
-        grid-template-columns:1fr;
-      }
-
-      .lens-grid{
         grid-template-columns:1fr;
       }
     }
@@ -724,23 +580,18 @@
         Exploring Earth and Mars through geospatial artificial intelligence, remote sensing,
         computer vision, and scalable scientific data analysis.
       </p>
-
-      <div class="hero-actions">
-        <a href="research.html" class="btn-primary">Explore Research</a>
-        <a href="publications.html" class="btn-light">View Publications</a>
-      </div>
     </div>
   </section>
 
   <main>
 
-    <!-- MAIN LIGHT DASHBOARD -->
-    <section class="dashboard-section">
+    <!-- MAIN CONTENT -->
+    <section class="main-section">
       <div class="wrap">
-        <div class="dashboard-grid">
+        <div class="main-grid">
 
           <!-- LEFT SIDE -->
-          <div class="left-panel">
+          <div class="content-panel">
 
             <div class="mission-block">
               <div class="section-label">Mission</div>
@@ -828,54 +679,7 @@
               </div>
 
             </div>
-
-            <a href="publications.html" class="news-link">See publications →</a>
           </aside>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH LENS -->
-    <section class="lens-section">
-      <div class="wrap">
-
-        <div class="lens-header">
-          <div class="section-label">Research Lens</div>
-
-          <h2>Earth, Mars, imagery, and intelligence.</h2>
-
-          <p>
-            The homepage stays concise while giving visitors a clear sense of the research direction:
-            using spatial data and AI to interpret complex landscapes at scale.
-          </p>
-        </div>
-
-        <div class="lens-grid">
-
-          <div class="lens-card">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <h3>Mapping</h3>
-            <p>Large-scale spatial mapping and terrain interpretation.</p>
-          </div>
-
-          <div class="lens-card">
-            <i class="fa-solid fa-layer-group"></i>
-            <h3>Data Fusion</h3>
-            <p>Combining imagery, topography, and geospatial layers.</p>
-          </div>
-
-          <div class="lens-card">
-            <i class="fa-solid fa-robot"></i>
-            <h3>AI Models</h3>
-            <p>Computer vision and machine learning for scientific discovery.</p>
-          </div>
-
-          <div class="lens-card">
-            <i class="fa-solid fa-mountain-sun"></i>
-            <h3>Landscapes</h3>
-            <p>Surface processes across terrestrial and planetary settings.</p>
-          </div>
 
         </div>
       </div>
